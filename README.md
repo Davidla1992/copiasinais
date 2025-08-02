@@ -1,0 +1,2 @@
+# copiasinais
+Sinais que funcionam
