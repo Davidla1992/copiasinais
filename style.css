@@ -125,4 +125,10 @@ footer {
   .content {
     flex-direction: column;
   }
+}.banner {
+  background-color: #ffe5b4; /* laranja claro */
+  color: #000000; /* texto preto */
+  text-align: center;
+  padding: 60px 20px;
+  border-bottom: 4px solid #dda15e;
 }
