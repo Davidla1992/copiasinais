@@ -1,3 +1,4 @@
+/* Fonte e base */
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #fefae0;
@@ -6,6 +7,7 @@ body {
   padding: 0;
 }
 
+/* Cabeçalho */
 nav {
   background-color: #283618;
   color: #ffffff;
@@ -40,6 +42,7 @@ nav ul li a:hover {
   color: #fefae0;
 }
 
+/* Banner */
 .banner {
   background-color: #dda15e;
   color: #ffffff;
@@ -48,6 +51,7 @@ nav ul li a:hover {
   border-bottom: 4px solid #bc6c25;
 }
 
+/* Seções */
 .section {
   padding: 40px 20px;
   margin: 20px auto;
@@ -57,6 +61,7 @@ nav ul li a:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
+/* Cards */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -79,6 +84,7 @@ nav ul li a:hover {
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
+/* Conteúdo com imagem */
 .content {
   display: flex;
   flex-wrap: wrap;
@@ -95,13 +101,17 @@ nav ul li a:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
+/* Rodapé */
 footer {
   background-color: #283618;
   color: #ffffff;
   text-align: center;
   padding: 20px;
   margin-top: 40px;
-}@media (max-width: 768px) {
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
   nav ul {
     flex-direction: column;
     gap: 10px;
