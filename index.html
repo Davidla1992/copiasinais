@@ -3,98 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <title>Gibiteka Max Rendon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: #f5f5f5;
-      color: #333;
-    }
-    header {
-      background: #ff5252;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; background: #fdfdfd; color: #333; }
+
+    nav {
+      background: #ff6b00;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       color: white;
-      padding: 40px 20px;
+    }
+    nav h1 { font-size: 1.8em; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: opacity 0.3s;
+    }
+    nav ul li a:hover {
+      opacity: 0.7;
+    }
+
+    .banner {
+      background: url('https://i.imgur.com/CHp1Xkh.jpg') center/cover no-repeat;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
       text-align: center;
+      position: relative;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
+    .banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
     }
-    header p {
-      margin-top: 10px;
+    .banner-content {
+      position: relative;
+      z-index: 1;
+    }
+    .banner h2 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    .banner p {
       font-size: 1.2em;
     }
-    .acervo {
-      max-width: 1000px;
-      margin: 40px auto;
+
+    .sobre {
+      max-width: 900px;
+      margin: 60px auto;
       padding: 20px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .acervo h2 {
       text-align: center;
-      margin-bottom: 30px;
+    }
+    .sobre h3 {
       font-size: 2em;
-      color: #ff5252;
+      color: #ff6b00;
+      margin-bottom: 20px;
     }
-    .gibi-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+    .sobre p {
+      font-size: 1em;
+      line-height: 1.6;
+      color: #555;
     }
-    .gibi {
-      width: 200px;
-      text-align: center;
-    }
-    .gibi img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    .gibi p {
-      margin-top: 10px;
-      font-weight: bold;
-    }
+
     footer {
+      background: #222;
+      color: white;
       text-align: center;
       padding: 20px;
-      background: #eee;
+      margin-top: 60px;
       font-size: 0.9em;
-      color: #777;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>📚 Gibiteka Max Rendon</h1>
-    <p>Bem-vindo à sua biblioteca digital de gibis e quadrinhos</p>
-  </header>
 
-  <section class="acervo">
-    <h2>Acervo</h2>
-    <div class="gibi-grid">
-      <div class="gibi">
-        <img src="https://i.imgur.com/IkQeB9w.jpg" alt="Turma da Mônica #1">
-        <p>Turma da Mônica #1</p>
-      </div>
-      <div class="gibi">
-        <img src="https://i.imgur.com/CHp1Xkh.jpg" alt="Turma da Mônica #2">
-        <p>Turma da Mônica #2</p>
-      </div>
-      <div class="gibi">
-        <img src="https://i.imgur.com/6XoZ9Qx.jpg" alt="Dom Casmurro">
-        <p>Dom Casmurro</p>
-      </div>
+  <nav>
+    <h1>Gibiteka Max Rendon</h1>
+    <ul>
+      <li><a href="#">A Gibiteka</a></li>
+      <li><a href="#">Acervo</a></li>
+      <li><a href="#">Serviços</a></li>
+      <li><a href="#">Login</a></li>
+    </ul>
+  </nav>
+
+  <section class="banner">
+    <div class="banner-content">
+      <h2>Bem-vindo à Gibiteka</h2>
+      <p>Um espaço digital para explorar, ler e se apaixonar por quadrinhos</p>
     </div>
   </section>
 
+  <section class="sobre">
+    <h3>Sobre a Gibiteka Max Rendon</h3>
+    <p>
+      A Gibiteka Max Rendon é uma biblioteca digital dedicada à preservação, leitura e divulgação de gibis, quadrinhos e literatura ilustrada. Nosso acervo reúne clássicos brasileiros, mangás, HQs internacionais e produções independentes. Criada para leitores de todas as idades, a Gibiteka promove o acesso gratuito à cultura visual e à narrativa gráfica.
+    </p>
+  </section>
+
   <footer>
-    &copy; 2025 Gibiteka Max Rendon. Todos os direitos reservados.
+    &copy; 2025 Gibiteka Max Rendon — Todos os direitos reservados
   </footer>
+
 </body>
 </html>
-
