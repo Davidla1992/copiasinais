@@ -42,14 +42,24 @@ nav ul li a:hover {
   color: #fefae0;
 }
 
-/* Banner */
+/* Banner de boas-vindas */
 .banner {
-  background-color: #ffe5b4; /* laranja claro */
-  color: #000000; /* texto preto */
+  background-color: #ffe5b4;
+  color: #000000;
   text-align: center;
   padding: 60px 20px;
   border-bottom: 4px solid #dda15e;
 }
+
+.banner h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.banner p {
+  font-size: 18px;
+  margin: 0;
 }
 
 /* Seções */
@@ -60,6 +70,11 @@ nav ul li a:hover {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.section h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
 }
 
 /* Cards */
@@ -85,21 +100,44 @@ nav ul li a:hover {
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
-/* Conteúdo com imagem */
+.card h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Layout com imagem e texto lado a lado */
 .content {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 40px;
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.image {
+  flex: 1;
+  min-width: 280px;
 }
 
 .image img {
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.text {
+  flex: 1;
+  min-width: 280px;
+  background-color: #ffe5b4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 /* Rodapé */
@@ -125,23 +163,14 @@ footer {
 
   .content {
     flex-direction: column;
+    text-align: center;
   }
 
-.banner {
-  background-color: #ffe5b4; /* laranja claro */
-  color: #000000; /* texto preto */
-  text-align: center;
-  padding: 60px 20px;
-  border-bottom: 4px solid #dda15e;
-}
+  .image img {
+    max-width: 100%;
+  }
 
-.banner h2 {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.banner p {
-  font-size: 18px;
-  margin: 0;
+  .text {
+    margin-top: 20px;
+  }
 }
