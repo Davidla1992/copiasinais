@@ -170,4 +170,11 @@ footer {
   .banner p {
     font-size: 1em;
   }
+}.banner {
+  background-image: url('imagens/fachada-gibiteka.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
 }
