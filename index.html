@@ -2,75 +2,99 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Biblioteca Digital</title>
+  <title>Gibiteka Max Rendon</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
+      background: #f5f5f5;
+      color: #333;
     }
     header {
-      background: #2c3e50;
+      background: #ff5252;
       color: white;
       padding: 40px 20px;
       text-align: center;
     }
-    section {
-      max-width: 900px;
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
+    .acervo {
+      max-width: 1000px;
       margin: 40px auto;
       padding: 20px;
       background: white;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-    h2 {
-      color: #2c3e50;
-      margin-bottom: 20px;
+    .acervo h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2em;
+      color: #ff5252;
     }
-    .livro {
-      display: inline-block;
+    .gibi-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .gibi {
       width: 200px;
-      margin: 10px;
       text-align: center;
     }
-    .livro img {
+    .gibi img {
       width: 100%;
       height: 280px;
       object-fit: cover;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
-    .livro a {
-      display: block;
-      margin-top: 8px;
-      text-decoration: none;
-      color: #2980b9;
+    .gibi p {
+      margin-top: 10px;
       font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #eee;
+      font-size: 0.9em;
+      color: #777;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>📚 Biblioteca Digital</h1>
-    <p>Explore livros e gibis online</p>
+    <h1>📚 Gibiteka Max Rendon</h1>
+    <p>Bem-vindo à sua biblioteca digital de gibis e quadrinhos</p>
   </header>
 
-  <section>
+  <section class="acervo">
     <h2>Acervo</h2>
-    <div class="livro">
-      <img src="https://i.imgur.com/IkQeB9w.jpg" alt="Turma da Mônica #1">
-      <a href="#">Ler agora</a>
-    </div>
-    <div class="livro">
-      <img src="https://i.imgur.com/CHp1Xkh.jpg" alt="Turma da Mônica #2">
-      <a href="#">Ler agora</a>
-    </div>
-    <div class="livro">
-      <img src="https://i.imgur.com/6XoZ9Qx.jpg" alt="Dom Casmurro">
-      <a href="#">Ler agora</a>
+    <div class="gibi-grid">
+      <div class="gibi">
+        <img src="https://i.imgur.com/IkQeB9w.jpg" alt="Turma da Mônica #1">
+        <p>Turma da Mônica #1</p>
+      </div>
+      <div class="gibi">
+        <img src="https://i.imgur.com/CHp1Xkh.jpg" alt="Turma da Mônica #2">
+        <p>Turma da Mônica #2</p>
+      </div>
+      <div class="gibi">
+        <img src="https://i.imgur.com/6XoZ9Qx.jpg" alt="Dom Casmurro">
+        <p>Dom Casmurro</p>
+      </div>
     </div>
   </section>
+
+  <footer>
+    &copy; 2025 Gibiteka Max Rendon. Todos os direitos reservados.
+  </footer>
 </body>
 </html>
 
