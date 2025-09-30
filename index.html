@@ -74,12 +74,15 @@
   <!-- FORMULÁRIO DE LOGIN/CADASTRO -->
   <div class="container" id="form-container">
     <h2 id="form-title">Login</h2>
-    <form id="login-form">
+
+    <!-- Formulário de Login -->
+    <form id="login-form" action="login.php" method="POST">
       <input type="email" name="email" placeholder="Email" required>
       <input type="password" name="senha" placeholder="Senha" required>
       <button type="submit">Entrar</button>
     </form>
 
+    <!-- Formulário de Cadastro -->
     <form id="signup-form" style="display: none;" action="cadastrar.php" method="POST">
       <input type="text" name="nome" placeholder="Nome completo" required>
       <input type="email" name="email" placeholder="Email" required>
