@@ -31,10 +31,13 @@ $mail->Subject = 'Confirme seu cadastro';
 $mail->Body = "
   Olá $nome,<br><br>
   Clique no link abaixo para confirmar seu cadastro:<br>
-  <a href='https://seusite.com/verificar.php?token=$token'>Confirmar e-mail</a>
+  <a href='https://dig.davidla1992.com.br/verificar.php?token=$token'>Confirmar e-mail</a>
 ";
 
 $mail->send();
+
+echo "Cadastro realizado! Verifique seu e-mail.";
+?>
 
 echo "Cadastro realizado! Verifique seu e-mail.";
 ?>
