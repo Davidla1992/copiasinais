@@ -1,2 +1,2 @@
-# copiasinais
+# GIBITEKA
 Sinais que funcionam
