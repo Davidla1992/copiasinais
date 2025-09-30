@@ -8,8 +8,8 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute([$token]);
 
 if ($stmt->rowCount()) {
-  echo "E-mail confirmado com sucesso!";
+  echo "✅ E-mail confirmado com sucesso!";
 } else {
-  echo "Token inválido ou já confirmado.";
+  echo "❌ Token inválido ou já confirmado.";
 }
 ?>
