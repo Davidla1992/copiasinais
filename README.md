@@ -1,2 +1,2 @@
 # GIBITEKA
-Sinais que funcionam
+
