@@ -52,6 +52,22 @@
       cursor: pointer;
       color: #007BFF;
     }
+
+    #info-gibiteka {
+      background-color: #f4f4f4;
+      padding: 30px;
+      border-radius: 10px;
+      margin: 40px auto;
+      max-width: 800px;
+    }
+
+    #info-gibiteka ul {
+      padding-left: 20px;
+    }
+
+    #info-gibiteka li {
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
@@ -59,7 +75,7 @@
   <nav>
     <h1>Gibiteka Municipal de Barueri Max Zendron</h1>
     <ul>
-      <li><a href="#">Gibiteka</a></li>
+      <li><a href="#info-gibiteka">Gibiteka</a></li>
       <li><a href="#">Acervo</a></li>
       <li><a href="#">Serviços</a></li>
       <li><a href="#form-container">Login</a></li>
@@ -75,14 +91,12 @@
   <div class="container" id="form-container">
     <h2 id="form-title">Login</h2>
 
-    <!-- Formulário de Login -->
     <form id="login-form" action="login.php" method="POST">
       <input type="email" name="email" placeholder="Email" required>
       <input type="password" name="senha" placeholder="Senha" required>
       <button type="submit">Entrar</button>
     </form>
 
-    <!-- Formulário de Cadastro -->
     <form id="signup-form" style="display: none;" action="cadastrar.php" method="POST">
       <input type="text" name="nome" placeholder="Nome completo" required>
       <input type="email" name="email" placeholder="Email" required>
@@ -125,6 +139,21 @@
     <div class="image">
       <img src="imagens/fachada.gibiteka" alt="Fachada do edifício" style="width:100%;max-width:600px;">
     </div>
+  </section>
+
+  <!-- NOVA SEÇÃO COM INFORMAÇÕES DETALHADAS -->
+  <section id="info-gibiteka" class="section">
+    <h3>Informações sobre a Gibiteka</h3>
+    <p>
+      A Gibiteka é uma biblioteca pública especializada em quadrinhos e literatura ilustrada, localizada em Barueri – SP. Seu objetivo é promover o acesso gratuito à cultura gráfica para todas as idades.
+    </p>
+    <ul>
+      <li><strong>📚 Acervo:</strong> Mais de 5.000 títulos de HQs, mangás, graphic novels e livros infantis.</li>
+      <li><strong>🎨 Atividades:</strong> Oficinas de desenho, clubes de leitura, exposições temáticas.</li>
+      <li><strong>📅 Horário:</strong> Segunda a sexta, das 9h às 17h.</li>
+      <li><strong>📍 Endereço:</strong> Rua Grace, 268 – Jardim Belval, Barueri – SP.</li>
+      <li><strong>📞 Contato:</strong> (11) 4199-1600 | gibiteka@barueri.sp.gov.br</li>
+    </ul>
   </section>
 
   <footer>
