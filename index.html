@@ -5,12 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gibiteka Municipal de Barueri Max Zendron</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       background-color: #f4f4f4;
+    }
+
+    .site-title {
+      background-color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      color: #007BFF;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     nav {
@@ -143,6 +152,11 @@
     }
 
     @media (max-width: 600px) {
+      .site-title {
+        font-size: 20px;
+        padding: 15px;
+      }
+
       nav {
         justify-content: center;
       }
@@ -193,6 +207,10 @@
   </style>
 </head>
 <body>
+
+  <header class="site-title">
+    <h1>Gibiteka Municipal de Barueri Max Zendron</h1>
+  </header>
 
   <nav>
     <ul>
@@ -265,23 +283,8 @@
     &copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados
   </footer>
 
- <script>
-  function alternarFormulario() {
-    const loginForm = document.getElementById('login-form');
-    const signupForm = document.getElementById('signup-form');
-    const formTitle = document.getElementById('form-title');
-    const toggleText = document.querySelector('.toggle');
-
-    if (loginForm.style.display === 'none') {
-      loginForm.style.display = 'block';
-      signupForm.style.display = 'none';
-      formTitle.textContent = 'Login';
-      toggleText.textContent = 'Ainda não tem conta? Cadastre-se';
-    } else {
-      loginForm.style.display = 'none';
-      signupForm.style.display = 'block';
-      formTitle.textContent = 'Cadastro';
-      toggleText.textContent = 'Já tem conta? Faça login';
-    }
-  }
-</script>
+  <script>
+    function alternarFormulario() {
+      const loginForm = document.getElementById('login-form');
+      const signupForm = document.getElementById('signup-form');
+      const formTitle = document.getElementById('form-title
