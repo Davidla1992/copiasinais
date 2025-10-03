@@ -1,65 +1,152 @@
+‎index.html‎
++ 3
+- 32
+Linhas alteradas: 3 adições e 32 exclusões
+Número da linha do arquivo original	Número da linha de diferença	Mudança de linha diferencial
+@@ -1,81 +1,65 @@
 <!DOCTYPE html>
-<html lang="pt-br"><head><meta charset="UTF-8"><title>Gibiteka Municipal de Barueri Max Zendron</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"><style>.container {background-color: white;padding: 30px;border-radius: 10px;box-shadow: 0 0 10px rgba(0,0,0,0.1);width: 300px;margin: 40px auto;}
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Gibiteka Municipal de Barueri Max Zendron</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+      margin: 40px auto;
+    }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-}
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
 
-button:hover {
-  background-color: #0056b3;
-}
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
 
-.toggle {
-  text-align: center;
-  margin-top: 15px;
-  font-size: 14px;
-  cursor: pointer;
-  color: #007BFF;
-}</style></head><body>
-<nav><h1>Gibiteka Municipal de Barueri Max Zendron</h1><ul><li><a href="#">Gibiteka</a></li><li><a href="#">Acervo</a></li><li><a href="#">Serviços</a></li><li><a href="#form-container">Login</a></li></ul></nav>
-<section class="banner"><h2>Bem-vindo à Gibiteka</h2><p>Explore quadrinhos, livros ilustrados e eventos culturais gratuitos</p></section>
-<!-- FORMULÁRIO DE LOGIN/CADASTRO -->
-<div class="container" id="form-container"><h2 id="form-title">Login</h2>
-<!-- Formulário de Login -->
-<form id="login-form" action="login.php" method="POST">
-  <input type="email" name="email" placeholder="Email" required>
-  <input type="password" name="senha" placeholder="Senha" required>
-  <button type="submit">Entrar</button>
-</form>
+    button:hover {
+      background-color: #0056b3;
+    }
 
-<!-- Formulário de Cadastro -->
-<form id="signup-form" style="display: none;" action="cadastrar.php" method="POST">
-  <input type="text" name="nome" placeholder="Nome completo" required>
-  <input type="email" name="email" placeholder="Email" required>
-  <input type="password" name="senha" placeholder="Senha" required>
-  <button type="submit">Cadastrar</button>
-</form>
+    .toggle {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      cursor: pointer;
+      color: #007BFF;
+    }
+    #info-gibiteka {
+      background-color: #f4f4f4;
+      padding: 30px;
+      border-radius: 10px;
+      margin: 40px auto;
+      max-width: 800px;
+    }
+    #info-gibiteka ul {
+      padding-left: 20px;
+    }
+    #info-gibiteka li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
 
-<div class="toggle" onclick="alternarFormulario()">Ainda não tem conta? Cadastre-se</div></div>
-<section class="section"><h3>Novidades e Destaques</h3><div class="cards"><div class="card"><h4>📚 Novos Títulos</h4><p>Confira os gibis recém-adicionados ao acervo digital.</p></div><div class="card"><h4>🎭 Eventos Culturais</h4><p>Participe de oficinas, clubes de leitura e exposições.</p></div><div class="card"><h4>🔍 Pesquisa Inteligente</h4><p>Busque por autor, gênero, idioma ou disponibilidade.</p></div></div></section>
-<section class="section"><h3>Sobre a Gibiteka Municipal de Barueri Max Zendron</h3><p>A Gibiteka Max Zendron é uma biblioteca digital dedicada à leitura e preservação de quadrinhos. Com acesso gratuito, acervo variado e serviços interativos, ela conecta leitores de todas as idades à cultura gráfica e à literatura ilustrada.</p></section>
-<section class="content"><div class="text"><p>A fachada da Gibiteka Max Zendron reflete seu compromisso com a cultura e acessibilidade. O espaço moderno e acolhedor recebe leitores de todas as idades.</p></div><div class="image"><img src="imagens/fachada.gibiteka" alt="Fachada do edifício" style="width:100%;max-width:600px;"></div></section>
-<footer>&copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados</footer>
-<script>function alternarFormulario() {const loginForm = document.getElementById('login-form');const signupForm = document.getElementById('signup-form');const formTitle = document.getElementById('form-title');const toggleText = document.querySelector('.toggle');if (loginForm.style.display === 'none') {loginForm.style.display = 'block';signupForm.style.display = 'none';formTitle.textContent = 'Login';toggleText.textContent = 'Ainda não tem conta? Cadastre-se';} else {loginForm.style.display = 'none';signupForm.style.display = 'block';formTitle.textContent = 'Cadastro';toggleText.textContent = 'Já tem conta? Faça login';}}</script>
-</body></html>
+  <nav>
+    <h1>Gibiteka Municipal de Barueri Max Zendron</h1>
+    <ul>
+      <li><a href="#info-gibiteka">Gibiteka</a></li>
+      <li><a href="#">Gibiteka</a></li>
+      <li><a href="#">Acervo</a></li>
+      <li><a href="#">Serviços</a></li>
+      <li><a href="#form-container">Login</a></li>
+@@ -91,12 +75,14 @@
+  <div class="container" id="form-container">
+    <h2 id="form-title">Login</h2>
+
+    <!-- Formulário de Login -->
+    <form id="login-form" action="login.php" method="POST">
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="senha" placeholder="Senha" required>
+      <button type="submit">Entrar</button>
+    </form>
+
+    <!-- Formulário de Cadastro -->
+    <form id="signup-form" style="display: none;" action="cadastrar.php" method="POST">
+      <input type="text" name="nome" placeholder="Nome completo" required>
+      <input type="email" name="email" placeholder="Email" required>
+@@ -141,45 +127,30 @@
+    </div>
+  </section>
+
+  <!-- NOVA SEÇÃO COM INFORMAÇÕES DETALHADAS -->
+  <section id="info-gibiteka" class="section">
+    <h3>Informações sobre a Gibiteka</h3>
+    <p>
+      A Gibiteka é uma biblioteca pública especializada em quadrinhos e literatura ilustrada, localizada em Barueri – SP. Seu objetivo é promover o acesso gratuito à cultura gráfica para todas as idades.
+    </p>
+    <ul>
+      <li><strong>📚 Acervo:</strong> Mais de 5.000 títulos de HQs, mangás, graphic novels e livros infantis.</li>
+      <li><strong>🎨 Atividades:</strong> Oficinas de desenho, clubes de leitura, exposições temáticas.</li>
+      <li><strong>📅 Horário:</strong> Segunda a sexta, das 9h às 17h.</li>
+      <li><strong>📍 Endereço:</strong> Rua Grace, 268 – Jardim Belval, Barueri – SP.</li>
+      <li><strong>📞 Contato:</strong> (11) 4199-1600 | gibiteka@barueri.sp.gov.br</li>
+    </ul>
+  </section>
+  <footer>
+    &copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados
+  </footer>
+
+  <script>
+    function alternarFormulario() {
+      const loginForm = document.getElementById('login-form');
+      const signupForm = document.getElementById('signup-form');
+      const formTitle = document.getElementById('form-title');
+      const toggleText = document.querySelector('.toggle');
+
+      if (loginForm.style.display === 'none') {
+        loginForm.style.display = 'block';
+        signupForm.style.display = 'none';
+        formTitle.textContent = 'Login';
+        toggleText.textContent = 'Ainda não tem conta? Cadastre-se';
+      } else {
+        loginForm.style.display = 'none';
+        signupForm.style.display = 'block';
+        formTitle.textContent = 'Cadastro';
+        toggleText.textContent = 'Já tem conta? Faça login';
+      }
+    }
+  </script>
+
+</body>
+</html>
+0 comentários de confirmação
+Comentários
+0
+ ( 0 )
+
+Comentário
+Você não está recebendo notificações deste tópico.
