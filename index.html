@@ -1,9 +1,3 @@
-‎index.html‎
-+ 3
-- 32
-Linhas alteradas: 3 adições e 32 exclusões
-Número da linha do arquivo original	Número da linha de diferença	Mudança de linha diferencial
-@@ -1,81 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -58,6 +52,7 @@ Número da linha do arquivo original	Número da linha de diferença	Mudança de 
       cursor: pointer;
       color: #007BFF;
     }
+
     #info-gibiteka {
       background-color: #f4f4f4;
       padding: 30px;
@@ -65,9 +60,11 @@ Número da linha do arquivo original	Número da linha de diferença	Mudança de 
       margin: 40px auto;
       max-width: 800px;
     }
+
     #info-gibiteka ul {
       padding-left: 20px;
     }
+
     #info-gibiteka li {
       margin-bottom: 10px;
     }
@@ -80,80 +77,18 @@ Número da linha do arquivo original	Número da linha de diferença	Mudança de 
     <ul>
       <li><a href="#info-gibiteka">Gibiteka</a></li>
       <li><a href="#">Gibiteka</a></li>
-      <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Acervo - Gibiteka Max Zendron</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background-color: #f4f4f4;
-      padding: 20px;
-    }
-
-    h1 {
-      text-align: center;
-      color: #007BFF;
-    }
-
-    .acervo-lista {
-      max-width: 800px;
-      margin: 0 auto;
-      background-color: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .item {
-      border-bottom: 1px solid #ccc;
-      padding: 15px 0;
-    }
-
-    .item:last-child {
-      border-bottom: none;
-    }
-
-    .item h3 {
-      margin: 0;
-      color: #333;
-    }
-
-    .item p {
-      margin: 5px 0 0;
-      color: #666;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>Acervo Digital</h1>
-
-  <div class="acervo-lista">
-    <div class="item">
-      <h3>Turma da Mônica – Edição Especial</h3>
-      <p>Autor: Mauricio de Sousa | Gênero: Infantil | Idioma: Português</p>
-    </div>
-    <div class="item">
-      <h3>Batman: Ano Um</h3>
-      <p>Autor: Frank Miller | Gênero: Super-herói | Idioma: Português</p>
-    </div>
-    <div class="item">
-      <h3>Persépolis</h3>
-      <p>Autor: Marjane Satrapi | Gênero: Autobiográfico | Idioma: Português</p>
-    </div>
-    <!-- Adicione mais títulos aqui -->
-  </div>
-
-</body>
-</html>
+      <li><a href="#">Acervo</a></li>
       <li><a href="#">Serviços</a></li>
       <li><a href="#form-container">Login</a></li>
-@@ -91,12 +75,14 @@
+    </ul>
+  </nav>
+
+  <section class="banner">
+    <h2>Bem-vindo à Gibiteka</h2>
+    <p>Explore quadrinhos, livros ilustrados e eventos culturais gratuitos</p>
+  </section>
+
+  <!-- FORMULÁRIO DE LOGIN/CADASTRO -->
   <div class="container" id="form-container">
     <h2 id="form-title">Login</h2>
 
@@ -168,7 +103,44 @@ Número da linha do arquivo original	Número da linha de diferença	Mudança de 
     <form id="signup-form" style="display: none;" action="cadastrar.php" method="POST">
       <input type="text" name="nome" placeholder="Nome completo" required>
       <input type="email" name="email" placeholder="Email" required>
-@@ -141,45 +127,30 @@
+      <input type="password" name="senha" placeholder="Senha" required>
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <div class="toggle" onclick="alternarFormulario()">Ainda não tem conta? Cadastre-se</div>
+  </div>
+
+  <section class="section">
+    <h3>Novidades e Destaques</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>📚 Novos Títulos</h4>
+        <p>Confira os gibis recém-adicionados ao acervo digital.</p>
+      </div>
+      <div class="card">
+        <h4>🎭 Eventos Culturais</h4>
+        <p>Participe de oficinas, clubes de leitura e exposições.</p>
+      </div>
+      <div class="card">
+        <h4>🔍 Pesquisa Inteligente</h4>
+        <p>Busque por autor, gênero, idioma ou disponibilidade.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h3>Sobre a Gibiteka Municipal de Barueri Max Zendron</h3>
+    <p>
+      A Gibiteka Max Zendron é uma biblioteca digital dedicada à leitura e preservação de quadrinhos. Com acesso gratuito, acervo variado e serviços interativos, ela conecta leitores de todas as idades à cultura gráfica e à literatura ilustrada.
+    </p>
+  </section>
+
+  <section class="content">
+    <div class="text">
+      <p>A fachada da Gibiteka Max Zendron reflete seu compromisso com a cultura e acessibilidade. O espaço moderno e acolhedor recebe leitores de todas as idades.</p>
+    </div>
+    <div class="image">
+      <img src="imagens/fachada.gibiteka" alt="Fachada do edifício" style="width:100%;max-width:600px;">
     </div>
   </section>
 
@@ -186,6 +158,7 @@ Número da linha do arquivo original	Número da linha de diferença	Mudança de 
       <li><strong>📞 Contato:</strong> (11) 4199-1600 | gibiteka@barueri.sp.gov.br</li>
     </ul>
   </section>
+
   <footer>
     &copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados
   </footer>
@@ -213,10 +186,3 @@ Número da linha do arquivo original	Número da linha de diferença	Mudança de 
 
 </body>
 </html>
-0 comentários de confirmação
-Comentários
-0
- ( 0 )
-
-Comentário
-Você não está recebendo notificações deste tópico.
