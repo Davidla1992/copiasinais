@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gibiteka Municipal de Barueri Max Zendron</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -15,9 +16,16 @@
     nav {
       background-color: #007BFF;
       padding: 15px 30px;
+      color: white;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
+    }
+
+    nav h1 {
+      font-size: 20px;
+      margin: 0;
     }
 
     nav ul {
@@ -54,6 +62,7 @@
       margin: 40px auto;
     }
 
+    h2 {
     h2, h3 {
       text-align: center;
       margin-bottom: 20px;
@@ -92,6 +101,9 @@
       color: #007BFF;
     }
 
+    #info-gibiteka {
+      background-color: #f4f4f4;
+      padding: 30px;
     .section {
       padding: 40px 20px;
       background-color: #fff;
@@ -109,10 +121,14 @@
       background-color: #e3f2fd;
       padding: 20px;
       border-radius: 10px;
+      margin: 40px auto;
+      max-width: 800px;
       width: 250px;
       box-shadow: 0 0 5px rgba(0,0,0,0.1);
     }
 
+    #info-gibiteka ul {
+      padding-left: 20px;
     .content {
       display: flex;
       flex-wrap: wrap;
@@ -123,6 +139,8 @@
       background-color: #fff;
     }
 
+    #info-gibiteka li {
+      margin-bottom: 10px;
     .text {
       max-width: 500px;
     }
@@ -142,37 +160,14 @@
     }
 
     @media (max-width: 600px) {
-      nav {
-        justify-content: center;
-      }
-
       nav ul {
         flex-direction: column;
-        align-items: center;
-        width: 100%;
+        gap: 10px;
         margin-top: 10px;
-      }
-
-      nav ul li {
-        width: 100%;
-      }
-
-      nav ul li a {
-        display: block;
-        padding: 10px;
-        background-color: #0056b3;
-        border-radius: 5px;
-        color: white;
-        text-align: center;
-      }
-
-      .banner h2 {
-        font-size: 22px;
       }
 
       .container {
         width: 90%;
-        margin: 20px auto;
       }
 
       .cards {
@@ -180,17 +175,8 @@
         align-items: center;
       }
 
-      .card {
-        width: 90%;
-      }
-
       .content {
         flex-direction: column;
-        padding: 20px;
-      }
-
-      .image img {
-        max-width: 100%;
       }
     }
   </style>
@@ -198,6 +184,8 @@
 <body>
 
   <nav>
+    <h1>Gibiteka Municipal de Barueri Max Zendron</h1>
+
     <ul>
       <li><a href="gibiteka.html">Gibiteka</a></li>
       <li><a href="acervo.html">Acervo</a></li>
@@ -211,15 +199,18 @@
     <p>Explore quadrinhos, livros ilustrados e eventos culturais gratuitos</p>
   </section>
 
+  <!-- FORMULÁRIO DE LOGIN/CADASTRO -->
   <div class="container" id="form-container">
     <h2 id="form-title">Login</h2>
 
+    <!-- Formulário de Login -->
     <form id="login-form" action="login.php" method="POST">
       <input type="email" name="email" placeholder="Email" required>
       <input type="password" name="senha" placeholder="Senha" required>
       <button type="submit">Entrar</button>
     </form>
 
+    <!-- Formulário de Cadastro -->
     <form id="signup-form" style="display: none;" action="cadastrar.php" method="POST">
       <input type="text" name="nome" placeholder="Nome completo" required>
       <input type="email" name="email" placeholder="Email" required>
@@ -246,15 +237,38 @@
         <p>Busque por autor, gênero, idioma ou disponibilidade.</p>
       </div>
     </div>
- 
+  </section>
+
+  <section class="section">
+    <h3>Sobre a Gibiteka Municipal de Barueri Max Zendron</h3>
+    <p>
+      A Gibiteka Max Zendron é uma biblioteca digital dedicada à leitura e preservação de quadrinhos. Com acesso gratuito, acervo variado e serviços interativos, ela conecta leitores de todas as idades à cultura gráfica e à literatura ilustrada.
+    </p>
+  </section>
 
   <section class="content">
     <div class="text">
       <p>A fachada da Gibiteka Max Zendron reflete seu compromisso com a cultura e acessibilidade. O espaço moderno e acolhedor recebe leitores de todas as idades.</p>
     </div>
     <div class="image">
-      <img src="imagens/fachada.gibiteka" alt="Fachada do edifício">
+      <img src="imagens/fachada.gibiteka" alt="Fachada do edifício" style="width:100%;max-width:600px;">
     </div>
+  </section>
+
+  <!-- NOVA SEÇÃO COM INFORMAÇÕES DETALHADAS -->
+  <section id="info-gibiteka" class="section">
+    <h3>Informações sobre a Gibiteka</h3>
+    <p>
+      A Gibiteka é uma biblioteca pública especializada em quadrinhos e literatura ilustrada, localizada em Barueri – SP. Seu objetivo é promover o acesso gratuito à cultura gráfica para todas as idades.
+    </p>
+    <ul>
+      <li><strong>📚 Acervo:</strong> Mais de 5.000 títulos de HQs, mangás, graphic novels e livros infantis.</li>
+      <li><strong>🎨 Atividades:</strong> Oficinas de desenho, clubes de leitura, exposições temáticas.</li>
+      <li><strong>📅 Horário:</strong> Segunda a sexta, das 9h às 17h.</li>
+      <li><strong>📍 Endereço:</strong> Rua Grace, 268 – Jardim Belval, Barueri – SP.</li>
+      <li><strong>📞 Contato:</strong> (11) 4199-1600 | gibiteka@barueri.sp.gov.br</li>
+    </ul>
+
   </section>
 
   <footer>
