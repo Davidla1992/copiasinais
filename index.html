@@ -301,6 +301,43 @@
       toggleText.textContent = 'Já tem conta? Faça login';
     }
   }
+
+  // Validação do formulário de cadastro
+  document.getElementById('signup-form').addEventListener('submit', function(e) {
+    const nome = this.nome.value.trim();
+    const email = this.email.value.trim();
+    const senha = this.senha.value.trim();
+
+    if (nome === '' || email === '' || senha === '') {
+      alert('Por favor, preencha todos os campos.');
+      e.preventDefault();
+      return;
+    }
+
+    if (!email.includes('@') || !email.includes('.')) {
+      alert('Digite um e-mail válido.');
+      e.preventDefault();
+      return;
+    }
+
+    if (senha.length < 6) {
+      alert('A senha deve ter pelo menos 6 caracteres.');
+      e.preventDefault();
+      return;
+    }
+
+    // Salvar dados no localStorage
+    localStorage.setItem('usuarioEmail', email);
+    localStorage.setItem('usuarioNome', nome);
+  });
+
+  // Preencher automaticamente o campo de e-mail no login
+  window.addEventListener('DOMContentLoaded', function() {
+    const emailSalvo = localStorage.getItem('usuarioEmail');
+    if (emailSalvo) {
+      document.querySelector('#login-form input[name="email"]').value = emailSalvo;
+    }
+  });
 </script>
 </body>
 </html>
