@@ -282,15 +282,25 @@
     &copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados
   </footer>
 
-  <script>
-    function alternarFormulario() {
-      const loginForm = document.getElementById('login-form');
-      const signupForm = document.getElementById('signup-form');
-      const formTitle = document.getElementById('form-title');
-      const toggleText = document.querySelector('.toggle');
+<script>
+  function alternarFormulario() {
+    const loginForm = document.getElementById('login-form');
+    const signupForm = document.getElementById('signup-form');
+    const formTitle = document.getElementById('form-title');
+    const toggleText = document.querySelector('.toggle');
 
-      if (loginForm.style.display === 'none') {
-        loginForm.style.display = 'block';
-        signupForm.style.display = 'none';
-        formTitle.textContent = 'Login';
-        toggleText.textContent =
+    if (loginForm.style.display === 'none') {
+      loginForm.style.display = 'block';
+      signupForm.style.display = 'none';
+      formTitle.textContent = 'Login';
+      toggleText.textContent = 'Ainda não tem conta? Cadastre-se';
+    } else {
+      loginForm.style.display = 'none';
+      signupForm.style.display = 'block';
+      formTitle.textContent = 'Cadastro';
+      toggleText.textContent = 'Já tem conta? Faça login';
+    }
+  }
+</script>
+</body>
+</html>
