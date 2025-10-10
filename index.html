@@ -209,16 +209,16 @@
 <body>
 
   <header class="top-bar">
-  <h1>Gibiteka Municipal de Barueri Max Zendron</h1>
-  <nav>
-    <ul>
-      <li><a href="gibiteka.html">Gibiteka</a></li>
-      <li><a href="acervo.html">Acervo</a></li>
-      <li><a href="#">Serviços</a></li>
-      <li><a href="#form-container">Login</a></li>
-    </ul>
-  </nav>
-</header>
+    <h1>Gibiteka Municipal de Barueri Max Zendron</h1>
+    <nav>
+      <ul>
+        <li><a href="gibiteka.html">Gibiteka</a></li>
+        <li><a href="acervo.html">Acervo</a></li>
+        <li><a href="#">Serviços</a></li>
+        <li><a href="#form-container">Login</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <section class="banner">
     <h2>Bem-vindo à Gibiteka</h2>
@@ -286,4 +286,14 @@
     function alternarFormulario() {
       const loginForm = document.getElementById('login-form');
       const signupForm = document.getElementById('signup-form');
-      const formTitle = document.getElementById('form-title
+      const formTitle = document.getElementById('form-title');
+      const toggleText = document.querySelector('.toggle');
+
+      if (loginForm.style.display === 'none') {
+        loginForm.style.display = 'block';
+        signupForm.style.display = 'none';
+        formTitle.textContent = 'Login';
+        toggleText.textContent = 'Ainda não tem conta? Cadastre-se';
+      } else {
+        loginForm.style.display = 'none';
+        signup
