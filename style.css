@@ -1,7 +1,8 @@
+/* Fonte e base */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
-  background-color: #F9FAFB;
+  background-color: #FFF3E0; /* Laranja suave */
   color: #333;
 }
 
@@ -31,6 +32,7 @@ body {
   margin: 0;
 }
 
+/* Menu de navegação */
 nav ul {
   list-style: none;
   display: flex;
@@ -65,9 +67,9 @@ nav ul li a:hover {
   margin-bottom: 10px;
 }
 
-/* Seções gerais */
+/* Seções gerais com fundo laranja */
 .section {
-  background-color: #fff;
+  background-color: #FFF3E0;
   padding: 60px 20px;
   margin: 20px 0;
 }
@@ -87,7 +89,7 @@ nav ul li a:hover {
 }
 
 .card {
-  background-color: #E0F2FE;
+  background-color: #FFE0B2;
   padding: 20px;
   border-radius: 12px;
   width: 280px;
@@ -99,7 +101,7 @@ nav ul li a:hover {
 
 .card:hover {
   transform: translateY(-5px);
-  background-color: #CFF0FF;
+  background-color: #FFD199;
 }
 
 .card h4 {
@@ -110,7 +112,7 @@ nav ul li a:hover {
 
 /* Seção com imagem e texto */
 .content {
-  background-color: #fff;
+  background-color: #FFF3E0;
   padding: 60px 20px;
 }
 
