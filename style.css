@@ -1,21 +1,28 @@
-/* Fonte e base */
-body {
-  font-family: 'Poppins', sans-serif;
+/* Reset básico */
+* {
   margin: 0;
-  background-color: #FFF3E0; /* Laranja suave */
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Container centralizado */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 20px;
 }
 
-/* Cabeçalho com título e menu alinhados */
+/* Cabeçalho */
 .top-bar {
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  background-color: #2c3e50;
+  color: #fff;
   padding: 20px 0;
 }
 
@@ -27,153 +34,144 @@ body {
 }
 
 .site-title {
-  font-size: 22px;
-  color: #0056b3;
-  margin: 0;
+  font-size: 1.8em;
+  font-weight: 600;
 }
 
-/* Menu de navegação */
 nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
-  margin: 0;
-  padding: 0;
-  flex-wrap: wrap;
 }
 
-nav ul li a {
-  color: #0056b3;
+nav a {
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s;
 }
 
-nav ul li a:hover {
-  color: #003d80;
+nav a:hover {
+  color: #f39c12;
 }
 
-/* Banner com imagem de fundo */
+/* Banner */
 .banner {
-  background: url('imagens/banner.jpg') center/cover no-repeat;
-  color: white;
-  text-align: center;
+  background-color: #e67e22;
+  color: #fff;
   padding: 60px 20px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  text-align: center;
 }
 
 .banner h2 {
-  font-size: 32px;
+  font-size: 2em;
   margin-bottom: 10px;
 }
 
-/* Seções gerais com fundo laranja */
+.banner p {
+  font-size: 1.2em;
+}
+
+/* Seções */
 .section {
-  background-color: #FFF3E0;
-  padding: 60px 20px;
-  margin: 20px 0;
+  padding: 40px 20px;
+  background-color: #fff;
 }
 
 .section h3 {
-  font-size: 24px;
-  color: #0056b3;
-  margin-bottom: 30px;
+  font-size: 1.6em;
+  margin-bottom: 20px;
+  color: #2c3e50;
 }
 
-/* Cards de destaque */
+/* Cards */
 .cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+  gap: 20px;
 }
 
 .card {
-  background-color: #FFE0B2;
+  background-color: #ecf0f1;
   padding: 20px;
-  border-radius: 12px;
-  width: 280px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-radius: 10px;
+  flex: 1 1 250px;
   text-decoration: none;
-  color: inherit;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  color: #333;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  background-color: #FFD199;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
 .card h4 {
-  margin-top: 0;
-  font-size: 20px;
-  color: #0056b3;
+  font-size: 1.2em;
+  margin-bottom: 10px;
 }
 
-/* Seção com imagem e texto */
-.content {
-  background-color: #FFF3E0;
-  padding: 60px 20px;
-}
-
+/* Seção com imagem */
 .content-flex {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 30px;
   align-items: center;
   justify-content: center;
+  margin-top: 40px;
 }
 
 .text {
-  max-width: 500px;
+  flex: 1 1 300px;
+  font-size: 1.1em;
 }
 
 .image img {
-  width: 100%;
-  max-width: 600px;
+  max-width: 100%;
+  height: auto;
   border-radius: 10px;
-  object-fit: cover;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.image img:hover {
+  transform: scale(1.03);
 }
 
 /* Rodapé */
 footer {
-  background-color: #0056b3;
-  color: white;
+  background-color: #2c3e50;
+  color: #fff;
   text-align: center;
-  padding: 30px 20px;
-  margin-top: 40px;
+  padding: 20px;
+  font-size: 0.9em;
 }
 
-/* Responsividade para celular */
+/* Responsividade */
 @media (max-width: 768px) {
   .header-flex {
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    text-align: center;
   }
 
   nav ul {
     flex-direction: column;
-    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
   }
 
-  .card {
-    width: 90%;
-  }
-
-  .banner {
-    padding: 40px 20px;
-  }
-
-  .banner h2 {
-    font-size: 24px;
+  .cards {
+    flex-direction: column;
   }
 
   .content-flex {
     flex-direction: column;
+    text-align: center;
   }
 
-  .image img {
-    max-width: 100%;
+  .text {
+    font-size: 1em;
   }
 }
