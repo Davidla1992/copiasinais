@@ -665,7 +665,49 @@ const livros = [
   { id: 648, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA MENTIRAS", edicao: "", ano: null },
   { id: 649, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA ILUSÕES", edicao: "", ano: null },
   { id: 650, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA REALIDADES", edicao: "", ano: null }
- 
+ const livros = [
+  { id: 651, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA FICÇÕES", edicao: "", ano: null },
+  { id: 652, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA FANTASIAS", edicao: "", ano: null },
+  { id: 653, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA MAGIA", edicao: "", ano: null },
+  { id: 654, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA CIÊNCIA", edicao: "", ano: null },
+  { id: 655, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA TECNOLOGIA", edicao: "", ano: null },
+  { id: 656, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA FUTURO", edicao: "", ano: null },
+  { id: 657, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA PASSADO", edicao: "", ano: null },
+  { id: 658, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA PRESENTE", edicao: "", ano: null },
+  { id: 659, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA TEMPO", edicao: "", ano: null },
+  { id: 660, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA ESPAÇO", edicao: "", ano: null },
+  { id: 661, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA UNIVERSO", edicao: "", ano: null },
+  { id: 662, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA MUNDO", edicao: "", ano: null },
+  { id: 663, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA PLANETA", edicao: "", ano: null },
+  { id: 664, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA GALÁXIA", edicao: "", ano: null },
+  { id: 665, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA ESTRELA", edicao: "", ano: null },
+  { id: 666, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA SOL", edicao: "", ano: null },
+  { id: 667, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA LUA", edicao: "", ano: null },
+  { id: 668, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA CÉU", edicao: "", ano: null },
+  { id: 669, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA CHÃO", edicao: "", ano: null },
+  { id: 670, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA AR", edicao: "", ano: null },
+  { id: 671, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA ÁGUA", edicao: "", ano: null },
+  { id: 672, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA FOGO", edicao: "", ano: null },
+  { id: 673, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA TERRA", edicao: "", ano: null },
+  { id: 674, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA ELEMENTO", edicao: "", ano: null },
+  { id: 675, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA NATUREZA", edicao: "", ano: null },
+  { id: 676, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA VIDA", edicao: "", ano: null },
+  { id: 677, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA MORTE", edicao: "", ano: null },
+  { id: 678, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA DESTINO", edicao: "", ano: null },
+  { id: 679, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA PROPÓSITO", edicao: "", ano: null },
+  { id: 680, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA ESSÊNCIA", edicao: "", ano: null },
+  { id: 681, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA ORIGEM", edicao: "", ano: null },
+  { id: 682, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA IDENTIDADE", edicao: "", ano: null },
+  { id: 683, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA NOME", edicao: "", ano: null },
+  { id: 684, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA ROSTO", edicao: "", ano: null },
+  { id: 685, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA SOMBRA", edicao: "", ano: null },
+  { id: 686, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA REFLEXO", edicao: "", ano: null },
+  { id: 687, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA CORPO", edicao: "", ano: null },
+  { id: 688, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA ALMA", edicao: "", ano: null },
+  { id: 689, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA CORAÇÃO", edicao: "", ano: null },
+  { id: 690, autor: "KINGS, STEPHEN", titulo: "O HOMEM QUE NÃO TINHA MENTE", edicao: "", ano: null }
+  // Continuação na Parte 18...
+];
 ];
 ];
 ];
