@@ -1,161 +1,143 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Acervo | Gibiteka Max Zendron</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <title>Acervo da Gibiteka</title>
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
       margin: 0;
       padding: 0;
-      background-color: #fdfdfd;
     }
 
-    .top-bar {
-      background-color: #2c3e50;
+    header {
+      background-color: #4a90e2;
       color: white;
-      padding: 20px 0;
+      padding: 20px;
+      text-align: center;
     }
 
-    .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .header-flex {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .site-title {
-      font-size: 1.5rem;
-      margin: 0;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .section {
-      padding: 40px 0;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-    }
-
-    #searchInput {
-      width: 100%;
+    header input {
+      margin-top: 10px;
       padding: 10px;
-      margin: 20px 0;
-      font-size: 1rem;
-      border: 1px solid #ccc;
+      width: 60%;
+      max-width: 500px;
+      border: none;
       border-radius: 5px;
     }
 
-    .book-list {
-      list-style-type: none;
-      padding-left: 0;
+    main {
+      padding: 20px;
     }
 
-    .book-list li {
-      padding: 12px;
-      margin-bottom: 10px;
-      background-color: #f0f0f0;
-      border-radius: 5px;
-      transition: background-color 0.3s;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: white;
     }
 
-    .book-list li:hover {
-      background-color: #e0e0e0;
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #eaeaea;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
     }
 
     footer {
-      background-color: #2c3e50;
-      color: white;
       text-align: center;
-      padding: 20px 0;
+      padding: 10px;
+      background-color: #eee;
       margin-top: 40px;
     }
   </style>
 </head>
 <body>
-
-  <header class="top-bar">
-    <div class="container header-flex">
-      <h1 class="site-title">Acervo da Gibiteka</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="gibiteka.html">Gibiteka</a></li>
-          <li><a href="servicos.html">Serviços</a></li>
-          <li><a href="login.html">Login</a></li>
-        </ul>
-      </nav>
-    </div>
+  <header>
+    <h1>📚 Acervo da Gibiteka</h1>
+    <input type="text" id="busca" placeholder="Buscar por título, autor ou ano..." onkeyup="filtrarLivros()">
   </header>
 
-  <section class="section">
-    <div class="container">
-      <h2>📚 Acervo Interativo</h2>
-      <p>Explore nosso acervo de quadrinhos e livros ilustrados disponíveis para leitura.</p>
-      <input type="text" id="searchInput" placeholder="Buscar por título, autor ou gênero..." />
-      <ul id="bookList" class="book-list">
-        <li data-autor="Vitor e Lu Cafaggi" data-genero="Infantil">Turma da Mônica – Laços</li>
-        <li data-autor="Frank Miller" data-genero="Super-herói">Batman: O Cavaleiro das Trevas</li>
-        <li data-autor="Marjane Satrapi" data-genero="Biográfico">Persépolis</li>
-        <li data-autor="Alan Moore" data-genero="Super-herói">Watchmen</li>
-        <li data-autor="Craig Thompson" data-genero="Romance">Retalhos</li>
-        <li data-autor="Art Spiegelman" data-genero="Histórico">Maus</li>
-        <li data-autor="Neil Gaiman" data-genero="Fantasia">Sandman</li>
-        <li data-autor="Fábio Moon e Gabriel Bá" data-genero="Drama">Daytripper</li>
-        <li data-autor="Alan Moore" data-genero="Distopia">V de Vingança</li>
-        <li data-autor="Jeff Smith" data-genero="Fantasia">Bone</li>
-      </ul>
-    </div>
-  </section>
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Autor</th>
+          <th>Título</th>
+          <th>Edição</th>
+          <th>Ano</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-livros">
+        <!-- Os dados serão inseridos aqui via JavaScript -->
+      </tbody>
+    </table>
+  </main>
 
   <footer>
-    <div class="container">
-      &copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados
-    </div>
+    <p>Gibiteka &copy; 2025</p>
   </footer>
 
   <script>
-    const searchInput = document.getElementById('searchInput');
-    const bookList = document.getElementById('bookList');
-    const books = bookList.getElementsByTagName('li');
+    const livros = [
+      { id: 2376, autor: "THOMPSON, COLIN", titulo: "FAMÍLIA POMBO: O PRINCIPAL SOU EU", edicao: "1ed", ano: 2011 },
+      { id: 2377, autor: "LAMY, H.L", titulo: "ZAP: O VOO", edicao: "1ed", ano: 2007 },
+      { id: 2382, autor: "VERN, JÚLIO", titulo: "VIAGEM AO CENTRO DA TERRA", edicao: "1ed", ano: 2008 },
+      { id: 2594, autor: "BROWN, DAN", titulo: "ANJOS E DEMÔNIOS", edicao: "", ano: null },
+      { id: 2732, autor: "HALEY, ALEX", titulo: "RAÍZES", edicao: "", ano: 2002 },
+      { id: 2733, autor: "HALEY, ALEX", titulo: "RAÍZES", edicao: "", ano: 2001 },
+      { id: 2734, autor: "HALEY, ALEX", titulo: "RAÍZES", edicao: "", ano: 1999 },
+      { id: 261, autor: "CAST, P. C.; CAST, KRISTIN", titulo: "ESCOLHIDA", edicao: "", ano: null },
+      { id: 2651, autor: "FIELDING, HELEN", titulo: "BRIDGET JONES LOUCA PELO GAROTO", edicao: "", ano: null },
+      { id: 2709, autor: "KINGS, STEPHEN", titulo: "A TORRE NEGRA VOL. III - AS TERRAS DEVASTADAS", edicao: "", ano: null }
+      // Adicione aqui todos os outros livros que você já enviou
+    ];
 
-    searchInput.addEventListener('input', function () {
-      const filter = searchInput.value.toLowerCase();
-      Array.from(books).forEach(book => {
-        const title = book.textContent.toLowerCase();
-        const autor = book.getAttribute('data-autor').toLowerCase();
-        const genero = book.getAttribute('data-genero').toLowerCase();
-        if (title.includes(filter) || autor.includes(filter) || genero.includes(filter)) {
-          book.style.display = '';
-        } else {
-          book.style.display = 'none';
-        }
+    function carregarTabela() {
+      const corpo = document.getElementById("tabela-livros");
+      corpo.innerHTML = "";
+      livros.forEach(livro => {
+        const linha = `<tr>
+          <td>${livro.id}</td>
+          <td>${livro.autor}</td>
+          <td>${livro.titulo}</td>
+          <td>${livro.edicao}</td>
+          <td>${livro.ano ?? ""}</td>
+        </tr>`;
+        corpo.innerHTML += linha;
       });
-    });
-  </script>
+    }
 
+    function filtrarLivros() {
+      const termo = document.getElementById("busca").value.toLowerCase();
+      const corpo = document.getElementById("tabela-livros");
+      corpo.innerHTML = "";
+      livros.filter(l =>
+        l.autor.toLowerCase().includes(termo) ||
+        l.titulo.toLowerCase().includes(termo) ||
+        String(l.ano).includes(termo)
+      ).forEach(livro => {
+        const linha = `<tr>
+          <td>${livro.id}</td>
+          <td>${livro.autor}</td>
+          <td>${livro.titulo}</td>
+          <td>${livro.edicao}</td>
+          <td>${livro.ano ?? ""}</td>
+        </tr>`;
+        corpo.innerHTML += linha;
+      });
+    }
+
+    carregarTabela();
+  </script>
 </body>
 </html>
