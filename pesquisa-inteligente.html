@@ -1,25 +1,189 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pesquisa Inteligente - Gibiteka</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pesquisa Inteligente - Gibiteka Max Zendron</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: 'Poppins', sans-serif; margin: 0; background-color: #f4f4f4; }
-    header, footer { background-color: #007BFF; color: white; text-align: center; padding: 20px; }
-    .section { padding: 40px 20px; background-color: #fff; }
-    h2 { text-align: center; margin-bottom: 20px; }
-    p { max-width: 800px; margin: 0 auto; text-align: center; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1E1F2B, #2C2F45);
+      color: #fff;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    .top-bar {
+      background-color: #1E1F2B;
+      padding: 1rem 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .site-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #A29BFE;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-menu li a {
+      color: #A29BFE;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-menu li a:hover {
+      color: #00BFFF;
+    }
+
+    .section {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .section h2 {
+      color: #A29BFE;
+      margin-bottom: 1rem;
+    }
+
+    .search-box {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 0 15px rgba(108, 99, 255, 0.2);
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      background-color: #2C2F45;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .search-box input::placeholder {
+      color: #ccc;
+    }
+
+    .search-box button {
+      background: linear-gradient(135deg, #6C63FF, #A29BFE);
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(108, 99, 255, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .search-box button:hover {
+      transform: scale(1.05);
+    }
+
+    .results {
+      margin-top: 2rem;
+      text-align: left;
+    }
+
+    .results h3 {
+      color: #A29BFE;
+      margin-bottom: 1rem;
+    }
+
+    .results p {
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background-color: #1E1F2B;
+      color: #A29BFE;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .header-flex {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-menu {
+        flex-direction: column;
+        margin-top: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <header><h1>Pesquisa Inteligente</h1></header>
-  <section class="section">
-    <h2>Encontre o que você procura com facilidade</h2>
-    <p>Busque por autor, gênero, idioma, ano de publicação ou disponibilidade. A Gibiteka oferece filtros avançados para facilitar sua leitura.</p>
-  </section>
-  <footer>&copy; 2025 Gibiteka Max Zendron</footer>
+
+  <header class="top-bar">
+    <div class="container header-flex">
+      <h1 class="site-title">Gibiteka Max Zendron</h1>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="gibiteka.html">Gibiteka</a></li>
+          <li><a href="acervo.html">Acervo</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="pesquisa-inteligente.html" aria-current="page">Pesquisa</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h2>Pesquisa Inteligente</h2>
+      <div class="search-box">
+        <input type="text" placeholder="Digite autor, gênero, título ou idioma..." />
+        <button>Buscar</button>
+      </div>
+
+      <div class="results">
+        <h3>Resultados sugeridos:</h3>
+        <p>🔍 “Turma da Mônica” — Coleção completa disponível</p>
+        <p>🔍 “Marvel” — HQs em português e inglês</p>
+        <p>🔍 “Mangá Shonen” — Gênero favorito entre jovens leitores</p>
+        <p>🔍 “Quadrinhos independentes” — Autores brasileiros em destaque</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      &copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados
+    </div>
+  </footer>
+
 </body>
 </html>
