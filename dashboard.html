@@ -5,22 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard - Gibiteka Max Zendron</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    body {margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0A1F44,#2B3A67);color:#E0F7FF;}
-    header{background:#2B3A67;padding:1rem;box-shadow:0 2px 10px rgba(0,191,255,0.2);}
-    .site-title{color:#00BFFF;font-weight:700;}
-    .nav-menu{list-style:none;display:flex;gap:1rem;margin:0;padding:0;}
-    .nav-menu li a{color:#1E90FF;text-decoration:none;font-weight:600;}
-    .nav-menu li a:hover{color:#00BFFF;}
-    main{padding:2rem 1rem;}
-    h2{color:#00BFFF;text-align:center;}
-    .card{background:rgba(10,31,68,0.85);padding:1.5rem;border-radius:16px;box-shadow:0 0 25px rgba(0,191,255,0.25);margin:1rem auto;max-width:600px;}
-    input,select{width:100%;padding:0.75rem;margin:0.5rem 0;border:none;border-radius:10px;background:rgba(255,255,255,0.08);color:#E0F7FF;}
-    input::placeholder{color:#A0C4FF;}
-    .button{background:linear-gradient(135deg,#1E90FF,#00BFFF);color:#fff;padding:0.75rem;border-radius:10px;font-weight:bold;border:none;cursor:pointer;width:100%;margin-top:1rem;}
-    .button:hover{transform:scale(1.03);box-shadow:0 0 10px rgba(0,191,255,0.4);}
-    footer{background:#2B3A67;color:#00BFFF;text-align:center;padding:1rem;margin-top:2rem;}
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
@@ -40,50 +25,85 @@
   </header>
 
   <main>
-    <h2>Visão Geral</h2>
+    <h2>Dashboard</h2>
+
+    <!-- Estatísticas -->
     <div class="card">
-      <h3 style="color:#1E90FF;">Estatísticas</h3>
-      <p id="stats"></p>
+      <h3>📊 Estatísticas do Acervo</h3>
+      <p id="estatisticas">Você possui 0 quadrinhos cadastrados.</p>
     </div>
+
+    <!-- Formulário de adicionar -->
     <div class="card">
-      <h3 style="color:#1E90FF;">Adicionar ao Acervo</h3>
+      <h3>➕ Adicionar Quadrinho</h3>
       <input id="titulo" placeholder="Título" />
       <input id="autor" placeholder="Autor" />
       <select id="genero">
         <option value="">Selecione o gênero</option>
-        <option>Super-herói</option><option>Mangá</option><option>Infantil</option><option>Fantasia</option><option>Outros</option>
+        <option>Super-herói</option>
+        <option>Mangá</option>
+        <option>Infantil</option>
+        <option>Fantasia</option>
+        <option>Outros</option>
       </select>
       <input id="ano" type="number" placeholder="Ano" />
-      <button class="button" onclick="addItem()">Salvar</button>
+      <button class="button" onclick="addItem()">Adicionar</button>
     </div>
-    <div class="card">
-      <h3 style="color:#1E90FF;">Seu Acervo</h3>
-      <div id="gridAcervo"></div>
-    </div>
+
+    <!-- Grid de quadrinhos -->
+    <div class="grid" id="gridAcervo"></div>
   </main>
 
-  <footer>&copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados</footer>
+  <footer>
+    &copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados
+  </footer>
 
   <script>
     const email = localStorage.getItem('loggedUser');
-    if (!email) { alert('Faça login para acessar o dashboard.'); window.location.href='login.html'; }
-    function loadData(){
-      const acervo = JSON.parse(localStorage.getItem(`acervo:${email}`)||'[]');
-      document.getElementById('stats').textContent=`Itens no acervo: ${acervo.length}`;
-      const grid=document.getElementById('gridAcervo');grid.innerHTML='';
-      acervo.forEach(item=>{
-        const el=document.createElement('div');el.className='card';
-        el.innerHTML=`<h4>${item.titulo}</h4><p>Autor: ${item.autor}</p><p>Gênero: ${item.genero}</p><p>Ano: ${item.ano||'-'}</p>`;
+    if (!email) {
+      alert('Faça login para acessar o dashboard.');
+      window.location.href = 'login.html';
+    }
+
+    function loadData() {
+      const acervo = JSON.parse(localStorage.getItem(`acervo:${email}`) || '[]');
+      document.getElementById('estatisticas').textContent = `Você possui ${acervo.length} quadrinhos cadastrados.`;
+      const grid = document.getElementById('gridAcervo');
+      grid.innerHTML = '';
+      acervo.forEach(item => {
+        const el = document.createElement('div');
+        el.className = 'item';
+        el.innerHTML = `<h4>${item.titulo}</h4>
+                        <p>Autor: ${item.autor}</p>
+                        <p>Gênero: ${item.genero}</p>
+                        <p>Ano: ${item.ano || '-'}</p>`;
         grid.appendChild(el);
       });
     }
-    function addItem(){
-      const item={titulo:titulo.value.trim(),autor:autor.value.trim(),genero:genero.value,ano:ano.value.trim()};
-      if(!item.titulo||!item.autor||!item.genero){alert('Preencha todos os campos.');return;}
-      const acervo=JSON.parse(localStorage.getItem(`acervo:${email}`)||'[]');acervo.push(item);
-      localStorage.setItem(`acervo:${email}`,JSON.stringify(acervo));loadData();
+
+    function addItem() {
+      const item = {
+        titulo: titulo.value.trim(),
+        autor: autor.value.trim(),
+        genero: genero.value,
+        ano: ano.value.trim()
+      };
+      if (!item.titulo || !item.autor || !item.genero) {
+        alert('Preencha todos os campos.');
+        return;
+      }
+      const acervo = JSON.parse(localStorage.getItem(`acervo:${email}`) || '[]');
+      acervo.push(item);
+      localStorage.setItem(`acervo:${email}`, JSON.stringify(acervo));
+      loadData();
     }
-    function logout(){localStorage.removeItem('loggedUser');window.location.href='login.html';}
+
+    function logout() {
+      localStorage.removeItem('loggedUser');
+      alert('Você saiu da sua conta.');
+      window.location.href = 'login.html';
+    }
+
     loadData();
   </script>
 </body>
