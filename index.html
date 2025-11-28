@@ -5,103 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Início - Gibiteka Max Zendron</title>
   <meta name="description" content="Bem-vindo à Gibiteka Max Zendron, sua biblioteca de quadrinhos e livros ilustrados." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0A1F44, #2B3A67);
-      color: #fff;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem;
-    }
-
-    header {
-      background: #2B3A67;
-      padding: 1rem 0;
-      box-shadow: 0 2px 10px rgba(0, 191, 255, 0.2);
-    }
-
-    .header-flex {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .site-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #00BFFF;
-    }
-
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-menu li a {
-      color: #1E90FF;
-      text-decoration: none;
-      font-weight: 600;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-
-    .nav-menu li a:hover {
-      color: #00BFFF;
-    }
-
-    .hero {
-      padding: 4rem 1rem;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      color: #00BFFF;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: #E0F7FF;
-      margin-bottom: 2rem;
-    }
-
-    .button {
-      background: linear-gradient(135deg, #1E90FF, #00BFFF);
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      margin: 0.5rem;
-      display: inline-block;
-    }
-
-    .button:hover {
-      transform: scale(1.05);
-    }
-
-    footer {
-      background: #2B3A67;
-      color: #00BFFF;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
+    body {margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0A1F44,#2B3A67);color:#fff;}
+    .container{max-width:1200px;margin:0 auto;padding:1rem;}
+    header{background:#2B3A67;padding:1rem 0;box-shadow:0 2px 10px rgba(0,191,255,0.2);}
+    .header-flex{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+    .site-title{font-size:1.5rem;font-weight:700;color:#00BFFF;}
+    .nav-menu{list-style:none;display:flex;gap:1rem;margin:0;padding:0;}
+    .nav-menu li a{color:#1E90FF;text-decoration:none;font-weight:600;cursor:pointer;}
+    .nav-menu li a:hover{color:#00BFFF;}
+    .hero{text-align:center;padding:4rem 1rem;}
+    .hero h1{color:#00BFFF;font-size:2.5rem;margin-bottom:1rem;}
+    .hero p{color:#E0F7FF;font-size:1.2rem;margin-bottom:2rem;}
+    .button{background:linear-gradient(135deg,#1E90FF,#00BFFF);color:#fff;padding:0.75rem 1.5rem;border-radius:8px;font-weight:bold;text-decoration:none;margin:0.5rem;display:inline-block;}
+    .button:hover{transform:scale(1.05);}
+    footer{background:#2B3A67;color:#00BFFF;text-align:center;padding:1rem;}
   </style>
 </head>
 <body>
@@ -135,7 +54,6 @@
   </footer>
 
   <script>
-    // Verifica se há usuário logado
     const loggedUser = localStorage.getItem("loggedUser");
     if (loggedUser) {
       const userData = JSON.parse(localStorage.getItem(loggedUser));
@@ -144,8 +62,6 @@
       document.getElementById("loginBtn").style.display = "none";
       document.getElementById("dashboardBtn").style.display = "inline-block";
     }
-
-    // Função de logout
     function logout() {
       localStorage.removeItem("loggedUser");
       alert("Você saiu da sua conta.");
