@@ -122,6 +122,32 @@
       font-weight: 600;
     }
 
+    /* Slogan em destaque com animação */
+    .slogan {
+      margin: 2rem auto;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #00BFFF;
+      text-align: center;
+      background: rgba(10,31,68,0.6);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      max-width: 800px;
+      box-shadow: 0 0 15px rgba(0,191,255,0.2);
+      opacity: 0;
+      animation: fadeIn 2s ease forwards, glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 15px rgba(0,191,255,0.2); }
+      to { box-shadow: 0 0 30px rgba(0,191,255,0.8); }
+    }
+
     footer {
       background: #2B3A67;
       color: #00BFFF;
@@ -160,6 +186,11 @@
     <div class="image-overlay">
       <img src="fachada-gibiteka.jpeg" alt="Fachada da Gibiteka" class="fachada-img" />
       <div class="overlay-text">📍 Nossa fachada oficial</div>
+    </div>
+
+    <!-- Slogan animado -->
+    <div class="slogan">
+      ✨ Aqui a leitura ganha vida!
     </div>
   </main>
 
