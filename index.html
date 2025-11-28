@@ -7,202 +7,31 @@
   <meta name="description" content="Bem-vindo à Gibiteka Max Zendron, sua biblioteca de quadrinhos e livros ilustrados." />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0A1F44, #2B3A67);
-      color: #fff;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem;
-    }
-
-    header {
-      background: #2B3A67;
-      padding: 1rem 0;
-      box-shadow: 0 2px 10px rgba(0, 191, 255, 0.2);
-      position: relative;
-    }
-
-    .header-flex {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .site-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #00BFFF;
-    }
-
-    /* Botão hambúrguer */
-    .menu-toggle {
-      font-size: 1.8rem;
-      background: none;
-      border: none;
-      color: #00BFFF;
-      cursor: pointer;
-    }
-
-    /* Menu escondido por padrão em mobile */
-    .nav-menu {
-      display: none;
-      background: #2B3A67;
-      position: absolute;
-      top: 60px;
-      right: 10px;
-      border-radius: 8px;
-      padding: 1rem;
-      box-shadow: 0 4px 12px rgba(0,191,255,0.3);
-    }
-
-    .nav-menu ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-menu li {
-      margin: 0.5rem 0;
-    }
-
-    .nav-menu li a {
-      color: #00BFFF;
-      text-decoration: none;
-      font-weight: 600;
-      display: block;
-      padding: 0.5rem 0;
-    }
-
-    .nav-menu li a:hover {
-      color: #1E90FF;
-    }
-
-    /* Em telas grandes, mostra menu horizontal */
-    @media (min-width: 768px) {
-      .menu-toggle {
-        display: none;
-      }
-      .nav-menu {
-        display: block;
-        position: static;
-        background: none;
-        padding: 0;
-        box-shadow: none;
-      }
-      .nav-menu ul {
-        display: flex;
-        gap: 1rem;
-      }
-      .nav-menu li {
-        margin: 0;
-      }
-      .nav-menu li a {
-        padding: 0;
-      }
-    }
-
-    .hero {
-      text-align: center;
-      padding: 3.5rem 1rem;
-    }
-
-    .hero h1 {
-      color: #00BFFF;
-      font-size: 2.4rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      color: #E0F7FF;
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .button {
-      background: linear-gradient(135deg, #1E90FF, #00BFFF);
-      color: #fff;
-      padding: 0.75rem 1.25rem;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      margin: 0.5rem;
-      display: inline-block;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0,191,255,0.4);
-    }
-
-    .image-overlay {
-      position: relative;
-      margin-top: 2rem;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(0,191,255,0.3);
-      text-align: center;
-    }
-
-    .fachada-img {
-      width: 50%;
-      max-width: 600px;
-      height: auto;
-      display: inline-block;
-      border-radius: 12px;
-    }
-
-    .overlay-text {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(10, 31, 68, 0.7);
-      color: #00BFFF;
-      padding: 0.75rem 1rem;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    .slogan {
-      margin: 2rem auto;
-      font-size: 2rem;
-      font-weight: 700;
-      color: #00BFFF;
-      text-align: center;
-      background: rgba(10,31,68,0.6);
-      padding: 1rem 1.5rem;
-      border-radius: 12px;
-      max-width: 800px;
-      box-shadow: 0 0 15px rgba(0,191,255,0.2);
-      opacity: 0;
-      animation: fadeIn 2s ease forwards, glow 2s ease-in-out infinite alternate;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes glow {
-      from { box-shadow: 0 0 15px rgba(0,191,255,0.2); }
-      to { box-shadow: 0 0 30px rgba(0,191,255,0.8); }
-    }
-
-    footer {
-      background: #2B3A67;
-      color: #00BFFF;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
+    /* === CSS igual para todas as páginas === */
+    body { margin:0; font-family:'Poppins',sans-serif; background:linear-gradient(135deg,#0A1F44,#2B3A67); color:#fff; }
+    .container { max-width:1200px; margin:0 auto; padding:1rem; }
+    header { background:#2B3A67; padding:1rem 0; box-shadow:0 2px 10px rgba(0,191,255,0.2); position:relative; }
+    .header-flex { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
+    .site-title { font-size:1.5rem; font-weight:700; color:#00BFFF; }
+    .menu-toggle { font-size:1.8rem; background:none; border:none; color:#00BFFF; cursor:pointer; }
+    .nav-menu { display:none; background:#2B3A67; position:absolute; top:60px; right:10px; border-radius:8px; padding:1rem; box-shadow:0 4px 12px rgba(0,191,255,0.3); }
+    .nav-menu ul { list-style:none; margin:0; padding:0; }
+    .nav-menu li { margin:0.5rem 0; }
+    .nav-menu li a { color:#00BFFF; text-decoration:none; font-weight:600; display:block; padding:0.5rem 0; }
+    .nav-menu li a:hover { color:#1E90FF; }
+    @media(min-width:768px){ .menu-toggle{display:none;} .nav-menu{display:block;position:static;background:none;padding:0;box-shadow:none;} .nav-menu ul{display:flex;gap:1rem;} .nav-menu li{margin:0;} .nav-menu li a{padding:0;} }
+    .hero{text-align:center;padding:3.5rem 1rem;}
+    .hero h1{color:#00BFFF;font-size:2.4rem;margin-bottom:1rem;}
+    .hero p{color:#E0F7FF;font-size:1.1rem;margin-bottom:1.5rem;}
+    .button{background:linear-gradient(135deg,#1E90FF,#00BFFF);color:#fff;padding:0.75rem 1.25rem;border-radius:8px;font-weight:bold;text-decoration:none;margin:0.5rem;display:inline-block;transition:transform 0.3s ease,box-shadow 0.3s ease;}
+    .button:hover{transform:scale(1.05);box-shadow:0 4px 12px rgba(0,191,255,0.4);}
+    .image-overlay{position:relative;margin-top:2rem;border-radius:12px;overflow:hidden;box-shadow:0 0 20px rgba(0,191,255,0.3);text-align:center;}
+    .fachada-img{width:50%;max-width:600px;height:auto;display:inline-block;border-radius:12px;}
+    .overlay-text{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);background:rgba(10,31,68,0.7);color:#00BFFF;padding:0.75rem 1rem;border-radius:8px;font-size:1rem;font-weight:600;}
+    .slogan{margin:2rem auto;font-size:2rem;font-weight:700;color:#00BFFF;text-align:center;background:rgba(10,31,68,0.6);padding:1rem 1.5rem;border-radius:12px;max-width:800px;box-shadow:0 0 15px rgba(0,191,255,0.2);opacity:0;animation:fadeIn 2s ease forwards,glow 2s ease-in-out infinite alternate;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes glow{from{box-shadow:0 0 15px rgba(0,191,255,0.2);}to{box-shadow:0 0 30px rgba(0,191,255,0.8);}}
+    footer{background:#2B3A67;color:#00BFFF;text-align:center;padding:1rem;font-size:0.9rem;}
   </style>
 </head>
 <body>
@@ -236,9 +65,7 @@
       <div class="overlay-text">📍 Nossa fachada oficial</div>
     </div>
 
-    <div class="slogan">
-      ✨ Aqui a leitura ganha vida!
-    </div>
+    <div class="slogan">✨ Aqui a leitura ganha vida!</div>
   </main>
 
   <footer>
@@ -246,14 +73,10 @@
   </footer>
 
   <script>
-    const loggedUser = localStorage.getItem("loggedUser");
-    if (loggedUser) {
-      const userData = JSON.parse(localStorage.getItem(`user:${loggedUser}`)) || { name: "Usuário" };
-      document.getElementById("welcomeMsg").textContent = `Bem-vindo de volta, ${userData.name}!`;
-      document.getElementById("loginBtn").style.display = "none";
-      document.getElementById("dashboardBtn").style.display = "inline-block";
-    }
-    function logout() {
-      localStorage.removeItem("loggedUser");
-      alert("Você saiu da sua conta.");
-      window.location.href = "login
+    function toggleMenu(){const menu=document.getElementById("navMenu");menu.style.display=menu.style.display==="block"?"none":"block";}
+    const loggedUser=localStorage.getItem("loggedUser");
+    if(loggedUser){const userData=JSON.parse(localStorage.getItem(`user:${loggedUser}`))||{name:"Usuário"};document.getElementById("welcomeMsg").textContent=`Bem-vindo de volta, ${userData.name}!`;document.getElementById("loginBtn").style.display="none";document.getElementById("dashboardBtn").style.display="inline-block";}
+    function logout(){localStorage.removeItem("loggedUser");alert("Você saiu da sua conta.");window.location.href="login.html";}
+  </script>
+</body>
+</html>
