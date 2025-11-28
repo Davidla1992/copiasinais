@@ -252,4 +252,6 @@
     const loggedUser = localStorage.getItem("loggedUser");
     if (loggedUser) {
       const userData = JSON.parse(localStorage.getItem(`user:${loggedUser}`)) || { name: "Usuário" };
-      document.getElementById("welcomeMsg").textContent = `
+      document.getElementById("welcomeMsg").textContent = `Bem-vindo de volta, ${userData.name}!`;
+      document.getElementById("loginBtn").style.display = "none";
+      document.get
