@@ -2,147 +2,67 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Entrar — Gibiteka Max Zendron</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0A1F44, #2B3A67);
-      color: #E6F2FF;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-    }
-
-    .login-box {
-      width: 100%;
-      max-width: 420px;
-      background: rgba(12, 26, 56, 0.92);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 12px 36px rgba(0, 191, 255, 0.22);
-    }
-
-    .login-box h2 {
-      margin: 0 0 24px;
-      font-size: 24px;
-      font-weight: 700;
-      color: #00BFFF;
-      text-align: center;
-    }
-
-    .field {
-      margin-bottom: 16px;
-    }
-
-    .label {
-      font-size: 14px;
-      color: #A8C4E8;
-      margin-bottom: 8px;
-    }
-
-    input {
-      width: 100%;
-      height: 48px;
-      padding: 0 16px;
-      border-radius: 10px;
-      border: 1px solid rgba(168,196,232,0.25);
-      background: rgba(255,255,255,0.08);
-      color: #E6F2FF;
-      font-size: 16px;
-    }
-
-    input::placeholder { color: #A8C4E8; }
-
-    input:focus {
-      outline: none;
-      background: rgba(255,255,255,0.12);
-      border-color: #00BFFF;
-      box-shadow: 0 0 0 3px rgba(0,191,255,0.18);
-    }
-
-    .button {
-      width: 100%;
-      height: 48px;
-      border: none;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #1E90FF, #00BFFF);
-      color: #fff;
-      font-weight: 600;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 16px;
-      transition: transform 0.12s ease, box-shadow 0.2s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 18px rgba(0,191,255,0.35);
-    }
-
-    .toggle {
-      margin-top: 16px;
-      text-align: center;
-      color: #A8C4E8;
-      font-size: 14px;
-      cursor: pointer;
-      text-decoration: underline;
-    }
-
-    .toggle:hover { color: #00BFFF; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Gibiteka Max Zendron</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="login-box">
+  <header>
+    <div class="container header-flex">
+      <h1 class="site-title">Gibiteka Max Zendron</h1>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="acervo.html">Acervo</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="pesquisa.html">Pesquisa</a></li>
+          <li><a href="perfil.html">Perfil</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="hero">
     <h2>Entrar ou Cadastrar</h2>
-    <form id="authForm" onsubmit="handleAuth(event)">
-      <div class="field">
-        <div class="label">Email</div>
-        <input type="email" id="email" placeholder="seuemail@exemplo.com" required />
+    <div class="card">
+      <input type="email" id="email" placeholder="Email" />
+      <input type="password" id="password" placeholder="Senha" />
+      <div id="nameField" style="display:none;">
+        <input type="text" id="name" placeholder="Nome (para cadastro)" />
       </div>
-      <div class="field">
-        <div class="label">Senha</div>
-        <input type="password" id="password" placeholder="Sua senha" required />
-      </div>
-      <div class="field" id="nameField" style="display:none;">
-        <div class="label">Nome</div>
-        <input type="text" id="name" placeholder="Seu nome (para cadastro)" />
-      </div>
-      <button class="button" type="submit" id="submitBtn">Entrar</button>
+      <button class="button" onclick="handleAuth()">Entrar</button>
       <div class="toggle" onclick="toggleMode()">Quero me cadastrar</div>
-    </form>
-  </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">&copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados</div>
+  </footer>
 
   <script>
     let isSignup = false;
     function toggleMode() {
       isSignup = !isSignup;
       document.getElementById('nameField').style.display = isSignup ? 'block' : 'none';
-      document.getElementById('submitBtn').textContent = isSignup ? 'Cadastrar' : 'Entrar';
+      document.querySelector('.button').textContent = isSignup ? 'Cadastrar' : 'Entrar';
       document.querySelector('.toggle').textContent = isSignup ? 'Já tenho conta' : 'Quero me cadastrar';
     }
-    function handleAuth(e) {
-      e.preventDefault();
+    function handleAuth() {
       const email = document.getElementById('email').value.trim().toLowerCase();
       const password = document.getElementById('password').value.trim();
       const name = document.getElementById('name').value.trim();
       const users = JSON.parse(localStorage.getItem('users') || '[]');
       if (isSignup) {
-        if (users.find(u => u.email === email)) { alert('Já existe uma conta com este email.'); return; }
-        const newUser = { email, name: name || 'Usuário', password };
-        users.push(newUser);
+        if (users.find(u => u.email === email)) return alert('Email já cadastrado.');
+        users.push({ email, name: name || 'Usuário', password });
         localStorage.setItem('users', JSON.stringify(users));
-        localStorage.setItem(`user:${email}`, JSON.stringify({ email, name: newUser.name }));
-        localStorage.setItem(`acervo:${email}`, JSON.stringify([]));
         localStorage.setItem('loggedUser', email);
         window.location.href = 'dashboard.html';
       } else {
         const user = users.find(u => u.email === email && u.password === password);
-        if (!user) { alert('Email ou senha inválidos.'); return; }
+        if (!user) return alert('Email ou senha inválidos.');
         localStorage.setItem('loggedUser', email);
         window.location.href = 'dashboard.html';
       }
