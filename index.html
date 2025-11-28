@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gibiteka Max Zendron</title>
-  <meta name="description" content="Gibiteka Max Zendron — acervo de quadrinhos, livros ilustrados e eventos culturais com tecnologia e acessibilidade." />
+  <title>Início - Gibiteka Max Zendron</title>
+  <meta name="description" content="Bem-vindo à Gibiteka Max Zendron, sua biblioteca de quadrinhos e livros ilustrados." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -12,8 +12,8 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0A1F44, #122A57);
-      color: #FFFFFF;
+      background: linear-gradient(135deg, #0A1F44, #2B3A67);
+      color: #fff;
     }
 
     .container {
@@ -23,10 +23,9 @@
     }
 
     header {
-      background-color: #122A57;
+      background: #2B3A67;
       padding: 1rem 0;
       box-shadow: 0 2px 10px rgba(0, 191, 255, 0.2);
-      position: relative;
     }
 
     .header-flex {
@@ -42,15 +41,6 @@
       color: #00BFFF;
     }
 
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      color: #00BFFF;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
     .nav-menu {
       list-style: none;
       display: flex;
@@ -63,7 +53,7 @@
       color: #1E90FF;
       text-decoration: none;
       font-weight: 600;
-      padding: 0.5rem;
+      cursor: pointer;
       transition: color 0.3s ease;
     }
 
@@ -71,46 +61,34 @@
       color: #00BFFF;
     }
 
-    .section {
-      padding: 3rem 1rem;
-      background-color: #122A57;
-      border-radius: 12px;
-      margin: 2rem 0;
-      box-shadow: 0 0 20px rgba(0, 191, 255, 0.1);
-      animation: fadeIn 1s ease-in-out;
+    .hero {
+      padding: 4rem 1rem;
+      text-align: center;
     }
 
-    .section h2 {
+    .hero h1 {
+      font-size: 2.5rem;
       color: #00BFFF;
       margin-bottom: 1rem;
-      text-align: center;
     }
 
-    .section p {
-      text-align: center;
-      font-size: 1.1rem;
+    .hero p {
+      font-size: 1.2rem;
       color: #E0F7FF;
-    }
-
-    .fachada-img {
-      display: block;
-      margin: 2rem auto;
-      max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+      margin-bottom: 2rem;
     }
 
     .button {
-      display: inline-block;
       background: linear-gradient(135deg, #1E90FF, #00BFFF);
       color: #fff;
       padding: 0.75rem 1.5rem;
       border-radius: 8px;
       font-weight: bold;
+      border: none;
+      cursor: pointer;
       text-decoration: none;
-      margin-top: 1rem;
-      box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
-      transition: transform 0.3s ease;
+      margin: 0.5rem;
+      display: inline-block;
     }
 
     .button:hover {
@@ -118,33 +96,11 @@
     }
 
     footer {
-      background-color: #122A57;
+      background: #2B3A67;
       color: #00BFFF;
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle { display: block; }
-      .nav-menu {
-        display: none;
-        flex-direction: column;
-        background-color: #0A1F44;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 100%;
-        padding: 1rem;
-        box-shadow: 0 5px 15px rgba(0, 191, 255, 0.2);
-      }
-      .nav-menu.active { display: flex; }
-      .nav-menu li { margin-bottom: 1rem; }
     }
   </style>
 </head>
@@ -152,28 +108,26 @@
   <header>
     <div class="container header-flex">
       <h1 class="site-title">Gibiteka Max Zendron</h1>
-      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu de navegação">☰</button>
       <nav>
-        <ul class="nav-menu" id="navMenu">
+        <ul class="nav-menu">
           <li><a href="index.html">🏠 Início</a></li>
           <li><a href="acervo.html">Acervo</a></li>
           <li><a href="servicos.html">Serviços</a></li>
           <li><a href="pesquisa.html">Pesquisa</a></li>
+          <li><a href="perfil.html">Perfil</a></li>
+          <li><a href="dashboard.html">📊 Dashboard</a></li>
           <li><a href="login.html">Login</a></li>
+          <li><a onclick="logout()">🚪 Logout</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <h2>Bem-vindo à Gibiteka</h2>
-      <p>Explore quadrinhos, livros ilustrados e eventos culturais com tecnologia e acessibilidade.</p>
-      <img src="fachada-gibiteka.jpeg" alt="Fachada da Gibiteka Max Zendron" class="fachada-img" />
-      <div style="text-align:center;">
-        <a href="acervo.html" class="button">Ver Acervo</a>
-      </div>
-    </div>
+  <main class="hero">
+    <h1>Bem-vindo à Gibiteka Max Zendron</h1>
+    <p id="welcomeMsg">Sua biblioteca de quadrinhos e livros ilustrados.</p>
+    <a href="login.html" class="button" id="loginBtn">Entrar / Cadastrar</a>
+    <a href="dashboard.html" class="button" id="dashboardBtn" style="display:none;">Ir para Dashboard</a>
   </main>
 
   <footer>
@@ -181,15 +135,22 @@
   </footer>
 
   <script>
-    function toggleMenu() {
-      const nav = document.getElementById('navMenu');
-      nav.classList.toggle('active');
+    // Verifica se há usuário logado
+    const loggedUser = localStorage.getItem("loggedUser");
+    if (loggedUser) {
+      const userData = JSON.parse(localStorage.getItem(loggedUser));
+      const userName = userData ? userData.name : "Usuário";
+      document.getElementById("welcomeMsg").textContent = `Bem-vindo de volta, ${userName}!`;
+      document.getElementById("loginBtn").style.display = "none";
+      document.getElementById("dashboardBtn").style.display = "inline-block";
     }
-    document.querySelectorAll('#navMenu a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('navMenu').classList.remove('active');
-      });
-    });
+
+    // Função de logout
+    function logout() {
+      localStorage.removeItem("loggedUser");
+      alert("Você saiu da sua conta.");
+      window.location.href = "login.html";
+    }
   </script>
 </body>
 </html>
