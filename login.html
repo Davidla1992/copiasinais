@@ -4,192 +4,118 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login - Gibiteka Max Zendron</title>
-  <meta name="description" content="Faça login ou cadastre-se na Gibiteka Max Zendron para acessar seu acervo personalizado." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0A1F44, #122A57);
-      color: #FFFFFF;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .auth-container {
-      background: #1A3A5F;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
-      width: 100%;
-      max-width: 400px;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .tabs {
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 1.5rem;
-    }
-
-    .tab {
-      flex: 1;
-      text-align: center;
-      padding: 0.75rem;
-      cursor: pointer;
-      font-weight: 600;
-      border-bottom: 3px solid transparent;
-      transition: all 0.3s ease;
-    }
-
-    .tab.active {
-      border-bottom: 3px solid #00BFFF;
-      color: #00BFFF;
-    }
-
-    form {
-      display: none;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    form.active {
-      display: flex;
-    }
-
-    input {
-      padding: 0.75rem;
-      border-radius: 8px;
-      border: none;
-      font-size: 1rem;
-    }
-
-    .button {
-      background: linear-gradient(135deg, #1E90FF, #00BFFF);
-      color: #fff;
-      padding: 0.75rem;
-      border-radius: 8px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .button:hover {
-      transform: scale(1.05);
-    }
-
-    .extra-links {
-      text-align: center;
-      margin-top: 1rem;
-      font-size: 0.9rem;
-    }
-
-    .extra-links a {
-      color: #00BFFF;
-      text-decoration: none;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    body{margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0A1F44,#2B3A67);color:#fff;}
+    .container{max-width:1200px;margin:0 auto;padding:1rem;}
+    header{background:#2B3A67;padding:1rem 0;box-shadow:0 2px 10px rgba(0,191,255,0.2);}
+    .header-flex{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+    .site-title{font-weight:700;color:#00BFFF;}
+    .nav-menu{list-style:none;display:flex;gap:1rem;margin:0;padding:0;}
+    .nav-menu li a{color:#1E90FF;text-decoration:none;font-weight:600;}
+    .nav-menu li a:hover{color:#00BFFF;}
+    main{padding:3rem 1rem;text-align:center;}
+    form{max-width:420px;margin:0 auto;background:#0A1F44;padding:1.5rem;border-radius:12px;box-shadow:0 0 15px rgba(0,191,255,0.2);}
+    input{width:100%;padding:0.75rem;margin:.5rem 0;border:none;border-radius:8px;}
+    .button{background:linear-gradient(135deg,#1E90FF,#00BFFF);color:#fff;padding:0.75rem 1rem;border-radius:8px;font-weight:bold;border:none;cursor:pointer;width:100%;}
+    .button:hover{transform:scale(1.02);}
+    .toggle{margin-top:1rem;color:#E0F7FF;cursor:pointer;}
   </style>
 </head>
 <body>
-  <div class="auth-container">
-    <div class="tabs">
-      <div class="tab active" onclick="showForm('login')">Login</div>
-      <div class="tab" onclick="showForm('register')">Cadastro</div>
+  <header>
+    <div class="container header-flex">
+      <h1 class="site-title">Gibiteka Max Zendron</h1>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="acervo.html">Acervo</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="pesquisa.html">Pesquisa</a></li>
+          <li><a href="perfil.html">Perfil</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a onclick="logout()">Logout</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- Formulário de Login -->
-    <form id="loginForm" class="active">
-      <input type="email" id="loginEmail" placeholder="Email" required />
-      <input type="password" id="loginPassword" placeholder="Senha" required />
-      <button type="submit" class="button">Entrar</button>
-      <div class="extra-links">
-        <a href="#">Esqueceu a senha?</a>
-      </div>
+  <main>
+    <h2>Entrar ou Cadastrar</h2>
+    <form id="authForm" onsubmit="handleAuth(event)">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Senha" required />
+      <input type="text" id="name" placeholder="Nome (apenas para cadastro)" style="display:none;" />
+      <button class="button" type="submit" id="submitBtn">Entrar</button>
+      <div class="toggle" onclick="toggleMode()">Quero me cadastrar</div>
     </form>
+  </main>
 
-    <!-- Formulário de Cadastro -->
-    <form id="registerForm">
-      <input type="text" id="registerName" placeholder="Nome completo" required />
-      <input type="email" id="registerEmail" placeholder="Email" required />
-      <input type="password" id="registerPassword" placeholder="Senha" required />
-      <input type="password" id="registerConfirm" placeholder="Confirmar senha" required />
-      <button type="submit" class="button">Cadastrar</button>
-    </form>
-  </div>
+  <footer>
+    <div class="container">&copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados</div>
+  </footer>
 
   <script>
-    function showForm(form) {
-      document.getElementById('loginForm').classList.remove('active');
-      document.getElementById('registerForm').classList.remove('active');
-      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+    let isSignup = false;
 
-      if (form === 'login') {
-        document.getElementById('loginForm').classList.add('active');
-        document.querySelector('.tab:nth-child(1)').classList.add('active');
+    function toggleMode() {
+      isSignup = !isSignup;
+      document.getElementById('name').style.display = isSignup ? 'block' : 'none';
+      document.getElementById('submitBtn').textContent = isSignup ? 'Cadastrar' : 'Entrar';
+      document.querySelector('.toggle').textContent = isSignup ? 'Já tenho conta' : 'Quero me cadastrar';
+    }
+
+    function getUsers() {
+      return JSON.parse(localStorage.getItem('users') || '[]');
+    }
+    function setUsers(users) {
+      localStorage.setItem('users', JSON.stringify(users));
+    }
+
+    function handleAuth(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim().toLowerCase();
+      const password = document.getElementById('password').value.trim();
+      const name = document.getElementById('name').value.trim();
+
+      const users = getUsers();
+
+      if (isSignup) {
+        if (users.find(u => u.email === email)) {
+          alert('Já existe uma conta com este email.');
+          return;
+        }
+        const newUser = { email, name: name || 'Usuário', password };
+        users.push(newUser);
+        setUsers(users);
+        localStorage.setItem(`user:${email}`, JSON.stringify({ email, name: newUser.name }));
+        localStorage.setItem(`acervo:${email}`, JSON.stringify([]));
+        localStorage.setItem('loggedUser', email);
+        alert('Cadastro realizado com sucesso!');
+        window.location.href = 'dashboard.html';
       } else {
-        document.getElementById('registerForm').classList.add('active');
-        document.querySelector('.tab:nth-child(2)').classList.add('active');
+        const user = users.find(u => u.email === email && u.password === password);
+        if (!user) {
+          alert('Email ou senha inválidos.');
+          return;
+        }
+        localStorage.setItem('loggedUser', email);
+        if (!localStorage.getItem(`user:${email}`)) {
+          localStorage.setItem(`user:${email}`, JSON.stringify({ email, name: user.name || 'Usuário' }));
+        }
+        if (!localStorage.getItem(`acervo:${email}`)) {
+          localStorage.setItem(`acervo:${email}`, JSON.stringify([]));
+        }
+        window.location.href = 'dashboard.html';
       }
     }
 
-    // Cadastro de usuário
-    document.getElementById('registerForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('registerName').value;
-      const email = document.getElementById('registerEmail').value;
-      const password = document.getElementById('registerPassword').value;
-      const confirm = document.getElementById('registerConfirm').value;
-
-      if (password !== confirm) {
-        alert('As senhas não coincidem!');
-        return;
-      }
-
-      // Verificar se já existe usuário com esse email
-      if (localStorage.getItem(email)) {
-        alert('Este email já está cadastrado. Faça login.');
-        showForm('login');
-        return;
-      }
-
-      // Salvar no localStorage
-      const user = { name, email, password };
-      localStorage.setItem(email, JSON.stringify(user));
-      alert('Cadastro realizado com sucesso! Agora faça login.');
-      showForm('login');
-    });
-
-    // Login de usuário
-    document.getElementById('loginForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const email = document.getElementById('loginEmail').value;
-      const password = document.getElementById('loginPassword').value;
-
-      const userData = localStorage.getItem(email);
-      if (!userData) {
-        alert('Usuário não encontrado. Faça o cadastro.');
-        return;
-      }
-
-      const user = JSON.parse(userData);
-      if (user.password === password) {
-        alert(`Bem-vindo, ${user.name}!`);
-        // Redireciona para o acervo
-        window.location.href = "acervo.html";
-      } else {
-        alert('Senha incorreta!');
-      }
-    });
+    function logout() {
+      localStorage.removeItem("loggedUser");
+      alert("Você saiu da sua conta.");
+      window.location.href = "login.html";
+    }
   </script>
 </body>
 </html>
