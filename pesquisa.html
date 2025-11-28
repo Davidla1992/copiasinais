@@ -4,80 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pesquisa - Gibiteka Max Zendron</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1 class="site-title">Gibiteka Max Zendron</h1>
-    <nav>
-      <ul class="nav-menu">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="acervo.html">Acervo</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="pesquisa.html">Pesquisa</a></li>
-        <li><a href="perfil.html">Perfil</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a onclick="logout()">Logout</a></li>
-      </ul>
-    </nav>
-  </header>
+  <header>... mesmo header ...</header>
 
-  <main>
+  <main class="hero">
     <h2>Pesquisa no Acervo</h2>
     <div class="card">
       <input id="busca" placeholder="Digite título, autor ou gênero" />
       <button class="button" onclick="pesquisar()">Pesquisar</button>
     </div>
-
     <div class="grid" id="resultados"></div>
   </main>
 
-  <footer>
-    &copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados
-  </footer>
+  <footer>... mesmo footer ...</footer>
 
   <script>
     const email = localStorage.getItem('loggedUser');
-    if (!email) {
-      alert('Faça login para acessar a pesquisa.');
-      window.location.href = 'login.html';
-    }
-
-    function pesquisar() {
-      const termo = document.getElementById('busca').value.trim().toLowerCase();
-      const acervo = JSON.parse(localStorage.getItem(`acervo:${email}`) || '[]');
-      const resultados = acervo.filter(item =>
-        item.titulo.toLowerCase().includes(termo) ||
-        item.autor.toLowerCase().includes(termo) ||
-        item.genero.toLowerCase().includes(termo)
-      );
-
-      const grid = document.getElementById('resultados');
-      grid.innerHTML = '';
-
-      if (resultados.length === 0) {
-        grid.innerHTML = `<p>Nenhum resultado encontrado.</p>`;
-        return;
-      }
-
-      resultados.forEach(item => {
-        const el = document.createElement('div');
-        el.className = 'item';
-        el.innerHTML = `<h4>${item.titulo}</h4>
-                        <p>Autor: ${item.autor}</p>
-                        <p>Gênero: ${item.genero}</p>
-                        <p>Ano: ${item.ano || '-'}</p>`;
-        grid.appendChild(el);
-      });
-    }
-
-    function logout() {
-      localStorage.removeItem('loggedUser');
-      alert('Você saiu da sua conta.');
-      window.location.href = 'login.html';
-    }
-  </script>
-</body>
-</html>
+    if (!email) window.location.href = 'login.html';
