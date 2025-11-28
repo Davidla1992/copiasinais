@@ -172,27 +172,8 @@
   <main class="section">
     <div class="container">
       <h2>Nosso Acervo</h2>
-      <div class="acervo-grid">
-        <div class="acervo-card">
-          <img src="spiderman.jpg" alt="Homem-Aranha quadrinho">
-          <h3>Homem-Aranha: De Volta ao Lar</h3>
-          <p>Autor: Stan Lee<br>Gênero: Super-heróis</p>
-        </div>
-        <div class="acervo-card">
-          <img src="naruto.jpg" alt="Naruto quadrinho">
-          <h3>Naruto Vol. 1</h3>
-          <p>Autor: Masashi Kishimoto<br>Gênero: Mangá</p>
-        </div>
-        <div class="acervo-card">
-          <img src="monica.jpg" alt="Turma da Mônica quadrinho">
-          <h3>Turma da Mônica - Clássicos</h3>
-          <p>Autor: Mauricio de Sousa<br>Gênero: Infantil</p>
-        </div>
-        <div class="acervo-card">
-          <img src="sandman.jpg" alt="Sandman quadrinho">
-          <h3>Sandman Vol. 1</h3>
-          <p>Autor: Neil Gaiman<br>Gênero: Fantasia</p>
-        </div>
+      <div class="acervo-grid" id="acervoGrid">
+        <!-- Cards serão gerados dinamicamente -->
       </div>
     </div>
   </main>
@@ -206,6 +187,27 @@
       const nav = document.getElementById('navMenu');
       nav.classList.toggle('active');
     }
+
+    // Simulação de acervo em JSON
+    const acervo = [
+      { titulo: "Homem-Aranha: De Volta ao Lar", autor: "Stan Lee", genero: "Super-heróis", imagem: "spiderman.jpg" },
+      { titulo: "Naruto Vol. 1", autor: "Masashi Kishimoto", genero: "Mangá", imagem: "naruto.jpg" },
+      { titulo: "Turma da Mônica - Clássicos", autor: "Mauricio de Sousa", genero: "Infantil", imagem: "monica.jpg" },
+      { titulo: "Sandman Vol. 1", autor: "Neil Gaiman", genero: "Fantasia", imagem: "sandman.jpg" }
+    ];
+
+    // Renderizar acervo dinamicamente
+    const grid = document.getElementById('acervoGrid');
+    acervo.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'acervo-card';
+      card.innerHTML = `
+        <img src="${item.imagem}" alt="${item.titulo}">
+        <h3>${item.titulo}</h3>
+        <p>Autor: ${item.autor}<br>Gênero: ${item.genero}</p>
+      `;
+      grid.appendChild(card);
+    });
   </script>
 </body>
 </html>
