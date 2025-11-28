@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gibiteka Max Zendron</title>
+  <meta name="description" content="Gibiteka Max Zendron — acervo de quadrinhos, livros ilustrados e eventos culturais com tecnologia e acessibilidade." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -128,10 +131,7 @@
     }
 
     @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
+      .menu-toggle { display: block; }
       .nav-menu {
         display: none;
         flex-direction: column;
@@ -143,34 +143,22 @@
         padding: 1rem;
         box-shadow: 0 5px 15px rgba(0, 191, 255, 0.2);
       }
-
-      .nav-menu.active {
-        display: flex;
-      }
-
-      .nav-menu li {
-        margin-bottom: 1rem;
-      }
-
-      .header-flex {
-        flex-direction: row;
-        justify-content: space-between;
-      }
+      .nav-menu.active { display: flex; }
+      .nav-menu li { margin-bottom: 1rem; }
     }
   </style>
 </head>
 <body>
-
   <header>
     <div class="container header-flex">
       <h1 class="site-title">Gibiteka Max Zendron</h1>
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu de navegação">☰</button>
       <nav>
         <ul class="nav-menu" id="navMenu">
           <li><a href="index.html">🏠 Início</a></li>
           <li><a href="acervo.html">Acervo</a></li>
           <li><a href="servicos.html">Serviços</a></li>
-          <li><a href="pesquisa-inteligente.html">Pesquisa</a></li>
+          <li><a href="pesquisa.html">Pesquisa</a></li>
           <li><a href="login.html">Login</a></li>
         </ul>
       </nav>
@@ -181,9 +169,7 @@
     <div class="container">
       <h2>Bem-vindo à Gibiteka</h2>
       <p>Explore quadrinhos, livros ilustrados e eventos culturais com tecnologia e acessibilidade.</p>
-
       <img src="fachada-gibiteka.jpeg" alt="Fachada da Gibiteka Max Zendron" class="fachada-img" />
-
       <div style="text-align:center;">
         <a href="acervo.html" class="button">Ver Acervo</a>
       </div>
@@ -191,9 +177,7 @@
   </main>
 
   <footer>
-    <div class="container">
-      &copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados
-    </div>
+    <div class="container">&copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados</div>
   </footer>
 
   <script>
@@ -201,7 +185,11 @@
       const nav = document.getElementById('navMenu');
       nav.classList.toggle('active');
     }
+    document.querySelectorAll('#navMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navMenu').classList.remove('active');
+      });
+    });
   </script>
-
 </body>
 </html>
