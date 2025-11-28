@@ -34,14 +34,14 @@
       <h1 class="site-title">Gibiteka Max Zendron</h1>
       <nav>
         <ul class="nav-menu">
-          <li><a href="index.html"> Início</a></li>
+          <li><a href="index.html">Início</a></li>
           <li><a href="acervo.html">Acervo</a></li>
           <li><a href="servicos.html">Serviços</a></li>
           <li><a href="pesquisa.html">Pesquisa</a></li>
           <li><a href="perfil.html">Perfil</a></li>
           <li><a href="dashboard.html">Dashboard</a></li>
           <li><a href="login.html">Login</a></li>
-          <li><a onclick="logout()"> Logout</a></li>
+          <li><a onclick="logout()">Logout</a></li>
         </ul>
       </nav>
     </div>
@@ -53,4 +53,17 @@
       <input type="text" id="searchInput" placeholder="Digite título ou autor..." />
       <select id="genreSelect">
         <option value="">Todos os gêneros</option>
-        <option
+        <option value="Super-herói">Super-herói</option>
+        <option value="Mangá">Mangá</option>
+        <option value="Infantil">Infantil</option>
+        <option value="Fantasia">Fantasia</option>
+        <option value="Outros">Outros</option>
+      </select>
+      <button type="submit" class="button">Pesquisar</button>
+    </form>
+
+    <div class="search-results" id="results"></div>
+  </main>
+
+  <footer>
+    <div class="container">&copy;
