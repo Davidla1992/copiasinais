@@ -1,24 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Serviços - Gibiteka Max Zendron</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0A1F44,#2B3A67);color:#fff;}
+    header{background:#2B3A67;padding:1rem 0;box-shadow:0 2px 10px rgba(0,191,255,0.2);}
+    .site-title{font-size:1.5rem;font-weight:700;color:#00BFFF;text-align:center;}
+    .nav-menu{list-style:none;display:flex;gap:1rem;justify-content:center;padding:0;}
+    .nav-menu li a{color:#1E90FF;text-decoration:none;font-weight:600;}
+    .nav-menu li a:hover{color:#00BFFF;}
+    h2{color:#00BFFF;text-align:center;margin-top:2rem;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin:2rem;}
+    .item{background:rgba(12,26,56,0.92);padding:1.5rem;border-radius:12px;box-shadow:0 0 15px rgba(0,191,255,0.22);}
+    .item h4{color:#00BFFF;margin-bottom:0.5rem;}
+    footer{background:#2B3A67;color:#00BFFF;text-align:center;padding:1rem;margin-top:2rem;}
+  </style>
 </head>
 <body>
-  <header>... mesmo header ...</header>
+  <header>
+    <h1 class="site-title">Gibiteka Max Zendron</h1>
+    <nav><ul class="nav-menu">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="acervo.html">Acervo</a></li>
+      <li><a href="servicos.html">Serviços</a></li>
+      <li><a href="pesquisa.html">Pesquisa</a></li>
+      <li><a href="perfil.html">Perfil</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul></nav>
+  </header>
 
-  <main class="hero">
+  <main>
     <h2>Serviços Disponíveis</h2>
     <div class="grid">
-      <div class="item"><h4>📖 Empréstimo de Quadrinhos</h4><p>Solicitação para emprestar e devolver títulos entre usuários.</p></div>
-      <div class="item"><h4>🔍 Pesquisa Personalizada</h4><p>Busque quadrinhos por título, autor ou gênero de forma rápida.</p></div>
-      <div class="item"><h4>👤 Gestão de Perfil</h4><p>Edite seus dados e mantenha sua conta sempre segura.</p></div>
-      <div class="item"><h4>📊 Dashboard Interativo</h4><p>Acompanhe estatísticas e tenha uma visão geral do seu acervo.</p></div>
+      <div class="item">
+        <h4>📖 Empréstimo de Quadrinhos</h4>
+        <p>Solicitação para emprestar e devolver títulos entre usuários.</p>
+      </div>
+      <div class="item">
+        <h4>🔍 Pesquisa Personalizada</h4>
+        <p>Busque quadrinhos por título, autor ou gênero de forma rápida.</p>
+      </div>
+      <div class="item">
+        <h4>👤 Gestão de Perfil</h4>
+        <p>Edite seus dados e mantenha sua conta sempre segura.</p>
+      </div>
+      <div class="item">
+        <h4>📊 Dashboard Interativo</h4>
+        <p>Acompanhe estatísticas e tenha uma visão geral do seu acervo.</p>
+      </div>
     </div>
   </main>
 
-  <footer>... mesmo footer ...</footer>
+  <footer>&copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados</footer>
 </body>
 </html>
