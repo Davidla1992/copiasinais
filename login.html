@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Serviços - Gibiteka Max Zendron</title>
+  <title>Login - Gibiteka Max Zendron</title>
+  <meta name="description" content="Faça login ou cadastre-se na Gibiteka Max Zendron para acessar seu acervo personalizado." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -12,214 +14,182 @@
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #0A1F44, #122A57);
       color: #FFFFFF;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem;
-    }
-
-    header {
-      background-color: #122A57;
-      padding: 1rem 0;
-      box-shadow: 0 2px 10px rgba(0, 191, 255, 0.2);
-      position: relative;
-    }
-
-    .header-flex {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      flex-wrap: wrap;
+      height: 100vh;
     }
 
-    .site-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #00BFFF;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      color: #00BFFF;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-menu li a {
-      color: #1E90FF;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.5rem;
-      transition: color 0.3s ease;
-    }
-
-    .nav-menu li a:hover {
-      color: #00BFFF;
-    }
-
-    .section {
-      padding: 3rem 1rem;
-      background-color: #122A57;
+    .auth-container {
+      background: #1A3A5F;
+      padding: 2rem;
       border-radius: 12px;
-      margin: 2rem 0;
-      box-shadow: 0 0 20px rgba(0, 191, 255, 0.1);
+      box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
+      width: 100%;
+      max-width: 400px;
       animation: fadeIn 1s ease-in-out;
     }
 
-    .section h2 {
-      color: #00BFFF;
-      margin-bottom: 2rem;
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 1.5rem;
+    }
+
+    .tab {
+      flex: 1;
       text-align: center;
+      padding: 0.75rem;
+      cursor: pointer;
+      font-weight: 600;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease;
     }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+    .tab.active {
+      border-bottom: 3px solid #00BFFF;
+      color: #00BFFF;
     }
 
-    .service {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 0 15px rgba(0, 191, 255, 0.2);
+    form {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    form.active {
+      display: flex;
+    }
+
+    input {
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .button {
+      background: linear-gradient(135deg, #1E90FF, #00BFFF);
+      color: #fff;
+      padding: 0.75rem;
+      border-radius: 8px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
       transition: transform 0.3s ease;
     }
 
-    .service:hover {
-      transform: translateY(-5px);
+    .button:hover {
+      transform: scale(1.05);
     }
 
-    .service h3 {
-      color: #00BFFF;
-      margin-bottom: 0.5rem;
-    }
-
-    .service p {
-      font-size: 0.95rem;
-      color: #E0F7FF;
-    }
-
-    footer {
-      background-color: #122A57;
-      color: #00BFFF;
+    .extra-links {
       text-align: center;
-      padding: 1rem;
+      margin-top: 1rem;
       font-size: 0.9rem;
+    }
+
+    .extra-links a {
+      color: #00BFFF;
+      text-decoration: none;
     }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
-      .nav-menu {
-        display: none;
-        flex-direction: column;
-        background-color: #0A1F44;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 100%;
-        padding: 1rem;
-        box-shadow: 0 5px 15px rgba(0, 191, 255, 0.2);
-      }
-
-      .nav-menu.active {
-        display: flex;
-      }
-
-      .nav-menu li {
-        margin-bottom: 1rem;
-      }
-
-      .header-flex {
-        flex-direction: row;
-        justify-content: space-between;
-      }
-    }
   </style>
 </head>
 <body>
-
-  <header>
-    <div class="container header-flex">
-      <h1 class="site-title">Gibiteka Max Zendron</h1>
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-      <nav>
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="index.html">🏠 Início</a></li>
-          <li><a href="acervo.html">Acervo</a></li>
-          <li><a href="servicos.html" aria-current="page">Serviços</a></li>
-          <li><a href="pesquisa-inteligente.html">Pesquisa</a></li>
-          <li><a href="login.html">Login</a></li>
-        </ul>
-      </nav>
+  <div class="auth-container">
+    <div class="tabs">
+      <div class="tab active" onclick="showForm('login')">Login</div>
+      <div class="tab" onclick="showForm('register')">Cadastro</div>
     </div>
-  </header>
 
-  <main class="section">
-    <div class="container">
-      <h2>Serviços Oferecidos</h2>
-      <div class="services-grid">
-        <div class="service">
-          <h3>💻 Acesso Digital</h3>
-          <p>Explore nosso acervo completo de quadrinhos e livros ilustrados diretamente do seu dispositivo.</p>
-        </div>
-        <div class="service">
-          <h3>📖 Leitura Presencial</h3>
-          <p>Espaços confortáveis e silenciosos para leitura no local com acesso gratuito ao acervo físico.</p>
-        </div>
-        <div class="service">
-          <h3>🎨 Oficinas Criativas</h3>
-          <p>Participe de oficinas de desenho, roteiro, ilustração e produção de quadrinhos.</p>
-        </div>
-        <div class="service">
-          <h3>🧠 Clube de Leitura</h3>
-          <p>Encontros mensais para discutir obras, autores e temas do universo gráfico-literário.</p>
-        </div>
-        <div class="service">
-          <h3>🔍 Pesquisa Guiada</h3>
-          <p>Ferramentas inteligentes para encontrar títulos por autor, gênero, idioma ou faixa etária.</p>
-        </div>
-        <div class="service">
-          <h3>🗓️ Eventos Culturais</h3>
-          <p>Exposições, lançamentos, rodas de conversa e encontros com autores e ilustradores.</p>
-        </div>
+    <!-- Formulário de Login -->
+    <form id="loginForm" class="active">
+      <input type="email" id="loginEmail" placeholder="Email" required />
+      <input type="password" id="loginPassword" placeholder="Senha" required />
+      <button type="submit" class="button">Entrar</button>
+      <div class="extra-links">
+        <a href="#">Esqueceu a senha?</a>
       </div>
-    </div>
-  </main>
+    </form>
 
-  <footer>
-    <div class="container">
-      &copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados
-    </div>
-  </footer>
+    <!-- Formulário de Cadastro -->
+    <form id="registerForm">
+      <input type="text" id="registerName" placeholder="Nome completo" required />
+      <input type="email" id="registerEmail" placeholder="Email" required />
+      <input type="password" id="registerPassword" placeholder="Senha" required />
+      <input type="password" id="registerConfirm" placeholder="Confirmar senha" required />
+      <button type="submit" class="button">Cadastrar</button>
+    </form>
+  </div>
 
   <script>
-    function toggleMenu() {
-      const nav = document.getElementById('navMenu');
-      nav.classList.toggle('active');
-    }
-  </script>
+    function showForm(form) {
+      document.getElementById('loginForm').classList.remove('active');
+      document.getElementById('registerForm').classList.remove('active');
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
 
+      if (form === 'login') {
+        document.getElementById('loginForm').classList.add('active');
+        document.querySelector('.tab:nth-child(1)').classList.add('active');
+      } else {
+        document.getElementById('registerForm').classList.add('active');
+        document.querySelector('.tab:nth-child(2)').classList.add('active');
+      }
+    }
+
+    // Cadastro de usuário
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('registerName').value;
+      const email = document.getElementById('registerEmail').value;
+      const password = document.getElementById('registerPassword').value;
+      const confirm = document.getElementById('registerConfirm').value;
+
+      if (password !== confirm) {
+        alert('As senhas não coincidem!');
+        return;
+      }
+
+      // Verificar se já existe usuário com esse email
+      if (localStorage.getItem(email)) {
+        alert('Este email já está cadastrado. Faça login.');
+        showForm('login');
+        return;
+      }
+
+      // Salvar no localStorage
+      const user = { name, email, password };
+      localStorage.setItem(email, JSON.stringify(user));
+      alert('Cadastro realizado com sucesso! Agora faça login.');
+      showForm('login');
+    });
+
+    // Login de usuário
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      const userData = localStorage.getItem(email);
+      if (!userData) {
+        alert('Usuário não encontrado. Faça o cadastro.');
+        return;
+      }
+
+      const user = JSON.parse(userData);
+      if (user.password === password) {
+        alert(`Bem-vindo, ${user.name}!`);
+        // Redireciona para o acervo
+        window.location.href = "acervo.html";
+      } else {
+        alert('Senha incorreta!');
+      }
+    });
+  </script>
 </body>
 </html>
