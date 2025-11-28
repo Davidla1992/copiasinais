@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Acervo - Gibiteka Max Zendron</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>/* mesmo CSS inline da dashboard */</style>
 </head>
 <body>
   <header>... mesmo header ...</header>
-
-  <main class="hero">
-    <h2>Seu Acervo</h2>
+  <main>
+    <h2 style="text-align:center;color:#00BFFF;">Seu Acervo</h2>
     <div class="card">
-      <input id="titulo" placeholder="Título" />
-      <input id="autor" placeholder="Autor" />
+      <input id="titulo" placeholder="Título">
+      <input id="autor" placeholder="Autor">
       <select id="genero">
         <option value="">Gênero</option>
         <option>Super-herói</option>
@@ -21,14 +20,12 @@
         <option>Infantil</option>
         <option>Fantasia</option>
       </select>
-      <input id="ano" type="number" placeholder="Ano" />
+      <input id="ano" type="number" placeholder="Ano">
       <button class="button" onclick="addItem()">Adicionar ao Acervo</button>
     </div>
     <div class="grid" id="gridAcervo"></div>
   </main>
-
   <footer>... mesmo footer ...</footer>
-
   <script>
     const email = localStorage.getItem('loggedUser');
     if (!email) window.location.href = 'login.html';
