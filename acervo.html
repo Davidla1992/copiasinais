@@ -9,195 +9,33 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0A1F44, #2B3A67);
-      color: #FFFFFF;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem;
-    }
-
-    header {
-      background-color: #2B3A67;
-      padding: 1rem 0;
-      box-shadow: 0 2px 10px rgba(0, 191, 255, 0.2);
-      position: relative;
-    }
-
-    .header-flex {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .site-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #00BFFF;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      color: #00BFFF;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-menu li a {
-      color: #1E90FF;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.5rem;
-      transition: color 0.3s ease;
-    }
-
-    .nav-menu li a:hover {
-      color: #00BFFF;
-    }
-
-    .section {
-      padding: 3rem 1rem;
-      background-color: #2B3A67;
-      border-radius: 12px;
-      margin: 2rem 0;
-      box-shadow: 0 0 20px rgba(0, 191, 255, 0.1);
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .section h2 {
-      color: #00BFFF;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-
-    .acervo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .acervo-card {
-      background: #0A1F44;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 191, 255, 0.2);
-      transition: transform 0.3s ease;
-      text-align: center;
-    }
-
-    .acervo-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .acervo-card img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-
-    .acervo-card h3 {
-      color: #1E90FF;
-      margin-bottom: 0.5rem;
-    }
-
-    .acervo-card p {
-      color: #E0F7FF;
-      font-size: 0.95rem;
-    }
-
-    .form-cadastro {
-      margin-top: 3rem;
-      background: #0A1F44;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 191, 255, 0.2);
-    }
-
-    .form-cadastro h3 {
-      text-align: center;
-      color: #00BFFF;
-      margin-bottom: 1rem;
-    }
-
-    .form-cadastro input {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      border: none;
-      font-size: 1rem;
-    }
-
-    .button {
-      background: linear-gradient(135deg, #1E90FF, #00BFFF);
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      width: 100%;
-    }
-
-    .button:hover {
-      transform: scale(1.05);
-    }
-
-    footer {
-      background-color: #2B3A67;
-      color: #00BFFF;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle { display: block; }
-      .nav-menu {
-        display: none;
-        flex-direction: column;
-        background-color: #0A1F44;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 100%;
-        padding: 1rem;
-        box-shadow: 0 5px 15px rgba(0, 191, 255, 0.2);
-      }
-      .nav-menu.active { display: flex; }
-      .nav-menu li { margin-bottom: 1rem; }
-    }
+    body { margin:0; font-family:'Poppins',sans-serif; background:linear-gradient(135deg,#0A1F44,#2B3A67); color:#fff; }
+    .container{max-width:1200px;margin:0 auto;padding:1rem;}
+    header{background:#2B3A67;padding:1rem 0;box-shadow:0 2px 10px rgba(0,191,255,0.2);}
+    .header-flex{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+    .site-title{font-size:1.5rem;font-weight:700;color:#00BFFF;}
+    .nav-menu{list-style:none;display:flex;gap:1rem;margin:0;padding:0;}
+    .nav-menu li a{color:#1E90FF;text-decoration:none;font-weight:600;}
+    .section{padding:3rem 1rem;background:#2B3A67;border-radius:12px;margin:2rem 0;box-shadow:0 0 20px rgba(0,191,255,0.1);}
+    .section h2{color:#00BFFF;text-align:center;margin-bottom:2rem;}
+    .acervo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;}
+    .acervo-card{background:#0A1F44;padding:1rem;border-radius:10px;box-shadow:0 0 15px rgba(0,191,255,0.2);text-align:center;}
+    .acervo-card img{max-width:100%;border-radius:8px;margin-bottom:1rem;}
+    .acervo-card h3{color:#1E90FF;margin-bottom:0.5rem;}
+    .form-cadastro{margin-top:3rem;background:#0A1F44;padding:2rem;border-radius:12px;box-shadow:0 0 15px rgba(0,191,255,0.2);}
+    .form-cadastro h3{text-align:center;color:#00BFFF;margin-bottom:1rem;}
+    .form-cadastro input{width:100%;padding:0.75rem;margin-bottom:1rem;border-radius:8px;border:none;font-size:1rem;}
+    .button{background:linear-gradient(135deg,#1E90FF,#00BFFF);color:#fff;padding:0.75rem;border-radius:8px;font-weight:bold;border:none;cursor:pointer;width:100%;}
+    .button:hover{transform:scale(1.05);}
+    footer{background:#2B3A67;color:#00BFFF;text-align:center;padding:1rem;font-size:0.9rem;}
   </style>
 </head>
 <body>
   <header>
     <div class="container header-flex">
       <h1 class="site-title">Gibiteka Max Zendron</h1>
-      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu de navegação">☰</button>
       <nav>
-        <ul class="nav-menu" id="navMenu">
+        <ul class="nav-menu">
           <li><a href="index.html">🏠 Início</a></li>
           <li><a href="acervo.html">Acervo</a></li>
           <li><a href="servicos.html">Serviços</a></li>
@@ -210,10 +48,8 @@
 
   <main class="section">
     <div class="container">
-      <h2>Nosso Acervo</h2>
-      <div class="acervo-grid" id="acervoGrid">
-        <!-- Cards gerados dinamicamente -->
-      </div>
+      <h2>Meu Acervo</h2>
+      <div class="acervo-grid" id="acervoGrid"></div>
 
       <div class="form-cadastro">
         <h3>Adicionar novo quadrinho</h3>
@@ -233,18 +69,57 @@
   </footer>
 
   <script>
-    function toggleMenu() {
-      const nav = document.getElementById('navMenu');
-      nav.classList.toggle('active');
+    // Recupera usuário logado
+    const loggedUser = localStorage.getItem("loggedUser");
+    if (!loggedUser) {
+      alert("Você precisa estar logado para acessar o acervo.");
+      window.location.href = "login.html";
     }
 
-    // Carregar acervo inicial
-    const acervoInicial = [
-      { titulo: "Homem-Aranha: De Volta ao Lar", autor: "Stan Lee", genero: "Super-heróis", imagem: "spiderman.jpg" },
-      { titulo: "Naruto Vol. 1", autor: "Masashi Kishimoto", genero: "Mangá", imagem: "naruto.jpg" },
-      { titulo: "Turma da Mônica - Clássicos", autor: "Mauricio de Sousa", genero: "Infantil", imagem: "monica.jpg" },
-      { titulo: "Sandman Vol. 1", autor: "Neil Gaiman", genero: "Fantasia", imagem: "sandman.jpg" }
-    ];
+    const userEmail = loggedUser;
+    const acervoKey = `acervo_${userEmail}`;
 
-    // Se não existir acervo no localStorage, salvar inicial
-    if
+    // Carregar acervo do usuário
+    let acervo = JSON.parse(localStorage.getItem(acervoKey)) || [];
+
+    const grid = document.getElementById("acervoGrid");
+
+    function renderAcervo() {
+      grid.innerHTML = "";
+      if (acervo.length === 0) {
+        grid.innerHTML = "<p style='text-align:center;color:#E0F7FF;'>Nenhum quadrinho cadastrado ainda.</p>";
+      } else {
+        acervo.forEach(item => {
+          const card = document.createElement("div");
+          card.className = "acervo-card";
+          card.innerHTML = `
+            <img src="${item.imagem}" alt="${item.titulo}">
+            <h3>${item.titulo}</h3>
+            <p>Autor: ${item.autor}<br>Gênero: ${item.genero}</p>
+          `;
+          grid.appendChild(card);
+        });
+      }
+    }
+
+    renderAcervo();
+
+    // Cadastro de novo quadrinho
+    document.getElementById("formQuadrinho").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const titulo = document.getElementById("titulo").value;
+      const autor = document.getElementById("autor").value;
+      const genero = document.getElementById("genero").value;
+      const imagem = document.getElementById("imagem").value;
+
+      const novoQuadrinho = { titulo, autor, genero, imagem };
+      acervo.push(novoQuadrinho);
+      localStorage.setItem(acervoKey, JSON.stringify(acervo));
+
+      renderAcervo();
+      this.reset();
+      alert("Quadrinho adicionado com sucesso!");
+    });
+  </script>
+</body>
+</html>
