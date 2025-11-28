@@ -5,126 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pesquisa - Gibiteka Max Zendron</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0A1F44, #2B3A67);
-      color: #E0F7FF;
-      min-height: 100vh;
-    }
-
-    header {
-      background: #2B3A67;
-      padding: 1rem;
-      box-shadow: 0 2px 10px rgba(0,191,255,0.2);
-    }
-
-    .site-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #00BFFF;
-    }
-
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-menu li a {
-      color: #1E90FF;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .nav-menu li a:hover {
-      color: #00BFFF;
-    }
-
-    main {
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-
-    h2 {
-      color: #00BFFF;
-      margin-bottom: 1rem;
-    }
-
-    .card {
-      max-width: 600px;
-      margin: 1rem auto;
-      background: rgba(10,31,68,0.85);
-      padding: 1.5rem;
-      border-radius: 16px;
-      box-shadow: 0 0 25px rgba(0,191,255,0.25);
-    }
-
-    input, select {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      margin: 0.5rem 0;
-      border: none;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.08);
-      color: #E0F7FF;
-      font-size: 1rem;
-    }
-
-    input::placeholder {
-      color: #A0C4FF;
-    }
-
-    .button {
-      background: linear-gradient(135deg, #1E90FF, #00BFFF);
-      color: #fff;
-      padding: 0.75rem;
-      border-radius: 10px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-      margin-top: 1rem;
-      font-size: 1rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .button:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 10px rgba(0,191,255,0.4);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .item {
-      background: rgba(10,31,68,0.85);
-      padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,191,255,0.25);
-      text-align: left;
-    }
-
-    .item h4 {
-      color: #00BFFF;
-      margin: 0 0 0.5rem;
-    }
-
-    footer {
-      background: #2B3A67;
-      color: #00BFFF;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
@@ -146,19 +27,11 @@
   <main>
     <h2>Pesquisa no Acervo</h2>
     <div class="card">
-      <input id="query" placeholder="Digite título ou autor" />
-      <select id="genero">
-        <option value="">Todos os gêneros</option>
-        <option>Super-herói</option>
-        <option>Mangá</option>
-        <option>Infantil</option>
-        <option>Fantasia</option>
-        <option>Outros</option>
-      </select>
-      <button class="button" onclick="search()">Pesquisar</button>
+      <input id="busca" placeholder="Digite título, autor ou gênero" />
+      <button class="button" onclick="pesquisar()">Pesquisar</button>
     </div>
 
-    <div class="grid" id="results"></div>
+    <div class="grid" id="resultados"></div>
   </main>
 
   <footer>
@@ -172,22 +45,24 @@
       window.location.href = 'login.html';
     }
 
-    function search() {
-      const q = document.getElementById('query').value.trim().toLowerCase();
-      const g = document.getElementById('genero').value;
+    function pesquisar() {
+      const termo = document.getElementById('busca').value.trim().toLowerCase();
       const acervo = JSON.parse(localStorage.getItem(`acervo:${email}`) || '[]');
-      const results = acervo.filter(item => {
-        const matchText = item.titulo.toLowerCase().includes(q) || item.autor.toLowerCase().includes(q);
-        const matchGenero = g ? item.genero === g : true;
-        return matchText && matchGenero;
-      });
-      const grid = document.getElementById('results');
+      const resultados = acervo.filter(item =>
+        item.titulo.toLowerCase().includes(termo) ||
+        item.autor.toLowerCase().includes(termo) ||
+        item.genero.toLowerCase().includes(termo)
+      );
+
+      const grid = document.getElementById('resultados');
       grid.innerHTML = '';
-      if (results.length === 0) {
-        grid.innerHTML = '<p>Nenhum resultado encontrado.</p>';
+
+      if (resultados.length === 0) {
+        grid.innerHTML = `<p>Nenhum resultado encontrado.</p>`;
         return;
       }
-      results.forEach(item => {
+
+      resultados.forEach(item => {
         const el = document.createElement('div');
         el.className = 'item';
         el.innerHTML = `<h4>${item.titulo}</h4>
