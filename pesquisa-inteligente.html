@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Serviços - Gibiteka Max Zendron</title>
+  <title>Pesquisa Inteligente - Gibiteka</title>
+  <meta name="description" content="Pesquise quadrinhos e livros ilustrados na Gibiteka Max Zendron com filtros inteligentes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0A1F44, #122A57);
+      background: linear-gradient(135deg, #0A1F44, #1A3A5F);
       color: #FFFFFF;
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 1rem;
     }
 
     header {
-      background-color: #122A57;
+      background-color: #1A3A5F;
       padding: 1rem 0;
       box-shadow: 0 2px 10px rgba(0, 191, 255, 0.2);
       position: relative;
@@ -71,50 +73,79 @@
 
     .section {
       padding: 3rem 1rem;
-      background-color: #122A57;
+      background-color: #f5f5f5;
       border-radius: 12px;
       margin: 2rem 0;
       box-shadow: 0 0 20px rgba(0, 191, 255, 0.1);
       animation: fadeIn 1s ease-in-out;
+      color: #333;
     }
 
     .section h2 {
-      color: #00BFFF;
+      color: #FF6600;
       margin-bottom: 2rem;
       text-align: center;
     }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+    .search-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
     }
 
-    .service {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 0 15px rgba(0, 191, 255, 0.2);
+    .search-form input, .search-form select {
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .button {
+      background: linear-gradient(135deg, #FF6600, #FF9900);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
       transition: transform 0.3s ease;
     }
 
-    .service:hover {
-      transform: translateY(-5px);
+    .button:hover {
+      transform: scale(1.05);
     }
 
-    .service h3 {
-      color: #00BFFF;
-      margin-bottom: 0.5rem;
+    .search-results {
+      margin-top: 2rem;
     }
 
-    .service p {
-      font-size: 0.95rem;
-      color: #E0F7FF;
+    .result-item {
+      background: #fff;
+      border-left: 5px solid #FF6600;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .result-item h3 {
+      margin: 0 0 0.5rem;
+      color: #1A3A5F;
+    }
+
+    .result-item p {
+      margin: 0;
+      color: #555;
     }
 
     footer {
-      background-color: #122A57;
+      background-color: #1A3A5F;
       color: #00BFFF;
       text-align: center;
       padding: 1rem;
@@ -127,10 +158,7 @@
     }
 
     @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
+      .menu-toggle { display: block; }
       .nav-menu {
         display: none;
         flex-direction: column;
@@ -142,34 +170,22 @@
         padding: 1rem;
         box-shadow: 0 5px 15px rgba(0, 191, 255, 0.2);
       }
-
-      .nav-menu.active {
-        display: flex;
-      }
-
-      .nav-menu li {
-        margin-bottom: 1rem;
-      }
-
-      .header-flex {
-        flex-direction: row;
-        justify-content: space-between;
-      }
+      .nav-menu.active { display: flex; }
+      .nav-menu li { margin-bottom: 1rem; }
     }
   </style>
 </head>
 <body>
-
   <header>
     <div class="container header-flex">
       <h1 class="site-title">Gibiteka Max Zendron</h1>
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu de navegação">☰</button>
       <nav>
         <ul class="nav-menu" id="navMenu">
           <li><a href="index.html">🏠 Início</a></li>
           <li><a href="acervo.html">Acervo</a></li>
-          <li><a href="servicos.html" aria-current="page">Serviços</a></li>
-          <li><a href="pesquisa-inteligente.html">Pesquisa</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="pesquisa.html">Pesquisa</a></li>
           <li><a href="login.html">Login</a></li>
         </ul>
       </nav>
@@ -178,40 +194,27 @@
 
   <main class="section">
     <div class="container">
-      <h2>Serviços Oferecidos</h2>
-      <div class="services-grid">
-        <div class="service">
-          <h3>💻 Acesso Digital</h3>
-          <p>Explore nosso acervo completo de quadrinhos e livros ilustrados diretamente do seu dispositivo.</p>
-        </div>
-        <div class="service">
-          <h3>📖 Leitura Presencial</h3>
-          <p>Espaços confortáveis e silenciosos para leitura no local com acesso gratuito ao acervo físico.</p>
-        </div>
-        <div class="service">
-          <h3>🎨 Oficinas Criativas</h3>
-          <p>Participe de oficinas de desenho, roteiro, ilustração e produção de quadrinhos.</p>
-        </div>
-        <div class="service">
-          <h3>🧠 Clube de Leitura</h3>
-          <p>Encontros mensais para discutir obras, autores e temas do universo gráfico-literário.</p>
-        </div>
-        <div class="service">
-          <h3>🔍 Pesquisa Guiada</h3>
-          <p>Ferramentas inteligentes para encontrar títulos por autor, gênero, idioma ou faixa etária.</p>
-        </div>
-        <div class="service">
-          <h3>🗓️ Eventos Culturais</h3>
-          <p>Exposições, lançamentos, rodas de conversa e encontros com autores e ilustradores.</p>
-        </div>
+      <h2>Pesquisa Inteligente</h2>
+      <form class="search-form" onsubmit="buscar(event)">
+        <input type="text" id="searchInput" placeholder="Digite título ou autor..." />
+        <select id="genreSelect">
+          <option value="">Todos os gêneros</option>
+          <option value="superheroi">Super-heróis</option>
+          <option value="manga">Mangá</option>
+          <option value="infantil">Infantil</option>
+          <option value="fantasia">Fantasia</option>
+        </select>
+        <button type="submit" class="button">Pesquisar</button>
+      </form>
+
+      <div class="search-results" id="results">
+        <!-- Resultados aparecerão aqui -->
       </div>
     </div>
   </main>
 
   <footer>
-    <div class="container">
-      &copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados
-    </div>
+    <div class="container">&copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados</div>
   </footer>
 
   <script>
@@ -219,7 +222,27 @@
       const nav = document.getElementById('navMenu');
       nav.classList.toggle('active');
     }
-  </script>
 
-</body>
-</html>
+    // Simulação de resultados de pesquisa
+    function buscar(event) {
+      event.preventDefault();
+      const termo = document.getElementById('searchInput').value;
+      const genero = document.getElementById('genreSelect').value;
+      const resultsDiv = document.getElementById('results');
+
+      resultsDiv.innerHTML = `
+        <div class="result-item">
+          <h3>Homem-Aranha: De Volta ao Lar</h3>
+          <p>Autor: Stan Lee — Gênero: Super-heróis</p>
+        </div>
+        <div class="result-item">
+          <h3>Naruto Vol. 1</h3>
+          <p>Autor: Masashi Kishimoto — Gênero: Mangá</p>
+        </div>
+        <div class="result-item">
+          <h3>Turma da Mônica - Clássicos</h3>
+          <p>Autor: Mauricio de Sousa — Gênero: Infantil</p>
+        </div>
+      `;
+    }
+  </script>
