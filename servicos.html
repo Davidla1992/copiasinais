@@ -4,185 +4,55 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Serviços - Gibiteka Max Zendron</title>
-  <meta name="description" content="Conheça os serviços oferecidos pela Gibiteka Max Zendron: empréstimos, eventos culturais e acessibilidade digital." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="description" content="Conheça os serviços oferecidos pela Gibiteka Max Zendron." />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0A1F44, #123344);
-      color: #FFFFFF;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem;
-    }
-
-    header {
-      background-color: #123344;
-      padding: 1rem 0;
-      box-shadow: 0 2px 10px rgba(0, 191, 255, 0.2);
-      position: relative;
-    }
-
-    .header-flex {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .site-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #00BFFF;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      color: #00BFFF;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-menu li a {
-      color: #1E90FF;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.5rem;
-      transition: color 0.3s ease;
-    }
-
-    .nav-menu li a:hover {
-      color: #00BFFF;
-    }
-
-    .section {
-      padding: 3rem 1rem;
-      background-color: #123344;
-      border-radius: 12px;
-      margin: 2rem 0;
-      box-shadow: 0 0 20px rgba(0, 191, 255, 0.1);
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .section h2 {
-      color: #00BFFF;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .service-card {
-      background: #0A1F44;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 191, 255, 0.2);
-      transition: transform 0.3s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .service-card h3 {
-      color: #1E90FF;
-      margin-bottom: 0.5rem;
-    }
-
-    .service-card p {
-      color: #E0F7FF;
-      font-size: 1rem;
-    }
-
-    footer {
-      background-color: #123344;
-      color: #00BFFF;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle { display: block; }
-      .nav-menu {
-        display: none;
-        flex-direction: column;
-        background-color: #0A1F44;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 100%;
-        padding: 1rem;
-        box-shadow: 0 5px 15px rgba(0, 191, 255, 0.2);
-      }
-      .nav-menu.active { display: flex; }
-      .nav-menu li { margin-bottom: 1rem; }
-    }
+    body { margin:0; font-family:'Poppins',sans-serif; background:linear-gradient(135deg,#0A1F44,#2B3A67); color:#fff; }
+    .container{max-width:1200px;margin:0 auto;padding:1rem;}
+    header{background:#2B3A67;padding:1rem 0;box-shadow:0 2px 10px rgba(0,191,255,0.2);}
+    .header-flex{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+    .site-title{font-size:1.5rem;font-weight:700;color:#00BFFF;}
+    .nav-menu{list-style:none;display:flex;gap:1rem;margin:0;padding:0;}
+    .nav-menu li a{color:#1E90FF;text-decoration:none;font-weight:600;cursor:pointer;}
+    .nav-menu li a:hover{color:#00BFFF;}
+    main{padding:3rem 1rem;text-align:center;}
+    h2{color:#00BFFF;margin-bottom:2rem;}
+    .service-card{background:#0A1F44;padding:1.5rem;border-radius:10px;margin:1rem auto;max-width:600px;box-shadow:0 0 15px rgba(0,191,255,0.2);}
+    footer{background:#2B3A67;color:#00BFFF;text-align:center;padding:1rem;font-size:0.9rem;}
   </style>
 </head>
 <body>
   <header>
     <div class="container header-flex">
       <h1 class="site-title">Gibiteka Max Zendron</h1>
-      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu de navegação">☰</button>
       <nav>
-        <ul class="nav-menu" id="navMenu">
+        <ul class="nav-menu">
           <li><a href="index.html">🏠 Início</a></li>
           <li><a href="acervo.html">Acervo</a></li>
           <li><a href="servicos.html">Serviços</a></li>
           <li><a href="pesquisa.html">Pesquisa</a></li>
+          <li><a href="perfil.html">Perfil</a></li>
+          <li><a href="dashboard.html">📊 Dashboard</a></li>
           <li><a href="login.html">Login</a></li>
+          <li><a onclick="logout()">🚪 Logout</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <h2>Serviços da Gibiteka</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>📚 Empréstimo de Quadrinhos</h3>
-          <p>Leve para casa suas histórias favoritas com prazos flexíveis e renovação online.</p>
-        </div>
-        <div class="service-card">
-          <h3>🎤 Eventos Culturais</h3>
-          <p>Participe de palestras, oficinas e encontros de fãs que celebram a cultura dos quadrinhos.</p>
-        </div>
-        <div class="service-card">
-          <h3>💻 Acessibilidade Digital</h3>
-          <p>Explore audiobooks, leitura assistida e ferramentas inclusivas para todos os públicos.</p>
-        </div>
-        <div class="service-card">
-          <h3>👨‍👩‍👧‍👦 Atividades Educativas</h3>
-          <p>Programas voltados para escolas e famílias, incentivando a leitura e criatividade.</p>
-        </div>
-      </div>
+  <main>
+    <h2>Nossos Serviços</h2>
+    <div class="service-card">
+      <h3>📚 Empréstimo de Quadrinhos</h3>
+      <p>Tenha acesso a uma vasta coleção de quadrinhos e mangás.</p>
+    </div>
+    <div class="service-card">
+      <h3>💻 Pesquisa Inteligente</h3>
+      <p>Encontre rapidamente títulos e autores com nosso sistema de busca.</p>
+    </div>
+    <div class="service-card">
+      <h3>👤 Perfil Personalizado</h3>
+      <p>Gerencie seu acervo e dados pessoais em um só lugar.</p>
     </div>
   </main>
 
@@ -191,15 +61,11 @@
   </footer>
 
   <script>
-    function toggleMenu() {
-      const nav = document.getElementById('navMenu');
-      nav.classList.toggle('active');
+    function logout() {
+      localStorage.removeItem("loggedUser");
+      alert("Você saiu da sua conta.");
+      window.location.href = "login.html";
     }
-    document.querySelectorAll('#navMenu a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('navMenu').classList.remove('active');
-      });
-    });
   </script>
 </body>
 </html>
