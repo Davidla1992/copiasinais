@@ -4,58 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Serviços - Gibiteka Max Zendron</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1 class="site-title">Gibiteka Max Zendron</h1>
-    <nav>
-      <ul class="nav-menu">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="acervo.html">Acervo</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="pesquisa.html">Pesquisa</a></li>
-        <li><a href="perfil.html">Perfil</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a onclick="logout()">Logout</a></li>
-      </ul>
-    </nav>
-  </header>
+  <header>... mesmo header ...</header>
 
-  <main>
+  <main class="hero">
     <h2>Serviços Disponíveis</h2>
     <div class="grid">
-      <div class="item">
-        <h4>📖 Empréstimo de Quadrinhos</h4>
-        <p>Facilidade para emprestar e gerenciar títulos entre usuários.</p>
-      </div>
-      <div class="item">
-        <h4>🔍 Pesquisa Personalizada</h4>
-        <p>Busque quadrinhos por título, autor ou gênero de forma rápida.</p>
-      </div>
-      <div class="item">
-        <h4>👤 Gestão de Perfil</h4>
-        <p>Atualize seus dados e mantenha sua conta sempre segura.</p>
-      </div>
-      <div class="item">
-        <h4>📊 Dashboard Interativo</h4>
-        <p>Acompanhe estatísticas e tenha uma visão geral do seu acervo.</p>
-      </div>
+      <div class="item"><h4>📖 Empréstimo de Quadrinhos</h4><p>Solicitação para emprestar e devolver títulos entre usuários.</p></div>
+      <div class="item"><h4>🔍 Pesquisa Personalizada</h4><p>Busque quadrinhos por título, autor ou gênero de forma rápida.</p></div>
+      <div class="item"><h4>👤 Gestão de Perfil</h4><p>Edite seus dados e mantenha sua conta sempre segura.</p></div>
+      <div class="item"><h4>📊 Dashboard Interativo</h4><p>Acompanhe estatísticas e tenha uma visão geral do seu acervo.</p></div>
     </div>
   </main>
 
-  <footer>
-    &copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados
-  </footer>
-
-  <script>
-    function logout() {
-      localStorage.removeItem('loggedUser');
-      alert('Você saiu da sua conta.');
-      window.location.href = 'login.html';
-    }
-  </script>
+  <footer>... mesmo footer ...</footer>
 </body>
 </html>
