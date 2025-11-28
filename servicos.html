@@ -5,83 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Serviços - Gibiteka Max Zendron</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0A1F44, #2B3A67);
-      color: #E0F7FF;
-      min-height: 100vh;
-    }
-
-    header {
-      background: #2B3A67;
-      padding: 1rem;
-      box-shadow: 0 2px 10px rgba(0,191,255,0.2);
-    }
-
-    .site-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #00BFFF;
-    }
-
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-menu li a {
-      color: #1E90FF;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .nav-menu li a:hover {
-      color: #00BFFF;
-    }
-
-    main {
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-
-    h2 {
-      color: #00BFFF;
-      margin-bottom: 1rem;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .card {
-      background: rgba(10,31,68,0.85);
-      padding: 1.5rem;
-      border-radius: 16px;
-      box-shadow: 0 0 25px rgba(0,191,255,0.25);
-      text-align: left;
-    }
-
-    .card h3 {
-      color: #00BFFF;
-      margin-top: 0;
-    }
-
-    footer {
-      background: #2B3A67;
-      color: #00BFFF;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
@@ -101,23 +25,23 @@
   </header>
 
   <main>
-    <h2>Nossos Serviços</h2>
+    <h2>Serviços Disponíveis</h2>
     <div class="grid">
-      <div class="card">
-        <h3>📚 Empréstimo de Quadrinhos</h3>
-        <p>Solicite empréstimos de títulos disponíveis no acervo e aproveite novas leituras.</p>
+      <div class="item">
+        <h4>📖 Empréstimo de Quadrinhos</h4>
+        <p>Facilidade para emprestar e gerenciar títulos entre usuários.</p>
       </div>
-      <div class="card">
-        <h3>🔍 Pesquisa Personalizada</h3>
-        <p>Encontre quadrinhos por título, autor ou gênero com nosso sistema de busca.</p>
+      <div class="item">
+        <h4>🔍 Pesquisa Personalizada</h4>
+        <p>Busque quadrinhos por título, autor ou gênero de forma rápida.</p>
       </div>
-      <div class="card">
-        <h3>👤 Gestão de Perfil</h3>
-        <p>Atualize suas informações pessoais e acompanhe suas estatísticas de leitura.</p>
+      <div class="item">
+        <h4>👤 Gestão de Perfil</h4>
+        <p>Atualize seus dados e mantenha sua conta sempre segura.</p>
       </div>
-      <div class="card">
-        <h3>📊 Dashboard Interativo</h3>
-        <p>Visualize estatísticas do seu acervo e acompanhe seu progresso de leitura.</p>
+      <div class="item">
+        <h4>📊 Dashboard Interativo</h4>
+        <p>Acompanhe estatísticas e tenha uma visão geral do seu acervo.</p>
       </div>
     </div>
   </main>
@@ -127,11 +51,6 @@
   </footer>
 
   <script>
-    const email = localStorage.getItem('loggedUser');
-    if (!email) {
-      alert('Faça login para acessar os serviços.');
-      window.location.href = 'login.html';
-    }
     function logout() {
       localStorage.removeItem('loggedUser');
       alert('Você saiu da sua conta.');
