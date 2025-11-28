@@ -236,9 +236,7 @@
       <div class="overlay-text">📍 Nossa fachada oficial</div>
     </div>
 
-    <div class="slogan">
-      ✨ Aqui a leitura ganha vida!
-    </div>
+    <div class="slogan">✨ Aqui a leitura ganha vida!</div>
   </main>
 
   <footer>
@@ -246,14 +244,12 @@
   </footer>
 
   <script>
+    function toggleMenu() {
+      const menu = document.getElementById("navMenu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+
     const loggedUser = localStorage.getItem("loggedUser");
     if (loggedUser) {
       const userData = JSON.parse(localStorage.getItem(`user:${loggedUser}`)) || { name: "Usuário" };
-      document.getElementById("welcomeMsg").textContent = `Bem-vindo de volta, ${userData.name}!`;
-      document.getElementById("loginBtn").style.display = "none";
-      document.getElementById("dashboardBtn").style.display = "inline-block";
-    }
-    function logout() {
-      localStorage.removeItem("loggedUser");
-      alert("Você saiu da sua conta.");
-      window.location.href = "login
+      document.getElementById("welcomeMsg").textContent = `
