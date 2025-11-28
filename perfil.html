@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Perfil - Gibiteka Max Zendron</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>/* mesmo CSS da index */</style>
 </head>
 <body>
-  <header>... (mesmo header da página inicial) ...</header>
-
-  <main class="hero">
-    <h2>Meu Perfil</h2>
+  <header>... mesmo header ...</header>
+  <main>
+    <h2 style="text-align:center;color:#00BFFF;">Meu Perfil</h2>
     <div class="card">
-      <input id="nome" placeholder="Nome" />
-      <input id="senha" type="password" placeholder="Nova senha" />
+      <input id="nome" placeholder="Nome">
+      <input id="senha" type="password" placeholder="Nova senha">
       <button class="button" onclick="salvarPerfil()">Salvar Alterações</button>
     </div>
   </main>
-
-  <footer>... (mesmo footer da página inicial) ...</footer>
-
+  <footer>... mesmo footer ...</footer>
   <script>
     const email = localStorage.getItem('loggedUser');
     if (!email) window.location.href = 'login.html';
