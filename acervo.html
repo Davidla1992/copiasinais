@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Acervo - Gibiteka Max Zendron</title>
-  <meta name="description" content="Explore o acervo de quadrinhos e livros ilustrados da Gibiteka Max Zendron." />
+  <meta name="description" content="Explore e cadastre quadrinhos no acervo da Gibiteka Max Zendron." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -121,6 +121,45 @@
       font-size: 0.95rem;
     }
 
+    .form-cadastro {
+      margin-top: 3rem;
+      background: #0A1F44;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 191, 255, 0.2);
+    }
+
+    .form-cadastro h3 {
+      text-align: center;
+      color: #00BFFF;
+      margin-bottom: 1rem;
+    }
+
+    .form-cadastro input {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .button {
+      background: linear-gradient(135deg, #1E90FF, #00BFFF);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      width: 100%;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+    }
+
     footer {
       background-color: #2B3A67;
       color: #00BFFF;
@@ -173,7 +212,18 @@
     <div class="container">
       <h2>Nosso Acervo</h2>
       <div class="acervo-grid" id="acervoGrid">
-        <!-- Cards serão gerados dinamicamente -->
+        <!-- Cards gerados dinamicamente -->
+      </div>
+
+      <div class="form-cadastro">
+        <h3>Adicionar novo quadrinho</h3>
+        <form id="formQuadrinho">
+          <input type="text" id="titulo" placeholder="Título" required />
+          <input type="text" id="autor" placeholder="Autor" required />
+          <input type="text" id="genero" placeholder="Gênero" required />
+          <input type="text" id="imagem" placeholder="URL da imagem (ex: spiderman.jpg)" required />
+          <button type="submit" class="button">Adicionar ao Acervo</button>
+        </form>
       </div>
     </div>
   </main>
@@ -188,26 +238,13 @@
       nav.classList.toggle('active');
     }
 
-    // Simulação de acervo em JSON
-    const acervo = [
+    // Carregar acervo inicial
+    const acervoInicial = [
       { titulo: "Homem-Aranha: De Volta ao Lar", autor: "Stan Lee", genero: "Super-heróis", imagem: "spiderman.jpg" },
       { titulo: "Naruto Vol. 1", autor: "Masashi Kishimoto", genero: "Mangá", imagem: "naruto.jpg" },
       { titulo: "Turma da Mônica - Clássicos", autor: "Mauricio de Sousa", genero: "Infantil", imagem: "monica.jpg" },
       { titulo: "Sandman Vol. 1", autor: "Neil Gaiman", genero: "Fantasia", imagem: "sandman.jpg" }
     ];
 
-    // Renderizar acervo dinamicamente
-    const grid = document.getElementById('acervoGrid');
-    acervo.forEach(item => {
-      const card = document.createElement('div');
-      card.className = 'acervo-card';
-      card.innerHTML = `
-        <img src="${item.imagem}" alt="${item.titulo}">
-        <h3>${item.titulo}</h3>
-        <p>Autor: ${item.autor}<br>Gênero: ${item.genero}</p>
-      `;
-      grid.appendChild(card);
-    });
-  </script>
-</body>
-</html>
+    // Se não existir acervo no localStorage, salvar inicial
+    if
