@@ -2,119 +2,116 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login - Gibiteka Max Zendron</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Entrar — Gibiteka Max Zendron</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #0A1F44, #2B3A67);
-      color: #E0F7FF;
+      color: #E6F2FF;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      padding: 1rem;
+      padding: 16px;
     }
 
     .login-box {
-      background: rgba(10, 31, 68, 0.85);
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 0 25px rgba(0, 191, 255, 0.25);
       width: 100%;
-      max-width: 400px;
-      text-align: center;
+      max-width: 420px;
+      background: rgba(12, 26, 56, 0.92);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 12px 36px rgba(0, 191, 255, 0.22);
     }
 
     .login-box h2 {
+      margin: 0 0 24px;
+      font-size: 24px;
+      font-weight: 700;
       color: #00BFFF;
-      margin-bottom: 1.5rem;
-      font-size: 1.6rem;
-      font-weight: 600;
+      text-align: center;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    .label {
+      font-size: 14px;
+      color: #A8C4E8;
+      margin-bottom: 8px;
     }
 
     input {
       width: 100%;
-      padding: 0.75rem 1rem;
-      margin: 0.5rem 0;
-      border: none;
+      height: 48px;
+      padding: 0 16px;
       border-radius: 10px;
-      background: rgba(255, 255, 255, 0.08);
-      color: #E0F7FF;
-      font-size: 1rem;
-      transition: background 0.3s ease;
+      border: 1px solid rgba(168,196,232,0.25);
+      background: rgba(255,255,255,0.08);
+      color: #E6F2FF;
+      font-size: 16px;
     }
+
+    input::placeholder { color: #A8C4E8; }
 
     input:focus {
       outline: none;
-      background: rgba(255, 255, 255, 0.12);
-    }
-
-    input::placeholder {
-      color: #A0C4FF;
+      background: rgba(255,255,255,0.12);
+      border-color: #00BFFF;
+      box-shadow: 0 0 0 3px rgba(0,191,255,0.18);
     }
 
     .button {
+      width: 100%;
+      height: 48px;
+      border: none;
+      border-radius: 12px;
       background: linear-gradient(135deg, #1E90FF, #00BFFF);
       color: #fff;
-      padding: 0.75rem;
-      border-radius: 10px;
-      font-weight: bold;
-      border: none;
+      font-weight: 600;
+      font-size: 16px;
       cursor: pointer;
-      width: 100%;
-      margin-top: 1rem;
-      font-size: 1rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin-top: 16px;
+      transition: transform 0.12s ease, box-shadow 0.2s ease;
     }
 
     .button:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(0,191,255,0.35);
     }
 
     .toggle {
-      margin-top: 1rem;
-      color: #A0C4FF;
-      font-size: 0.95rem;
+      margin-top: 16px;
+      text-align: center;
+      color: #A8C4E8;
+      font-size: 14px;
       cursor: pointer;
       text-decoration: underline;
-      transition: color 0.2s ease;
     }
 
-    .toggle:hover {
-      color: #00BFFF;
-    }
-
-    @media (max-width: 480px) {
-      .login-box {
-        padding: 1.5rem;
-        border-radius: 12px;
-      }
-
-      .login-box h2 {
-        font-size: 1.4rem;
-      }
-
-      .button {
-        font-size: 0.95rem;
-      }
-    }
+    .toggle:hover { color: #00BFFF; }
   </style>
 </head>
 <body>
   <div class="login-box">
     <h2>Entrar ou Cadastrar</h2>
     <form id="authForm" onsubmit="handleAuth(event)">
-      <input type="email" id="email" placeholder="Seu email" required />
-      <input type="password" id="password" placeholder="Sua senha" required />
-      <input type="text" id="name" placeholder="Seu nome (para cadastro)" style="display:none;" />
+      <div class="field">
+        <div class="label">Email</div>
+        <input type="email" id="email" placeholder="seuemail@exemplo.com" required />
+      </div>
+      <div class="field">
+        <div class="label">Senha</div>
+        <input type="password" id="password" placeholder="Sua senha" required />
+      </div>
+      <div class="field" id="nameField" style="display:none;">
+        <div class="label">Nome</div>
+        <input type="text" id="name" placeholder="Seu nome (para cadastro)" />
+      </div>
       <button class="button" type="submit" id="submitBtn">Entrar</button>
       <div class="toggle" onclick="toggleMode()">Quero me cadastrar</div>
     </form>
@@ -122,41 +119,30 @@
 
   <script>
     let isSignup = false;
-
     function toggleMode() {
       isSignup = !isSignup;
-      document.getElementById('name').style.display = isSignup ? 'block' : 'none';
+      document.getElementById('nameField').style.display = isSignup ? 'block' : 'none';
       document.getElementById('submitBtn').textContent = isSignup ? 'Cadastrar' : 'Entrar';
       document.querySelector('.toggle').textContent = isSignup ? 'Já tenho conta' : 'Quero me cadastrar';
     }
-
     function handleAuth(e) {
       e.preventDefault();
       const email = document.getElementById('email').value.trim().toLowerCase();
       const password = document.getElementById('password').value.trim();
       const name = document.getElementById('name').value.trim();
-
       const users = JSON.parse(localStorage.getItem('users') || '[]');
-
       if (isSignup) {
-        if (users.find(u => u.email === email)) {
-          alert('Já existe uma conta com este email.');
-          return;
-        }
+        if (users.find(u => u.email === email)) { alert('Já existe uma conta com este email.'); return; }
         const newUser = { email, name: name || 'Usuário', password };
         users.push(newUser);
         localStorage.setItem('users', JSON.stringify(users));
         localStorage.setItem(`user:${email}`, JSON.stringify({ email, name: newUser.name }));
         localStorage.setItem(`acervo:${email}`, JSON.stringify([]));
         localStorage.setItem('loggedUser', email);
-        alert('Cadastro realizado com sucesso!');
         window.location.href = 'dashboard.html';
       } else {
         const user = users.find(u => u.email === email && u.password === password);
-        if (!user) {
-          alert('Email ou senha inválidos.');
-          return;
-        }
+        if (!user) { alert('Email ou senha inválidos.'); return; }
         localStorage.setItem('loggedUser', email);
         window.location.href = 'dashboard.html';
       }
