@@ -4,27 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Perfil - Gibiteka Max Zendron</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1 class="site-title">Gibiteka Max Zendron</h1>
-    <nav>
-      <ul class="nav-menu">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="acervo.html">Acervo</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="pesquisa.html">Pesquisa</a></li>
-        <li><a href="perfil.html">Perfil</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a onclick="logout()">Logout</a></li>
-      </ul>
-    </nav>
-  </header>
+  <header>... (mesmo header da página inicial) ...</header>
 
-  <main>
+  <main class="hero">
     <h2>Meu Perfil</h2>
     <div class="card">
       <input id="nome" placeholder="Nome" />
@@ -33,35 +18,22 @@
     </div>
   </main>
 
-  <footer>
-    &copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados
-  </footer>
+  <footer>... (mesmo footer da página inicial) ...</footer>
 
   <script>
     const email = localStorage.getItem('loggedUser');
-    if (!email) {
-      alert('Faça login para acessar o perfil.');
-      window.location.href = 'login.html';
-    }
-
+    if (!email) window.location.href = 'login.html';
     function salvarPerfil() {
       const nome = document.getElementById('nome').value.trim();
       const senha = document.getElementById('senha').value.trim();
       const users = JSON.parse(localStorage.getItem('users') || '[]');
-      const userIndex = users.findIndex(u => u.email === email);
-      if (userIndex >= 0) {
-        if (nome) users[userIndex].name = nome;
-        if (senha) users[userIndex].password = senha;
+      const index = users.findIndex(u => u.email === email);
+      if (index >= 0) {
+        if (nome) users[index].name = nome;
+        if (senha) users[index].password = senha;
         localStorage.setItem('users', JSON.stringify(users));
-        localStorage.setItem(`user:${email}`, JSON.stringify({ email, name: users[userIndex].name }));
-        alert('Perfil atualizado com sucesso!');
+        alert('Perfil atualizado!');
       }
-    }
-
-    function logout() {
-      localStorage.removeItem('loggedUser');
-      alert('Você saiu da sua conta.');
-      window.location.href = 'login.html';
     }
   </script>
 </body>
