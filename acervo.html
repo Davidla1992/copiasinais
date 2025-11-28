@@ -15,9 +15,10 @@
     .header-flex{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
     .site-title{font-size:1.5rem;font-weight:700;color:#00BFFF;}
     .nav-menu{list-style:none;display:flex;gap:1rem;margin:0;padding:0;}
-    .nav-menu li a{color:#1E90FF;text-decoration:none;font-weight:600;}
+    .nav-menu li a{color:#1E90FF;text-decoration:none;font-weight:600;cursor:pointer;}
     .section{padding:3rem 1rem;background:#2B3A67;border-radius:12px;margin:2rem 0;box-shadow:0 0 20px rgba(0,191,255,0.1);}
-    .section h2{color:#00BFFF;text-align:center;margin-bottom:2rem;}
+    .section h2{color:#00BFFF;text-align:center;margin-bottom:1rem;}
+    .welcome{color:#E0F7FF;text-align:center;margin-bottom:2rem;font-size:1.2rem;}
     .acervo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;}
     .acervo-card{background:#0A1F44;padding:1rem;border-radius:10px;box-shadow:0 0 15px rgba(0,191,255,0.2);text-align:center;}
     .acervo-card img{max-width:100%;border-radius:8px;margin-bottom:1rem;}
@@ -41,6 +42,7 @@
           <li><a href="servicos.html">Serviços</a></li>
           <li><a href="pesquisa.html">Pesquisa</a></li>
           <li><a href="login.html">Login</a></li>
+          <li><a onclick="logout()">🚪 Logout</a></li>
         </ul>
       </nav>
     </div>
@@ -49,6 +51,7 @@
   <main class="section">
     <div class="container">
       <h2>Meu Acervo</h2>
+      <p class="welcome" id="welcomeMsg"></p>
       <div class="acervo-grid" id="acervoGrid"></div>
 
       <div class="form-cadastro">
@@ -76,10 +79,14 @@
       window.location.href = "login.html";
     }
 
-    const userEmail = loggedUser;
-    const acervoKey = `acervo_${userEmail}`;
+    // Recupera dados do usuário
+    const userData = JSON.parse(localStorage.getItem(loggedUser));
+    const userName = userData ? userData.name : "Usuário";
 
-    // Carregar acervo do usuário
+    // Mensagem de boas-vindas
+    document.getElementById("welcomeMsg").textContent = `Bem-vindo, ${userName}! Aqui está o seu acervo.`;
+
+    const acervoKey = `acervo_${loggedUser}`;
     let acervo = JSON.parse(localStorage.getItem(acervoKey)) || [];
 
     const grid = document.getElementById("acervoGrid");
@@ -120,6 +127,13 @@
       this.reset();
       alert("Quadrinho adicionado com sucesso!");
     });
+
+    // Função de logout
+    function logout() {
+      localStorage.removeItem("loggedUser");
+      alert("Você saiu da sua conta.");
+      window.location.href = "login.html";
+    }
   </script>
 </body>
 </html>
