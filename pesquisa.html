@@ -7,13 +7,13 @@
   <meta name="description" content="Pesquise quadrinhos e livros ilustrados na Gibiteka Max Zendron." />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    body { margin:0; font-family:'Poppins',sans-serif; background:linear-gradient(135deg,#0A1F44,#2B3A67); color:#fff; }
+    body{margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0A1F44,#2B3A67);color:#fff;}
     .container{max-width:1200px;margin:0 auto;padding:1rem;}
     header{background:#2B3A67;padding:1rem 0;box-shadow:0 2px 10px rgba(0,191,255,0.2);}
-    .header-flex{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+    .header-flex{display:flex;justify-content:space-between;align-items:center;}
     .site-title{font-size:1.5rem;font-weight:700;color:#00BFFF;}
     .nav-menu{list-style:none;display:flex;gap:1rem;margin:0;padding:0;}
-    .nav-menu li a{color:#1E90FF;text-decoration:none;font-weight:600;cursor:pointer;}
+    .nav-menu li a{color:#1E90FF;text-decoration:none;font-weight:600;}
     .nav-menu li a:hover{color:#00BFFF;}
     main{padding:3rem 1rem;}
     h2{color:#00BFFF;text-align:center;margin-bottom:2rem;}
@@ -25,7 +25,7 @@
     .result-card{background:#0A1F44;padding:1rem;border-radius:10px;box-shadow:0 0 15px rgba(0,191,255,0.2);}
     .result-card h3{color:#1E90FF;margin-bottom:0.5rem;}
     .result-card p{color:#E0F7FF;font-size:0.95rem;}
-    footer{background:#2B3A67;color:#00BFFF;text-align:center;padding:1rem;font-size:0.9rem;}
+    footer{background:#2B3A67;color:#00BFFF;text-align:center;padding:1rem;}
   </style>
 </head>
 <body>
@@ -52,24 +52,4 @@
     <form class="search-form" onsubmit="buscar(event)">
       <input type="text" id="searchInput" placeholder="Digite título ou autor..." />
       <select id="genreSelect">
-        <option value="">Todos os gêneros</option>
-        <option value="superheroi">Super-heróis</option>
-        <option value="manga">Mangá</option>
-        <option value="infantil">Infantil</option>
-        <option value="fantasia">Fantasia</option>
-      </select>
-      <button type="submit" class="button">Pesquisar</button>
-    </form>
-
-    <div class="search-results" id="results"></div>
-  </main>
-
-  <footer>
-    <div class="container">&copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados</div>
-  </footer>
-
-  <script>
-    function logout() {
-      localStorage.removeItem("loggedUser");
-      alert("Você saiu da sua conta.");
-      window.location.href = "login
+        <option value="">Todos os gê
