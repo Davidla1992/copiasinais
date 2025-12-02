@@ -1,1 +1,189 @@
 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos - Gibiteka Max Zendron</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #f9f9f9; }
+
+    /* Cabeçalho */
+    header {
+      background: #ff2d2d;
+      color: #fff;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+    .logo img { height: 50px; }
+
+    /* Menu padrão (desktop) */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: .3rem .6rem;
+      border-radius: 4px;
+      transition: background .3s, color .3s;
+    }
+    nav a:hover { background: rgba(255,255,255,0.2); }
+    nav a.active { background: #fff; color: #ff2d2d; }
+
+    /* Botão hamburguer */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: #fff;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    /* Cards de eventos */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin: 2rem;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,.1);
+      transition: transform .2s;
+    }
+    .card:hover { transform: scale(1.03); }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-body { padding: 1rem; }
+    .card-body h3 { margin-bottom: .5rem; font-size: 1.2rem; color: #333; }
+    .card-body p { font-size: .9rem; color: #555; }
+    .btn {
+      display: inline-block;
+      margin-top: .5rem;
+      padding: .5rem .8rem;
+      background: #ff2d2d;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: .9rem;
+    }
+    .btn:hover { background: #cc1f1f; }
+
+    /* Responsivo (mobile) */
+    @media (max-width: 768px) {
+      .menu-toggle { display: flex; }
+      nav ul {
+        flex-direction: column;
+        background: #ff2d2d;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 220px;
+        padding: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+      nav ul.show { max-height: 500px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="logobarueri.jpg" alt="Logo Gibiteka Max Zendron"></a>
+    </div>
+
+    <!-- Botão hamburguer -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <!-- Menu -->
+    <nav>
+      <ul id="menu">
+        <li><a href="catalogo.html">📚 Catálogo</a></li>
+        <li><a href="eventos.html" class="active">🎉 Eventos</a></li>
+        <li><a href="sobre.html">ℹ️ Sobre</a></li>
+        <li><a href="contato.html">📞 Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Eventos -->
+  <main>
+    <h2 style="text-align:center; margin:2rem 0;">Eventos da Gibiteka</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://picsum.photos/400/200?manga" alt="Clube de Leitura de Mangá">
+        <div class="card-body">
+          <h3>Clube de Leitura de Mangá</h3>
+          <p>Encontros mensais para discutir volumes de séries populares.</p>
+          <a href="#" class="btn">Inscreva-se</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/400/200?hq" alt="Oficina de HQ">
+        <div class="card-body">
+          <h3>Oficina de HQ</h3>
+          <p>Aulas de desenho e narrativa gráfica com artistas convidados.</p>
+          <a href="#" class="btn">Participar</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/400/200?cinema" alt="Sessões de cinema geek">
+        <div class="card-body">
+          <h3>Sessões de Cinema Geek</h3>
+          <p>Exibição de animações e filmes baseados em quadrinhos.</p>
+          <a href="#" class="btn">Ver programação</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/400/200?expo" alt="Exposições temáticas">
+        <div class="card-body">
+          <h3>Exposições Temáticas</h3>
+          <p>Mostra de capas históricas e trabalhos de artistas convidados.</p>
+          <a href="#" class="btn">Visitar</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Script -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+
+    document.querySelectorAll('#menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('show');
+      });
+    });
+  </script>
+</body>
+</html>
