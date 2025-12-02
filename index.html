@@ -19,7 +19,7 @@
       justify-content: space-between;
       align-items: center;
       position: relative;
-      z-index: 1000; /* garante que o header fique acima do hero */
+      z-index: 1000;
     }
     .logo img { height: 50px; }
 
@@ -37,12 +37,7 @@
       transition: background .3s, color .3s;
     }
     nav a:hover { background: rgba(255,255,255,0.2); }
-
-    /* Destaque do link ativo (desktop) */
-    nav a.active {
-      background: #fff;
-      color: #ff2d2d;
-    }
+    nav a.active { background: #fff; color: #ff2d2d; }
 
     /* Botão hamburguer */
     .menu-toggle {
@@ -70,15 +65,10 @@
         right: 0;
         width: 220px;
         padding: 1rem;
-        z-index: 2000; /* 🔥 garante que fique acima do hero */
+        z-index: 2000;
       }
       nav ul.show { display: flex; }
-
-      /* Corrige o visual do link ativo no mobile */
-      nav a.active {
-        background: rgba(255,255,255,0.2);
-        color: #fff;
-      }
+      nav a.active { background: rgba(255,255,255,0.2); color: #fff; }
     }
 
     /* Hero Section */
@@ -94,12 +84,9 @@
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0,0,0,0.5);
-      z-index: 0; /* 🔽 camada mais baixa */
+      z-index: 0;
     }
-    #hero h1, #hero p, #hero a {
-      position: relative;
-      z-index: 1; /* 🔼 texto acima da camada escura */
-    }
+    #hero h1, #hero p, #hero a { position: relative; z-index: 1; }
     #hero h1 { font-size: 3rem; margin-bottom: 1rem; }
     #hero p { font-size: 1.2rem; margin-bottom: 2rem; }
     #hero a {
@@ -111,25 +98,12 @@
       font-weight: bold;
       transition: background .3s, color .3s;
     }
-    #hero a:hover {
-      background: #ff2d2d;
-      color: #fff;
-    }
+    #hero a:hover { background: #ff2d2d; color: #fff; }
 
     /* Seções gerais */
-    section {
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #ff2d2d;
-    }
-    section p {
-      color: #555;
-      margin-bottom: 2rem;
-    }
+    section { padding: 3rem 2rem; text-align: center; }
+    section h2 { font-size: 2rem; margin-bottom: 1rem; color: #ff2d2d; }
+    section p { color: #555; margin-bottom: 2rem; }
 
     /* Cards de eventos */
     #eventos .card {
@@ -140,10 +114,7 @@
       width: 280px;
       transition: transform .3s, box-shadow .3s;
     }
-    #eventos .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    }
+    #eventos .card:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
     #eventos .cards-container {
       display: flex;
       gap: 2rem;
@@ -152,13 +123,8 @@
     }
 
     /* Lista de novidades do catálogo */
-    #catalogo {
-      background: #ffefef;
-    }
-    #catalogo ul {
-      list-style: none;
-      padding: 0;
-    }
+    #catalogo { background: #ffefef; }
+    #catalogo ul { list-style: none; padding: 0; }
     #catalogo li {
       margin: 1rem 0;
       font-size: 1.2rem;
@@ -166,11 +132,7 @@
       color: #333;
       position: relative;
     }
-    #catalogo li::before {
-      content: "✨";
-      position: absolute;
-      left: -25px;
-    }
+    #catalogo li::before { content: "✨"; position: absolute; left: -25px; }
 
     /* Galeria de fotos */
     #galeria .grid {
@@ -183,43 +145,41 @@
       border-radius: 10px;
       transition: transform .3s, filter .3s;
     }
-    #galeria img:hover {
-      transform: scale(1.05);
-      filter: brightness(1.1);
-    }
+    #galeria img:hover { transform: scale(1.05); filter: brightness(1.1); }
 
     /* Rodapé */
     footer {
       background: #ff2d2d;
       color: #fff;
-      text-align: center;
       padding: 2rem 1rem;
       margin-top: 2rem;
     }
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      max-width: 1000px;
+      margin: auto;
+      text-align: left;
+    }
+    .footer-column {
+      flex: 1 1 250px;
+      margin: 1rem;
+    }
     footer h3 {
       margin-bottom: .5rem;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      padding-bottom: .3rem;
     }
-    footer p {
-      margin: .3rem 0;
-    }
-    .footer-contact p {
-      margin: .2rem 0;
-    }
+    footer p { margin: .3rem 0; }
     footer a {
       color: #fff;
       font-weight: bold;
       text-decoration: none;
       transition: color .3s;
     }
-    footer a:hover {
-      color: #ffecec;
-      text-decoration: underline;
-    }
-    .footer-container {
-      max-width: 600px;
-      margin: auto;
-    }
+    footer a:hover { color: #ffecec; text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -233,10 +193,10 @@
     </div>
     <nav>
       <ul id="menu">
-        <li><a href="catalogo.html" class="active" title="Ver catálogo de quadrinhos">📚 Catálogo</a></li>
-        <li><a href="eventos.html" title="Ver eventos">🎉 Eventos</a></li>
-        <li><a href="sobre.html" title="Sobre a Gibiteka">ℹ️ Sobre</a></li>
-        <li><a href="contato.html" title="Entre em contato">📞 Contato</a></li>
+        <li><a href="catalogo.html" class="active">📚 Catálogo</a></li>
+        <li><a href="eventos.html">🎉 Eventos</a></li>
+        <li><a href="sobre.html">ℹ️ Sobre</a></li>
+        <li><a href="contato.html">📞 Contato</a></li>
       </ul>
     </nav>
   </header>
@@ -265,4 +225,9 @@
   </section>
 
   <!-- Novidades do Catálogo -->
-  <section id="catalog
+  <section id="catalogo">
+    <h2>📚 Novidades do Catálogo</h2>
+    <p>Chegaram novos títulos para você explorar!</p>
+    <ul>
+      <li>Naruto Vol. 45</li>
+      <li>
