@@ -5,14 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gibiteka Max Zendron</title>
   <style>
-    /* Reset básico */
+    /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: Arial, sans-serif;
-      background: #fdfdfd;
-      color: #222;
-      line-height: 1.6;
-    }
+    body { font-family: Arial, sans-serif; scroll-behavior: smooth; }
 
     /* Cabeçalho */
     header {
@@ -24,12 +19,9 @@
       align-items: center;
       position: relative;
     }
-    .logo img {
-      height: 50px;
-      display: block;
-    }
+    .logo img { height: 50px; }
 
-    /* Menu padrão */
+    /* Menu */
     nav ul {
       list-style: none;
       display: flex;
@@ -39,10 +31,14 @@
       color: #fff;
       text-decoration: none;
       font-weight: bold;
+      padding: .3rem .6rem;
+      border-radius: 4px;
+      transition: background .3s, color .3s;
     }
-    nav a:hover { text-decoration: underline; }
+    nav a:hover { background: rgba(255,255,255,0.2); }
+    nav a.active { background: #fff; color: #ff2d2d; }
 
-    /* Botão hamburguer (mobile) */
+    /* Botão hamburguer */
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -56,109 +52,14 @@
       border-radius: 2px;
     }
 
-    /* Hero */
-    .hero {
-      background: url('https://picsum.photos/1200/400?comic') center/cover no-repeat;
-      color: #fff;
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-    .hero h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px #000;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      text-shadow: 1px 1px #000;
-    }
+    /* Seções */
+    section { padding: 2rem; min-height: 60vh; }
+    #catalogo { background: #fdfdfd; }
+    #eventos { background: #f9f9f9; }
+    #sobre { background: #f3f3f3; }
+    #contato { background: #e9ecef; }
 
-    /* Busca */
-    .search {
-      margin: 2rem auto;
-      max-width: 600px;
-      display: flex;
-      gap: .5rem;
-    }
-    .search input {
-      flex: 1;
-      padding: .7rem;
-      border: 2px solid #ff2d2d;
-      border-radius: 5px;
-    }
-    .search button {
-      padding: .7rem 1rem;
-      background: #ff2d2d;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .search button:hover { background: #cc1f1f; }
-
-    /* Catálogo */
-    .catalogo { padding: 2rem; }
-    .catalogo h2 { margin-bottom: 1rem; color: #ff2d2d; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-    }
-    .card {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0,0,0,.1);
-      transition: transform .2s;
-    }
-    .card:hover { transform: scale(1.03); }
-    .card img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-    }
-    .card-body { padding: 1rem; }
-    .card-body h3 { margin-bottom: .5rem; font-size: 1.1rem; color: #333; }
-    .card-body p { font-size: .9rem; color: #555; }
-    .btn {
-      display: inline-block;
-      margin-top: .5rem;
-      padding: .5rem .8rem;
-      background: #ff2d2d;
-      color: #fff;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: .9rem;
-    }
-    .btn:hover { background: #cc1f1f; }
-
-    /* Eventos */
-    #eventos { padding: 2rem; background: #f9f9f9; }
-    #eventos h2 { color: #ff2d2d; margin-bottom: 1rem; }
-    .evento {
-      background: #fff;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,.1);
-    }
-
-    /* Sobre */
-    #sobre { padding: 2rem; background: #f3f3f3; }
-    #sobre h2 { color: #ff2d2d; margin-bottom: 1rem; }
-
-    /* Rodapé */
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-
-    /* Responsividade */
+    /* Responsivo */
     @media (max-width: 768px) {
       .menu-toggle { display: flex; }
       nav ul {
@@ -172,18 +73,6 @@
         padding: 1rem;
       }
       nav ul.active { display: flex; }
-      .hero h2 { font-size: 1.6rem; }
-      .hero p { font-size: 1rem; }
-      .search { flex-direction: column; }
-      .search button { width: 100%; }
-      .grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 480px) {
-      .hero { padding: 2rem 1rem; }
-      .hero h2 { font-size: 1.4rem; }
-      .hero p { font-size: .9rem; }
-      .card img { height: 200px; }
     }
   </style>
 </head>
@@ -191,67 +80,84 @@
   <!-- Cabeçalho -->
   <header>
     <div class="logo">
-      <a href="#">
-        <img src="logobarueri.jpg" alt="Logo Gibiteka Max Zendron">
-      </a>
+      <img src="logobarueri.jpg" alt="Logo Gibiteka Max Zendron">
     </div>
 
     <!-- Botão hamburguer -->
     <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
 
     <!-- Menu -->
     <nav>
       <ul id="menu">
-        <li><a href="#catalogo">Catálogo</a></li>
-        <li><a href="#eventos">Eventos</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <li><a href="#catalogo">📚 Catálogo</a></li>
+        <li><a href="#eventos">🎉 Eventos</a></li>
+        <li><a href="#sobre">ℹ️ Sobre</a></li>
+        <li><a href="#contato">📞 Contato</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h2>Bem-vindo à Gibiteka Max Zendron</h2>
-    <p>Explore quadrinhos, mangás e graphic novels online e presencialmente.</p>
+  <!-- Seções -->
+  <section id="catalogo">
+    <h2>Catálogo de Quadrinhos</h2>
+    <p>Aqui você encontra HQs, mangás e graphic novels disponíveis na Gibiteka.</p>
   </section>
 
-  <!-- Busca -->
-  <form class="search">
-    <input type="text" placeholder="Buscar por título, autor ou personagem...">
-    <button type="submit">Buscar</button>
-  </form>
+  <section id="eventos">
+    <h2>Eventos da Gibiteka</h2>
+    <p>Participe de clubes de leitura, oficinas e encontros culturais.</p>
+  </section>
 
-  <!-- Catálogo -->
-  <section class="catalogo" id="catalogo">
-    <h2>Catálogo de Quadrinhos</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://picsum.photos/200/300?comic1" alt="Capa HQ">
-        <div class="card-body">
-          <h3>Homem-Aranha: De Volta ao Lar</h3>
-          <p>Autor: Stan Lee • Formato: Físico/Digital</p>
-          <a href="#" class="btn">Ler Online</a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://picsum.photos/200/300?comic2" alt="Capa HQ">
-        <div class="card-body">
-          <h3>Batman: Ano Um</h3>
-          <p>Autor: Frank Miller • Formato: Físico</p>
-          <a href="#" class="btn">Reservar</a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://picsum.photos/200/300?comic3" alt="Capa HQ">
-        <div class="card-body">
-          <h3>One Piece Vol. 1</h3>
-          <p>Autor: Eiichiro Oda • Formato: Digital</p>
-          <a href="#" class="btn">Ler Online</a>
-        </div>
-      </div>
-    </div
+  <section id="sobre">
+    <h2>Sobre a Gibiteka Max Zendron</h2>
+    <p>A Gibiteka é um espaço dedicado à preservação e difusão dos quadrinhos em Barueri.</p>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Email: gibiteka@barueri.sp.gov.br<br>Telefone: (11) 99999-9999</p>
+  </section>
+
+  <!-- Script -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    // Abre/fecha menu no mobile
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+
+    // Fecha menu ao clicar em um item (mobile)
+    document.querySelectorAll('#menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('active');
+      });
+    });
+
+    // Destacar item ativo conforme seção visível
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("#menu a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 80;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
