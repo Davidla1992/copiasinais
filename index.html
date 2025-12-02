@@ -19,6 +19,7 @@
       justify-content: space-between;
       align-items: center;
       position: relative;
+      z-index: 1000; /* garante que o header fique acima do hero */
     }
     .logo img { height: 50px; }
 
@@ -69,6 +70,7 @@
         right: 0;
         width: 220px;
         padding: 1rem;
+        z-index: 2000; /* 🔥 garante que fique acima do hero */
       }
       nav ul.show { display: flex; }
 
@@ -92,8 +94,12 @@
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0,0,0,0.5);
+      z-index: 0; /* 🔽 camada mais baixa */
     }
-    #hero h1, #hero p, #hero a { position: relative; }
+    #hero h1, #hero p, #hero a {
+      position: relative;
+      z-index: 1; /* 🔼 texto acima da camada escura */
+    }
     #hero h1 { font-size: 3rem; margin-bottom: 1rem; }
     #hero p { font-size: 1.2rem; margin-bottom: 2rem; }
     #hero a {
@@ -248,10 +254,4 @@
     </ul>
   </section>
 
-  <!-- Galeria de Fotos -->
-  <section id="galeria">
-    <h2>🖼️ Galeria de Fotos</h2>
-    <p>Veja alguns momentos especiais da Gibiteka.</p>
-    <div class="grid">
-      <img src="foto1.jpg" alt="Evento na Gibiteka">
-      <img src="
+  <!--
