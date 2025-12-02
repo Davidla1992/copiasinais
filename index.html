@@ -7,7 +7,7 @@
   <style>
     /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; }
+    body { font-family: 'Arial', sans-serif; line-height: 1.6; }
 
     /* Cabeçalho */
     header {
@@ -21,7 +21,6 @@
     }
     .logo img { height: 50px; }
 
-    /* Menu padrão (desktop) */
     nav ul {
       list-style: none;
       display: flex;
@@ -56,7 +55,7 @@
     @media (max-width: 768px) {
       .menu-toggle { display: flex; }
       nav ul {
-        display: none; /* escondido por padrão */
+        display: none;
         flex-direction: column;
         background: #ff2d2d;
         position: absolute;
@@ -65,12 +64,64 @@
         width: 220px;
         padding: 1rem;
       }
-      nav ul.show { display: flex; } /* aparece quando a classe "show" é adicionada */
+      nav ul.show { display: flex; }
     }
 
-    /* Seções */
-    section { padding: 2rem; }
-    #home { background: #fdfdfd; }
+    /* Hero Section */
+    #hero {
+      background: url('banner.jpg') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+    #hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    #hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+    #hero a {
+      background: #fff;
+      color: #ff2d2d;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    #hero a:hover { background: #f1f1f1; }
+
+    /* Destaques */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin: 2rem;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    }
+    .card h3 { margin-bottom: .5rem; color: #ff2d2d; }
+    .card p { margin-bottom: 1rem; }
+    .card a {
+      background: #ff2d2d;
+      color: #fff;
+      padding: .5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .card a:hover { background: #cc1f1f; }
+
+    /* Rodapé */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    footer p { margin: .5rem 0; }
   </style>
 </head>
 <body>
@@ -79,13 +130,9 @@
     <div class="logo">
       <img src="logobarueri.jpg" alt="Logo Gibiteka Max Zendron">
     </div>
-
-    <!-- Botão hamburguer -->
     <div class="menu-toggle" id="menu-toggle">
       <span></span><span></span><span></span>
     </div>
-
-    <!-- Menu -->
     <nav>
       <ul id="menu">
         <li><a href="catalogo.html">📚 Catálogo</a></li>
@@ -96,11 +143,46 @@
     </nav>
   </header>
 
-  <!-- Página inicial -->
-  <section id="home">
-    <h2>Bem-vindo à Gibiteka Max Zendron</h2>
-    <p>Explore nosso acervo de quadrinhos, participe de eventos e descubra mais sobre nossa história.</p>
+  <!-- Hero -->
+  <section id="hero">
+    <h1>Bem-vindo à Gibiteka Max Zendron</h1>
+    <p>O espaço cultural de Barueri dedicado aos quadrinhos e mangás.</p>
+    <a href="catalogo.html">Explore o Catálogo</a>
   </section>
+
+  <!-- Destaques -->
+  <section>
+    <h2 style="text-align:center; margin:2rem 0;">Descubra mais</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>📚 Catálogo</h3>
+        <p>Explore nosso acervo de HQs e mangás.</p>
+        <a href="catalogo.html">Ver mais</a>
+      </div>
+      <div class="card">
+        <h3>🎉 Eventos</h3>
+        <p>Participe de oficinas, clubes de leitura e exposições.</p>
+        <a href="eventos.html">Ver programação</a>
+      </div>
+      <div class="card">
+        <h3>ℹ️ Sobre</h3>
+        <p>Conheça a história e missão da Gibiteka.</p>
+        <a href="sobre.html">Saiba mais</a>
+      </div>
+      <div class="card">
+        <h3>📞 Contato</h3>
+        <p>Fale conosco e saiba como chegar.</p>
+        <a href="contato.html">Entrar em contato</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>📍 Rua XYZ, Barueri – SP</p>
+    <p>📧 gibiteka@barueri.sp.gov.br | ☎ (11) 99999-9999</p>
+    <p>© 2025 Gibiteka Max Zendron – Todos os direitos reservados</p>
+  </footer>
 
   <!-- Script -->
   <script>
@@ -108,10 +190,9 @@
     const menu = document.getElementById('menu');
 
     toggle.addEventListener('click', () => {
-      menu.classList.toggle('show'); // alterna a classe "show"
+      menu.classList.toggle('show');
     });
 
-    // Fecha menu ao clicar em um item
     document.querySelectorAll('#menu a').forEach(link => {
       link.addEventListener('click', () => {
         menu.classList.remove('show');
