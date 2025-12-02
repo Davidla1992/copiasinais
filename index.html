@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gibiteka Max Zendron</title>
+  <meta name="description" content="Gibiteka Max Zendron - Espaço cultural de Barueri dedicado aos quadrinhos e mangás.">
   <style>
     /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -102,8 +103,84 @@
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
+      transition: background .3s, color .3s;
     }
-    #hero a:hover { background: #f1f1f1; }
+    #hero a:hover {
+      background: #ff2d2d;
+      color: #fff;
+    }
+
+    /* Seções gerais */
+    section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ff2d2d;
+    }
+    section p {
+      color: #555;
+      margin-bottom: 2rem;
+    }
+
+    /* Cards de eventos */
+    #eventos .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      width: 280px;
+      transition: transform .3s, box-shadow .3s;
+    }
+    #eventos .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    #eventos .cards-container {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Lista de novidades do catálogo */
+    #catalogo {
+      background: #ffefef;
+    }
+    #catalogo ul {
+      list-style: none;
+      padding: 0;
+    }
+    #catalogo li {
+      margin: 1rem 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+      position: relative;
+    }
+    #catalogo li::before {
+      content: "✨";
+      position: absolute;
+      left: -25px;
+    }
+
+    /* Galeria de fotos */
+    #galeria .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap: 1rem;
+    }
+    #galeria img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform .3s, filter .3s;
+    }
+    #galeria img:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
 
     /* Rodapé */
     footer {
@@ -114,23 +191,25 @@
       margin-top: 2rem;
     }
     footer p { margin: .5rem 0; }
+    footer a { color: #fff; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <!-- Cabeçalho -->
   <header>
     <div class="logo">
-      <img src="logobarueri.jpg" alt="Logo Gibiteka Max Zendron">
+      <img src="logobarueri.jpg" alt="Logo Gibiteka Max Zendron" loading="lazy">
     </div>
-    <div class="menu-toggle" id="menu-toggle">
+    <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menu de navegação">
       <span></span><span></span><span></span>
     </div>
     <nav>
       <ul id="menu">
-        <li><a href="catalogo.html" class="active">📚 Catálogo</a></li>
-        <li><a href="eventos.html">🎉 Eventos</a></li>
-        <li><a href="sobre.html">ℹ️ Sobre</a></li>
-        <li><a href="contato.html">📞 Contato</a></li>
+        <li><a href="catalogo.html" class="active" title="Ver catálogo de quadrinhos">📚 Catálogo</a></li>
+        <li><a href="eventos.html" title="Ver eventos">🎉 Eventos</a></li>
+        <li><a href="sobre.html" title="Sobre a Gibiteka">ℹ️ Sobre</a></li>
+        <li><a href="contato.html" title="Entre em contato">📞 Contato</a></li>
       </ul>
     </nav>
   </header>
@@ -142,27 +221,37 @@
     <a href="catalogo.html">Explore o Catálogo</a>
   </section>
 
-  <!-- Rodapé -->
-  <footer>
-    <p>📍 Rua XYZ, Barueri – SP</p>
-    <p>📧 gibiteka@barueri.sp.gov.br | ☎ (11) 99999-9999</p>
-    <p>© 2025 Gibiteka Max Zendron – Todos os direitos reservados</p>
-  </footer>
+  <!-- Últimos Eventos -->
+  <section id="eventos">
+    <h2>🎉 Últimos Eventos</h2>
+    <p>Confira os eventos que já movimentaram a Gibiteka!</p>
+    <div class="cards-container">
+      <div class="card">
+        <h3>Oficina de Mangá</h3>
+        <p>Novembro 2025 – Jovens aprenderam técnicas de desenho com artistas locais.</p>
+      </div>
+      <div class="card">
+        <h3>Encontro Cosplay</h3>
+        <p>Outubro 2025 – Um desfile incrível com personagens de anime e HQs.</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- Script -->
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
+  <!-- Novidades do Catálogo -->
+  <section id="catalogo">
+    <h2>📚 Novidades do Catálogo</h2>
+    <p>Chegaram novos títulos para você explorar!</p>
+    <ul>
+      <li>Naruto Vol. 45</li>
+      <li>Batman: Ano Um</li>
+      <li>Turma da Mônica Jovem #100</li>
+    </ul>
+  </section>
 
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('show');
-    });
-
-    document.querySelectorAll('#menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('show');
-      });
-    });
-  </script>
-</body>
-</html>
+  <!-- Galeria de Fotos -->
+  <section id="galeria">
+    <h2>🖼️ Galeria de Fotos</h2>
+    <p>Veja alguns momentos especiais da Gibiteka.</p>
+    <div class="grid">
+      <img src="foto1.jpg" alt="Evento na Gibiteka">
+      <img src="
