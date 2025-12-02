@@ -35,7 +35,12 @@
       transition: background .3s, color .3s;
     }
     nav a:hover { background: rgba(255,255,255,0.2); }
-    nav a.active { background: #fff; color: #ff2d2d; }
+
+    /* Destaque do link ativo (desktop) */
+    nav a.active {
+      background: #fff;
+      color: #ff2d2d;
+    }
 
     /* Botão hamburguer */
     .menu-toggle {
@@ -65,6 +70,12 @@
         padding: 1rem;
       }
       nav ul.show { display: flex; }
+
+      /* Corrige o visual do link ativo no mobile */
+      nav a.active {
+        background: rgba(255,255,255,0.2);
+        color: #fff;
+      }
     }
 
     /* Hero Section */
@@ -79,11 +90,9 @@
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.5); /* camada escura para contraste */
+      background: rgba(0,0,0,0.5);
     }
-    #hero h1, #hero p, #hero a {
-      position: relative; /* mantém texto acima da camada escura */
-    }
+    #hero h1, #hero p, #hero a { position: relative; }
     #hero h1 { font-size: 3rem; margin-bottom: 1rem; }
     #hero p { font-size: 1.2rem; margin-bottom: 2rem; }
     #hero a {
@@ -95,33 +104,6 @@
       font-weight: bold;
     }
     #hero a:hover { background: #f1f1f1; }
-
-    /* Destaques */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      margin: 2rem;
-    }
-    .card {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,.1);
-    }
-    .card h3 { margin-bottom: .5rem; color: #ff2d2d; }
-    .card p { margin-bottom: 1rem; }
-    .card a {
-      background: #ff2d2d;
-      color: #fff;
-      padding: .5rem 1rem;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .card a:hover { background: #cc1f1f; }
 
     /* Rodapé */
     footer {
@@ -145,7 +127,7 @@
     </div>
     <nav>
       <ul id="menu">
-        <li><a href="catalogo.html">📚 Catálogo</a></li>
+        <li><a href="catalogo.html" class="active">📚 Catálogo</a></li>
         <li><a href="eventos.html">🎉 Eventos</a></li>
         <li><a href="sobre.html">ℹ️ Sobre</a></li>
         <li><a href="contato.html">📞 Contato</a></li>
@@ -158,33 +140,6 @@
     <h1>Gibiteka Max Zendron</h1>
     <p>O espaço cultural de Barueri dedicado aos quadrinhos e mangás.</p>
     <a href="catalogo.html">Explore o Catálogo</a>
-  </section>
-
-  <!-- Destaques -->
-  <section>
-    <h2 style="text-align:center; margin:2rem 0;">Descubra mais</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>📚 Catálogo</h3>
-        <p>Explore nosso acervo de HQs e mangás.</p>
-        <a href="catalogo.html">Ver mais</a>
-      </div>
-      <div class="card">
-        <h3>🎉 Eventos</h3>
-        <p>Participe de oficinas, clubes de leitura e exposições.</p>
-        <a href="eventos.html">Ver programação</a>
-      </div>
-      <div class="card">
-        <h3>ℹ️ Sobre</h3>
-        <p>Conheça a história e missão da Gibiteka.</p>
-        <a href="sobre.html">Saiba mais</a>
-      </div>
-      <div class="card">
-        <h3>📞 Contato</h3>
-        <p>Fale conosco e saiba como chegar.</p>
-        <a href="contato.html">Entrar em contato</a>
-      </div>
-    </div>
   </section>
 
   <!-- Rodapé -->
