@@ -69,10 +69,20 @@
 
     /* Hero Section */
     #hero {
-      background: url('banner.jpg') center/cover no-repeat;
+      position: relative;
+      background: url('fotogibiteka.jpeg') center/cover no-repeat;
       color: #fff;
       text-align: center;
       padding: 5rem 2rem;
+    }
+    #hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5); /* camada escura para contraste */
+    }
+    #hero h1, #hero p, #hero a {
+      position: relative; /* mantém texto acima da camada escura */
     }
     #hero h1 { font-size: 3rem; margin-bottom: 1rem; }
     #hero p { font-size: 1.2rem; margin-bottom: 2rem; }
