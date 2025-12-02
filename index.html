@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gibiteka de Barueri</title>
+  <title>Gibiteka Max Zendron</title>
   <style>
     /* Reset básico */
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -22,15 +22,17 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
     .logo img {
-      height: 50px;   /* tamanho do logo */
+      height: 50px;
       display: block;
     }
     nav ul {
       list-style: none;
       display: flex;
       gap: 1rem;
+      flex-wrap: wrap;
     }
     nav a {
       color: #fff;
@@ -174,6 +176,49 @@
       padding: 1rem;
       margin-top: 2rem;
     }
+
+    /* Media Queries para responsividade */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: .5rem;
+        margin-top: 1rem;
+      }
+      .hero h2 {
+        font-size: 1.6rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .search {
+        flex-direction: column;
+      }
+      .search button {
+        width: 100%;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 2rem 1rem;
+      }
+      .hero h2 {
+        font-size: 1.4rem;
+      }
+      .hero p {
+        font-size: .9rem;
+      }
+      .card img {
+        height: 200px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -181,7 +226,7 @@
   <header>
     <div class="logo">
       <a href="#">
-        <img src="logobarueri.jpg" alt="Logo Gibiteka de Barueri">
+        <img src="logobarueri.jpg" alt="Logo Gibiteka Max Zendron">
       </a>
     </div>
     <nav>
@@ -195,7 +240,7 @@
 
   <!-- Hero -->
   <section class="hero">
-    <h2>Bem-vindo à Gibiteka Digital</h2>
+    <h2>Bem-vindo à Gibiteka Max Zendron</h2>
     <p>Explore quadrinhos, mangás e graphic novels online e presencialmente.</p>
   </section>
 
@@ -245,22 +290,4 @@
       <a href="#" class="btn">Inscreva-se</a>
     </div>
     <div class="evento">
-      <strong>Oficina de HQ</strong> — 20/12/2025<br>
-      Aprenda técnicas de desenho e narrativa gráfica.<br>
-      <a href="#" class="btn">Participar</a>
-    </div>
-  </section>
-
-  <!-- Sobre -->
-  <section id="sobre">
-    <h2>Sobre a Gibiteka</h2>
-    <p>A Gibiteka de Barueri é um espaço dedicado à leitura e preservação de quadrinhos, mangás e graphic novels. Nosso objetivo é democratizar o acesso à cultura pop e formar novos leitores.</p>
-    <p>Oferecemos acervo físico e digital, além de eventos culturais e oficinas para todas as idades.</p>
-  </section>
-
-  <!-- Rodapé -->
-  <footer>
-    <p>&copy; 2025 Gibiteka de Barueri — Todos os direitos reservados.</p>
-  </footer>
-</body>
-</html>
+      <strong>Oficina de HQ</strong> — 20/12
