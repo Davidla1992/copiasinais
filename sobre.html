@@ -1,1 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre - Gibiteka Max Zendron</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #f3f3f3; }
 
+    /* Cabeçalho */
+    header {
+      background: #ff2d2d;
+      color: #fff;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+    .logo img { height: 50px; }
+
+    /* Menu padrão (desktop) */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: .3rem .6rem;
+      border-radius: 4px;
+      transition: background .3s, color .3s;
+    }
+    nav a:hover { background: rgba(255,255,255,0.2); }
+    nav a.active { background: #fff; color: #ff2d2d; }
+
+    /* Botão hamburguer */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: #fff;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    /* Conteúdo */
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    }
+    main h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #ff2d2d;
+    }
+    main p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Responsivo (mobile) */
+    @media (max-width: 768px) {
+      .menu-toggle { display: flex; }
+      nav ul {
+        flex-direction: column;
+        background: #ff2d2d;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 220px;
+        padding: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+      nav ul.show { max-height: 500px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="logobarueri.jpg" alt="Logo Gibiteka Max Zendron"></a>
+    </div>
+
+    <!-- Botão hamburguer -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <!-- Menu -->
+    <nav>
+      <ul id="menu">
+        <li><a href="catalogo.html">📚 Catálogo</a></li>
+        <li><a href="eventos.html">🎉 Eventos</a></li>
+        <li><a href="sobre.html" class="active">ℹ️ Sobre</a></li>
+        <li><a href="contato.html">📞 Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sobre -->
+  <main>
+    <h2>Sobre a Gibiteka Max Zendron</h2>
+    <p>A Gibiteka Max Zendron é um espaço cultural localizado em Barueri, dedicado à leitura, preservação e valorização dos quadrinhos e mangás.</p>
+    <p>Fundada com o objetivo de democratizar o acesso à cultura pop e às histórias em quadrinhos, a Gibiteka oferece um acervo diversificado que inclui títulos clássicos, lançamentos recentes e obras independentes.</p>
+    <p>Além do acervo físico e digital, o espaço promove atividades culturais regulares, como clubes de leitura, oficinas de HQ, sessões de cinema geek e exposições temáticas.</p>
+    <p>Nosso público-alvo inclui jovens, adultos, fãs de cultura pop e pesquisadores que desejam explorar o universo dos quadrinhos em um ambiente acolhedor e inspirador.</p>
+    <p><strong>Missão:</strong> Incentivar a leitura, preservar a memória dos quadrinhos e fomentar a produção cultural.</p>
+    <p><strong>Diferencial:</strong> Um espaço único que une acervo, atividades e comunidade em torno da paixão pelos quadrinhos.</p>
+  </main>
+
+  <!-- Script -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+
+    document.querySelectorAll('#menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('show');
+      });
+    });
+  </script>
+</body>
+</html>
