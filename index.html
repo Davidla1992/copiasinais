@@ -1,257 +1,213 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Início - Gibiteka Max Zendron</title>
-  <meta name="description" content="Bem-vindo à Gibiteka Max Zendron, sua biblioteca de quadrinhos e livros ilustrados." />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gibiteka de Barueri</title>
   <style>
+    /* Reset básico */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0A1F44, #2B3A67);
-      color: #fff;
+      font-family: Arial, sans-serif;
+      background: #fdfdfd;
+      color: #222;
+      line-height: 1.6;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem;
-    }
-
+    /* Cabeçalho */
     header {
-      background: #2B3A67;
-      padding: 1rem 0;
-      box-shadow: 0 2px 10px rgba(0, 191, 255, 0.2);
-      position: relative;
-    }
-
-    .header-flex {
+      background: #ff2d2d;
+      color: #fff;
+      padding: 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
     }
-
-    .site-title {
+    header h1 {
       font-size: 1.5rem;
-      font-weight: 700;
-      color: #00BFFF;
-    }
-
-    /* Botão hambúrguer */
-    .menu-toggle {
-      font-size: 1.8rem;
-      background: none;
-      border: none;
-      color: #00BFFF;
-      cursor: pointer;
-    }
-
-    /* Menu escondido por padrão em mobile */
-    .nav-menu {
-      display: none;
-      background: #2B3A67;
-      position: absolute;
-      top: 60px;
-      right: 10px;
-      border-radius: 8px;
-      padding: 1rem;
-      box-shadow: 0 4px 12px rgba(0,191,255,0.3);
-    }
-
-    .nav-menu ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-menu li {
-      margin: 0.5rem 0;
-    }
-
-    .nav-menu li a {
-      color: #00BFFF;
-      text-decoration: none;
-      font-weight: 600;
-      display: block;
-      padding: 0.5rem 0;
-    }
-
-    .nav-menu li a:hover {
-      color: #1E90FF;
-    }
-
-    /* Em telas grandes, mostra menu horizontal */
-    @media (min-width: 768px) {
-      .menu-toggle {
-        display: none;
-      }
-      .nav-menu {
-        display: block;
-        position: static;
-        background: none;
-        padding: 0;
-        box-shadow: none;
-      }
-      .nav-menu ul {
-        display: flex;
-        gap: 1rem;
-      }
-      .nav-menu li {
-        margin: 0;
-      }
-      .nav-menu li a {
-        padding: 0;
-      }
-    }
-
-    .hero {
-      text-align: center;
-      padding: 3.5rem 1rem;
-    }
-
-    .hero h1 {
-      color: #00BFFF;
-      font-size: 2.4rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      color: #E0F7FF;
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .button {
-      background: linear-gradient(135deg, #1E90FF, #00BFFF);
-      color: #fff;
-      padding: 0.75rem 1.25rem;
-      border-radius: 8px;
       font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    nav a {
+      color: #fff;
       text-decoration: none;
-      margin: 0.5rem;
-      display: inline-block;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
     }
 
-    .button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0,191,255,0.4);
-    }
-
-    .image-overlay {
-      position: relative;
-      margin-top: 2rem;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(0,191,255,0.3);
+    /* Hero */
+    .hero {
+      background: url('https://picsum.photos/1200/400?comic') center/cover no-repeat;
+      color: #fff;
       text-align: center;
+      padding: 4rem 2rem;
     }
-
-    .fachada-img {
-      width: 50%;
-      max-width: 600px;
-      height: auto;
-      display: inline-block;
-      border-radius: 12px;
-    }
-
-    .overlay-text {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(10, 31, 68, 0.7);
-      color: #00BFFF;
-      padding: 0.75rem 1rem;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    .slogan {
-      margin: 2rem auto;
+    .hero h2 {
       font-size: 2rem;
-      font-weight: 700;
-      color: #00BFFF;
-      text-align: center;
-      background: rgba(10,31,68,0.6);
-      padding: 1rem 1.5rem;
-      border-radius: 12px;
-      max-width: 800px;
-      box-shadow: 0 0 15px rgba(0,191,255,0.2);
-      opacity: 0;
-      animation: fadeIn 2s ease forwards, glow 2s ease-in-out infinite alternate;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px #000;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      text-shadow: 1px 1px #000;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Busca */
+    .search {
+      margin: 2rem auto;
+      max-width: 600px;
+      display: flex;
+      gap: .5rem;
+    }
+    .search input {
+      flex: 1;
+      padding: .7rem;
+      border: 2px solid #ff2d2d;
+      border-radius: 5px;
+    }
+    .search button {
+      padding: .7rem 1rem;
+      background: #ff2d2d;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .search button:hover {
+      background: #cc1f1f;
     }
 
-    @keyframes glow {
-      from { box-shadow: 0 0 15px rgba(0,191,255,0.2); }
-      to { box-shadow: 0 0 30px rgba(0,191,255,0.8); }
+    /* Catálogo */
+    .catalogo {
+      padding: 2rem;
+    }
+    .catalogo h2 {
+      margin-bottom: 1rem;
+      color: #ff2d2d;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,.1);
+      transition: transform .2s;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 1rem;
+    }
+    .card-body h3 {
+      margin-bottom: .5rem;
+      font-size: 1.1rem;
+      color: #333;
+    }
+    .card-body p {
+      font-size: .9rem;
+      color: #555;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: .5rem;
+      padding: .5rem .8rem;
+      background: #ff2d2d;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: .9rem;
+    }
+    .btn:hover {
+      background: #cc1f1f;
     }
 
+    /* Rodapé */
     footer {
-      background: #2B3A67;
-      color: #00BFFF;
+      background: #222;
+      color: #fff;
       text-align: center;
       padding: 1rem;
-      font-size: 0.9rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
+  <!-- Cabeçalho -->
   <header>
-    <div class="container header-flex">
-      <h1 class="site-title">Gibiteka Max Zendron</h1>
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-      <nav id="navMenu" class="nav-menu">
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="acervo.html">Acervo</a></li>
-          <li><a href="servicos.html">Serviços</a></li>
-          <li><a href="pesquisa.html">Pesquisa</a></li>
-          <li><a href="perfil.html">Perfil</a></li>
-          <li><a href="dashboard.html">Dashboard</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a onclick="logout()">Logout</a></li>
-        </ul>
-      </nav>
-    </div>
+    <h1>📚 Gibiteka de Barueri</h1>
+    <nav>
+      <ul>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#eventos">Eventos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="hero">
-    <h1>Bem-vindo à Gibiteka Max Zendron</h1>
-    <p id="welcomeMsg">Sua biblioteca de quadrinhos e livros ilustrados.</p>
-    <a href="login.html" class="button" id="loginBtn">Entrar / Cadastrar</a>
-    <a href="dashboard.html" class="button" id="dashboardBtn" style="display:none;">Ir para Dashboard</a>
+  <!-- Hero -->
+  <section class="hero">
+    <h2>Bem-vindo à Gibiteka Digital</h2>
+    <p>Explore quadrinhos, mangás e graphic novels online e presencialmente.</p>
+  </section>
 
-    <div class="image-overlay">
-      <img src="fachada-gibiteka.jpeg" alt="Fachada da Gibiteka" class="fachada-img" />
-      <div class="overlay-text">📍 Nossa fachada oficial</div>
+  <!-- Busca -->
+  <form class="search">
+    <input type="text" placeholder="Buscar por título, autor ou personagem...">
+    <button type="submit">Buscar</button>
+  </form>
+
+  <!-- Catálogo -->
+  <section class="catalogo" id="catalogo">
+    <h2>Catálogo de Quadrinhos</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://picsum.photos/200/300?comic1" alt="Capa HQ">
+        <div class="card-body">
+          <h3>Homem-Aranha: De Volta ao Lar</h3>
+          <p>Autor: Stan Lee • Formato: Físico/Digital</p>
+          <a href="#" class="btn">Ler Online</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/200/300?comic2" alt="Capa HQ">
+        <div class="card-body">
+          <h3>Batman: Ano Um</h3>
+          <p>Autor: Frank Miller • Formato: Físico</p>
+          <a href="#" class="btn">Reservar</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/200/300?comic3" alt="Capa HQ">
+        <div class="card-body">
+          <h3>One Piece Vol. 1</h3>
+          <p>Autor: Eiichiro Oda • Formato: Digital</p>
+          <a href="#" class="btn">Ler Online</a>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="slogan">✨ Aqui a leitura ganha vida!</div>
-  </main>
-
+  <!-- Rodapé -->
   <footer>
-    <div class="container">&copy; 2025 Gibiteka Max Zendron — Todos os direitos reservados</div>
+    <p>&copy; 2025 Gibiteka de Barueri — Todos os direitos reservados.</p>
   </footer>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("navMenu");
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
-    }
-
-    const loggedUser = localStorage.getItem("loggedUser");
-    if (loggedUser) {
-      const userData = JSON.parse(localStorage.getItem(`user:${loggedUser}`)) || { name: "Usuário" };
-      document.getElementById("welcomeMsg").textContent = `Bem-vindo de volta, ${userData.name}!`;
-      document.getElementById("loginBtn").style.display = "none";
-      document.get
+</body>
+</html>
