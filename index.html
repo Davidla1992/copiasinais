@@ -23,9 +23,9 @@
       justify-content: space-between;
       align-items: center;
     }
-    header h1 {
-      font-size: 1.5rem;
-      font-weight: bold;
+    .logo img {
+      height: 50px;   /* tamanho do logo */
+      display: block;
     }
     nav ul {
       list-style: none;
@@ -139,6 +139,33 @@
       background: #cc1f1f;
     }
 
+    /* Eventos */
+    #eventos {
+      padding: 2rem;
+      background: #f9f9f9;
+    }
+    #eventos h2 {
+      color: #ff2d2d;
+      margin-bottom: 1rem;
+    }
+    .evento {
+      background: #fff;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    }
+
+    /* Sobre */
+    #sobre {
+      padding: 2rem;
+      background: #f3f3f3;
+    }
+    #sobre h2 {
+      color: #ff2d2d;
+      margin-bottom: 1rem;
+    }
+
     /* Rodapé */
     footer {
       background: #222;
@@ -152,7 +179,11 @@
 <body>
   <!-- Cabeçalho -->
   <header>
-    <h1>📚 Gibiteka de Barueri</h1>
+    <div class="logo">
+      <a href="#">
+        <img src="logobarueri.jpg" alt="Logo Gibiteka de Barueri">
+      </a>
+    </div>
     <nav>
       <ul>
         <li><a href="#catalogo">Catálogo</a></li>
@@ -203,6 +234,28 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- Eventos -->
+  <section id="eventos">
+    <h2>Eventos da Gibiteka</h2>
+    <div class="evento">
+      <strong>Clube de Mangá</strong> — 15/12/2025<br>
+      Encontro para discutir os volumes de One Piece.<br>
+      <a href="#" class="btn">Inscreva-se</a>
+    </div>
+    <div class="evento">
+      <strong>Oficina de HQ</strong> — 20/12/2025<br>
+      Aprenda técnicas de desenho e narrativa gráfica.<br>
+      <a href="#" class="btn">Participar</a>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre">
+    <h2>Sobre a Gibiteka</h2>
+    <p>A Gibiteka de Barueri é um espaço dedicado à leitura e preservação de quadrinhos, mangás e graphic novels. Nosso objetivo é democratizar o acesso à cultura pop e formar novos leitores.</p>
+    <p>Oferecemos acervo físico e digital, além de eventos culturais e oficinas para todas as idades.</p>
   </section>
 
   <!-- Rodapé -->
