@@ -1,1 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - Gibiteka Max Zendron</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #e9ecef; }
 
+    /* Cabeçalho */
+    header {
+      background: #ff2d2d;
+      color: #fff;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+    .logo img { height: 50px; }
+
+    /* Menu padrão (desktop) */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: .3rem .6rem;
+      border-radius: 4px;
+      transition: background .3s, color .3s;
+    }
+    nav a:hover { background: rgba(255,255,255,0.2); }
+    nav a.active { background: #fff; color: #ff2d2d; }
+
+    /* Botão hamburguer */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: #fff;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    /* Conteúdo */
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    }
+    main h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #ff2d2d;
+    }
+    main p {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    form label {
+      font-weight: bold;
+      display: block;
+      margin-top: .5rem;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: .5rem;
+      margin-top: .3rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      margin-top: 1rem;
+      background: #ff2d2d;
+      color: #fff;
+      border: none;
+      padding: .7rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    form button:hover { background: #cc1f1f; }
+
+    /* Responsivo (mobile) */
+    @media (max-width: 768px) {
+      .menu-toggle { display: flex; }
+      nav ul {
+        flex-direction: column;
+        background: #ff2d2d;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 220px;
+        padding: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+      nav ul.show { max-height: 500px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="logobarueri.jpg" alt="Logo Gibiteka Max Zendron"></a>
+    </div>
+
+    <!-- Botão hamburguer -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <!-- Menu -->
+    <nav>
+      <ul id="menu">
+        <li><a href="catalogo.html">📚 Catálogo</a></li>
+        <li><a href="eventos.html">🎉 Eventos</a></li>
+        <li><a href="sobre.html">ℹ️ Sobre</a></li>
+        <li><a href="contato.html" class="active">📞 Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contato -->
+  <main>
+    <h2>Contato</h2>
+    <p><strong>Endereço:</strong> Rua XYZ, Barueri – SP</p>
+    <p><strong>Telefone:</strong> (11) 99999-9999</p>
+    <p><strong>Email:</strong> gibiteka@barueri.sp.gov.br</p>
+    <p><strong>Horário de funcionamento:</strong> segunda a sábado, das 9h às 18h</p>
+
+    <form>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+
+  <!-- Script -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+
+    document.querySelectorAll('#menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('show');
+      });
+    });
+  </script>
+</body>
+</html>
