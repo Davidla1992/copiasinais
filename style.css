@@ -7,9 +7,8 @@
 
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background: #fff; /* fundo branco */
-  color: #000; /* texto preto */
+  background: #fff;
+  color: #000;
 }
 
 /* Cabeçalho */
@@ -86,39 +85,42 @@ nav a:hover {
   color: #000;
 }
 
-/* Seções */
-section {
-  padding: 2rem;
+/* Rodapé */
+footer {
+  background: #000;
+  color: #fff;
+  padding: 2rem 1rem;
 }
 
-.cards-container {
+.footer-container {
   display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
 }
 
-.card {
-  background: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  flex: 1;
-  min-width: 250px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  border-left: 5px solid #0f0; /* destaque verde limão */
+.footer-column h3 {
+  margin-bottom: 0.5rem;
 }
 
-/* Galeria */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-}
+/* Responsividade */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #f00; /* vermelho */
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+  }
 
-.grid img {
-  width: 100%;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
+  nav ul.show {
+    display: flex;
+  }
 
-.grid img:hover {
-  transform: scale(1.
+  .menu-toggle {
+    display: flex;
+  }
+}
