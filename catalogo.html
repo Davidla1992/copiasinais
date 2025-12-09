@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,17 +7,18 @@
   <style>
     /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background: #fdfdfd; }
+    body { font-family: Arial, sans-serif; background: #ffffff; color:#212121; }
 
-    /* Cabeçalho */
+    /* Cabeçalho (Azul + Amarelo Royal) */
     header {
-      background: #ff2d2d;
+      background: #1565c0; /* Azul */
       color: #fff;
       padding: 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: relative;
+      border-bottom: 4px solid #fbc02d; /* Amarelo Royal */
     }
     .logo img { height: 50px; }
 
@@ -37,7 +37,7 @@
       transition: background .3s, color .3s;
     }
     nav a:hover { background: rgba(255,255,255,0.2); }
-    nav a.active { background: #fff; color: #ff2d2d; }
+    nav a.active { background: #fff; color: #c62828; } /* Vermelho ativo */
 
     /* Botão hamburguer */
     .menu-toggle {
@@ -51,6 +51,22 @@
       background: #fff;
       margin: 4px 0;
       border-radius: 2px;
+    }
+
+    /* Hero com imagem atrás do título */
+    #hero {
+      text-align: center;
+      padding: 60px 20px;
+      color: #212121;
+      background:
+        linear-gradient(to bottom, rgba(251,192,45,0.75), rgba(255,241,118,0.75)), /* overlay amarelo */
+        url('fotogibiteka.jpeg') center/cover no-repeat;
+    }
+    #hero h2 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: #c62828; /* Vermelho */
+      text-shadow: 0 2px 4px rgba(0,0,0,0.25);
     }
 
     /* Grid de cards */
@@ -75,32 +91,66 @@
       object-fit: cover;
     }
     .card-body { padding: 1rem; }
-    .card-body h3 { margin-bottom: .5rem; font-size: 1.1rem; color: #333; }
+    .card-body h3 { margin-bottom: .5rem; font-size: 1.1rem; color: #1565c0; } /* Azul */
     .card-body p { font-size: .9rem; color: #555; }
     .btn {
       display: inline-block;
       margin-top: .5rem;
       padding: .5rem .8rem;
-      background: #ff2d2d;
-      color: #fff;
+      background: #76ff03; /* Verde Limão */
+      color: #000;
       border-radius: 5px;
       text-decoration: none;
       font-size: .9rem;
+      border: 2px solid #33691e;
+      transition: background .3s, color .3s;
     }
-    .btn:hover { background: #cc1f1f; }
+    .btn:hover { background: #33691e; color: #fff; }
+
+    /* Rodapé (Preto + Branco + detalhes coloridos) */
+    footer {
+      background: #000;
+      color: #fff;
+      padding: 40px 20px;
+    }
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+    .footer-column {
+      flex: 1 1 220px;
+      margin: 10px;
+    }
+    .footer-column h3 {
+      color: #76ff03; /* Verde Limão */
+      margin-bottom: 10px;
+    }
+    .footer-column a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .footer-column a:hover { color: #fbc02d; } /* Amarelo Royal */
+    .footer-bottom {
+      text-align: center;
+      border-top: 2px solid #c62828; /* Vermelho */
+      padding-top: 10px;
+      font-size: .9rem;
+    }
 
     /* Responsivo (mobile) */
     @media (max-width: 768px) {
       .menu-toggle { display: flex; }
       nav ul {
         flex-direction: column;
-        background: #ff2d2d;
+        background: #1565c0;
         position: absolute;
         top: 70px;
         right: 0;
         width: 220px;
         padding: 1rem;
-        max-height: 0; /* escondido */
+        max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease;
       }
@@ -132,9 +182,14 @@
     </nav>
   </header>
 
+  <!-- Hero -->
+  <section id="hero">
+    <h2>Catálogo de Quadrinhos</h2>
+    <p>Explore nossa coleção de quadrinhos e mangás.</p>
+  </section>
+
   <!-- Catálogo -->
   <main>
-    <h2 style="text-align:center; margin:2rem 0;">Catálogo de Quadrinhos</h2>
     <div class="grid">
       <div class="card">
         <img src="https://picsum.photos/200/300?spiderman" alt="Capa Homem-Aranha">
@@ -171,20 +226,8 @@
     </div>
   </main>
 
-  <!-- Script -->
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('show');
-    });
-
-    document.querySelectorAll('#menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('show');
-      });
-    });
-  </script>
-</body>
-</html>
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h
