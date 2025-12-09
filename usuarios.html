@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,149 +7,227 @@
   <style>
     /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background: #ffffff; color:#212121; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      background: #ffffff;
+      color:#212121;
+    }
 
     /* Cabeçalho (Azul + Amarelo Royal) */
     header {
       background: #1565c0; /* Azul */
-      color: #fff;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       border-bottom: 4px solid #fbc02d; /* Amarelo Royal */
+      padding: 10px 20px;
+      text-align: center;
     }
-    .logo h1 { font-size: 1.5rem; color:#fff; }
-
-    /* Menu */
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      padding: .3rem .6rem;
-      border-radius: 4px;
-      transition: background .3s, color .3s;
-    }
-    nav a:hover { background: rgba(255,255,255,0.2); }
+    .logo img { max-width: 150px; height: auto; }
 
     /* Hero com imagem atrás do título */
     #hero {
+      position: relative;
       text-align: center;
       padding: 60px 20px;
       color: #212121;
       background:
-        linear-gradient(to bottom, rgba(251,192,45,0.75), rgba(255,241,118,0.75)), /* overlay amarelo */
+        linear-gradient(to bottom, rgba(251,192,45,0.75), rgba(255,241,118,0.75)),
         url('fotogibiteka.jpeg') center/cover no-repeat;
     }
-    #hero h2 {
-      font-size: 2.2rem;
+    .hero-content { max-width: 900px; margin: 0 auto; }
+    .hero-content h1 {
+      font-size: 2.4rem;
       margin-bottom: 10px;
       color: #c62828; /* Vermelho */
       text-shadow: 0 2px 4px rgba(0,0,0,0.25);
     }
+    .hero-content p { font-size: 1rem; margin-bottom: 16px; }
 
-    /* Container de formulários */
-    .forms-container {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      padding: 2rem;
-    }
-    .form-box {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 8px;
-      flex: 1;
-      min-width: 250px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .form-box h3 {
-      margin-bottom: 1rem;
-      color: #1565c0; /* Azul */
-    }
-    .form-box form {
-      display: flex;
+    /* Botão hambúrguer */
+    .menu-toggle {
+      display: none;
       flex-direction: column;
-      gap: 0.8rem;
+      justify-content: space-around;
+      width: 30px;
+      height: 25px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      margin: 20px auto 10px;
     }
-    .form-box input {
-      padding: 0.6rem;
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: #212121; /* Preto */
+      border-radius: 2px;
+    }
+
+    /* Menu centralizado */
+    .hero-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .hero-menu a {
+      text-decoration: none;
+      color: #212121; /* Preto */
+      font-weight: bold;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: color 0.25s, background 0.25s;
+    }
+    .hero-menu a:hover,
+    .hero-menu a.active { color: #c62828; } /* Vermelho */
+
+    /* Conteúdo */
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    }
+    main h2 { text-align:center; margin-bottom:1rem; color:#c62828; }
+    form label { font-weight: bold; display: block; margin-top: .5rem; }
+    form input {
+      width: 100%;
+      padding: .5rem;
+      margin-top: .3rem;
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 5px;
     }
-    .form-box button {
-      padding: 0.7rem;
+    form button {
+      margin-top: 1rem;
       background: #76ff03; /* Verde Limão */
       color: #000;
       border: 2px solid #33691e;
-      border-radius: 4px;
+      padding: .7rem 1rem;
+      border-radius: 5px;
       cursor: pointer;
       transition: background .3s, color .3s;
     }
-    .form-box button:hover { background: #33691e; color:#fff; }
+    form button:hover { background: #33691e; color:#fff; }
 
-    /* Rodapé (Preto + Branco + detalhes coloridos) */
+    /* Rodapé */
     footer {
       background: #000;
       color: #fff;
-      text-align: center;
-      padding: 1rem;
-      border-top: 2px solid #c62828; /* Vermelho */
+      padding: 40px 20px;
     }
-    footer p { font-size:.9rem; }
+    .footer-container { display: flex; flex-wrap: wrap; justify-content: space-around; margin-bottom: 20px; }
+    .footer-column { flex: 1 1 220px; margin: 10px; }
+    .footer-column h3 { margin-bottom: 10px; font-size: 1.2rem; color: #76ff03; }
+    .footer-column a { color: #fff; text-decoration: none; }
+    .footer-column a:hover { color: #fbc02d; }
+    .footer-bottom { text-align: center; border-top: 2px solid #c62828; padding-top: 10px; font-size: .9rem; }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .menu-toggle { display: flex; }
+      .hero-menu ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background: rgba(255,255,255,0.9);
+        padding: 12px;
+        border-radius: 8px;
+      }
+      .hero-menu ul.show { display: flex; }
+    }
   </style>
 </head>
 <body>
-  <!-- Cabeçalho -->
   <header>
     <div class="logo">
-      <h1>Área de Usuários</h1>
+      <a href="index.html"><img src="logobarueri.jpg" alt="Logo Gibiteka Max Zendron"></a>
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Voltar ao Início</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <!-- Hero -->
   <section id="hero">
-    <h2>Bem-vindo à Área de Usuários</h2>
-    <p>Acesse sua conta ou cadastre-se para aproveitar nossos serviços.</p>
-  </section>
+    <div class="hero-content">
+      <h1>Área de Usuários</h1>
+      <p>Acesse sua conta ou cadastre-se.</p>
 
-  <!-- Formulários -->
-  <section class="forms-container">
-    <!-- Login -->
-    <div class="form-box">
-      <h3>Login</h3>
-      <form action="login.php" method="POST">
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="password" name="senha" placeholder="Senha" required>
-        <button type="submit">Entrar</button>
-      </form>
-    </div>
+      <!-- Botão Hambúrguer -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
 
-    <!-- Cadastro -->
-    <div class="form-box">
-      <h3>Cadastro</h3>
-      <form action="register.php" method="POST">
-        <input type="text" name="nome" placeholder="Nome completo" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="password" name="senha" placeholder="Senha" required>
-        <button type="submit">Cadastrar</button>
-      </form>
+      <!-- Menu -->
+      <nav class="hero-menu">
+        <ul id="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="usuarios.html" class="active">Área de Usuários</a></li>
+        </ul>
+      </nav>
     </div>
   </section>
 
-  <!-- Rodapé -->
+  <main>
+    <h2>Login</h2>
+    <form>
+      <label for="usuario">Usuário:</label>
+      <input type="text" id="usuario" name="usuario" required>
+
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" name="senha" required>
+
+      <button type="submit">Entrar</button>
+    </form>
+
+    <h2 style="margin-top:2rem;">Cadastro</h2>
+    <form>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="nova-senha">Senha:</label>
+      <input type="password" id="nova-senha" name="nova-senha" required>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+  </main>
+
   <footer>
-    <p>© 2025 Gibiteka Max Zendron – Todos os direitos reservados.</p>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Endereço</h3>
+        <p>Rua Rio Grande do Sul, 234 - Centro – Barueri/SP</p>
+      </div>
+      <div class="footer-column">
+        <h3>Contato</h3>
+        <p>Email: gibiteka@barueri.sp.gov.br</p>
+      </div>
+      <div class="footer-column">
+        <h3>Redes Sociais</h3>
+        <p>Facebook | Instagram | YouTube</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Gibiteka Max Zendron – Todos os direitos reservados.</p>
+    </div>
   </footer>
-</body>
-</html>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    function closeMenu() {
+      menu.classList.remove('show');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+    function openMenu() {
+      menu.classList.add('show');
+      menuToggle.set
