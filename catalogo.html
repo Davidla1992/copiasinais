@@ -7,57 +7,20 @@
   <style>
     /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background: #ffffff; color:#212121; }
+    body { font-family: Arial, Helvetica, sans-serif; line-height: 1.6; background: #ffffff; color:#212121; }
 
     /* Cabeçalho (Azul + Amarelo Royal) */
     header {
       background: #1565c0; /* Azul */
-      color: #fff;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
       border-bottom: 4px solid #fbc02d; /* Amarelo Royal */
+      padding: 10px 20px;
+      text-align: center;
     }
-    .logo img { height: 50px; }
+    .logo img { max-width: 150px; height: auto; }
 
-    /* Menu padrão (desktop) */
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      padding: .3rem .6rem;
-      border-radius: 4px;
-      transition: background .3s, color .3s;
-    }
-    nav a:hover { background: rgba(255,255,255,0.2); }
-    nav a.active { background: #fff; color: #c62828; } /* Vermelho ativo */
-
-    /* Botão hambúrguer */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      background: transparent;
-      border: none;
-    }
-    .menu-toggle span {
-      height: 3px;
-      width: 25px;
-      background: #fff;
-      margin: 4px 0;
-      border-radius: 2px;
-      display: block;
-    }
-
-    /* Hero com imagem atrás do título */
+    /* Hero com imagem atrás do título e menu centralizado */
     #hero {
+      position: relative;
       text-align: center;
       padding: 60px 20px;
       color: #212121;
@@ -65,12 +28,68 @@
         linear-gradient(to bottom, rgba(251,192,45,0.75), rgba(255,241,118,0.75)),
         url('fotogibiteka.jpeg') center/cover no-repeat;
     }
+    .hero-content { max-width: 900px; margin: 0 auto; }
+    .hero-content h1,
     #hero h2 {
       font-size: 2.2rem;
       margin-bottom: 10px;
       color: #c62828; /* Vermelho */
       text-shadow: 0 2px 4px rgba(0,0,0,0.25);
     }
+    .hero-content p { font-size: 1rem; margin-bottom: 16px; }
+
+    /* Botão (Verde Limão) */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #76ff03; /* Verde Limão */
+      color: #000;
+      text-decoration: none;
+      border-radius: 6px;
+      border: 2px solid #33691e;
+      transition: background 0.25s, color 0.25s;
+    }
+    .btn:hover { background: #33691e; color: #fff; }
+
+    /* Menu centralizado dentro do hero (igual ao index) */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 25px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      margin: 20px auto 10px;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: #212121; /* Preto */
+      border-radius: 2px;
+    }
+
+    .hero-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .hero-menu a {
+      text-decoration: none;
+      color: #212121;          /* Preto */
+      font-weight: bold;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: color 0.25s, background 0.25s;
+    }
+    .hero-menu a:hover,
+    .hero-menu a.active { color: #c62828; } /* Vermelho */
 
     /* Grid de cards */
     .grid {
@@ -88,77 +107,37 @@
       transition: transform .2s;
     }
     .card:hover { transform: scale(1.03); }
-    .card img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-    }
+    .card img { width: 100%; height: 300px; object-fit: cover; }
     .card-body { padding: 1rem; }
     .card-body h3 { margin-bottom: .5rem; font-size: 1.1rem; color: #1565c0; } /* Azul */
     .card-body p { font-size: .9rem; color: #555; }
-    .btn {
-      display: inline-block;
-      margin-top: .5rem;
-      padding: .5rem .8rem;
-      background: #76ff03; /* Verde Limão */
-      color: #000;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: .9rem;
-      border: 2px solid #33691e;
-      transition: background .3s, color .3s;
-    }
-    .btn:hover { background: #33691e; color: #fff; }
+    .card .btn { margin-top: .5rem; }
 
     /* Rodapé (Preto + Branco + detalhes coloridos) */
     footer {
-      background: #000;
-      color: #fff;
+      background: #000000; /* Preto */
+      color: #ffffff;      /* Branco */
       padding: 40px 20px;
     }
-    .footer-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      margin-bottom: 20px;
-    }
-    .footer-column {
-      flex: 1 1 220px;
-      margin: 10px;
-    }
-    .footer-column h3 {
-      color: #76ff03; /* Verde Limão */
-      margin-bottom: 10px;
-    }
-    .footer-column a {
-      color: #fff;
-      text-decoration: none;
-    }
+    .footer-container { display: flex; flex-wrap: wrap; justify-content: space-around; margin-bottom: 20px; }
+    .footer-column { flex: 1 1 220px; margin: 10px; }
+    .footer-column h3 { margin-bottom: 10px; font-size: 1.2rem; color: #76ff03; } /* Verde Limão */
+    .footer-column a { color: #ffffff; text-decoration: none; }
     .footer-column a:hover { color: #fbc02d; } /* Amarelo Royal */
-    .footer-bottom {
-      text-align: center;
-      border-top: 2px solid #c62828; /* Vermelho */
-      padding-top: 10px;
-      font-size: .9rem;
-    }
+    .footer-bottom { text-align: center; border-top: 2px solid #c62828; padding-top: 10px; font-size: .9rem; }
 
-    /* Responsivo (mobile) */
+    /* Responsivo (mobile): comportamento igual ao index */
     @media (max-width: 768px) {
       .menu-toggle { display: flex; }
-      nav ul {
+      .hero-menu ul {
+        display: none;                /* escondido por padrão no mobile */
         flex-direction: column;
-        background: #1565c0;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 220px;
-        padding: 1rem;
-        max-height: 0;          /* escondido por padrão */
-        overflow: hidden;
-        transition: max-height 0.4s ease;
-        border-bottom-left-radius: 8px;
+        gap: 10px;
+        background: rgba(255,255,255,0.9);
+        padding: 12px;
+        border-radius: 8px;
       }
-      nav ul.show { max-height: 500px; } /* mostra quando tem .show */
+      .hero-menu ul.show { display: flex; }  /* mostra quando tem .show */
     }
   </style>
 </head>
@@ -166,29 +145,33 @@
   <!-- Cabeçalho -->
   <header>
     <div class="logo">
-      <a href="index.html"><img src="logobarueri.jpg" alt="Logo Gibiteka Max Zendron"></a>
+      <a href="index.html"><img src="logobarueri.jpg" alt="Logo Gibiteka Max Zendron" loading="lazy"></a>
     </div>
-
-    <!-- Botão hambúrguer (acessível) -->
-    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu">
-      <span></span><span></span><span></span>
-    </button>
-
-    <!-- Menu -->
-    <nav>
-      <ul id="menu">
-        <li><a href="catalogo.html" class="active">Catálogo</a></li>
-        <li><a href="eventos.html">Eventos</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero com título e menu igual ao index -->
   <section id="hero">
-    <h2>Catálogo de Quadrinhos</h2>
-    <p>Explore nossa coleção de quadrinhos e mangás.</p>
+    <div class="hero-content">
+      <h2>Catálogo de Quadrinhos</h2>
+      <p>Explore nossa coleção de quadrinhos e mangás.</p>
+
+      <!-- Botão Hambúrguer (acessível) -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Menu centralizado -->
+      <nav aria-label="Menu principal" class="hero-menu">
+        <ul id="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="catalogo.html" class="active">Catálogo</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="usuarios.html">Área de Usuários</a></li>
+        </ul>
+      </nav>
+    </div>
   </section>
 
   <!-- Catálogo -->
@@ -250,7 +233,7 @@
     </div>
   </footer>
 
-  <!-- Script do menu hambúrguer (igual à página inicial) -->
+  <!-- Script do menu hambúrguer (igual ao index) -->
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
@@ -267,11 +250,7 @@
 
     menuToggle.addEventListener('click', () => {
       const isOpen = menu.classList.contains('show');
-      if (isOpen) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
+      if (isOpen) { closeMenu(); } else { openMenu(); }
     });
 
     // Fecha ao clicar fora
