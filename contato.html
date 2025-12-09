@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,67 +7,82 @@
   <style>
     /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background: #ffffff; color:#212121; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      background: #ffffff;
+      color:#212121;
+    }
 
     /* Cabeçalho (Azul + Amarelo Royal) */
     header {
       background: #1565c0; /* Azul */
-      color: #fff;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
       border-bottom: 4px solid #fbc02d; /* Amarelo Royal */
+      padding: 10px 20px;
+      text-align: center;
     }
-    .logo img { height: 50px; }
-
-    /* Menu padrão (desktop) */
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      padding: .3rem .6rem;
-      border-radius: 4px;
-      transition: background .3s, color .3s;
-    }
-    nav a:hover { background: rgba(255,255,255,0.2); }
-    nav a.active { background: #fff; color: #c62828; } /* Vermelho ativo */
-
-    /* Botão hamburguer */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .menu-toggle span {
-      height: 3px;
-      width: 25px;
-      background: #fff;
-      margin: 4px 0;
-      border-radius: 2px;
-    }
+    .logo img { max-width: 150px; height: auto; }
 
     /* Hero com imagem atrás do título */
     #hero {
+      position: relative;
       text-align: center;
       padding: 60px 20px;
       color: #212121;
       background:
-        linear-gradient(to bottom, rgba(251,192,45,0.75), rgba(255,241,118,0.75)), /* overlay amarelo */
+        linear-gradient(to bottom, rgba(251,192,45,0.75), rgba(255,241,118,0.75)),
         url('fotogibiteka.jpeg') center/cover no-repeat;
     }
-    #hero h2 {
-      font-size: 2.2rem;
+    .hero-content { max-width: 900px; margin: 0 auto; }
+    .hero-content h1 {
+      font-size: 2.4rem;
       margin-bottom: 10px;
       color: #c62828; /* Vermelho */
       text-shadow: 0 2px 4px rgba(0,0,0,0.25);
     }
+    .hero-content p { font-size: 1rem; margin-bottom: 16px; }
+
+    /* Botão hambúrguer */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 25px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      margin: 20px auto 10px;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: #212121; /* Preto */
+      border-radius: 2px;
+    }
+
+    /* Menu centralizado */
+    .hero-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .hero-menu a {
+      text-decoration: none;
+      color: #212121; /* Preto */
+      font-weight: bold;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: color 0.25s, background 0.25s;
+    }
+    .hero-menu a:hover,
+    .hero-menu a.active { color: #c62828; } /* Vermelho */
 
     /* Conteúdo */
     main {
@@ -78,17 +93,9 @@
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,.1);
     }
-    main h2 {
-      text-align: center;
-      margin-bottom: 1rem;
-      color: #c62828; /* Vermelho */
-    }
+    main h2 { text-align:center; margin-bottom:1rem; color:#c62828; }
     main p { margin-bottom: 1rem; color: #333; }
-    form label {
-      font-weight: bold;
-      display: block;
-      margin-top: .5rem;
-    }
+    form label { font-weight: bold; display: block; margin-top: .5rem; }
     form input, form textarea {
       width: 100%;
       padding: .5rem;
@@ -108,92 +115,71 @@
     }
     form button:hover { background: #33691e; color:#fff; }
 
-    /* Rodapé (Preto + Branco + detalhes coloridos) */
+    /* Rodapé */
     footer {
       background: #000;
       color: #fff;
       padding: 40px 20px;
     }
-    .footer-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      margin-bottom: 20px;
-    }
-    .footer-column {
-      flex: 1 1 220px;
-      margin: 10px;
-    }
-    .footer-column h3 {
-      color: #76ff03; /* Verde Limão */
-      margin-bottom: 10px;
-    }
-    .footer-column a {
-      color: #fff;
-      text-decoration: none;
-    }
-    .footer-column a:hover { color: #fbc02d; } /* Amarelo Royal */
-    .footer-bottom {
-      text-align: center;
-      border-top: 2px solid #c62828; /* Vermelho */
-      padding-top: 10px;
-      font-size: .9rem;
-    }
+    .footer-container { display: flex; flex-wrap: wrap; justify-content: space-around; margin-bottom: 20px; }
+    .footer-column { flex: 1 1 220px; margin: 10px; }
+    .footer-column h3 { margin-bottom: 10px; font-size: 1.2rem; color: #76ff03; }
+    .footer-column a { color: #fff; text-decoration: none; }
+    .footer-column a:hover { color: #fbc02d; }
+    .footer-bottom { text-align: center; border-top: 2px solid #c62828; padding-top: 10px; font-size: .9rem; }
 
-    /* Responsivo (mobile) */
+    /* Responsivo */
     @media (max-width: 768px) {
       .menu-toggle { display: flex; }
-      nav ul {
+      .hero-menu ul {
+        display: none;
         flex-direction: column;
-        background: #1565c0;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 220px;
-        padding: 1rem;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease;
+        gap: 10px;
+        background: rgba(255,255,255,0.9);
+        padding: 12px;
+        border-radius: 8px;
       }
-      nav ul.show { max-height: 500px; }
+      .hero-menu ul.show { display: flex; }
     }
   </style>
 </head>
 <body>
-  <!-- Cabeçalho -->
   <header>
     <div class="logo">
       <a href="index.html"><img src="logobarueri.jpg" alt="Logo Gibiteka Max Zendron"></a>
     </div>
-
-    <!-- Botão hamburguer -->
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span><span></span><span></span>
-    </div>
-
-    <!-- Menu -->
-    <nav>
-      <ul id="menu">
-        <li><a href="catalogo.html">Catálogo</a></li>
-        <li><a href="eventos.html">Eventos</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="contato.html" class="active">Contato</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <!-- Hero -->
   <section id="hero">
-    <h2>Contato</h2>
-    <p>Entre em contato com a equipe da Gibiteka.</p>
+    <div class="hero-content">
+      <h1>Contato</h1>
+      <p>Entre em contato com a equipe da Gibiteka.</p>
+
+      <!-- Botão Hambúrguer -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Menu -->
+      <nav class="hero-menu">
+        <ul id="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html" class="active">Contato</a></li>
+          <li><a href="usuarios.html">Área de Usuários</a></li>
+        </ul>
+      </nav>
+    </div>
   </section>
 
-  <!-- Contato -->
   <main>
-    <p><strong>Endereço:</strong> Rua XYZ, Barueri – SP</p>
-    <p><strong>Telefone:</strong> (11) 99999-9999</p>
+    <h2>Fale Conosco</h2>
+    <p><strong>Endereço:</strong> Rua Rio Grande do Sul, 234 - Centro – Barueri/SP</p>
+    <p><strong>Telefone:</strong> (11) 4199-1234</p>
     <p><strong>Email:</strong> gibiteka@barueri.sp.gov.br</p>
-    <p><strong>Horário de funcionamento:</strong> segunda a sábado, das 9h às 18h</p>
+    <p><strong>Horário de funcionamento:</strong> Segunda a sábado, das 9h às 18h</p>
 
     <form>
       <label for="nome">Nome:</label>
@@ -209,7 +195,6 @@
     </form>
   </main>
 
-  <!-- Rodapé -->
   <footer>
     <div class="footer-container">
       <div class="footer-column">
@@ -230,20 +215,10 @@
     </div>
   </footer>
 
-  <!-- Script do menu hambúrguer -->
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
 
     function closeMenu() {
       menu.classList.remove('show');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    }
-
-    function openMenu() {
-      menu.classList.add('show');
-      menuToggle.setAttribute('aria-expanded', 'true');
-    }
-
-    menuToggle.addEventListener('click', () => {
-      const isOpen = menu.classList.contains('show
+      menuToggle.setAttribute
