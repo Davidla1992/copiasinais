@@ -39,11 +39,13 @@
     nav a:hover { background: rgba(255,255,255,0.2); }
     nav a.active { background: #fff; color: #c62828; } /* Vermelho ativo */
 
-    /* Botão hamburguer */
+    /* Botão hambúrguer */
     .menu-toggle {
       display: none;
       flex-direction: column;
       cursor: pointer;
+      background: transparent;
+      border: none;
     }
     .menu-toggle span {
       height: 3px;
@@ -51,6 +53,7 @@
       background: #fff;
       margin: 4px 0;
       border-radius: 2px;
+      display: block;
     }
 
     /* Hero com imagem atrás do título */
@@ -59,7 +62,7 @@
       padding: 60px 20px;
       color: #212121;
       background:
-        linear-gradient(to bottom, rgba(251,192,45,0.75), rgba(255,241,118,0.75)), /* overlay amarelo */
+        linear-gradient(to bottom, rgba(251,192,45,0.75), rgba(255,241,118,0.75)),
         url('fotogibiteka.jpeg') center/cover no-repeat;
     }
     #hero h2 {
@@ -150,12 +153,12 @@
         right: 0;
         width: 220px;
         padding: 1rem;
-        max-height: 0;
+        max-height: 0;          /* escondido por padrão */
         overflow: hidden;
         transition: max-height 0.4s ease;
+        border-bottom-left-radius: 8px;
       }
-      nav ul.show { max-height: 500px; }
-      .card img { height: 200px; }
+      nav ul.show { max-height: 500px; } /* mostra quando tem .show */
     }
   </style>
 </head>
@@ -166,10 +169,10 @@
       <a href="index.html"><img src="logobarueri.jpg" alt="Logo Gibiteka Max Zendron"></a>
     </div>
 
-    <!-- Botão hamburguer -->
-    <div class="menu-toggle" id="menu-toggle">
+    <!-- Botão hambúrguer (acessível) -->
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu">
       <span></span><span></span><span></span>
-    </div>
+    </button>
 
     <!-- Menu -->
     <nav>
@@ -232,4 +235,60 @@
       <div class="footer-column">
         <h3>Endereço</h3>
         <p>Rua Rio Grande do Sul, 234 - Centro – Barueri/SP</p>
-     
+      </div>
+      <div class="footer-column">
+        <h3>Contato</h3>
+        <p>Email: gibiteka@barueri.sp.gov.br</p>
+      </div>
+      <div class="footer-column">
+        <h3>Redes Sociais</h3>
+        <p>Facebook | Instagram | YouTube</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Gibiteka Max Zendron – Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Script do menu hambúrguer (igual à página inicial) -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    function closeMenu() {
+      menu.classList.remove('show');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    function openMenu() {
+      menu.classList.add('show');
+      menuToggle.setAttribute('aria-expanded', 'true');
+    }
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = menu.classList.contains('show');
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    // Fecha ao clicar fora
+    document.addEventListener('click', (e) => {
+      const clickInside = menu.contains(e.target) || menuToggle.contains(e.target);
+      if (!clickInside) closeMenu();
+    });
+
+    // Fecha ao clicar em um link
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => closeMenu());
+    });
+
+    // Fecha com Esc
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+  </script>
+</body>
+</html>
