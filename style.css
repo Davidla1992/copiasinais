@@ -8,44 +8,75 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
-  background: #f9f9f9;
   color: #333;
+  background-color: #f9f9f9;
 }
 
 /* Cabeçalho */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #222;
-  color: #fff;
+  background: #fff;
   padding: 10px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
 }
 
-header .logo img {
-  height: 50px;
+.logo img {
+  max-width: 150px;
 }
 
-/* Menu padrão (desktop) */
-nav ul {
+/* Hero */
+#hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #fff, #f0f0f0);
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #d32f2f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #b71c1c;
+}
+
+/* Menu centralizado */
+.hero-menu ul {
   list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
-nav ul li a {
-  color: #fff;
+.hero-menu a {
   text-decoration: none;
+  color: #333;
   font-weight: bold;
   transition: color 0.3s;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-  color: #ffcc00;
+.hero-menu a:hover,
+.hero-menu a.active {
+  color: #d32f2f;
 }
 
 /* Botão hambúrguer */
@@ -54,131 +85,72 @@ nav ul li a.active {
   flex-direction: column;
   justify-content: space-around;
   width: 30px;
-  height: 30px;
+  height: 25px;
   background: transparent;
   border: none;
   cursor: pointer;
+  margin: 20px auto;
 }
 
 .menu-toggle span {
   display: block;
-  height: 3px;
   width: 100%;
-  background: #fff;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* Menu mobile escondido */
-#menu {
-  display: none;
-  flex-direction: column;
-  background: #222;
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  width: 220px;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-#menu li {
-  border-bottom: 1px solid #333;
-}
-
-#menu li a {
-  padding: 12px;
-  display: block;
-  color: #fff;
-}
-
-#menu li a:hover {
+  height: 3px;
   background: #333;
 }
 
-/* Quando o menu abre */
-#menu.show {
-  display: flex;
-  animation: slideDown 0.3s ease forwards;
-}
-
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsividade */
+/* Responsivo */
 @media (max-width: 768px) {
-  nav ul {
-    display: none; /* esconde menu desktop */
+  .hero-menu ul {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero-menu ul.show {
+    display: flex;
   }
   .menu-toggle {
-    display: flex; /* mostra botão hambúrguer */
+    display: flex;
   }
-}
-
-/* Hero */
-#hero {
-  background: url('hero.jpg') center/cover no-repeat;
-  color: #fff;
-  text-align: center;
-  padding: 100px 20px;
-}
-
-#hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-#hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-}
-
-#hero .btn {
-  background: #ffcc00;
-  color: #222;
-  padding: 12px 25px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-#hero .btn:hover {
-  background: #e6b800;
 }
 
 /* Rodapé */
 footer {
   background: #222;
-  color: #fff;
-  padding: 30px 20px;
+  color: #eee;
+  padding: 40px 20px;
 }
 
 .footer-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+  margin: 10px;
 }
 
 .footer-column h3 {
   margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #fff;
 }
 
 .footer-column a {
-  color: #ffcc00;
+  color: #eee;
   text-decoration: none;
 }
 
 .footer-column a:hover {
-  text-decoration: underline;
+  color: #d32f2f;
 }
 
 .footer-bottom {
   text-align: center;
-  margin-top: 20px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
   font-size: 0.9rem;
 }
