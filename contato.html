@@ -7,17 +7,18 @@
   <style>
     /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background: #e9ecef; }
+    body { font-family: Arial, sans-serif; background: #ffffff; color:#212121; }
 
-    /* Cabeçalho */
+    /* Cabeçalho (Azul + Amarelo Royal) */
     header {
-      background: #ff2d2d;
+      background: #1565c0; /* Azul */
       color: #fff;
       padding: 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: relative;
+      border-bottom: 4px solid #fbc02d; /* Amarelo Royal */
     }
     .logo img { height: 50px; }
 
@@ -36,7 +37,7 @@
       transition: background .3s, color .3s;
     }
     nav a:hover { background: rgba(255,255,255,0.2); }
-    nav a.active { background: #fff; color: #ff2d2d; }
+    nav a.active { background: #fff; color: #c62828; } /* Vermelho ativo */
 
     /* Botão hamburguer */
     .menu-toggle {
@@ -52,6 +53,22 @@
       border-radius: 2px;
     }
 
+    /* Hero com imagem atrás do título */
+    #hero {
+      text-align: center;
+      padding: 60px 20px;
+      color: #212121;
+      background:
+        linear-gradient(to bottom, rgba(251,192,45,0.75), rgba(255,241,118,0.75)), /* overlay amarelo */
+        url('fotogibiteka.jpeg') center/cover no-repeat;
+    }
+    #hero h2 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: #c62828; /* Vermelho */
+      text-shadow: 0 2px 4px rgba(0,0,0,0.25);
+    }
+
     /* Conteúdo */
     main {
       max-width: 800px;
@@ -64,12 +81,9 @@
     main h2 {
       text-align: center;
       margin-bottom: 1rem;
-      color: #ff2d2d;
+      color: #c62828; /* Vermelho */
     }
-    main p {
-      margin-bottom: 1rem;
-      color: #333;
-    }
+    main p { margin-bottom: 1rem; color: #333; }
     form label {
       font-weight: bold;
       display: block;
@@ -84,21 +98,54 @@
     }
     form button {
       margin-top: 1rem;
-      background: #ff2d2d;
-      color: #fff;
-      border: none;
+      background: #76ff03; /* Verde Limão */
+      color: #000;
+      border: 2px solid #33691e;
       padding: .7rem 1rem;
       border-radius: 5px;
       cursor: pointer;
+      transition: background .3s, color .3s;
     }
-    form button:hover { background: #cc1f1f; }
+    form button:hover { background: #33691e; color:#fff; }
+
+    /* Rodapé (Preto + Branco + detalhes coloridos) */
+    footer {
+      background: #000;
+      color: #fff;
+      padding: 40px 20px;
+    }
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+    .footer-column {
+      flex: 1 1 220px;
+      margin: 10px;
+    }
+    .footer-column h3 {
+      color: #76ff03; /* Verde Limão */
+      margin-bottom: 10px;
+    }
+    .footer-column a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .footer-column a:hover { color: #fbc02d; } /* Amarelo Royal */
+    .footer-bottom {
+      text-align: center;
+      border-top: 2px solid #c62828; /* Vermelho */
+      padding-top: 10px;
+      font-size: .9rem;
+    }
 
     /* Responsivo (mobile) */
     @media (max-width: 768px) {
       .menu-toggle { display: flex; }
       nav ul {
         flex-direction: column;
-        background: #ff2d2d;
+        background: #1565c0;
         position: absolute;
         top: 70px;
         right: 0;
@@ -135,9 +182,14 @@
     </nav>
   </header>
 
+  <!-- Hero -->
+  <section id="hero">
+    <h2>Contato</h2>
+    <p>Entre em contato com a equipe da Gibiteka.</p>
+  </section>
+
   <!-- Contato -->
   <main>
-    <h2>Contato</h2>
     <p><strong>Endereço:</strong> Rua XYZ, Barueri – SP</p>
     <p><strong>Telefone:</strong> (11) 99999-9999</p>
     <p><strong>Email:</strong> gibiteka@barueri.sp.gov.br</p>
@@ -156,6 +208,27 @@
       <button type="submit">Enviar</button>
     </form>
   </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Endereço</h3>
+        <p>Rua Rio Grande do Sul, 234 - Centro – Barueri/SP</p>
+      </div>
+      <div class="footer-column">
+        <h3>Contato</h3>
+        <p>Email: gibiteka@barueri.sp.gov.br</p>
+      </div>
+      <div class="footer-column">
+        <h3>Redes Sociais</h3>
+        <p>Facebook | Instagram | YouTube</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Gibiteka Max Zendron – Todos os direitos reservados.</p>
+    </div>
+  </footer>
 
   <!-- Script -->
   <script>
