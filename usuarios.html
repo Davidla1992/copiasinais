@@ -1,13 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Área de Usuários – Gibiteka Max Zendron</title>
-  <meta name="description" content="Área de Usuários da Gibiteka Max Zendron - login e cadastro.">
-  <link rel="stylesheet" href="style.css">
-  <!-- Font Awesome para ícones -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="description" content="Área de Usuários da Gibiteka Max Zendron - login e cadastro."/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* Base */
+    body { font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #212121; background: #fff; }
+
+    /* Cabeçalho */
+    header { background: #1565c0; padding: 10px 20px; text-align: center; border-bottom: 4px solid #fbc02d; }
+    .logo img { max-width: 150px; }
+
+    /* Hero */
+    #hero {
+      text-align: center; padding: 60px 20px;
+      background: linear-gradient(to bottom, rgba(251,192,45,0.75), rgba(255,241,118,0.75)),
+                  url('fotogibiteka.jpeg') center/cover no-repeat;
+    }
+    .hero-content h1 { font-size: 2.5rem; margin-bottom: 10px; color: #c62828; text-shadow: 0 2px 4px rgba(0,0,0,0.25); }
+    .hero-content p { font-size: 1.2rem; margin-bottom: 20px; }
+
+    /* Menu */
+    .hero-menu ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
+    .hero-menu a { text-decoration: none; color: #212121; font-weight: bold; transition: color 0.25s; }
+    .hero-menu a:hover, .hero-menu a.active { color: #c62828; }
+    .menu-toggle { display: none; flex-direction: column; justify-content: space-around; width: 30px; height: 25px; border: none; cursor: pointer; margin: 20px auto; background: transparent; }
+    .menu-toggle span { display: block; width: 100%; height: 3px; background: #212121; }
+    @media (max-width: 768px) {
+      .hero-menu ul { display: none; flex-direction: column; gap: 10px; background: rgba(255,255,255,0.9); padding: 12px; border-radius: 8px; }
+      .hero-menu ul.show { display: flex; }
+      .menu-toggle { display: flex; }
+    }
+
+    /* Container */
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { color: #c62828; margin-bottom: 15px; border-bottom: 2px solid #fbc02d; padding-bottom: 5px; }
+    .subtitulo-form { margin-top: 24px; color: #212121; font-size: 1.05rem; border-left: 4px solid #fbc02d; padding-left: 8px; }
+
+    /* Form */
+    form label { display: block; margin-top: 12px; font-weight: bold; color: #212121; }
+    form input, form select { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 6px; }
+    form input:focus, form select:focus { border-color: #1565c0; outline: none; box-shadow: 0 0 6px rgba(21,101,192,0.25); }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+
+    /* Botões */
+    button { margin-top: 20px; width: 100%; padding: 12px; background: #76ff03; color: #000; border: 2px solid #33691e; border-radius: 6px; font-size: 16px; cursor: pointer; transition: background 0.25s, color 0.25s, transform 0.15s; }
+    button:hover { background: #33691e; color: #fff; transform: translateY(-1px); }
+
+    .divider { border-top: 2px solid #fbc02d; margin: 40px 0; }
+
+    /* Mensagens */
+    .mensagem { margin: 20px 0; padding: 15px; border-radius: 8px; font-weight: bold; text-align: center; }
+    .sucesso { background: #d4edda; color: #155724; }
+    .erro { background: #f8d7da; color: #721c24; }
+    .matricula-box { margin-top: 12px; padding: 10px; border: 2px dashed #fbc02d; border-radius: 6px; color: #c62828; font-weight: bold; text-align: center; display: none; }
+
+    /* Rodapé */
+    footer { background: #000; color: #fff; padding: 40px 20px; }
+    .footer-container { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px; margin-bottom: 20px; }
+    .footer-column { flex: 1 1 220px; }
+    .footer-column h3 { margin-bottom: 10px; font-size: 1.2rem; color: #76ff03; }
+    .footer-column a { color: #fff; text-decoration: none; border-bottom: 1px dashed transparent; transition: color 0.2s, border-color 0.2s; }
+    .footer-column a:hover { color: #fbc02d; border-color: #fbc02d; }
+    .footer-bottom { text-align: center; border-top: 2px solid #c62828; padding-top: 10px; font-size: 0.9rem; }
+  </style>
 </head>
 <body>
   <!-- Cabeçalho -->
@@ -24,12 +87,12 @@
       <p>Faça login ou cadastre-se para acessar conteúdos exclusivos.</p>
 
       <!-- Botão Hambúrguer -->
-      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
         <span></span><span></span><span></span>
       </button>
 
       <!-- Menu centralizado -->
-      <nav aria-label="Menu principal" class="hero-menu">
+      <nav class="hero-menu" aria-label="Menu principal">
         <ul id="menu">
           <li><a href="index.html">Início</a></li>
           <li><a href="catalogo.html">Catálogo</a></li>
@@ -44,7 +107,7 @@
 
   <!-- Conteúdo principal -->
   <div class="container">
-    <!-- Mensagens -->
+    <!-- Mensagens (sucesso/erro via query string) -->
     <?php if (isset($_GET['msg'])): ?>
       <div class="mensagem <?php echo ($_GET['tipo'] ?? '') === 'sucesso' ? 'sucesso' : 'erro'; ?>">
         <?php echo htmlspecialchars($_GET['msg']); ?>
@@ -71,27 +134,43 @@
     <div class="form-section">
       <h2>Cadastro</h2>
       <form id="cadastroForm" method="POST" action="cadastrar.php">
-        <label for="nome">Nome completo:</label>
-        <input type="text" id="nome" name="nome" required>
+        <!-- Dados pessoais -->
+        <div class="grid-2">
+          <div>
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" name="nome" required>
+          </div>
+          <div>
+            <label for="sexo">Sexo:</label>
+            <select id="sexo" name="sexo" required>
+              <option value="">Selecione</option>
+              <option value="M">Masculino</option>
+              <option value="F">Feminino</option>
+            </select>
+          </div>
+        </div>
 
-        <label for="sexo">Sexo:</label>
-        <select id="sexo" name="sexo" required>
-          <option value="">Selecione</option>
-          <option value="M">Masculino</option>
-          <option value="F">Feminino</option>
-        </select>
+        <div class="grid-2">
+          <div>
+            <label for="nascimento">Data de nascimento:</label>
+            <input type="date" id="nascimento" name="nascimento" required>
+          </div>
+          <div>
+            <label for="documento">Documento (CPF ou RG):</label>
+            <input type="text" id="documento" name="documento" required>
+          </div>
+        </div>
 
-        <label for="nascimento">Data de nascimento:</label>
-        <input type="date" id="nascimento" name="nascimento" required>
-
-        <label for="documento">Documento (CPF ou RG):</label>
-        <input type="text" id="documento" name="documento" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="celular">Telefone celular:</label>
-        <input type="tel" id="celular" name="celular" required>
+        <div class="grid-2">
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <label for="celular">Telefone celular:</label>
+            <input type="tel" id="celular" name="celular" required>
+          </div>
+        </div>
 
         <label for="contato">Aceita contato?</label>
         <select id="contato" name="aceita_contato" required>
@@ -100,17 +179,84 @@
           <option value="nao">Não</option>
         </select>
 
-        <label for="uf">Estado (UF):</label>
-        <input type="text" id="uf" name="uf" maxlength="2" required>
+        <!-- Endereço -->
+        <h3 class="subtitulo-form">Endereço</h3>
+        <div class="grid-2">
+          <div>
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" placeholder="00000-000" required>
+          </div>
+          <div>
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro" name="bairro" required>
+          </div>
+        </div>
 
-        <label for="cidade">Cidade:</label>
-        <input type="text" id="cidade" name="cidade" required>
+        <label for="endereco">Endereço (Rua, Av.):</label>
+        <input type="text" id="endereco" name="endereco" required>
 
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required>
+        <label for="complemento">Complemento:</label>
+        <input type="text" id="complemento" name="complemento" placeholder="Apto, bloco, referência">
 
-        <label for="confirmarSenha">Confirmar senha:</label>
-        <input type="password" id="confirmarSenha" required>
+        <div class="grid-2">
+          <div>
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" required>
+          </div>
+          <div>
+            <label for="uf">Estado (UF):</label>
+            <input type="text" id="uf" name="uf" maxlength="2" required>
+          </div>
+        </div>
+
+        <!-- Estudo -->
+        <h3 class="subtitulo-form">Situação de estudo</h3>
+        <label for="estuda">Você estuda?</label>
+        <select id="estuda" name="estuda" required>
+          <option value="">Selecione</option>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
+
+        <div id="estudoCampos" style="display:none;">
+          <label for="escola">Nome da escola:</label>
+          <input type="text" id="escola" name="escola">
+          <label for="telefone_escola">Telefone da escola (opcional):</label>
+          <input type="tel" id="telefone_escola" name="telefone_escola" placeholder="(11) 0000-0000">
+        </div>
+
+        <!-- Trabalho -->
+        <h3 class="subtitulo-form">Situação de trabalho</h3>
+        <label for="trabalha">Você trabalha?</label>
+        <select id="trabalha" name="trabalha" required>
+          <option value="">Selecione</option>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
+
+        <div id="trabalhoCampos" style="display:none;">
+          <label for="empresa">Nome da empresa:</label>
+          <input type="text" id="empresa" name="empresa">
+          <label for="telefone_empresa">Telefone da empresa (opcional):</label>
+          <input type="tel" id="telefone_empresa" name="telefone_empresa" placeholder="(11) 0000-0000">
+        </div>
+
+        <!-- Segurança -->
+        <h3 class="subtitulo-form">Segurança</h3>
+        <div class="grid-2">
+          <div>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+          </div>
+          <div>
+            <label for="confirmarSenha">Confirmar senha:</label>
+            <input type="password" id="confirmarSenha" required>
+          </div>
+        </div>
+
+        <!-- Matrícula (gerada automaticamente) -->
+        <input type="hidden" id="matricula" name="matricula">
+        <div id="matriculaBox" class="matricula-box"></div>
 
         <button type="submit">Cadastrar</button>
       </form>
@@ -139,7 +285,6 @@
         <p><a href="#">YouTube</a></p>
       </div>
     </div>
-
     <div class="footer-bottom">
       <p>© 2026 Gibiteka Max Zendron – Todos os direitos reservados.</p>
       <p>Desenvolvido com ❤️ para os fãs de quadrinhos e mangás.</p>
@@ -150,51 +295,70 @@
     // Menu responsivo e acessível
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
+    function closeMenu() { menu.classList.remove('show'); menuToggle.setAttribute('aria-expanded', 'false'); }
+    function openMenu() { menu.classList.add('show'); menuToggle.setAttribute('aria-expanded', 'true'); }
+    menuToggle.addEventListener('click', () => menu.classList.contains('show') ? closeMenu() : openMenu());
+    document.addEventListener('click', (e) => { const inside = menu.contains(e.target) || menuToggle.contains(e.target); if (!inside) closeMenu(); });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeMenu()));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
 
-    function closeMenu() {
-      menu.classList.remove('show');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    }
+    // Máscara simples de CEP
+    const cepInput = document.getElementById('cep');
+    cepInput.addEventListener('input', () => {
+      let v = cepInput.value.replace(/\D/g, '').slice(0, 8);
+      if (v.length > 5) v = v.slice(0, 5) + '-' + v.slice(5);
+      cepInput.value = v;
+    });
 
-    function openMenu() {
-      menu.classList.add('show');
-      menuToggle.setAttribute('aria-expanded', 'true');
-    }
-
-    menuToggle.addEventListener('click', () => {
-      const isOpen = menu.classList.contains('show');
-      if (isOpen) {
-        closeMenu();
-      } else {
-        openMenu();
+    // Mostrar/ocultar campos de estudo
+    const estuda = document.getElementById('estuda');
+    const estudoCampos = document.getElementById('estudoCampos');
+    estuda.addEventListener('change', () => {
+      estudoCampos.style.display = estuda.value === 'sim' ? 'block' : 'none';
+      if (estuda.value !== 'sim') {
+        document.getElementById('escola').value = '';
+        document.getElementById('telefone_escola').value = '';
       }
     });
 
-    // Fecha ao clicar fora
-    document.addEventListener('click', (e) => {
-      const clickInside = menu.contains(e.target) || menuToggle.contains(e.target);
-      if (!clickInside) closeMenu();
+    // Mostrar/ocultar campos de trabalho
+    const trabalha = document.getElementById('trabalha');
+    const trabalhoCampos = document.getElementById('trabalhoCampos');
+    trabalha.addEventListener('change', () => {
+      trabalhoCampos.style.display = trabalha.value === 'sim' ? 'block' : 'none';
+      if (trabalha.value !== 'sim') {
+        document.getElementById('empresa').value = '';
+        document.getElementById('telefone_empresa').value = '';
+      }
     });
 
-    // Fecha ao clicar em um link
-    menu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => closeMenu());
-    });
-
-    // Fecha com Esc
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
-    });
-
-    // Validação de senha no cadastro
+    // Validação de senha + geração de matrícula
     const form = document.getElementById('cadastroForm');
+    const matriculaInput = document.getElementById('matricula');
+    const matriculaBox = document.getElementById('matriculaBox');
+
+    function gerarMatricula() {
+      // Formato: GIB-AAAAMMDD-HHMMSS-XXXX
+      const d = new Date();
+      const pad = (n) => String(n).padStart(2, '0');
+      const rand = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+      return `GIB-${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}-${rand}`;
+    }
+
     form.addEventListener('submit', function (e) {
       const senha = document.getElementById('senha').value;
       const confirmar = document.getElementById('confirmarSenha').value;
       if (senha !== confirmar) {
         e.preventDefault();
         alert("As senhas não coincidem!");
+        return;
       }
+      // Gera matrícula e exibe
+      const codigo = gerarMatricula();
+      matriculaInput.value = codigo;
+      matriculaBox.textContent = `Matrícula gerada: ${codigo}`;
+      matriculaBox.style.display = 'block';
+      // O formulário segue para cadastrar.php com a matrícula no campo oculto
     });
   </script>
 </body>
