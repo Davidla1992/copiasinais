@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eventos - Gibiteka Max Zendron</title>
   <style>
-    /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -16,16 +15,14 @@
       color:#212121;
     }
 
-    /* Cabeçalho (Azul + Amarelo Royal) */
     header {
-      background: #1565c0; /* Azul */
-      border-bottom: 4px solid #fbc02d; /* Amarelo Royal */
+      background: #1565c0;
+      border-bottom: 4px solid #fbc02d;
       padding: 10px 20px;
       text-align: center;
     }
     .logo img { max-width: 150px; height: auto; }
 
-    /* Hero com imagem atrás do título */
     #hero {
       position: relative;
       text-align: center;
@@ -39,16 +36,15 @@
     .hero-content h1 {
       font-size: 2.4rem;
       margin-bottom: 10px;
-      color: #c62828; /* Vermelho */
+      color: #c62828;
       text-shadow: 0 2px 4px rgba(0,0,0,0.25);
     }
     .hero-content p { font-size: 1rem; margin-bottom: 16px; }
 
-    /* Botão (Verde Limão) */
     .btn {
       display: inline-block;
       padding: 10px 20px;
-      background: #76ff03; /* Verde Limão */
+      background: #76ff03;
       color: #000;
       text-decoration: none;
       border-radius: 6px;
@@ -57,7 +53,6 @@
     }
     .btn:hover { background: #33691e; color: #fff; }
 
-    /* Botão hambúrguer */
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -73,11 +68,10 @@
       display: block;
       width: 100%;
       height: 3px;
-      background: #212121; /* Preto */
+      background: #212121;
       border-radius: 2px;
     }
 
-    /* Menu centralizado */
     .hero-menu ul {
       list-style: none;
       padding: 0;
@@ -89,20 +83,23 @@
     }
     .hero-menu a {
       text-decoration: none;
-      color: #212121; /* Preto */
+      color: #212121;
       font-weight: bold;
       padding: 6px 10px;
       border-radius: 6px;
       transition: color 0.25s, background 0.25s;
     }
     .hero-menu a:hover,
-    .hero-menu a.active { color: #c62828; } /* Vermelho */
+    .hero-menu a.active { color: #c62828; }
 
-    /* Conteúdo */
-    main { max-width: 900px; margin: 2rem auto; padding: 1rem; text-align: center; }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      text-align: center;
+    }
     main h2 { margin-bottom: 20px; color: #1565c0; }
 
-    /* Lista de eventos */
     .event-list {
       list-style: none;
       padding: 0;
@@ -119,30 +116,51 @@
       font-weight: bold;
     }
 
-    /* Imagem dentro do conteúdo */
     .event-image {
       display: block;
-      max-width: 33%; /* 3 vezes menor */
+      max-width: 33%;
       height: auto;
       margin: 20px auto;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.25);
     }
 
-    /* Rodapé */
     footer {
       background: #000;
       color: #fff;
       padding: 40px 20px;
     }
-    .footer-container { display: flex; flex-wrap: wrap; justify-content: space-around; margin-bottom: 20px; }
-    .footer-column { flex: 1 1 220px; margin: 10px; }
-    .footer-column h3 { margin-bottom: 10px; font-size: 1.2rem; color: #76ff03; }
-    .footer-column a { color: #fff; text-decoration: none; transition: all 0.3s ease; }
-    .footer-column a:hover { text-decoration: underline; opacity: 0.8; }
-    .footer-bottom { text-align: center; border-top: 2px solid #c62828; padding-top: 10px; font-size: .9rem; }
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+    .footer-column {
+      flex: 1 1 220px;
+      margin: 10px;
+    }
+    .footer-column h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #76ff03;
+    }
+    .footer-column a {
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .footer-column a:hover {
+      text-decoration: underline;
+      opacity: 0.8;
+    }
+    .footer-bottom {
+      text-align: center;
+      border-top: 2px solid #c62828;
+      padding-top: 10px;
+      font-size: .9rem;
+    }
 
-    /* Responsivo */
     @media (max-width: 768px) {
       .menu-toggle { display: flex; }
       .hero-menu ul {
@@ -169,12 +187,10 @@
       <h1>Eventos da Gibiteka</h1>
       <p>Confira os próximos encontros e atividades culturais.</p>
 
-      <!-- Botão Hambúrguer -->
       <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu">
         <span></span><span></span><span></span>
       </button>
 
-      <!-- Menu -->
       <nav class="hero-menu">
         <ul id="menu">
           <li><a href="index.html">Início</a></li>
@@ -190,19 +206,14 @@
 
   <main>
     <h2>Próximos Eventos</h2>
-
-    <!-- Lista de eventos alinhados -->
     <ul class="event-list">
       <li>07 de fevereiro de 2026 das 13h às 19h – 23ª edição do Boardgame Barueri (festival de jogos de tabuleiro) – Entrada Franca</li>
       <li>11 de fevereiro de 2026 das 11h às 13h – Cinema na Gibiteka</li>
       <li>21 de fevereiro de 2026 das 13h às 19h – Encontro de RPG Primórdios</li>
     </ul>
-
-    <!-- Imagem menor logo abaixo -->
     <img src="gibitekaeventos.jpeg" alt="Foto dos eventos da Gibiteka" class="event-image">
   </main>
 
-  <!-- Rodapé atualizado -->
   <footer>
     <div class="footer-container">
       <div class="footer-column">
@@ -216,4 +227,12 @@
         <p>Email: <a href="mailto:gibitekamaxzendron@barueri.sp.gov.br">gibitekamaxzendron@barueri.sp.gov.br</a></p>
         <p>
           Instagram:
-          <a href="https://instagram.com/gibitekam
+          <a href="https://instagram.com/gibitekamaxzendron2015" target="_blank">
+            <i class="fab fa-instagram"></i> @gibitekamaxzendron2015
+          </a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Gibiteka Max Zendron – Todos os direitos reservados.</p>
+      <p>Desenvolvido com ❤️ para os fãs de
