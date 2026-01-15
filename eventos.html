@@ -33,7 +33,7 @@
       color: #212121;
       background:
         linear-gradient(to bottom, rgba(251,192,45,0.75), rgba(255,241,118,0.75)),
-        url('fotogibiteka.jpeg') center/cover no-repeat;
+        url('gibitekaeventos.jpeg') center/cover no-repeat;
     }
     .hero-content { max-width: 900px; margin: 0 auto; }
     .hero-content h1 {
@@ -43,6 +43,16 @@
       text-shadow: 0 2px 4px rgba(0,0,0,0.25);
     }
     .hero-content p { font-size: 1rem; margin-bottom: 16px; }
+
+    /* Imagem dentro do conteúdo */
+    .event-image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    }
 
     /* Botão (Verde Limão) */
     .btn {
@@ -99,7 +109,8 @@
     .hero-menu a.active { color: #c62828; } /* Vermelho */
 
     /* Conteúdo */
-    main { max-width: 900px; margin: 2rem auto; padding: 1rem; }
+    main { max-width: 900px; margin: 2rem auto; padding: 1rem; text-align: center; }
+    main h2 { margin-bottom: 20px; color: #1565c0; }
 
     /* Rodapé */
     footer {
@@ -162,6 +173,10 @@
 
   <main>
     <h2>Próximos Eventos</h2>
+
+    <!-- Imagem harmonizada -->
+    <img src="gibitekaeventos.jpeg" alt="Foto dos eventos da Gibiteka" class="event-image">
+
     <p>• 07 de fevereiro de 2026 das 13h às 19h – 23ª edição do Boardgame Barueri (festival de jogos de tabuleiro) – Entrada Franca</p>
     <p>• 11 de fevereiro de 2026 das 11h às 13h – Cinema na Gibiteka</p>
     <p>• 21 de fevereiro de 2026 das 13h às 19h – Encontro de RPG Primórdios</p>
@@ -201,17 +216,4 @@
       menuToggle.setAttribute('aria-expanded', 'false');
     }
     function openMenu() {
-      menu.classList.add('show');
-      menuToggle.setAttribute('aria-expanded', 'true');
-    }
-    menuToggle.addEventListener('click', () => {
-      menu.classList.contains('show') ? closeMenu() : openMenu();
-    });
-    document.addEventListener('click', (e) => {
-      if (!menu.contains(e.target) && !menuToggle.contains(e.target)) closeMenu();
-    });
-    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeMenu()));
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-  </script>
-</body>
-</html>
+      menu.classList.add
