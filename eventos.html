@@ -44,6 +44,64 @@
     }
     .hero-content p { font-size: 1rem; margin-bottom: 16px; }
 
+    /* Botão (Verde Limão) */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #76ff03; /* Verde Limão */
+      color: #000;
+      text-decoration: none;
+      border-radius: 6px;
+      border: 2px solid #33691e;
+      transition: background 0.25s, color 0.25s;
+    }
+    .btn:hover { background: #33691e; color: #fff; }
+
+    /* Botão hambúrguer */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 25px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      margin: 20px auto 10px;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: #212121; /* Preto */
+      border-radius: 2px;
+    }
+
+    /* Menu centralizado */
+    .hero-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .hero-menu a {
+      text-decoration: none;
+      color: #212121; /* Preto */
+      font-weight: bold;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: color 0.25s, background 0.25s;
+    }
+    .hero-menu a:hover,
+    .hero-menu a.active { color: #c62828; } /* Vermelho */
+
+    /* Conteúdo */
+    main { max-width: 900px; margin: 2rem auto; padding: 1rem; text-align: center; }
+    main h2 { margin-bottom: 20px; color: #1565c0; }
+
     /* Lista de eventos */
     .event-list {
       list-style: none;
@@ -158,37 +216,4 @@
         <p>Email: <a href="mailto:gibitekamaxzendron@barueri.sp.gov.br">gibitekamaxzendron@barueri.sp.gov.br</a></p>
         <p>
           Instagram:
-          <a href="https://instagram.com/gibitekamaxzendron2015" target="_blank">
-            <i class="fab fa-instagram"></i> @gibitekamaxzendron2015
-          </a>
-        </p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 Gibiteka Max Zendron – Todos os direitos reservados.</p>
-    </div>
-  </footer>
-
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-
-    function closeMenu() {
-      menu.classList.remove('show');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    }
-    function openMenu() {
-      menu.classList.add('show');
-      menuToggle.setAttribute('aria-expanded', 'true');
-    }
-    menuToggle.addEventListener('click', () => {
-      menu.classList.contains('show') ? closeMenu() : openMenu();
-    });
-    document.addEventListener('click', (e) => {
-      if (!menu.contains(e.target) && !menuToggle.contains(e.target)) closeMenu();
-    });
-    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeMenu()));
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-  </script>
-</body>
-</html>
+          <a href="https://instagram.com/gibitekam
