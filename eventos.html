@@ -47,7 +47,7 @@
     /* Imagem dentro do conteúdo */
     .event-image {
       display: block;
-      max-width: 100%;
+      max-width: 33%; /* 3 vezes menor */
       height: auto;
       margin: 20px auto;
       border-radius: 8px;
@@ -174,12 +174,13 @@
   <main>
     <h2>Próximos Eventos</h2>
 
-    <!-- Imagem harmonizada -->
-    <img src="gibitekaeventos.jpeg" alt="Foto dos eventos da Gibiteka" class="event-image">
-
+    <!-- Eventos primeiro -->
     <p>• 07 de fevereiro de 2026 das 13h às 19h – 23ª edição do Boardgame Barueri (festival de jogos de tabuleiro) – Entrada Franca</p>
     <p>• 11 de fevereiro de 2026 das 11h às 13h – Cinema na Gibiteka</p>
     <p>• 21 de fevereiro de 2026 das 13h às 19h – Encontro de RPG Primórdios</p>
+
+    <!-- Imagem menor logo abaixo -->
+    <img src="gibitekaeventos.jpeg" alt="Foto dos eventos da Gibiteka" class="event-image">
   </main>
 
   <!-- Rodapé atualizado -->
@@ -211,9 +212,4 @@
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
 
-    function closeMenu() {
-      menu.classList.remove('show');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    }
-    function openMenu() {
-      menu.classList.add
+    function
