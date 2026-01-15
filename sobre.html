@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sobre - Gibiteka Max Zendron</title>
   <style>
-    /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -15,16 +14,14 @@
       color:#212121;
     }
 
-    /* Cabeçalho (Azul + Amarelo Royal) */
     header {
-      background: #1565c0; /* Azul */
-      border-bottom: 4px solid #fbc02d; /* Amarelo Royal */
+      background: #1565c0;
+      border-bottom: 4px solid #fbc02d;
       padding: 10px 20px;
       text-align: center;
     }
     .logo img { max-width: 150px; height: auto; }
 
-    /* Hero com imagem atrás do título */
     #hero {
       position: relative;
       text-align: center;
@@ -38,16 +35,15 @@
     .hero-content h1 {
       font-size: 2.4rem;
       margin-bottom: 10px;
-      color: #c62828; /* Vermelho */
+      color: #c62828;
       text-shadow: 0 2px 4px rgba(0,0,0,0.25);
     }
     .hero-content p { font-size: 1rem; margin-bottom: 16px; }
 
-    /* Botão (Verde Limão) */
     .btn {
       display: inline-block;
       padding: 10px 20px;
-      background: #76ff03; /* Verde Limão */
+      background: #76ff03;
       color: #000;
       text-decoration: none;
       border-radius: 6px;
@@ -56,7 +52,6 @@
     }
     .btn:hover { background: #33691e; color: #fff; }
 
-    /* Botão hambúrguer */
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -72,11 +67,10 @@
       display: block;
       width: 100%;
       height: 3px;
-      background: #212121; /* Preto */
+      background: #212121;
       border-radius: 2px;
     }
 
-    /* Menu centralizado */
     .hero-menu ul {
       list-style: none;
       padding: 0;
@@ -88,33 +82,54 @@
     }
     .hero-menu a {
       text-decoration: none;
-      color: #212121; /* Preto */
+      color: #212121;
       font-weight: bold;
       padding: 6px 10px;
       border-radius: 6px;
       transition: color 0.25s, background 0.25s;
     }
     .hero-menu a:hover,
-    .hero-menu a.active { color: #c62828; } /* Vermelho */
+    .hero-menu a.active { color: #c62828; }
 
-    /* Conteúdo */
     main { max-width: 900px; margin: 2rem auto; padding: 1rem; }
     main h2 { color:#c62828; margin-bottom:1rem; }
 
-    /* Rodapé */
     footer {
       background: #000;
       color: #fff;
       padding: 40px 20px;
     }
-    .footer-container { display: flex; flex-wrap: wrap; justify-content: space-around; margin-bottom: 20px; }
-    .footer-column { flex: 1 1 220px; margin: 10px; }
-    .footer-column h3 { margin-bottom: 10px; font-size: 1.2rem; color: #76ff03; }
-    .footer-column a { color: #fff; text-decoration: none; }
-    .footer-column a:hover { color: #fbc02d; }
-    .footer-bottom { text-align: center; border-top: 2px solid #c62828; padding-top: 10px; font-size: .9rem; }
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+    .footer-column {
+      flex: 1 1 220px;
+      margin: 10px;
+    }
+    .footer-column h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #76ff03;
+    }
+    .footer-column a {
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .footer-column a:hover {
+      text-decoration: underline;
+      opacity: 0.8;
+    }
+    .footer-bottom {
+      text-align: center;
+      border-top: 2px solid #c62828;
+      padding-top: 10px;
+      font-size: .9rem;
+    }
 
-    /* Responsivo */
     @media (max-width: 768px) {
       .menu-toggle { display: flex; }
       .hero-menu ul {
@@ -141,12 +156,10 @@
       <h1>Sobre a Gibiteka Max Zendron</h1>
       <p>Conheça a história e missão da Gibiteka.</p>
 
-      <!-- Botão Hambúrguer -->
       <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu">
         <span></span><span></span><span></span>
       </button>
 
-      <!-- Menu -->
       <nav class="hero-menu">
         <ul id="menu">
           <li><a href="index.html">Início</a></li>
@@ -162,52 +175,38 @@
 
   <main>
     <h2>Nossa História</h2>
-    <p>A Gibiteka Max Zendron é um espaço cultural de Barueri dedicado aos quadrinhos e mangás. 
-       Fundada para promover a leitura e a cultura geek, oferece acervo variado, eventos e oficinas.</p>
+    <p>Em 1968 a Lei Municipal n° 5 criou a primeira biblioteca municipal de Barueri, mais tarde denominada Biblioteca Pública Max Zendron, que passou a funcionar no atual prédio próprio desde 1982.</p>
+    <p>A partir de 2015 a então Biblioteca Max Zendron criou uma gibiteca e em 2019, passou a ser caracterizada como Estação Cultural (Lei Municipal 2670/2019) e em 2021 após consulta aos munícipes recebeu a denominação atual de Gibiteka Max Zendron (Lei Municipal 2857/2021).</p>
+    <p>Desde 2015 até 2019, a então biblioteca passou por uma transição e a partir de 2019, mantendo majoritariamente um acervo formado por gibis e materiais afins (graphic novels, adaptações para quadrinhos, mangás, fanzines, etc.).</p>
+    <p>Recentemente a Gibiteka disponibilizou um acervo de fanzines com mais de 1000 exemplares, e está ampliando seu acervo de vídeos e livros infantis.</p>
+
     <h2>Missão</h2>
-    <p>Promover o acesso à cultura dos quadrinhos e mangás, incentivando a criatividade e a convivência comunitária.</p>
+    <ul>
+      <li>Ser uma referência local e regional para a cultura HQ, Nerd e Geek e afins, mantendo acervos e atividades culturais nestes segmentos;</li>
+      <li>Contribuir com a política municipal de cultura na condição de Estação Cultural do município;</li>
+      <li>Promover o conhecimento e a disseminação de serviços bibliográficos como consulta local e on-line e recuperação de materiais bibliográficos de forma coerente com a sua missão.</li>
+    </ul>
   </main>
 
   <footer>
     <div class="footer-container">
       <div class="footer-column">
         <h3>Endereço</h3>
-        <p>Rua Rio Grande do Sul, 234 - Centro – Barueri/SP</p>
+        <p>Rua Rio Grande do Sul, 234 – Vila Boa Vista</p>
+        <p>Barueri – SP</p>
+        <p>CEP: 06411-060</p>
       </div>
       <div class="footer-column">
         <h3>Contato</h3>
-        <p>Email: gibiteka@barueri.sp.gov.br</p>
-      </div>
-      <div class="footer-column">
-        <h3>Redes Sociais</h3>
-        <p>Facebook | Instagram | YouTube</p>
+        <p>Email: <a href="mailto:gibitekamaxzendron@barueri.sp.gov.br">gibitekamaxzendron@barueri.sp.gov.br</a></p>
+        <p>
+          Instagram:
+          <a href="https://instagram.com/gibitekamaxzendron2015" target="_blank">
+            <i class="fab fa-instagram"></i> @gibitekamaxzendron2015
+          </a>
+        </p>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Gibiteka Max Zendron – Todos os direitos reservados.</p>
-    </div>
-  </footer>
-
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-
-    function closeMenu() {
-      menu.classList.remove('show');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    }
-    function openMenu() {
-      menu.classList.add('show');
-      menuToggle.setAttribute('aria-expanded', 'true');
-    }
-    menuToggle.addEventListener('click', () => {
-      menu.classList.contains('show') ? closeMenu() : openMenu();
-    });
-    document.addEventListener('click', (e) => {
-      if (!menu.contains(e.target) && !menuToggle.contains(e.target)) closeMenu();
-    });
-    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeMenu()));
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-  </script>
-</body>
-</html>
+      <p>© 2026 Gibiteka Max Zendron – Todos os direitos reservados.</p>
+      <p>Desenvolvido com ❤️ para os fãs de
