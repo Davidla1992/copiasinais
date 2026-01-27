@@ -134,9 +134,33 @@ header {
   }
 }
 
-/* Mensagem institucional centralizada */
-.mensagem-central {
+/* Rodapé institucional */
+footer {
+  background: #ff9800;
+  color: #212121;
+  padding: 40px 20px;
+}
+
+.rodape-institucional {
   text-align: center;
-  margin: 60px auto 40px;
-  font-size: 1.1rem;
-  color: #e65100; /* l
+  margin-bottom: 30px;
+}
+
+.rodape-institucional h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #212121;
+}
+
+.rodape-institucional p {
+  margin: 4px 0;
+  font-size: 1rem;
+}
+
+.rodape-institucional a {
+  color: #212121;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.rodape-in
