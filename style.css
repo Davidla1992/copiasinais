@@ -33,7 +33,7 @@ header {
   color: #212121;
   background:
     linear-gradient(to bottom, rgba(255, 152, 0, 0.75), rgba(255, 241, 118, 0.75)),
-    url('gibiteka-fondo.jpg') center/cover no-repeat; /* nova imagem de fundo */
+    url('gibiteka-fondo.jpg') center/cover no-repeat; /* imagem de fundo atrás do menu */
 }
 
 .hero-content {
@@ -156,5 +156,4 @@ footer {
 
 .footer-column h3 {
   margin-bottom: 10px;
-  font-size: 1.2rem;
-  color: #fff
+  font
