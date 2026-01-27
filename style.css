@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 
-/* Tipografia e fundo geral */
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
@@ -13,7 +12,7 @@ body {
   background-color: #fff3e0; /* fundo suave */
 }
 
-/* Cabeçalho com novo logo */
+/* Cabeçalho */
 header {
   background: #ff9800; /* laranja vibrante */
   padding: 10px 20px;
@@ -24,18 +23,17 @@ header {
 .logo img {
   max-width: 150px;
   height: auto;
-  content: url('logogibiteka.jpeg'); /* novo logo */
 }
 
-/* Hero com imagem de fundo e overlay */
+/* Hero com imagem de fundo */
 #hero {
   position: relative;
   text-align: center;
   padding: 80px 20px;
   color: #212121;
   background:
-    linear-gradient(to bottom, rgba(255, 152, 0, 0.75), rgba(255, 241, 118, 0.75)), /* overlay laranja */
-    url('fotogibiteka.jpeg') center/cover no-repeat;
+    linear-gradient(to bottom, rgba(255, 152, 0, 0.75), rgba(255, 241, 118, 0.75)),
+    url('gibiteka-fondo.jpg') center/cover no-repeat; /* nova imagem de fundo */
 }
 
 .hero-content {
@@ -48,7 +46,7 @@ header {
 .hero-content h1 {
   font-size: 2.8rem;
   margin-bottom: 10px;
-  color: #e65100; /* laranja escuro */
+  color: #e65100;
   text-shadow: 0 2px 4px rgba(0,0,0,0.25);
 }
 
@@ -58,7 +56,7 @@ header {
   color: #212121;
 }
 
-/* Botão estilo flyer */
+/* Botão */
 .btn {
   display: inline-block;
   padding: 10px 20px;
@@ -76,7 +74,7 @@ header {
   transform: translateY(-1px);
 }
 
-/* Menu centralizado */
+/* Menu */
 .hero-menu ul {
   list-style: none;
   padding: 0;
@@ -119,7 +117,6 @@ header {
   background: #212121;
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
   .hero-menu ul {
     display: none;
@@ -137,7 +134,7 @@ header {
   }
 }
 
-/* Rodapé institucional */
+/* Rodapé */
 footer {
   background: #ff9800;
   color: #ffffff;
@@ -160,25 +157,4 @@ footer {
 .footer-column h3 {
   margin-bottom: 10px;
   font-size: 1.2rem;
-  color: #fff;
-}
-
-.footer-column a {
-  color: #ffffff;
-  text-decoration: none;
-  border-bottom: 1px dashed transparent;
-  transition: color 0.2s, border-color 0.2s;
-}
-
-.footer-column a:hover {
-  color: #212121;
-  border-color: #212121;
-}
-
-.footer-bottom {
-  text-align: center;
-  border-top: 2px solid #e65100;
-  padding-top: 10px;
-  font-size: 0.9rem;
-  color: #fff;
-}
+  color: #fff
