@@ -5,140 +5,180 @@
   box-sizing: border-box;
 }
 
+/* Tipografia e fundo geral */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fff3e0; /* tom suave de fundo */
-  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
+  color: #212121;              /* Preto */
+  background-color: #ffffff;   /* Branco */
 }
 
-/* Cabeçalho */
+/* Cabeçalho (Azul + Amarelo Royal) com novo logo */
 header {
-  background-color: #ff9800; /* laranja vibrante */
+  background: #1565c0;         /* Azul */
+  padding: 10px 20px;
   text-align: center;
-  padding: 15px;
+  border-bottom: 4px solid #fbc02d; /* Amarelo Royal */
 }
 
-header .logo img {
-  max-height: 80px;
+.logo img {
+  max-width: 150px;
+  height: auto;
+  content: url('logogibiteka.jpeg'); /* Novo logo */
 }
 
-/* Hero */
+/* Hero com imagem atrás do título */
 #hero {
-  background: url("fundo.jpg") no-repeat center center/cover; /* coloque aqui sua imagem de fundo */
-  color: white;
+  position: relative;
   text-align: center;
   padding: 80px 20px;
-  position: relative;
-}
-
-#hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4); /* overlay para destacar o texto */
+  color: #212121;
+  background:
+    linear-gradient(to bottom, rgba(251, 192, 45, 0.75), rgba(255, 241, 118, 0.75)), /* overlay amarelo */
+    url('fotogibiteka.jpeg') center/cover no-repeat; /* imagem atrás do título */
 }
 
 .hero-content {
+  max-width: 900px;
+  margin: 0 auto;
   position: relative;
   z-index: 1;
 }
 
 .hero-content h1 {
-  font-size: 2.5em;
-  margin-bottom: 15px;
-  color: #fff;
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #c62828;              /* Vermelho */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.25);
 }
 
 .hero-content p {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   margin-bottom: 20px;
+  color: #212121;              /* Preto */
 }
 
-/* Botão */
+/* Botão (Verde Limão) */
 .btn {
   display: inline-block;
-  padding: 12px 25px;
-  background-color: #ff9800;
-  color: white;
+  padding: 10px 20px;
+  background: #76ff03;         /* Verde Limão */
+  color: #000;                 /* Preto */
   text-decoration: none;
   border-radius: 6px;
-  font-weight: bold;
-  transition: background 0.3s ease;
+  border: 2px solid #33691e;   /* Verde escuro */
+  transition: background 0.25s, color 0.25s, transform 0.15s;
 }
 
 .btn:hover {
-  background-color: #e65100;
+  background: #33691e;         /* Verde escuro */
+  color: #fff;                 /* Branco */
+  transform: translateY(-1px);
 }
 
-/* Menu hambúrguer */
+/* Menu centralizado */
+.hero-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.hero-menu a {
+  text-decoration: none;
+  color: #212121;              /* Preto */
+  font-weight: bold;
+  transition: color 0.25s;
+}
+
+.hero-menu a:hover,
+.hero-menu a.active {
+  color: #c62828;              /* Vermelho */
+}
+
+/* Botão hambúrguer */
 .menu-toggle {
-  background: none;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
   border: none;
   cursor: pointer;
-  margin-top: 20px;
+  margin: 20px auto;
 }
 
 .menu-toggle span {
   display: block;
-  width: 25px;
+  width: 100%;
   height: 3px;
-  margin: 5px auto;
-  background-color: white;
-  transition: all 0.3s ease;
+  background: #212121;         /* Preto */
 }
 
-/* Menu */
-.hero-menu ul {
-  list-style: none;
-  margin-top: 20px;
+/* Responsivo */
+@media (max-width: 768px) {
+  .hero-menu ul {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(255,255,255,0.8);
+    padding: 12px;
+    border-radius: 8px;
+  }
+  .hero-menu ul.show {
+    display: flex;
+  }
+  .menu-toggle {
+    display: flex;
+  }
 }
 
-.hero-menu ul li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-.hero-menu ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: opacity 0.3s ease;
-}
-
-.hero-menu ul li a:hover {
-  opacity: 0.7;
-}
-
-.hero-menu ul li a.active {
-  border-bottom: 2px solid #ff9800;
-}
-
-/* Rodapé */
+/* Rodapé (Preto + Branco com detalhes coloridos) */
 footer {
-  background-color: #ff9800;
-  color: white;
-  padding: 30px 20px;
-  text-align: center;
+  background: #000000;         /* Preto */
+  color: #ffffff;              /* Branco */
+  padding: 40px 20px;
 }
 
 .footer-container {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
+  justify-content: space-around;
   margin-bottom: 20px;
+  gap: 20px;
 }
 
 .footer-column {
+  flex: 1 1 220px;
   margin: 10px;
 }
 
 .footer-column h3 {
   margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #76ff03;              /* Verde Limão */
+}
+
+.footer-column a {
+  color: #ffffff;              /* Branco */
+  text-decoration: none;
+  border-bottom: 1px dashed transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.footer-column a:hover {
+  color: #fbc02d;              /* Amarelo Royal */
+  border-color: #fbc02d;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.3);
+  text-align: center;
+  border-top: 2px solid #c62828; /* Vermelho */
   padding-top: 10px;
-  font-size: 0.9em;
+  font-size: 0.9rem;
+  color: #fff;
 }
