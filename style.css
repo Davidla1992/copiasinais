@@ -24,8 +24,9 @@ header h1, header p {
   color: #fff;
 }
 
+/* Logo principal duas vezes maior */
 .logo-principal {
-  max-height: 100px;
+  max-height: 200px; /* antes era 100px */
   margin-bottom: 10px;
 }
 
