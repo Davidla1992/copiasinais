@@ -1,4 +1,4 @@
-/* Reset básico */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -9,147 +9,109 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
   color: #212121;
-  background-color: #fff3e0; /* fundo suave */
+  background-color: #fff8e1;
 }
 
-/* Cabeçalho */
+/* Cabeçalho com logos */
 header {
-  background: #ff9800; /* laranja vibrante */
+  background: #ff9800;
   padding: 10px 20px;
   text-align: center;
-  border-bottom: 4px solid #e65100; /* laranja escuro */
+  border-bottom: 4px solid #e65100;
 }
 
-.logo img {
-  max-width: 150px;
-  height: auto;
+.top-logos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-/* Hero com imagem de fundo */
+.top-logos img {
+  max-height: 60px;
+  width: auto;
+}
+
+/* Hero com fundo imagem + overlay */
 #hero {
   position: relative;
   text-align: center;
-  padding: 80px 20px;
+  padding: 120px 20px;
   color: #212121;
   background:
-    linear-gradient(to bottom, rgba(255, 152, 0, 0.75), rgba(255, 241, 118, 0.75)),
-    url('gibiteka-fondo.jpg') center/cover no-repeat; /* imagem de fundo atrás do menu */
+    linear-gradient(to bottom, rgba(255, 152, 0, 0.85), rgba(255, 241, 118, 0.85)),
+    url('gibiteka-fondo.jpg') center/cover no-repeat;
 }
 
 .hero-content {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
 }
 
 .hero-content h1 {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
-  color: #e65100;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #b71c1c; /* vermelho forte */
   text-shadow: 0 2px 4px rgba(0,0,0,0.25);
 }
 
 .hero-content p {
   font-size: 1.2rem;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   color: #212121;
 }
 
 /* Botão */
 .btn {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 12px 24px;
   background: #ff9800;
   color: #fff;
   text-decoration: none;
   border-radius: 6px;
   border: 2px solid #e65100;
-  transition: background 0.25s, color 0.25s, transform 0.15s;
+  font-weight: bold;
+  transition: background 0.25s, transform 0.15s;
 }
 
 .btn:hover {
   background: #e65100;
-  color: #fff;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
-/* Menu */
-.hero-menu ul {
+/* Rodapé */
+footer {
+  background: #ff9800;
+  color: #212121;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Menu no rodapé */
+.footer-menu ul {
   list-style: none;
-  padding: 0;
-  margin: 20px 0 0;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+  margin-bottom: 30px;
 }
 
-.hero-menu a {
+.footer-menu a {
   text-decoration: none;
   color: #212121;
   font-weight: bold;
   transition: color 0.25s;
 }
 
-.hero-menu a:hover,
-.hero-menu a.active {
+.footer-menu a:hover,
+.footer-menu a.active {
   color: #e65100;
 }
 
-/* Botão hambúrguer */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 30px;
-  height: 25px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  margin: 20px auto;
-}
-
-.menu-toggle span {
-  display: block;
-  width: 100%;
-  height: 3px;
-  background: #212121;
-}
-
-@media (max-width: 768px) {
-  .hero-menu ul {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    background: rgba(255,255,255,0.9);
-    padding: 12px;
-    border-radius: 8px;
-  }
-  .hero-menu ul.show {
-    display: flex;
-  }
-  .menu-toggle {
-    display: flex;
-  }
-}
-
 /* Rodapé institucional */
-footer {
-  background: #ff9800;
-  color: #212121;
-  padding: 40px 20px;
-}
-
-.rodape-institucional {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
 .rodape-institucional h3 {
   font-size: 1.2rem;
   margin-bottom: 8px;
-  color: #212121;
 }
 
 .rodape-institucional p {
@@ -159,8 +121,14 @@ footer {
 
 .rodape-institucional a {
   color: #212121;
-  text-decoration: none;
   font-weight: bold;
 }
 
-.rodape-in
+.rodape-institucional a:hover {
+  text-decoration: underline;
+}
+
+copyright {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
