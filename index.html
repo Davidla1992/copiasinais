@@ -4,47 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gibiteka Max Zendron</title>
-  <meta name="description" content="Gibiteka Max Zendron - Quadrinhos e adaptações, mangás, Revistas Marvel e DC, livros juvenil, jogos e oficinas culturais.">
+  <meta name="description" content="HQs, mangás, livros infantojuvenis, jogos e oficinas culturais.">
   <link rel="stylesheet" href="style.css">
-  <!-- Font Awesome para ícones -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <!-- Cabeçalho -->
+  <!-- Cabeçalho institucional -->
   <header>
-    <div class="logo">
-      <img src="logo-final.jpg" alt="Logo Gibiteka Max Zendron" loading="lazy">
+    <div class="top-logos">
+      <img src="logo-secretaria.png" alt="Secretaria de Cultura e Turismo" loading="lazy">
+      <img src="logo-prefeitura.png" alt="Prefeitura de Barueri" loading="lazy">
     </div>
   </header>
 
-  <!-- Hero com imagem atrás do título e menu -->
+  <!-- Hero principal -->
   <section id="hero">
     <div class="hero-content">
       <h1>Gibiteka Max Zendron</h1>
-      <p>Quadrinhos e adaptações, mangás, Revistas Marvel e DC, livros juvenil, jogos e oficinas culturais</p>
-      <a href="catalogo.html" class="btn">Explore o Catálogo</a>
-
-      <!-- Botão Hambúrguer -->
-      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu">
-        <span></span><span></span><span></span>
-      </button>
-
-      <!-- Menu centralizado -->
-      <nav aria-label="Menu principal" class="hero-menu">
-        <ul id="menu">
-          <li><a href="index.html" class="active">Início</a></li>
-          <li><a href="catalogo.html">Catálogo</a></li>
-          <li><a href="eventos.html">Eventos</a></li>
-          <li><a href="sobre.html">Sobre</a></li>
-          <li><a href="contato.html">Contato</a></li>
-          <li><a href="usuarios.html">Área de Usuários</a></li>
-        </ul>
-      </nav>
+      <p>HQs, mangás, Livros infanto Juvenil, jogos e oficinas culturais</p>
+      <a href="catalogo.html" class="btn">Explore o catálogo</a>
     </div>
   </section>
 
   <!-- Rodapé institucional -->
   <footer>
+    <!-- Menu no rodapé -->
+    <nav class="footer-menu">
+      <ul>
+        <li><a href="index.html" class="active">Início</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="usuarios.html">Área de Usuários</a></li>
+      </ul>
+    </nav>
+
     <div class="rodape-institucional">
       <h3>📍 Endereço</h3>
       <p>Rua Rio Grande do Sul, 234 – Vila Boa Vista</p>
@@ -53,52 +47,12 @@
 
       <h3>✉️ Contato</h3>
       <p>Email: <a href="mailto:gibitekamaxzendron@barueri.sp.gov.br">gibitekamaxzendron@barueri.sp.gov.br</a></p>
-      <p>Instagram: <a href="https://instagram.com/gibitekamaxzendron2015" target="_blank">📷 @gibitekamaxzendron2015</a></p>
+      <p>Instagram: <a href="https://instagram.com/gibitekamaxzendron2015" target="_blank">@gibitekamaxzendron2015</a></p>
     </div>
 
-    <!-- Copyright separado e centralizado -->
     <div class="copyright">
       <p>© 2026 Gibiteka Max Zendron – Todos os direitos reservados.</p>
-      <p>Desenvolvido para os fãs de quadrinhos e mangás.</p>
     </div>
   </footer>
-
-  <script>
-    // Menu responsivo e acessível
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-
-    function closeMenu() {
-      menu.classList.remove('show');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    }
-
-    function openMenu() {
-      menu.classList.add('show');
-      menuToggle.setAttribute('aria-expanded', 'true');
-    }
-
-    menuToggle.addEventListener('click', () => {
-      const isOpen = menu.classList.contains('show');
-      if (isOpen) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    });
-
-    document.addEventListener('click', (e) => {
-      const clickInside = menu.contains(e.target) || menuToggle.contains(e.target);
-      if (!clickInside) closeMenu();
-    });
-
-    menu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => closeMenu());
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
-    });
-  </script>
 </body>
 </html>
