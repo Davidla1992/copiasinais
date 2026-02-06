@@ -79,11 +79,33 @@ header {
   transform: translateY(-2px);
 }
 
-/* Rodapé igual ao modelo da imagem */
+/* Rodapé */
 footer {
   background: #ff9800; /* fundo laranja */
   color: #fff;         /* texto branco */
   padding: 40px 20px;
+}
+
+/* Menu no rodapé */
+.footer-menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.footer-menu a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.25s;
+}
+
+.footer-menu a:hover,
+.footer-menu a.active {
+  text-decoration: underline;
 }
 
 /* Container em duas colunas */
