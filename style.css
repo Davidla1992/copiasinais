@@ -24,6 +24,11 @@ header h1, header p {
   color: #fff;
 }
 
+.logo-principal {
+  max-height: 100px;
+  margin-bottom: 10px;
+}
+
 /* Hero */
 #hero {
   text-align: center;
