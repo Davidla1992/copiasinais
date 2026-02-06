@@ -14,10 +14,11 @@ body {
 
 /* Cabeçalho com logos */
 header {
-  background: #ff9800;
+  background: transparent; /* fundo transparente para ver imagem */
   padding: 10px 20px;
   text-align: center;
-  border-bottom: 4px solid #e65100;
+  position: relative;
+  z-index: 10;
 }
 
 .top-logos {
@@ -31,14 +32,77 @@ header {
   width: auto;
 }
 
-/* Hero com fundo imagem + overlay */
+/* Menu hamburguer */
+.hamburger {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #000; /* linhas pretas */
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(9px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-9px);
+}
+
+/* Navegação principal */
+.main-nav {
+  display: none;
+  background: rgba(255, 152, 0, 0.9);
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.main-nav.open {
+  display: block;
+}
+
+.main-nav ul {
+  list-style: none;
+}
+
+.main-nav li {
+  margin: 10px 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Hero com fundo imagem + overlay mais claro */
 #hero {
   position: relative;
   text-align: center;
   padding: 120px 20px;
   color: #212121;
   background:
-    linear-gradient(to bottom, rgba(255, 152, 0, 0.85), rgba(255, 241, 118, 0.85)),
+    linear-gradient(to bottom, rgba(255, 200, 100, 0.6), rgba(255, 241, 118, 0.6)),
     url('gibiteka-fondo.jpg') center/cover no-repeat;
 }
 
@@ -50,7 +114,7 @@ header {
 .hero-content h1 {
   font-size: 3rem;
   margin-bottom: 15px;
-  color: #b71c1c; /* vermelho forte */
+  color: #b71c1c;
   text-shadow: 0 2px 4px rgba(0,0,0,0.25);
 }
 
@@ -81,8 +145,8 @@ header {
 
 /* Rodapé */
 footer {
-  background: #ff9800; /* fundo laranja */
-  color: #fff;         /* texto branco */
+  background: #ff9800;
+  color: #fff;
   padding: 40px 20px;
 }
 
@@ -132,37 +196,3 @@ footer {
 
 .footer-col a {
   color: #fff;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.footer-col a:hover {
-  text-decoration: underline;
-}
-
-/* Copyright */
-.copyright {
-  text-align: center;
-  font-size: 0.9rem;
-  border-top: 1px solid rgba(255,255,255,0.4);
-  padding-top: 15px;
-  color: #fff;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-  .hero-content p {
-    font-size: 1rem;
-  }
-  .btn {
-    padding: 10px 20px;
-  }
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-}
