@@ -14,16 +14,15 @@ body {
 
 /* Cabeçalho */
 header {
-  background: transparent;
+  background: #ff9800;
   padding: 10px 20px;
   text-align: center;
-  position: relative;
-  z-index: 10;
 }
 
 .top-logos {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 20px;
 }
 
@@ -32,59 +31,7 @@ header {
   width: auto;
 }
 
-/* Botão hamburguer */
-.hamburger {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  display: none; /* escondido em desktop */
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 22px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.hamburger span {
-  display: block;
-  height: 4px;
-  width: 100%;
-  background: #000;
-  border-radius: 2px;
-  transition: 0.3s;
-}
-
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translateY(9px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-9px);
-}
-
-/* Navegação principal - desktop */
-.main-nav {
-  display: block;
-}
-
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.main-nav a {
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
-}
-
-/* Hero com fundo imagem + overlay mais claro */
+/* Hero com fundo imagem + overlay */
 #hero {
   position: relative;
   text-align: center;
@@ -113,7 +60,7 @@ header {
   color: #212121;
 }
 
-/* Botão */
+/* Botão principal */
 .btn {
   display: inline-block;
   padding: 12px 24px;
@@ -132,6 +79,71 @@ header {
   transform: translateY(-2px);
 }
 
+/* Hamburguer central */
+.hamburger {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #000;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(9px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-9px);
+}
+
+/* Menu hamburguer */
+.main-nav {
+  display: none;
+  margin-top: 15px;
+}
+
+.main-nav.open {
+  display: block;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #212121;
+  font-weight: bold;
+}
+
+/* Desktop: menu horizontal */
+@media (min-width: 769px) {
+  .main-nav ul {
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
 /* Rodapé */
 footer {
   background: #ff9800;
@@ -139,7 +151,6 @@ footer {
   padding: 40px 20px;
 }
 
-/* Menu no rodapé */
 .footer-menu ul {
   list-style: none;
   display: flex;
@@ -161,4 +172,59 @@ footer {
   text-decoration: underline;
 }
 
-/* Container em duas colunas */
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: left;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.footer-col h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.footer-col p {
+  margin: 6px 0;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.footer-col a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255,255,255,0.4);
+  padding-top: 15px;
+  color: #fff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .btn {
+    padding: 10px 20px;
+  }
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+}
