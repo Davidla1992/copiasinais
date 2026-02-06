@@ -14,6 +14,25 @@
       <img src="logo-secretaria.png" alt="Secretaria de Cultura e Turismo" loading="lazy">
       <img src="logo-prefeitura.png" alt="Prefeitura de Barueri" loading="lazy">
     </div>
+
+    <!-- Botão hamburguer -->
+    <button class="hamburger" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Menu de navegação -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" class="active">Início</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="usuarios.html">Área de Usuários</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- Hero principal -->
@@ -39,7 +58,7 @@
       </ul>
     </nav>
 
-    <!-- Conteúdo institucional adaptado -->
+    <!-- Conteúdo institucional -->
     <div class="footer-container">
       <div class="footer-col">
         <h2>Endereço</h2>
@@ -59,5 +78,16 @@
       <p>© 2026 Gibiteka Max Zendron – Todos os direitos reservados.</p>
     </div>
   </footer>
+
+  <!-- Script para abrir/fechar menu -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('.main-nav');
+
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
