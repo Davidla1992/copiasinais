@@ -12,9 +12,9 @@ body {
   background-color: #fff8e1;
 }
 
-/* Cabeçalho com logos */
+/* Cabeçalho */
 header {
-  background: transparent; /* fundo transparente para ver imagem */
+  background: transparent;
   padding: 10px 20px;
   text-align: center;
   position: relative;
@@ -32,12 +32,12 @@ header {
   width: auto;
 }
 
-/* Menu hamburguer */
+/* Botão hamburguer */
 .hamburger {
   position: absolute;
   top: 15px;
   right: 20px;
-  display: flex;
+  display: none; /* escondido em desktop */
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
@@ -51,7 +51,7 @@ header {
   display: block;
   height: 4px;
   width: 100%;
-  background: #000; /* linhas pretas */
+  background: #000;
   border-radius: 2px;
   transition: 0.3s;
 }
@@ -66,27 +66,16 @@ header {
   transform: rotate(-45deg) translateY(-9px);
 }
 
-/* Navegação principal */
+/* Navegação principal - desktop */
 .main-nav {
-  display: none;
-  background: rgba(255, 152, 0, 0.9);
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  border-radius: 8px;
-  padding: 15px;
-}
-
-.main-nav.open {
   display: block;
 }
 
 .main-nav ul {
   list-style: none;
-}
-
-.main-nav li {
-  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .main-nav a {
@@ -102,7 +91,7 @@ header {
   padding: 120px 20px;
   color: #212121;
   background:
-    linear-gradient(to bottom, rgba(255, 200, 100, 0.6), rgba(255, 241, 118, 0.6)),
+    linear-gradient(to bottom, rgba(255, 200, 100, 0.5), rgba(255, 241, 118, 0.5)),
     url('gibiteka-fondo.jpg') center/cover no-repeat;
 }
 
@@ -173,26 +162,3 @@ footer {
 }
 
 /* Container em duas colunas */
-.footer-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  text-align: left;
-  gap: 40px;
-  margin-bottom: 20px;
-}
-
-.footer-col h2 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.footer-col p {
-  margin: 6px 0;
-  font-size: 1rem;
-  color: #fff;
-}
-
-.footer-col a {
-  color: #fff;
