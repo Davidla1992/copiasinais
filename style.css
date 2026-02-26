@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -6,97 +6,67 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Arial", sans-serif;
   line-height: 1.6;
-  background-color: #fff8e1;
-  color: #212121;
+  color: #333;
 }
 
 /* Cabeçalho */
 header {
-  background: #ff9800;
-  padding: 20px;
+  background: #004080;
+  color: white;
+  padding: 1em;
   text-align: center;
-  color: #fff;
 }
 
-header h1, header p {
-  color: #fff;
-}
-
-/* Logo principal duas vezes maior */
 .logo-principal {
-  max-height: 200px; /* antes era 100px */
-  margin-bottom: 10px;
+  max-width: 120px;
+  display: block;
+  margin: 0 auto 10px;
 }
 
 /* Hero */
 #hero {
+  background: url("Asset 1@3xx.png") center/cover no-repeat;
+  color: white;
   text-align: center;
-  padding: 100px 20px;
-  background:
-    linear-gradient(to bottom, rgba(255, 200, 100, 0.5), rgba(255, 241, 118, 0.5)),
-    url('gibiteka-fondo.jpg') center/cover no-repeat;
+  padding: 4em 2em;
 }
 
-.hero-content h2 {
-  color: #212121;
-  margin-bottom: 20px;
+#hero h2 {
+  font-size: 1.8em;
+  margin-bottom: 1em;
 }
 
 .btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background: #ff9800;
-  color: #fff;
-  border-radius: 6px;
-  border: 2px solid #e65100;
-  font-weight: bold;
+  background: #ffcc00;
+  color: #004080;
+  padding: 0.8em 1.5em;
   text-decoration: none;
-  transition: background 0.25s, transform 0.15s;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
-.btn:hover {
-  background: #e65100;
-  transform: translateY(-2px);
-}
-
-/* Hamburguer central */
+/* Menu hamburguer */
 .hamburger {
-  margin: 20px auto;
-  display: flex;
+  display: none;
   flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 22px;
+  gap: 5px;
+  margin: 1em auto;
   background: none;
   border: none;
   cursor: pointer;
 }
 
 .hamburger span {
-  display: block;
-  height: 4px;
-  width: 100%;
-  background: #000;
-  border-radius: 2px;
-  transition: 0.3s;
+  width: 25px;
+  height: 3px;
+  background: white;
 }
 
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translateY(9px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-9px);
-}
-
-/* Menu hamburguer */
+/* Navegação */
 .main-nav {
   display: none;
-  margin-top: 15px;
 }
 
 .main-nav.open {
@@ -105,88 +75,45 @@ header h1, header p {
 
 .main-nav ul {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
+}
+
+.main-nav li {
+  margin: 10px 0;
 }
 
 .main-nav a {
+  color: white;
   text-decoration: none;
-  color: #212121;
-  font-weight: bold;
-}
-
-/* Desktop: menu horizontal */
-@media (min-width: 769px) {
-  .main-nav ul {
-    flex-direction: row;
-    gap: 20px;
-  }
 }
 
 /* Rodapé */
 footer {
-  background: #ff9800;
-  color: #fff;
-  padding: 40px 20px;
+  background: #f1f1f1;
+  padding: 2em;
 }
 
 .footer-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 20px;
 }
 
 .footer-col h2 {
-  margin-bottom: 10px;
-  color: #fff;
+  margin-bottom: 0.5em;
 }
 
-.footer-col p {
-  margin: 6px 0;
-  font-size: 1rem;
-  color: #fff;
-}
-
-.footer-col a {
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.footer-col a:hover {
-  text-decoration: underline;
-}
-
-/* Políticas centralizadas */
 .politicas {
   text-align: center;
-  font-size: 0.9rem;
-}
-
-.politicas a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.politicas a:hover {
-  text-decoration: underline;
+  margin-top: 1em;
+  font-size: 0.9em;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .hamburger {
+    display: flex;
   }
-
-  .footer-col {
-    max-width: 100%;
-    margin-bottom: 20px;
+  .main-nav {
+    text-align: center;
   }
 }
