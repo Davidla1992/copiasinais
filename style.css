@@ -6,15 +6,13 @@
 }
 
 body {
-  font-family: "Arial", sans-serif;
+  font-family: Arial, sans-serif;
   line-height: 1.6;
   color: #333;
 }
 
 /* Cabeçalho */
 header {
-  background: #004080;
-  color: white;
   padding: 1em;
   text-align: center;
 }
@@ -39,12 +37,12 @@ header {
 }
 
 .btn {
-  background: #ffcc00;
-  color: #004080;
   padding: 0.8em 1.5em;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
+  background: #ccc; /* igual ao primeiro código */
+  color: #000;
 }
 
 /* Menu hamburguer */
@@ -62,7 +60,7 @@ header {
 .hamburger span {
   width: 25px;
   height: 3px;
-  background: white;
+  background: black; /* igual ao primeiro código */
 }
 
 /* Navegação */
@@ -83,7 +81,6 @@ header {
 }
 
 .main-nav a {
-  color: white;
   text-decoration: none;
 }
 
