@@ -16,16 +16,15 @@ html, body {
 /* Cabeçalho */
 header {
   background: #ff6600; /* laranja forte */
-  color: #fff; /* texto branco */
   padding: 1em;
   text-align: center;
   width: 100%;
 }
 
 .logo-principal {
-  max-width: 120px;
+  max-width: 180px; /* destaque para o logo */
   display: block;
-  margin: 0 auto 10px;
+  margin: 0 auto;
 }
 
 /* Hero ocupa toda a tela */
