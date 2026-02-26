@@ -5,7 +5,9 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  height: 100%;
+  width: 100%;
   font-family: Arial, sans-serif;
   line-height: 1.6;
   color: #000; /* texto padrão em preto */
@@ -17,6 +19,7 @@ header {
   color: #fff; /* texto branco */
   padding: 1em;
   text-align: center;
+  width: 100%;
 }
 
 .logo-principal {
@@ -25,26 +28,47 @@ header {
   margin: 0 auto 10px;
 }
 
-/* Hero */
+/* Hero ocupa toda a tela */
 #hero {
+  position: relative;
+  height: 100vh; /* ocupa toda a altura da janela */
+  width: 100%;
   background: url("Asset 1@3xx.png") center/cover no-repeat;
   color: #fff; /* texto branco sobre fundo */
   text-align: center;
-  padding: 4em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Overlay laranja/amarelo para harmonizar com flyer */
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(255,102,0,0.6), rgba(255,204,0,0.6));
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1; /* texto acima do overlay */
 }
 
 #hero h2 {
-  font-size: 1.8em;
+  font-size: 2em;
   margin-bottom: 1em;
 }
 
 .btn {
   background: #ffcc00; /* amarelo vivo */
   color: #000; /* texto preto */
-  padding: 0.8em 1.5em;
+  padding: 1em 2em;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
+  font-size: 1.1em;
 }
 
 /* Menu hamburguer */
@@ -53,14 +77,14 @@ header {
   flex-direction: column;
   gap: 5px;
   margin: 1em auto;
-  background: none;   /* sem fundo */
-  border: none;       /* sem borda */
-  box-shadow: none;   /* sem sombra */
+  background: none;
+  border: none;
+  box-shadow: none;
   cursor: pointer;
 }
 
 .hamburger span {
-  width: 25px;
+  width: 30px;
   height: 3px;
   background: #000; /* linhas pretas */
 }
@@ -85,6 +109,7 @@ header {
 .main-nav a {
   color: #000; /* links pretos */
   text-decoration: none;
+  font-size: 1.1em;
 }
 
 /* Rodapé */
@@ -92,6 +117,7 @@ footer {
   background: #ff6600; /* laranja forte */
   color: #fff; /* texto branco */
   padding: 2em;
+  width: 100%;
 }
 
 .footer-container {
