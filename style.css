@@ -22,7 +22,7 @@ header {
 }
 
 .logo-principal {
-  max-width: 260px; /* logo maior para dar impacto */
+  max-width: 260px; /* logo maior */
   display: block;
   margin: 0 auto;
 }
@@ -57,7 +57,7 @@ header {
 
 /* Título e descrição */
 #hero h2 {
-  font-size: 3.5em; /* título ainda maior */
+  font-size: 3.5em; /* título grande */
   font-weight: bold;
   margin-bottom: 0.2em;
 }
@@ -76,24 +76,26 @@ header {
   border-radius: 5px;
   font-weight: bold;
   font-size: 1.3em;
-  margin-top: 1em;
+  margin: 0.8em auto; /* bem próximo do texto */
+  display: inline-block;
 }
 
 /* Menu hamburguer */
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 6px;
-  margin: 0.5em auto;
+  gap: 8px; /* mais espaçamento entre linhas */
+  margin: 0.8em auto; /* logo abaixo do botão */
   background: none;
   border: none;
   cursor: pointer;
 }
 
 .hamburger span {
-  width: 40px; /* linhas maiores */
-  height: 5px;
+  width: 45px; /* linhas maiores */
+  height: 6px; /* mais grossas */
   background: #000;
+  border-radius: 3px;
 }
 
 /* Navegação */
