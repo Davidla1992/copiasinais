@@ -53,8 +53,9 @@ header {
   flex-direction: column;
   gap: 5px;
   margin: 1em auto;
-  background: none;
-  border: none;
+  background: none;   /* sem fundo */
+  border: none;       /* sem borda */
+  box-shadow: none;   /* sem sombra */
   cursor: pointer;
 }
 
