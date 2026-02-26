@@ -22,7 +22,7 @@ header {
 }
 
 .logo-principal {
-  max-width: 180px;
+  max-width: 260px; /* logo maior para dar impacto */
   display: block;
   margin: 0 auto;
 }
@@ -57,25 +57,25 @@ header {
 
 /* Título e descrição */
 #hero h2 {
-  font-size: 3em; /* título maior e impactante */
+  font-size: 3.5em; /* título ainda maior */
   font-weight: bold;
   margin-bottom: 0.2em;
 }
 
 #hero p {
   margin-bottom: 0.5em;
-  font-size: 1.5em; /* descrição maior */
+  font-size: 1.8em; /* descrição maior */
 }
 
 /* Botão catálogo */
 .btn {
   background: #ffcc00;
   color: #000;
-  padding: 1em 2em;
+  padding: 1em 2.5em;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.3em;
   margin-top: 1em;
 }
 
@@ -83,16 +83,16 @@ header {
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
-  margin: 0.5em auto; /* bem próximo do texto */
+  gap: 6px;
+  margin: 0.5em auto;
   background: none;
   border: none;
   cursor: pointer;
 }
 
 .hamburger span {
-  width: 35px; /* linhas maiores para acompanhar o título */
-  height: 4px;
+  width: 40px; /* linhas maiores */
+  height: 5px;
   background: #000;
 }
 
@@ -116,7 +116,7 @@ header {
 .main-nav a {
   color: #000;
   text-decoration: none;
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 
 /* Rodapé */
