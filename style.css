@@ -55,6 +55,25 @@ header {
   z-index: 1; /* texto acima do overlay */
 }
 
+/* Banner institucional */
+.banner-institucional {
+  background: #ff6600; /* laranja forte */
+  color: #fff; /* texto branco */
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+}
+
+.banner-institucional h2 {
+  margin: 0;
+  font-size: 1.8em;
+}
+
+.banner-institucional p {
+  margin: 0.5em 0 0;
+  font-size: 1em;
+}
+
 #hero h2 {
   font-size: 2em;
   margin-bottom: 1em;
