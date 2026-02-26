@@ -8,11 +8,13 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: #000; /* texto padrão em preto */
 }
 
 /* Cabeçalho */
 header {
+  background: #ff6600; /* laranja forte */
+  color: #fff; /* texto branco */
   padding: 1em;
   text-align: center;
 }
@@ -26,7 +28,7 @@ header {
 /* Hero */
 #hero {
   background: url("Asset 1@3xx.png") center/cover no-repeat;
-  color: white;
+  color: #fff; /* texto branco sobre fundo */
   text-align: center;
   padding: 4em 2em;
 }
@@ -37,12 +39,12 @@ header {
 }
 
 .btn {
+  background: #ffcc00; /* amarelo vivo */
+  color: #000; /* texto preto */
   padding: 0.8em 1.5em;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
-  background: #ccc; /* igual ao primeiro código */
-  color: #000;
 }
 
 /* Menu hamburguer */
@@ -60,7 +62,7 @@ header {
 .hamburger span {
   width: 25px;
   height: 3px;
-  background: black; /* igual ao primeiro código */
+  background: #000; /* linhas pretas */
 }
 
 /* Navegação */
@@ -81,12 +83,14 @@ header {
 }
 
 .main-nav a {
+  color: #000; /* links pretos */
   text-decoration: none;
 }
 
 /* Rodapé */
 footer {
-  background: #f1f1f1;
+  background: #ff6600; /* laranja forte */
+  color: #fff; /* texto branco */
   padding: 2em;
 }
 
@@ -98,6 +102,10 @@ footer {
 
 .footer-col h2 {
   margin-bottom: 0.5em;
+}
+
+.footer-col a {
+  color: #ffcc00; /* amarelo vivo nos links */
 }
 
 .politicas {
