@@ -10,37 +10,48 @@
 <body>
   <!-- Cabeçalho -->
   <header>
-    <div class="header-container">
-      <img src="logo-final.jpg" alt="Logo Prefeitura de Barueri" class="logo-principal" loading="lazy">
+    <div class="top-bar">
+      <h1>Gibiteka Municipal de Barueri Max Zendron</h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="sobre.html">A Gibiteka</a></li>
+          <li><a href="catalogo.html">Acervo</a></li>
+          <li><a href="eventos.html">Serviço</a></li>
+          <li><a href="usuarios.html">Login</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons">
+        <a href="https://instagram.com/gibitekamaxzendron2015" target="_blank">Instagram</a>
+        <a href="mailto:gibitekamaxzendron@barueri.sp.gov.br">Email</a>
+      </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section id="hero">
-    <div class="hero-content">
-      <h2>Gibiteka Max Zendron</h2>
-      <p>HQs, mangás, Livros infanto Juvenil, jogos e oficinas culturais</p>
-
-      <div class="hero-actions">
+  <!-- Seção 1 -->
+  <section class="section">
+    <div class="section-content">
+      <div class="section-text">
+        <h2>HQs, Mangás e Cultura</h2>
+        <p>HQs, mangás, livros infantojuvenis, jogos e oficinas culturais.</p>
         <a href="catalogo.html" class="btn">Explore o catálogo</a>
-
-        <button class="hamburger" aria-label="Abrir menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
+      <div class="section-image">
+        <img src="fachada.jpg" alt="Fachada da Gibiteka Max Zendron" loading="lazy">
+      </div>
+    </div>
+  </section>
 
-      <nav class="main-nav">
-        <ul>
-          <li><a href="index.html" class="active">Início</a></li>
-          <li><a href="catalogo.html">Catálogo</a></li>
-          <li><a href="eventos.html">Eventos</a></li>
-          <li><a href="sobre.html">Sobre</a></li>
-          <li><a href="contato.html">Contato</a></li>
-          <li><a href="usuarios.html">Área de Usuários</a></li>
-        </ul>
-      </nav>
+  <!-- Seção 2 invertida -->
+  <section class="section alt">
+    <div class="section-content">
+      <div class="section-image">
+        <img src="interior.jpg" alt="Interior da Gibiteka Max Zendron" loading="lazy">
+      </div>
+      <div class="section-text">
+        <h2>Eventos e Oficinas</h2>
+        <p>Participe de oficinas culturais, jogos e atividades para todas as idades.</p>
+        <a href="eventos.html" class="btn">Veja os eventos</a>
+      </div>
     </div>
   </section>
 
@@ -64,15 +75,5 @@
       <p><a href="politicas.html">Políticas de Privacidade</a> | <a href="termos.html">Termos de Uso</a></p>
     </div>
   </footer>
-
-  <script>
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('.main-nav');
-
-    hamburger.addEventListener('click', () => {
-      nav.classList.toggle('open');
-      hamburger.classList.toggle('active');
-    });
-  </script>
 </body>
 </html>
