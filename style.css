@@ -2,121 +2,115 @@
 /* Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html, body {
-  height: 100%;
-  width: 100%;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #ff6600;
   color: #000;
+  line-height: 1.6;
 }
 
 /* Cabeçalho */
 header {
-  background: #ff6600;
-  padding: 1em;
-  text-align: center;
-  width: 100%;
-}
-
-.logo-principal {
-  max-width: 260px;
-  display: block;
-  margin: 0 auto;
-}
-
-/* Hero */
-#hero {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  background: url("Asset 1@3xx.png") center/cover no-repeat;
-  color: #fff;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(rgba(255,102,0,0.6), rgba(255,204,0,0.6));
-  z-index: 0;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
-
-/* Título e descrição */
-#hero h2 {
-  font-size: 3.5em;
-  font-weight: bold;
-  margin-bottom: 0.2em;
-}
-
-#hero p {
-  margin-bottom: 0.8em;
-  font-size: 1.6em;
-}
-
-/* Bloco central */
-.hero-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Botão catálogo */
-.btn {
-  background: #ff6600; /* laranja forte */
-  color: #fff; /* texto branco */
-  padding: 1em 3em;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 1.4em;
-  margin-bottom: 0.8em;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* destaque */
-}
-
-/* Menu hamburguer */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.hamburger span {
-  width: 50px;
-  height: 7px;
   background: #000;
-  border-radius: 3px;
+  color: #fff;
+  padding: 1em;
 }
 
-/* Navegação */
-.main-nav { display: none; }
-.main-nav.open { display: block; }
-.main-nav ul { list-style: none; }
-.main-nav li { margin: 10px 0; }
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.top-bar h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
 .main-nav a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
-  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.main-nav a:hover {
+  color: #ffcc00;
+}
+
+.social-icons a {
+  margin-left: 1rem;
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+/* Seções */
+.section {
+  background: #fff;
+  padding: 3rem 2rem;
+}
+
+.section.alt {
+  background: #000;
+  color: #fff;
+}
+
+.section-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.section-text {
+  flex: 1;
+}
+
+.section-text h2 {
+  margin-bottom: 1rem;
+}
+
+.section-text p {
+  margin-bottom: 1.5rem;
+}
+
+.section-image {
+  flex: 1;
+}
+
+.section-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Botões */
+.btn {
+  background: #ff6600;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ffcc00;
+  color: #000;
 }
 
 /* Rodapé */
 footer {
-  background: #ff6600;
+  background: #000;
   color: #fff;
-  padding: 2em;
-  width: 100%;
+  padding: 2rem;
 }
 
 .footer-container {
@@ -125,17 +119,16 @@ footer {
   flex-wrap: wrap;
 }
 
-.footer-col h2 { margin-bottom: 0.5em; }
-.footer-col a { color: #ffcc00; }
+.footer-col h2 {
+  margin-bottom: 0.5rem;
+}
+
+.footer-col a {
+  color: #ffcc00;
+}
 
 .politicas {
   text-align: center;
-  margin-top: 1em;
-  font-size: 0.9em;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .hamburger { display: flex; margin-top: 0.5em; }
-  .main-nav { text-align: center; }
+  margin-top: 1rem;
+  font-size: 0.9rem;
 }
