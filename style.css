@@ -67,6 +67,36 @@ header {
 @keyframes fadeIn { from{opacity:0;transform:scale(0.9);} to{opacity:1;transform:scale(1);} }
 @keyframes bounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
 
+/* Ícones sociais */
+.social-footer {
+  text-align: center;
+  padding: 2rem 0 1rem;
+  background: #0d0d0d;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.social-icons a {
+  color: #39ff14;
+  font-size: 1.8rem;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  animation: glowIcons 2s infinite;
+}
+.social-icons a:hover {
+  color: #fff;
+  transform: scale(1.2);
+  text-shadow: 0 0 15px #39ff14;
+}
+
+/* Brilho suave nos ícones */
+@keyframes glowIcons {
+  0% { text-shadow: 0 0 5px #39ff14; }
+  50% { text-shadow: 0 0 15px #39ff14; }
+  100% { text-shadow: 0 0 5px #39ff14; }
+}
+
 /* Rodapé com linha verde brilhante */
 footer {
   background: #0d0d0d;
