@@ -117,7 +117,7 @@ header {
   margin-bottom: 1rem;
 }
 
-/* Links sociais */
+/* Links sociais com ícones verdes */
 .social-links {
   display: flex;
   flex-wrap: wrap;
@@ -126,13 +126,18 @@ header {
 }
 
 .social-links a {
-  color: #fff;
+  color: #0d0d0d;
   background: #39ff14;
   padding: 0.6rem 1.2rem;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
   transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.social-links a i {
+  margin-right: 8px;
+  color: #0d0d0d;
 }
 
 .social-links a:hover {
