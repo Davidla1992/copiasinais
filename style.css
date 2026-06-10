@@ -5,7 +5,7 @@
 }
 
 html {
-  scroll-behavior: smooth; /* Transição suave */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -33,6 +33,7 @@ header {
 
 .logo-img {
   height: 55px;
+  max-width: 100%;
 }
 
 /* Botão menu responsivo */
@@ -63,11 +64,11 @@ header {
   color: #fff;
 }
 
-/* Hero com fundo da praia */
+/* Hero com fundo */
 .hero {
   text-align: center;
   padding: 6rem 2rem;
-  background: url('Copiasinais/imagemfondo.png') no-repeat center center fixed;
+  background: url('imagemfondo.png') no-repeat center center fixed;
   background-size: cover;
   min-height: 100vh;
   display: flex;
@@ -181,4 +182,3 @@ footer {
     padding: 1.5rem;
   }
 }
-
