@@ -5,7 +5,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Transição suave */
 }
 
 body {
@@ -181,3 +181,4 @@ footer {
     padding: 1.5rem;
   }
 }
+
