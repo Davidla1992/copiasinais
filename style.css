@@ -13,7 +13,16 @@ header {
   z-index: 1000;
 }
 .navbar { display: flex; justify-content: space-between; align-items: center; }
-.logo-img { height: 55px; }
+
+/* Logo aumentado 25% */
+.logo-img {
+  height: 69px; /* antes era 55px */
+  max-width: 100%;
+  transition: transform 0.3s ease;
+}
+.logo-img:hover {
+  transform: scale(1.05);
+}
 
 /* Menu */
 .menu { list-style: none; display: flex; gap: 1.5rem; }
@@ -89,4 +98,9 @@ footer {
   }
   .menu.active { display: flex; }
   .menu-toggle { display: flex; }
+
+  /* Logo 25% maior também no celular */
+  .logo-img {
+    height: 86px; /* aumento proporcional para telas menores */
+  }
 }
