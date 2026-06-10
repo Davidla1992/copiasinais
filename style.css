@@ -36,17 +36,6 @@ header {
   max-width: 100%;
 }
 
-/* Botão menu responsivo */
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  color: #39ff14;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* Menu desktop */
 .menu {
   list-style: none;
   display: flex;
@@ -82,7 +71,7 @@ header {
   padding: 2rem;
 }
 
-/* Botão verde com efeito pulsante + fade-in */
+/* Botão verde com efeito pulsante + fade-in + bounce */
 .btn {
   display: inline-block;
   padding: 0.8rem 1.8rem;
@@ -92,47 +81,64 @@ header {
   border-radius: 5px;
   font-weight: bold;
   transition: background 0.3s ease;
-  animation: fadeIn 2s ease-in-out, pulse 2s infinite;
+  animation: fadeIn 2s ease-in-out, pulse 2s infinite, bounce 3s ease-in-out infinite;
 }
 
 .btn:hover {
   background: #fff;
 }
 
-/* Animação de brilho pulsante */
+/* Animações */
 @keyframes pulse {
-  0% {
-    box-shadow: 0 0 5px #39ff14;
-  }
-  50% {
-    box-shadow: 0 0 20px #39ff14;
-  }
-  100% {
-    box-shadow: 0 0 5px #39ff14;
-  }
+  0% { box-shadow: 0 0 5px #39ff14; }
+  50% { box-shadow: 0 0 20px #39ff14; }
+  100% { box-shadow: 0 0 5px #39ff14; }
 }
 
-/* Animação de entrada suave */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
 
-/* Seções adicionais */
-.about, .contact {
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Seções */
+.about, .contact, .social {
   padding: 4rem 2rem;
   text-align: center;
   background: #111;
 }
 
-.about h2, .contact h2 {
+.about h2, .contact h2, .social h2 {
   color: #39ff14;
+  margin-bottom: 1rem;
+}
+
+/* Links sociais */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: #fff;
+  background: #39ff14;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #fff;
+  color: #0d0d0d;
+  transform: scale(1.1);
 }
 
 /* Rodapé */
@@ -146,7 +152,6 @@ footer {
 /* Responsividade */
 @media (max-width: 768px) {
   .menu {
-    display: none;
     flex-direction: column;
     background: #0d0d0d;
     position: absolute;
@@ -156,15 +161,11 @@ footer {
     padding: 1rem;
   }
 
-  .menu.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
   .hero-content {
     padding: 1.5rem;
+  }
+
+  .social-links {
+    flex-direction: column;
   }
 }
