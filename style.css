@@ -37,6 +37,7 @@ header {
   max-width: 100%;
 }
 
+/* Menu padrão */
 .menu {
   list-style: none;
   display: flex;
@@ -52,6 +53,39 @@ header {
 
 .menu a:hover {
   color: #fff;
+}
+
+/* Botão hamburguer */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: #39ff14;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animação do botão hamburguer */
+.menu-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Hero */
@@ -159,29 +193,4 @@ header {
 
 /* Rodapé */
 footer {
-  background: #0d0d0d;
-  color: #39ff14;
-  text-align: center;
-  padding: 1rem;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .menu {
-    flex-direction: column;
-    background: #0d0d0d;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 200px;
-    padding: 1rem;
-  }
-
-  .hero-content {
-    padding: 1.5rem;
-  }
-
-  .social-links {
-    flex-direction: column;
-  }
-}
+  background: #0
