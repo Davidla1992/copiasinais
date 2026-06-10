@@ -64,11 +64,12 @@ header {
   color: #fff;
 }
 
-/* Hero com fundo */
+/* Hero apenas com fundo */
 .hero {
   text-align: center;
-  padding: 6rem 2rem;
-  background: url('imagemfondo.png') no-repeat center center fixed;
+  background: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)),
+    url('imagemfondo.png') no-repeat center center fixed;
   background-size: cover;
   min-height: 100vh;
   display: flex;
@@ -77,24 +78,13 @@ header {
 }
 
 .hero-content {
-  background: rgba(0, 0, 0, 0.5);
+  background: none;
   padding: 2rem;
-  border-radius: 10px;
 }
 
-.hero h2 {
-  font-size: 2.8rem;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-top: 1rem;
-}
-
+/* Botão verde com efeito pulsante */
 .btn {
   display: inline-block;
-  margin-top: 1.5rem;
   padding: 0.8rem 1.8rem;
   background: #39ff14;
   color: #0d0d0d;
@@ -102,10 +92,24 @@ header {
   border-radius: 5px;
   font-weight: bold;
   transition: background 0.3s ease;
+  animation: pulse 2s infinite;
 }
 
 .btn:hover {
   background: #fff;
+}
+
+/* Animação de brilho pulsante */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 5px #39ff14;
+  }
+  50% {
+    box-shadow: 0 0 20px #39ff14;
+  }
+  100% {
+    box-shadow: 0 0 5px #39ff14;
+  }
 }
 
 /* Seções adicionais */
@@ -172,10 +176,6 @@ footer {
 
   .menu-toggle {
     display: block;
-  }
-
-  .hero h2 {
-    font-size: 2rem;
   }
 
   .hero-content {
