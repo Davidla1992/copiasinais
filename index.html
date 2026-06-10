@@ -12,7 +12,12 @@
   <header>
     <nav class="navbar">
       <img src="logotipo.png" alt="GreenLux Logo" class="logo-img">
-      <ul class="menu">
+      <button class="menu-toggle" id="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="menu" id="menu">
         <li><a href="#hero">Início</a></li>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#contato">Contato</a></li>
@@ -58,5 +63,15 @@
   <footer>
     <p>&copy; 2026 GreenLux Shop - Todos os direitos reservados</p>
   </footer>
+
+  <!-- Script para abrir/fechar menu -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      toggle.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
