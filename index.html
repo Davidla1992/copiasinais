@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GreenLux Shop</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Ícones do Font Awesome -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
@@ -18,43 +16,49 @@
         <span class="bar"></span>
       </button>
       <ul class="menu" id="menu">
-        <li><a href="#hero">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#marcas">Marcas</a></li>
+        <li><a href="#missao">Missão</a></li>
+        <li><a href="#impacto">Impacto</a></li>
+        <li><a href="#parceiros">Parceiros</a></li>
         <li><a href="#contato">Contato</a></li>
-        <li><a href="#redes">Redes Sociais</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero com fundo e botão -->
-  <section id="hero" class="hero">
+  <!-- Home -->
+  <section id="home" class="hero">
     <div class="hero-content">
-      <a href="#redes" class="btn">Ver Redes</a>
+      <a href="#contato" class="btn">Entre em Contato</a>
     </div>
   </section>
 
-  <!-- Seção Sobre -->
-  <section id="sobre" class="about">
-    <h2>Sobre Nós</h2>
-    <p>A GreenLux é dedicada a oferecer produtos sustentáveis e sofisticados para o seu dia a dia.</p>
+  <!-- Marcas -->
+  <section id="marcas" class="section">
+    <h2>Marcas</h2>
+    <p>Conheça as marcas que fazem parte da GreenLux.</p>
   </section>
 
-  <!-- Redes Sociais -->
-  <section id="redes" class="social">
-    <h2>Conecte-se Conosco</h2>
-    <div class="social-links">
-      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-      <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
-      <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-      <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-      <a href="https://wa.me/5511999999999" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-    </div>
+  <!-- Missão -->
+  <section id="missao" class="section">
+    <h2>Missão</h2>
+    <p>Nossa missão é unir luxo e sustentabilidade.</p>
+  </section>
+
+  <!-- Impacto -->
+  <section id="impacto" class="section">
+    <h2>Impacto</h2>
+    <p>Descubra o impacto positivo que geramos.</p>
+  </section>
+
+  <!-- Parceiros -->
+  <section id="parceiros" class="section">
+    <h2>Parceiros</h2>
+    <p>Trabalhamos com parceiros que compartilham nossos valores.</p>
   </section>
 
   <!-- Contato -->
-  <section id="contato" class="contact">
+  <section id="contato" class="section">
     <h2>Contato</h2>
     <p>Entre em contato pelo e-mail: contato@greenlux.com</p>
   </section>
@@ -64,7 +68,7 @@
     <p>&copy; 2026 GreenLux Shop - Todos os direitos reservados</p>
   </footer>
 
-  <!-- Script para abrir/fechar menu -->
+  <!-- Script do menu -->
   <script>
     const toggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
