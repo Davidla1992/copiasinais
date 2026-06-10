@@ -14,11 +14,11 @@
   <header>
     <nav class="navbar">
       <img src="logotipo.png" alt="GreenLux Logo" class="logo-img">
-      <button class="menu-toggle">&#9776;</button>
       <ul class="menu">
         <li><a href="#hero">Início</a></li>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#contato">Contato</a></li>
+        <li><a href="#redes">Redes Sociais</a></li>
       </ul>
     </nav>
   </header>
@@ -26,13 +26,27 @@
   <!-- Hero apenas com fundo e botão -->
   <section id="hero" class="hero">
     <div class="hero-content">
-      <a href="#sobre" class="btn">Ver Produtos</a>
+      <a href="#redes" class="btn">Ver Redes</a>
     </div>
   </section>
 
   <section id="sobre" class="about">
     <h2>Sobre Nós</h2>
     <p>A GreenLux é dedicada a oferecer produtos sustentáveis e sofisticados para o seu dia a dia.</p>
+  </section>
+
+  <!-- Redes sociais -->
+  <section id="redes" class="social">
+    <h2>Conecte-se Conosco</h2>
+    <div class="social-links">
+      <a href="https://www.instagram.com" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com" target="_blank">Facebook</a>
+      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+      <a href="https://www.twitter.com" target="_blank">Twitter</a>
+      <a href="https://www.tiktok.com" target="_blank">TikTok</a>
+      <a href="https://www.youtube.com" target="_blank">YouTube</a>
+      <a href="https://wa.me/5511999999999" target="_blank">WhatsApp</a>
+    </div>
   </section>
 
   <section id="contato" class="contact">
@@ -43,13 +57,5 @@
   <footer>
     <p>&copy; 2026 GreenLux Shop - Todos os direitos reservados</p>
   </footer>
-
-  <script>
-    const toggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
-    });
-  </script>
 </body>
 </html>
