@@ -9,6 +9,7 @@
 <body>
   <header>
     <nav class="navbar">
+      <!-- Logo -->
       <img src="Copiasinais/logotipo.png" alt="GreenLux Logo" class="logo-img">
       <button class="menu-toggle">&#9776;</button>
       <ul class="menu">
@@ -20,6 +21,7 @@
     </nav>
   </header>
 
+  <!-- Hero com fundo -->
   <section id="hero" class="hero">
     <div class="hero-content">
       <h2>Luxo Sustentável</h2>
@@ -28,6 +30,7 @@
     </div>
   </section>
 
+  <!-- Produtos -->
   <section id="produtos" class="products">
     <h2>Nossos Produtos</h2>
     <div class="product-grid">
@@ -46,21 +49,25 @@
     </div>
   </section>
 
+  <!-- Sobre -->
   <section id="sobre" class="about">
     <h2>Sobre Nós</h2>
     <p>A GreenLux é dedicada a oferecer produtos sustentáveis e sofisticados para o seu dia a dia.</p>
   </section>
 
+  <!-- Contato -->
   <section id="contato" class="contact">
     <h2>Contato</h2>
     <p>Entre em contato pelo e-mail: contato@greenlux.com</p>
   </section>
 
+  <!-- Rodapé -->
   <footer>
     <p>&copy; 2026 GreenLux Shop - Todos os direitos reservados</p>
   </footer>
 
   <script>
+    // Menu responsivo
     const toggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
     toggle.addEventListener('click', () => {
