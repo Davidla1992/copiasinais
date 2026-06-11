@@ -20,69 +20,64 @@ header {
 .menu a { color: #39ff14; text-decoration: none; font-weight: bold; transition: color 0.3s ease; }
 .menu a:hover { color: #fff; }
 
-/* Botão hamburguer */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-.bar {
-  height: 3px;
-  width: 100%;
-  background-color: #39ff14;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-.menu-toggle.active .bar:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.menu-toggle.active .bar:nth-child(2) { opacity: 0; }
-.menu-toggle.active .bar:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-
 /* Hero */
 .hero {
   text-align: center;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('imagemfondo.png') no-repeat center center fixed;
-  background-size: cover;
-  min-height: 100vh;
-  display: flex; justify-content: center; align-items: center;
+  padding: 80px 20px;
+  background: linear-gradient(to right, #006400, #00a86b);
+  color: white;
 }
-.hero-content { padding: 2rem; }
-
-/* Botão pulsante */
-.btn {
-  display: inline-block; padding: 0.8rem 1.8rem;
-  background: #39ff14; color: #0d0d0d;
-  text-decoration: none; border-radius: 5px; font-weight: bold;
+.hero h1 { font-size: 2.5em; margin-bottom: 10px; }
+.hero p { font-size: 1.2em; }
+.hero .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #39ff14;
+  color: #0d0d0d;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
   transition: background 0.3s ease;
-  animation: fadeIn 2s ease-in-out, pulse 2s infinite, bounce 3s ease-in-out infinite;
 }
-.btn:hover { background: #fff; }
+.hero .btn:hover { background: #fff; }
 
-/* Animações */
-@keyframes pulse { 0%{box-shadow:0 0 5px #39ff14;} 50%{box-shadow:0 0 20px #39ff14;} 100%{box-shadow:0 0 5px #39ff14;} }
-@keyframes fadeIn { from{opacity:0;transform:scale(0.9);} to{opacity:1;transform:scale(1);} }
-@keyframes bounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
+/* Conteúdo */
+.content { padding: 40px 20px; text-align: center; }
+.brand, .impact-box, .partner {
+  margin-bottom: 30px;
+  background: #111;
+  padding: 20px;
+  border-radius: 8px;
+}
+.brand h2, .impact-box h2, .partner h2 { color: #00a86b; }
+.brand p, .impact-box p, .partner p { color: #ccc; }
+
+/* Formulário de contato */
+form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+form input, form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+form button {
+  padding: 10px;
+  background: #39ff14;
+  color: #0d0d0d;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+form button:hover { background: #fff; }
 
 /* Ícones sociais */
-.social-footer {
-  text-align: center;
-  padding: 2rem 0 1rem;
-  background: #0d0d0d;
-}
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
+.social-footer { text-align: center; padding: 2rem 0 1rem; background: #0d0d0d; }
+.social-icons { display: flex; justify-content: center; gap: 1.5rem; }
 .social-icons a {
   color: #39ff14;
   font-size: 1.8rem;
   transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
-  animation: glowIcons 2s infinite;
 }
 .social-icons a:hover {
   color: #fff;
@@ -90,41 +85,11 @@ header {
   text-shadow: 0 0 15px #39ff14;
 }
 
-/* Brilho suave nos ícones */
-@keyframes glowIcons {
-  0% { text-shadow: 0 0 5px #39ff14; }
-  50% { text-shadow: 0 0 15px #39ff14; }
-  100% { text-shadow: 0 0 5px #39ff14; }
-}
-
-/* Rodapé com linha verde brilhante */
+/* Rodapé */
 footer {
   background: #0d0d0d;
   color: #39ff14;
   text-align: center;
   padding: 1rem;
-  position: relative;
-  bottom: 0;
-  width: 100%;
   border-top: 2px solid #39ff14;
-  animation: glowLine 2s infinite;
 }
-
-/* Brilho suave na linha verde */
-@keyframes glowLine {
-  0% { box-shadow: 0 -2px 5px #39ff14; }
-  50% { box-shadow: 0 -2px 15px #39ff14; }
-  100% { box-shadow: 0 -2px 5px #39ff14; }
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    background: #0d0d0d;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 200px;
-    padding: 1rem
