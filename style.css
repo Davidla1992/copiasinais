@@ -19,11 +19,11 @@ header {
   z-index: 1000;
 }
 .navbar { display: flex; justify-content: space-between; align-items: center; }
-.logo-img { height: 200px; background: transparent; } /* logo maior no cabeçalho */
+.logo-img { height: 280px; background: transparent; } /* logo 4x maior */
 
-/* Menu hamburguer */
+/* Menu hamburguer (apenas celular) */
 .menu-toggle {
-  display: flex;
+  display: none; /* escondido no PC */
   flex-direction: column;
   justify-content: space-between;
   width: 28px;
@@ -46,22 +46,12 @@ header {
 .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
 .menu-toggle.active .bar:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-/* Menu centralizado */
+/* Menu horizontal no PC */
 .menu {
   list-style: none;
-  display: none;
-  flex-direction: column;
-  gap: 1.5rem;
-  text-align: center;
-  position: fixed;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0,0,0,0.7);
-  padding: 2rem;
-  border-radius: 10px;
-  border: 2px solid #fff; /* mesma cor do logo */
+  display: flex;
+  gap: 2rem;
 }
-.menu.active { display: flex; }
 .menu a { 
   color: #fff; /* mesma cor do logo */
   text-decoration: none; 
@@ -77,11 +67,6 @@ header {
   display: flex; justify-content: center; align-items: center;
 }
 .hero-content { padding: 2rem; }
-.logo-hero {
-  width: 600px; /* logo 3x maior para PC */
-  max-width: 90%; /* responsivo para celular */
-  height: auto;
-}
 
 /* Ícones sociais */
 .social-footer { text-align: center; padding: 2rem 0 1rem; }
@@ -110,10 +95,23 @@ footer a:hover { color: #ccc; }
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .logo-img { height: 120px; }
-  .logo-hero { width: 300px; }
+  .logo-img { height: 150px; }
+  .menu { 
+    display: none; /* esconde menu horizontal */
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.7);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 2px solid #fff;
+  }
+  .menu.active { display: flex; }
+  .menu-toggle { display: flex; } /* mostra hamburguer no celular */
 }
 @media (max-width: 480px) {
-  .logo-img { height: 90px; }
-  .logo-hero { width: 200px; }
+  .logo-img { height: 100px; }
 }
