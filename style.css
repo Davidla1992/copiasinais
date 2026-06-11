@@ -21,7 +21,21 @@ header {
 .navbar { display: flex; justify-content: space-between; align-items: center; }
 .logo-img { height: 280px; background: transparent; } /* logo 4x maior */
 
-/* Menu hamburguer (apenas celular) */
+/* Menu horizontal no PC */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.menu a { 
+  color: #fff; /* mesma cor do logo */
+  text-decoration: none; 
+  font-weight: bold; 
+  transition: color 0.3s ease; 
+}
+.menu a:hover { color: #ccc; }
+
+/* Menu hamburguer (somente celular) */
 .menu-toggle {
   display: none; /* escondido no PC */
   flex-direction: column;
@@ -45,20 +59,6 @@ header {
 .menu-toggle.active .bar:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
 .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
 .menu-toggle.active .bar:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-
-/* Menu horizontal no PC */
-.menu {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
-.menu a { 
-  color: #fff; /* mesma cor do logo */
-  text-decoration: none; 
-  font-weight: bold; 
-  transition: color 0.3s ease; 
-}
-.menu a:hover { color: #ccc; }
 
 /* Hero */
 .hero {
@@ -88,30 +88,3 @@ footer {
   color: #fff;
   text-align: center;
   padding: 1rem;
-}
-footer a { color: #fff; text-decoration: none; }
-footer a:hover { color: #ccc; }
-.footer-links { margin-top: 0.5rem; font-size: 0.9rem; }
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .logo-img { height: 150px; }
-  .menu { 
-    display: none; /* esconde menu horizontal */
-    flex-direction: column;
-    gap: 1.5rem;
-    text-align: center;
-    position: fixed;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.7);
-    padding: 2rem;
-    border-radius: 10px;
-    border: 2px solid #fff;
-  }
-  .menu.active { display: flex; }
-  .menu-toggle { display: flex; } /* mostra hamburguer no celular */
-}
-@media (max-width: 480px) {
-  .logo-img { height: 100px; }
-}
