@@ -95,18 +95,20 @@ footer {
   color: var(--logo-color);
   font-size: 2rem;
   transition: transform 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7); /* sombra nos ícones */
 }
 .social-icons a:hover {
-  color: var(--logo-color);
   transform: scale(1.2);
   text-shadow: 0 0 15px var(--logo-color);
 }
 .footer-text {
   font-size: 0.8rem;
+  text-shadow: 0 0 6px rgba(0,0,0,0.6); /* sombra nos textos do rodapé */
 }
 .footer-links a {
   color: var(--logo-color);
   text-decoration: none;
+  text-shadow: 0 0 6px rgba(0,0,0,0.6);
 }
 .footer-links a:hover { color: var(--logo-color); }
 
@@ -126,7 +128,6 @@ footer {
     transform: translate(-50%, -50%);
     background: transparent; /* fundo transparente */
     padding: 2rem;
-    border-radius: 10px;
   }
   .menu a {
     font-size: 1.8rem;
