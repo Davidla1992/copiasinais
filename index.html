@@ -43,7 +43,11 @@
     const menu = document.getElementById('menu');
 
     menuToggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
+      if (menu.classList.contains('active')) {
+        menu.classList.remove('active');
+      } else {
+        menu.classList.add('active');
+      }
     });
   </script>
 </body>
