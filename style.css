@@ -1,74 +1,118 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GreenLux Shop</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Ícones do Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
-  <!-- Cabeçalho -->
-  <header>
-    <nav class="navbar">
-      <!-- Logo com link para atualizar página -->
-      <a href="index.html">
-        <img src="logofinal.png" alt="GreenLux Logo" class="logo-img">
-      </a>
-      <button class="menu-toggle" id="menu-toggle">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <ul class="menu" id="menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#marcas">Marcas</a></li>
-        <li><a href="#missao">Missão</a></li>
-        <li><a href="#impacto">Impacto</a></li>
-        <li><a href="#parceiros">Parceiros</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { 
+  font-family: Arial, sans-serif; 
+  line-height: 1.6; 
+  color: #fff; /* mesma cor do logo */
+  background: url('imagemfondo.png') no-repeat center center fixed;
+  background-size: cover;
+}
 
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <!-- Logo central removido -->
-    </div>
-  </section>
+/* Cabeçalho fixo */
+header {
+  background: transparent;
+  padding: 0.5rem 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+.navbar { display: flex; justify-content: space-between; align-items: center; }
+.logo-img { height: 280px; background: transparent; } /* logo grande no PC */
 
-  <!-- Ícones sociais -->
-  <section class="social-footer">
-    <div class="social-icons">
-      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-    </div>
-  </section>
+/* Menu horizontal no PC */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.menu a { 
+  color: #fff; /* mesma cor do logo */
+  text-decoration: none; 
+  font-weight: bold; 
+  transition: color 0.3s ease; 
+}
+.menu a:hover { color: #ccc; }
 
-  <!-- Rodapé -->
-  <footer>
-    <p>&copy; 2026 GreenLux Shop. Todos os direitos reservados.</p>
-    <div class="footer-links">
-      <a href="#politica-privacidade">Política de Privacidade</a> |
-      <a href="#termos-uso">Termos de Uso</a> |
-      <a href="#direitos">Direitos Autorais</a>
-    </div>
-  </footer>
+/* Menu hamburguer (somente celular) */
+.menu-toggle {
+  display: none; /* escondido no PC */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: #fff; /* mesma cor do logo */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.menu-toggle.active .bar:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+.menu-toggle.active .bar:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-  <!-- Script para menu -->
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
+/* Hero */
+.hero {
+  text-align: center;
+  min-height: 100vh;
+  display: flex; justify-content: center; align-items: center;
+}
+.hero-content { padding: 2rem; }
 
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
-      menu.classList.toggle('active');
-    });
-  </script>
-</body>
-</html>
+/* Ícones sociais */
+.social-footer { text-align: center; padding: 2rem 0 1rem; }
+.social-icons { display: flex; justify-content: center; gap: 1.5rem; }
+.social-icons a { 
+  color: #fff; /* mesma cor do logo */
+  font-size: 2rem; 
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease; 
+}
+.social-icons a:hover { 
+  color: #ccc; 
+  transform: scale(1.2); 
+  text-shadow: 0 0 15px #fff; 
+}
+
+/* Rodapé */
+footer {
+  background: transparent;
+  color: #fff; /* mesma cor do logo */
+  text-align: center;
+  padding: 1rem;
+}
+footer a { color: #fff; text-decoration: none; }
+footer a:hover { color: #ccc; }
+.footer-links { margin-top: 0.5rem; font-size: 0.9rem; }
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .logo-img { height: 60px; } /* logo pequeno no canto esquerdo */
+  .navbar { justify-content: space-between; }
+  .menu { 
+    display: none; /* esconde menu horizontal */
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.7);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 2px solid #fff;
+  }
+  .menu.active { display: flex; }
+  .menu-toggle { display: flex; } /* mostra hamburguer no celular */
+}
+@media (max-width: 480px) {
+  .logo-img { height: 50px; }
+}
