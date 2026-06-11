@@ -41,7 +41,7 @@ header {
   height: 200px; /* PC: 4x maior */
 }
 
-/* Menu */
+/* Menu PC */
 .menu {
   list-style: none;
   display: flex;
@@ -124,12 +124,15 @@ footer {
     position: fixed;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.9);
+    background: transparent; /* fundo transparente */
     padding: 2rem;
     border-radius: 10px;
-    border: 2px solid var(--logo-color);
   }
-  .menu a { font-size: 1.8rem; }
+  .menu a {
+    font-size: 1.8rem;
+    color: var(--logo-color);
+    background: transparent; /* apenas letras visíveis */
+  }
   .menu.active { display: flex; }
   .menu-toggle { display: flex; position: absolute; right: 20px; top: 15px; }
   .footer-text { font-size: 0.7rem; }
