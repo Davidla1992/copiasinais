@@ -4,7 +4,7 @@ html { scroll-behavior: smooth; }
 body { 
   font-family: Arial, sans-serif; 
   line-height: 1.6; 
-  color: #fff; /* mesma cor do logo */
+  color: #39ff14; /* cor do logotipo */
   background: url('imagemfondo.png') no-repeat center center fixed;
   background-size: cover;
 }
@@ -28,12 +28,12 @@ header {
   gap: 2rem;
 }
 .menu a { 
-  color: #fff; /* mesma cor do logo */
+  color: #39ff14; /* mesma cor do logo */
   text-decoration: none; 
   font-weight: bold; 
   transition: color 0.3s ease; 
 }
-.menu a:hover { color: #ccc; }
+.menu a:hover { color: #fff; }
 
 /* Menu hamburguer (somente celular) */
 .menu-toggle {
@@ -49,7 +49,7 @@ header {
 .bar {
   height: 3px;
   width: 100%;
-  background-color: #fff; /* mesma cor do logo */
+  background-color: #39ff14; /* mesma cor do logo */
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -66,25 +66,25 @@ header {
 .social-footer { text-align: center; padding: 2rem 0 1rem; }
 .social-icons { display: flex; justify-content: center; gap: 1.5rem; }
 .social-icons a { 
-  color: #fff; /* mesma cor do logo */
+  color: #39ff14; /* mesma cor do logo */
   font-size: 2rem; 
   transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease; 
 }
 .social-icons a:hover { 
-  color: #ccc; 
+  color: #fff; 
   transform: scale(1.2); 
-  text-shadow: 0 0 15px #fff; 
+  text-shadow: 0 0 15px #39ff14; 
 }
 
 /* Rodapé */
 footer {
   background: transparent;
-  color: #fff; /* mesma cor do logo */
+  color: #39ff14; /* mesma cor do logo */
   text-align: center;
   padding: 1rem;
 }
-footer a { color: #fff; text-decoration: none; }
-footer a:hover { color: #ccc; }
+footer a { color: #39ff14; text-decoration: none; }
+footer a:hover { color: #fff; }
 .footer-links { margin-top: 0.5rem; font-size: 0.9rem; }
 
 /* Responsividade */
@@ -102,7 +102,7 @@ footer a:hover { color: #ccc; }
     background: rgba(0,0,0,0.9);
     padding: 2rem;
     border-radius: 10px;
-    border: 2px solid #fff;
+    border: 2px solid #39ff14;
   }
   .menu.active { display: flex; }
   .menu-toggle { display: flex; position: absolute; right: 20px; top: 20px; } /* hambúrguer à direita */
