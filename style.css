@@ -89,6 +89,9 @@ header {
 
 /* Rodapé */
 footer {
+  display: flex;
+  flex-direction: column; /* força ordem vertical */
+  align-items: center;    /* centraliza tudo */
   text-align: center;
   padding: 2rem 1rem 1rem;
   color: var(--logo-color);
