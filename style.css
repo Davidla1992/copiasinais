@@ -32,7 +32,7 @@ header {
 }
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* logo à esquerda, menu à direita */
   align-items: center;
   width: 100%;
   padding: 0 1rem;
@@ -101,10 +101,12 @@ footer {
     padding: 0;
     z-index: 2000;
   }
+
   /* Mostra menu quando ativo */
   .menu.active {
     display: flex;
   }
+
   /* Mostra botão hambúrguer */
   .menu-toggle {
     display: block;
@@ -112,8 +114,14 @@ footer {
     right: 20px;
     top: 20px;
   }
+
   /* Esconde menu horizontal padrão */
   .navbar .menu {
     display: none;
+  }
+
+  /* Corrige conflito: força exibir quando ativo */
+  .navbar .menu.active {
+    display: flex;
   }
 }
