@@ -94,30 +94,11 @@ header {
 
 /* Rodapé */
 footer {
-  background: rgba(0,0,0,0.7);
+  background: transparent;
   color: #39ff14;
   text-align: center;
   padding: 1rem;
-  border-top: 2px solid #39ff14;
 }
 footer a { color: #39ff14; text-decoration: none; }
 footer a:hover { color: #fff; }
-.footer-links { margin-top: 0.5rem; }
-
-/* Seções de políticas */
-.policy-section {
-  background: rgba(0,0,0,0.8);
-  color: #39ff14;
-  padding: 2rem;
-  margin: 2rem auto;
-  max-width: 900px;
-  border: 2px solid #39ff14;
-  border-radius: 10px;
-}
-.policy-section h2 {
-  margin-bottom: 1rem;
-  color: #fff;
-}
-.policy-section p {
-  font-size: 1rem;
-}
+.footer-links { margin-top: 0.5rem; font-size: 0.9rem; }
