@@ -1,5 +1,5 @@
 :root {
-  --logo-color: #2596be; /* cor exata do logotipo */
+  --logo-color: #39ff14; /* verde exato do logotipo */
 }
 
 body {
@@ -77,7 +77,7 @@ footer {
   text-align: center;
   padding: 2rem 1rem 1rem;
   color: var(--logo-color);
-  margin-top: auto; /* força rodapé no fim da tela */
+  margin-top: auto; /* garante rodapé no fim */
 }
 .social-icons {
   display: flex;
