@@ -1,33 +1,72 @@
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-.bar {
-  height: 3px;
-  width: 100%;
-  background-color: var(--logo-color);
-  border-radius: 2px;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenLux Shop - Contato</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-image">
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo-link">
+        <img src="logofinal.png" alt="GreenLux Logo" class="logo-img">
+      </a>
+      <!-- Botão hambúrguer -->
+      <button class="menu-toggle" id="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="marcas.html">Marcas</a></li>
+        <li><a href="missao.html">Missão</a></li>
+        <li><a href="impacto.html">Impacto</a></li>
+        <li><a href="parceiros.html">Parceiros</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    gap: 1.5rem;
-    text-align: center;
-    position: fixed;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    background: transparent;
-    padding: 2rem;
-  }
-  .menu.active { display: flex; }
-  .menu-toggle { display: flex; position: absolute; right: 20px; top: 15px; }
-}
+  <section class="hero">
+    <h1>Contato</h1>
+    <form>
+      <label for="nome">Nome:</label><br>
+      <input type="text" id="nome" name="nome"><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email"><br><br>
+
+      <label for="mensagem">Mensagem:</label><br>
+      <textarea id="mensagem" name="mensagem"></textarea><br><br>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Rodapé com redes sociais e direitos reservados -->
+  <footer>
+    <div class="social-icons">
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+
+    <div class="footer-text">
+      <p>&copy; 2026 GreenLux Shop. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Script para ativar menu mobile -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
