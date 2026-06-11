@@ -63,7 +63,7 @@ header {
   font-size: 2rem;
   background: none;
   border: none;
-  color: var(--logo-color);
+  color: var(--logo-color); /* verde igual ao logo */
   cursor: pointer;
   z-index: 2100;
 }
@@ -123,5 +123,11 @@ footer {
   /* Corrige conflito: força exibir quando ativo */
   .navbar .menu.active {
     display: flex;
+  }
+
+  /* Links do menu no celular em verde */
+  .menu a {
+    color: var(--logo-color);
+    font-size: 1.8rem;
   }
 }
