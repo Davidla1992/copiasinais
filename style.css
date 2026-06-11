@@ -1,5 +1,5 @@
 :root {
-  --logo-color: #2596be; /* cor exata do logotipo (extraída da sua aba aberta) */
+  --logo-color: #2596be; /* cor exata do logotipo */
 }
 
 body {
@@ -8,6 +8,9 @@ body {
   background: url('imagemfondo.png') no-repeat center center fixed;
   background-size: cover;
   padding-top: 70px; /* compensa cabeçalho fixo */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Cabeçalho fixo */
@@ -67,13 +70,14 @@ header {
 }
 
 /* Hero */
-.hero { min-height: 100vh; }
+.hero { flex: 1; }
 
 /* Rodapé */
 footer {
   text-align: center;
   padding: 2rem 1rem 1rem;
   color: var(--logo-color);
+  margin-top: auto; /* força rodapé no fim da tela */
 }
 .social-icons {
   display: flex;
@@ -92,7 +96,7 @@ footer {
   text-shadow: 0 0 15px var(--logo-color);
 }
 .footer-text {
-  font-size: 0.8rem; /* menor no celular */
+  font-size: 0.8rem;
 }
 .footer-links a {
   color: var(--logo-color);
