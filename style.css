@@ -45,9 +45,6 @@ header {
   background: none;
   border: none;
   cursor: pointer;
-  position: absolute;
-  right: 20px;
-  top: 20px;
 }
 .bar {
   height: 3px;
@@ -56,9 +53,6 @@ header {
   border-radius: 2px;
   transition: all 0.3s ease;
 }
-.menu-toggle.active .bar:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.menu-toggle.active .bar:nth-child(2) { opacity: 0; }
-.menu-toggle.active .bar:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
 /* Hero */
 .hero {
@@ -105,13 +99,13 @@ footer a:hover { color: #ccc; }
     position: fixed;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.9);
     padding: 2rem;
     border-radius: 10px;
     border: 2px solid #fff;
   }
   .menu.active { display: flex; }
-  .menu-toggle { display: flex; } /* mostra hamburguer no celular */
+  .menu-toggle { display: flex; position: absolute; right: 20px; top: 20px; } /* hambúrguer à direita */
 }
 @media (max-width: 480px) {
   .logo-img { height: 50px; }
