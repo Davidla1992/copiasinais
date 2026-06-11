@@ -5,42 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GreenLux Shop - Missão</title>
   <style>
-    body { margin:0; font-family:Arial,sans-serif; background:#000; color:#fff; }
-    .navbar { display:flex; justify-content:space-between; align-items:center; background:#006400; padding:10px 20px; }
-    .navbar .menu { list-style:none; display:flex; gap:15px; }
-    .navbar .menu a { color:white; text-decoration:none; font-weight:bold; }
-    .hero { text-align:center; padding:60px 20px; background:linear-gradient(to right,#006400,#00a86b); color:white; }
-    .content { padding:40px 20px; text-align:center; }
-    footer { text-align:center; padding:20px; background:#006400; color:white; }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:Arial,sans-serif;background:#0d0d0d;color:#fff;}
+    header{background:#0d0d0d;padding:1rem 2rem;position:fixed;width:100%;top:0;z-index:1000;}
+    .navbar{display:flex;justify-content:space-between;align-items:center;}
+    .logo-img{height:69px;cursor:pointer;}
+    .menu{list-style:none;display:flex;gap:1.5rem;}
+    .menu a{color:#39ff14;text-decoration:none;font-weight:bold;}
+    .menu a:hover{color:#fff;}
+    .menu-toggle{display:none;flex-direction:column;justify-content:space-between;width:28px;height:20px;background:none;border:none;cursor:pointer;}
+    .bar{height:3px;width:100%;background:#39ff14;border-radius:2px;transition:.3s;}
+    .menu-toggle.active .bar:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+    .menu-toggle.active .bar:nth-child(2){opacity:0;}
+    .menu-toggle.active .bar:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+    .hero{text-align:center;padding:80px 20px;background:linear-gradient(to right,#006400,#00a86b);margin-top:70px;}
+    .content{padding:40px 20px;text-align:center;}
+    footer{background:#0d0d0d;color:#39ff14;text-align:center;padding:1rem;border-top:2px solid #39ff14;}
+    @media(max-width:768px){.menu{display:none;flex-direction:column;background:#0d0d0d;position:absolute;top:70px;right:0;width:200px;padding:1rem;}
+    .menu.active{display:flex;} .menu-toggle{display:flex;} .logo-img{height:86px;}}
   </style>
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <img src="logotipo.png" alt="GreenLux Logo" class="logo-img">
-      <ul class="menu">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="marcas.html">Marcas</a></li>
-        <li><a href="missao.html">Missão</a></li>
-        <li><a href="impacto.html">Impacto</a></li>
-        <li><a href="parceiros.html">Parceiros</a></li>
-        <li><a href="contato.html">Contato</a></li>
+      <a href="index.html"><img src="logotipo.png" alt="GreenLux Logo" class="logo-img"></a>
+      <button class="menu-toggle" id="menu-toggle"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Home</a></li><li><a href="marcas.html">Marcas</a></li><li><a href="missao.html">Missão</a></li><li><a href="impacto.html">Impacto</a></li><li><a href="parceiros.html">Parceiros</a></li><li><a href="contato.html">Contato</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="hero">
     <h1>Nossa Missão</h1>
-    <p>Promover luxo sustentável e responsabilidade ambiental.</p>
-  </section>
-
-  <section class="content">
-    <p>A GreenLux Shop acredita que é possível unir sofisticação e consciência ecológica. Nossa missão é oferecer produtos de alta qualidade que respeitam o meio ambiente e contribuem para um futuro melhor.</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 GreenLux Shop - Todos os direitos reservados</p>
-  </footer>
-</body>
-</html>
+    <p>Prom
 
