@@ -4,7 +4,7 @@ html { scroll-behavior: smooth; }
 body { 
   font-family: Arial, sans-serif; 
   line-height: 1.6; 
-  color: #39ff14; 
+  color: #fff; /* mesma cor do logo */
   background: url('imagemfondo.png') no-repeat center center fixed;
   background-size: cover;
 }
@@ -19,7 +19,7 @@ header {
   z-index: 1000;
 }
 .navbar { display: flex; justify-content: space-between; align-items: center; }
-.logo-img { height: 69px; background: transparent; }
+.logo-img { height: 200px; background: transparent; } /* logo maior no cabeçalho */
 
 /* Menu hamburguer */
 .menu-toggle {
@@ -38,7 +38,7 @@ header {
 .bar {
   height: 3px;
   width: 100%;
-  background-color: #39ff14;
+  background-color: #fff; /* mesma cor do logo */
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -59,16 +59,16 @@ header {
   background: rgba(0,0,0,0.7);
   padding: 2rem;
   border-radius: 10px;
-  border: 2px solid #39ff14;
+  border: 2px solid #fff; /* mesma cor do logo */
 }
 .menu.active { display: flex; }
 .menu a { 
-  color: #39ff14; 
+  color: #fff; 
   text-decoration: none; 
   font-weight: bold; 
   transition: color 0.3s ease; 
 }
-.menu a:hover { color: #fff; }
+.menu a:hover { color: #ccc; }
 
 /* Hero */
 .hero {
@@ -77,28 +77,11 @@ header {
   display: flex; justify-content: center; align-items: center;
 }
 .hero-content { padding: 2rem; }
+.logo-hero {
+  width: 600px; /* logo 3x maior para PC */
+  max-width: 90%; /* responsivo para celular */
+  height: auto;
+}
 
 /* Ícones sociais */
-.social-footer { text-align: center; padding: 2rem 0 1rem; }
-.social-icons { display: flex; justify-content: center; gap: 1.5rem; }
-.social-icons a { 
-  color: #39ff14; 
-  font-size: 1.8rem; 
-  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease; 
-}
-.social-icons a:hover { 
-  color: #fff; 
-  transform: scale(1.2); 
-  text-shadow: 0 0 15px #39ff14; 
-}
-
-/* Rodapé */
-footer {
-  background: transparent;
-  color: #39ff14;
-  text-align: center;
-  padding: 1rem;
-}
-footer a { color: #39ff14; text-decoration: none; }
-footer a:hover { color: #fff; }
-.footer-links { margin-top: 0.5rem; font-size: 0.9rem; }
+.social-footer { text-align: center; padding
