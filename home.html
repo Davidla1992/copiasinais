@@ -4,7 +4,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GreenLux Shop - Home</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #000; /* fundo preto */
+      color: #fff; /* texto branco */
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #006400; /* verde escuro */
+      padding: 10px 20px;
+    }
+
+    .navbar .menu {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    .navbar .menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(to right, #006400, #00a86b);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+    }
+
+    .hero .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: white;
+      color: #006400;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #006400;
+      color: white;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -14,21 +75,3 @@
         <li><a href="home.html">Home</a></li>
         <li><a href="marcas.html">Marcas</a></li>
         <li><a href="missao.html">Missão</a></li>
-        <li><a href="impacto.html">Impacto</a></li>
-        <li><a href="parceiros.html">Parceiros</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>Bem-vindo à GreenLux Shop</h1>
-    <p>Luxo sustentável para um futuro melhor</p>
-    <a href="contato.html" class="btn">Entre em Contato</a>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 GreenLux Shop - Todos os direitos reservados</p>
-  </footer>
-</body>
-</html>
