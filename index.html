@@ -12,7 +12,13 @@
       <a href="index.html" class="logo-link">
         <img src="logofinal.png" alt="GreenLux Logo" class="logo-img">
       </a>
-      <ul class="menu">
+      <!-- Botão hambúrguer -->
+      <button class="menu-toggle" id="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="menu" id="menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="marcas.html">Marcas</a></li>
         <li><a href="missao.html">Missão</a></li>
@@ -28,5 +34,14 @@
 
   <!-- Rodapé vazio na home -->
   <footer></footer>
+
+  <!-- Script para ativar menu mobile -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
