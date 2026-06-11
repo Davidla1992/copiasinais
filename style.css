@@ -1,5 +1,5 @@
 :root {
-  --logo-color: #39FF14; /* verde igual ao logo */
+  --logo-color: #39FF14;
 }
 
 /* Fundo */
@@ -27,12 +27,12 @@ header {
   left: 0;
   width: 100%;
   height: 70px;
-  background: none;
+  background: none; /* sem franja preta */
   z-index: 2000;
 }
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* logo à esquerda, menu à direita */
   align-items: center;
   width: 100%;
   padding: 0 1rem;
@@ -59,11 +59,11 @@ header {
 
 /* Botão hambúrguer */
 .menu-toggle {
-  display: none;
+  display: none; /* escondido no desktop */
   font-size: 2rem;
   background: none;
   border: none;
-  color: var(--logo-color); /* verde igual ao logo */
+  color: var(--logo-color);
   cursor: pointer;
   z-index: 2100;
 }
@@ -97,7 +97,7 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: none;
+    background: none; /* sem franja preta */
     padding: 0;
     z-index: 2000;
   }
@@ -123,11 +123,5 @@ footer {
   /* Corrige conflito: força exibir quando ativo */
   .navbar .menu.active {
     display: flex;
-  }
-
-  /* Links do menu no celular em verde */
-  .menu a {
-    color: var(--logo-color);
-    font-size: 1.8rem;
   }
 }
