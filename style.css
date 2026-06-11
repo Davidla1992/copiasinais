@@ -1,40 +1,46 @@
-/* Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { 
-  font-family: Arial, sans-serif; 
-  line-height: 1.6; 
+:root {
+  --logo-color: #39ff14; /* cor do logotipo */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
   background: url('imagemfondo.png') no-repeat center center fixed;
   background-size: cover;
 }
 
-/* Cor oficial do logotipo */
-:root {
-  --logo-color: #39ff14; /* substitua se sua logo tiver outro código */
-}
-
-/* Cabeçalho */
+/* Cabeçalho fixo */
 header {
-  background: transparent;
-  padding: 0.5rem 1rem;
   position: fixed;
-  width: 100%;
   top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
   z-index: 1000;
 }
-.navbar { display: flex; justify-content: space-between; align-items: center; }
-.logo-img { height: 280px; }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* logo e menu alinhados no topo */
+  margin: 0;
+  padding: 0; /* remove espaço extra */
+}
+.logo-img {
+  height: 80px; /* altura menor para ficar mais em cima */
+}
 
 /* Menu PC */
 .menu {
   list-style: none;
   display: flex;
   gap: 2rem;
+  margin: 0;
+  padding: 0;
 }
-.menu a { 
-  color: var(--logo-color); 
-  text-decoration: none; 
-  font-weight: bold; 
+.menu a {
+  color: var(--logo-color);
+  text-decoration: none;
+  font-weight: bold;
 }
 .menu a:hover { color: var(--logo-color); }
 
@@ -56,24 +62,20 @@ header {
   border-radius: 2px;
 }
 
-/* Hero */
-.hero { min-height: 100vh; }
-
 /* Ícones sociais */
-.social-icons a { 
-  color: var(--logo-color); 
-  font-size: 2rem; 
-  transition: transform 0.3s ease, text-shadow 0.3s ease; 
+.social-icons a {
+  color: var(--logo-color);
+  font-size: 2rem;
+  transition: transform 0.3s ease;
 }
-.social-icons a:hover { 
-  color: var(--logo-color); 
-  transform: scale(1.2); 
-  text-shadow: 0 0 15px var(--logo-color); 
+.social-icons a:hover {
+  color: var(--logo-color);
+  transform: scale(1.2);
+  text-shadow: 0 0 15px var(--logo-color);
 }
 
 /* Rodapé */
 footer {
-  background: transparent;
   color: var(--logo-color);
   text-align: center;
   padding: 1rem;
@@ -83,9 +85,8 @@ footer a:hover { color: var(--logo-color); }
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .logo-img { height: 60px; }
-  .navbar { justify-content: space-between; }
-  .menu { 
+  .logo-img { height: 50px; }
+  .menu {
     display: none;
     flex-direction: column;
     gap: 1.5rem;
@@ -100,7 +101,4 @@ footer a:hover { color: var(--logo-color); }
   }
   .menu.active { display: flex; }
   .menu-toggle { display: flex; position: absolute; right: 20px; top: 20px; }
-}
-@media (max-width: 480px) {
-  .logo-img { height: 50px; }
 }
