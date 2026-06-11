@@ -1,66 +1,172 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GreenLux Shop</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
-  <!-- Cabeçalho -->
-  <header>
-    <nav class="navbar">
-      <a href="index.html" class="logo-link">
-        <img src="logofinal.png" alt="GreenLux Logo" class="logo-img">
-      </a>
-      <button class="menu-toggle" id="menu-toggle">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <ul class="menu" id="menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#marcas">Marcas</a></li>
-        <li><a href="#missao">Missão</a></li>
-        <li><a href="#impacto">Impacto</a></li>
-        <li><a href="#parceiros">Parceiros</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+/* Importando fontes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
 
-  <!-- Hero -->
-  <section id="home" class="hero"></section>
+:root {
+  --logo-color: #39FF14; /* verde neon do logotipo */
+}
 
-  <!-- Rodapé -->
-  <footer>
-    <div class="social-icons">
-      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-    </div>
+/* Fonte padrão do corpo */
+body {
+  margin: 0;
+  font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  background: url('imagemfondo.png') no-repeat center center fixed;
+  background-size: cover;
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-transform: uppercase;
+}
 
-    <div class="footer-text">
-      <p>&copy; 2026 GreenLux Shop. Todos os direitos reservados.</p>
-    </div>
+/* Cabeçalho */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: transparent;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+.logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.logo-img {
+  height: 200px;
+}
 
-    <div class="footer-links">
-      <a href="#politica-privacidade">Política de Privacidade</a> |
-      <a href="#termos-uso">Termos de Uso</a> |
-      <a href="#direitos">Direitos Autorais</a>
-    </div>
-  </footer>
+/* Menu PC */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.menu a {
+  color: var(--logo-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.menu a:hover { color: var(--logo-color); }
 
-  <!-- Script -->
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-    menuToggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
-    });
-  </script>
-</body>
-</html>
+/* Hambúrguer */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: var(--logo-color);
+  border-radius: 2px;
+}
+
+/* Hero */
+.hero { flex: 1; }
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  color: var(--logo-color);
+  margin-top: auto;
+  font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  text-transform: none;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+.social-icons a {
+  color: var(--logo-color);
+  font-size: 2rem;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  font-family: 'Playfair Display', serif;
+}
+.social-icons a:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 15px var(--logo-color);
+}
+.footer-text {
+  font-size: 0.8rem;
+  text-shadow: 0 0 6px rgba(0,0,0,0.6);
+  text-transform: none;
+  margin-bottom: 0.5rem;
+}
+.footer-links {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.footer-links a {
+  color: var(--logo-color);
+  text-decoration: none;
+  text-shadow: 0 0 6px rgba(0,0,0,0.6);
+  font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  text-transform: none;
+}
+.footer-links a:hover { color: var(--logo-color); }
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header { height: 60px; }
+  body { padding-top: 60px; }
+  .logo-img { height: 240px; }
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    padding: 2rem;
+  }
+  .menu a {
+    font-size: 1.8rem;
+    color: var(--logo-color);
+    background: transparent;
+    text-shadow: 0 0 8px rgba(0,0,0,0.7);
+    text-transform: uppercase;
+  }
+  .menu.active { display: flex; }
+  .menu-toggle { display: flex; position: absolute; right: 20px; top: 15px; }
+  .footer-text { font-size: 0.7rem; }
+}
+@media (max-width: 480px) {
+  header { height: 50px; }
+  body { padding-top: 50px; }
+  .logo-img { height: 180px; }
+  .menu a {
+    font-size: 2rem;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+    text-transform: uppercase;
+  }
+  .footer-text { font-size: 0.6rem; }
+}
