@@ -12,17 +12,14 @@
   <!-- Cabeçalho -->
   <header>
     <nav class="navbar">
-      <!-- Logo com link para atualizar página -->
       <a href="index.html" class="logo-link">
         <img src="logofinal.png" alt="GreenLux Logo" class="logo-img">
       </a>
-      <!-- Botão hamburguer (aparece só no celular) -->
       <button class="menu-toggle" id="menu-toggle">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
-      <!-- Menu -->
       <ul class="menu" id="menu">
         <li><a href="#home">Home</a></li>
         <li><a href="#marcas">Marcas</a></li>
@@ -36,9 +33,7 @@
 
   <!-- Hero -->
   <section id="home" class="hero">
-    <div class="hero-content">
-      <!-- Logo central removido -->
-    </div>
+    <div class="hero-content"></div>
   </section>
 
   <!-- Ícones sociais -->
@@ -62,11 +57,10 @@
     </div>
   </footer>
 
-  <!-- Script para menu -->
+  <!-- Script -->
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
-
     menuToggle.addEventListener('click', () => {
       menu.classList.toggle('active');
     });
