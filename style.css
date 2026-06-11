@@ -102,3 +102,22 @@ footer {
 }
 footer a { color: #39ff14; text-decoration: none; }
 footer a:hover { color: #fff; }
+.footer-links { margin-top: 0.5rem; }
+
+/* Seções de políticas */
+.policy-section {
+  background: rgba(0,0,0,0.8);
+  color: #39ff14;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  border: 2px solid #39ff14;
+  border-radius: 10px;
+}
+.policy-section h2 {
+  margin-bottom: 1rem;
+  color: #fff;
+}
+.policy-section p {
+  font-size: 1rem;
+}
