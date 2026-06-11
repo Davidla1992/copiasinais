@@ -16,11 +16,13 @@
       <a href="index.html" class="logo-link">
         <img src="logofinal.png" alt="GreenLux Logo" class="logo-img">
       </a>
+      <!-- Botão hamburguer (aparece só no celular) -->
       <button class="menu-toggle" id="menu-toggle">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
+      <!-- Menu -->
       <ul class="menu" id="menu">
         <li><a href="#home">Home</a></li>
         <li><a href="#marcas">Marcas</a></li>
@@ -66,7 +68,6 @@
     const menu = document.getElementById('menu');
 
     menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
       menu.classList.toggle('active');
     });
   </script>
