@@ -131,7 +131,8 @@ footer {
   .menu a {
     font-size: 1.8rem;
     color: var(--logo-color);
-    background: transparent; /* apenas letras visíveis */
+    background: transparent;
+    text-shadow: 0 0 8px rgba(0,0,0,0.7); /* sombra para legibilidade */
   }
   .menu.active { display: flex; }
   .menu-toggle { display: flex; position: absolute; right: 20px; top: 15px; }
@@ -142,6 +143,9 @@ footer {
   body { padding-top: 50px; }
   .logo-img { height: 180px; } /* Smartphone: 6x maior */
   .logo-link { justify-content: flex-start; }
-  .menu a { font-size: 2rem; }
+  .menu a {
+    font-size: 2rem;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8); /* sombra mais forte em telas pequenas */
+  }
   .footer-text { font-size: 0.6rem; }
 }
