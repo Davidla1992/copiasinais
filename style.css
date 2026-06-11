@@ -1,6 +1,6 @@
 /* Importando fontes */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
 
 :root {
   --logo-color: #39FF14; /* verde neon do logotipo */
@@ -60,8 +60,9 @@ header {
   text-decoration: none;
   font-weight: 600;
   font-size: 1.5rem;
-  font-family: 'Montserrat', 'Futura', 'Avenir', sans-serif;
+  font-family: 'Playfair Display', serif; /* Fonte elegante */
   letter-spacing: 2px;
+  text-transform: uppercase; /* Mantém maiúsculas no menu */
 }
 .menu a:hover { color: var(--logo-color); }
 
@@ -79,86 +80,4 @@ header {
 .bar {
   height: 3px;
   width: 100%;
-  background-color: var(--logo-color);
-  border-radius: 2px;
-}
-
-/* Hero */
-.hero { flex: 1; }
-
-/* Rodapé */
-footer {
-  text-align: center;
-  padding: 2rem 1rem 1rem;
-  color: var(--logo-color);
-  margin-top: auto;
-  font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-  text-transform: none; /* Rodapé não fica todo em maiúscula */
-}
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
-}
-.social-icons a {
-  color: var(--logo-color);
-  font-size: 2rem;
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
-  text-shadow: 0 0 8px rgba(0,0,0,0.7);
-  font-family: 'Montserrat', sans-serif;
-}
-.social-icons a:hover {
-  transform: scale(1.2);
-  text-shadow: 0 0 15px var(--logo-color);
-}
-.footer-text {
-  font-size: 0.8rem;
-  text-shadow: 0 0 6px rgba(0,0,0,0.6);
-  text-transform: none; /* Mantém minúsculas */
-}
-.footer-links a {
-  color: var(--logo-color);
-  text-decoration: none;
-  text-shadow: 0 0 6px rgba(0,0,0,0.6);
-  font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-  text-transform: none; /* Links permanecem minúsculos */
-}
-.footer-links a:hover { color: var(--logo-color); }
-
-/* Responsividade */
-@media (max-width: 768px) {
-  header { height: 60px; }
-  body { padding-top: 60px; }
-  .logo-img { height: 240px; }
-  .menu {
-    display: none;
-    flex-direction: column;
-    gap: 1.5rem;
-    text-align: center;
-    position: fixed;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    background: transparent;
-    padding: 2rem;
-  }
-  .menu a {
-    font-size: 1.8rem;
-    color: var(--logo-color);
-    background: transparent;
-    text-shadow: 0 0 8px rgba(0,0,0,0.7);
-  }
-  .menu.active { display: flex; }
-  .menu-toggle { display: flex; position: absolute; right: 20px; top: 15px; }
-  .footer-text { font-size: 0.7rem; }
-}
-@media (max-width: 480px) {
-  header { height: 50px; }
-  body { padding-top: 50px; }
-  .logo-img { height: 180px; }
-  .menu a {
-    font-size: 2rem;
-    text-shadow: 0 0 10px rgba(0,0,0,0.8);
-  }
-  .footer-text { font-size: 0.6rem; }
-}
+  background-color: var(--logo
