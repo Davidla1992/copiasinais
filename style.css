@@ -43,7 +43,7 @@ header {
   padding: 0 1rem;
 }
 .logo-link { display: flex; align-items: center; }
-.logo-img { height: 240px; } /* logo 4x maior */
+.logo-img { height: 240px; } /* logo grande no desktop */
 
 /* Menu desktop */
 .menu {
@@ -100,6 +100,11 @@ footer {
 
 /* Responsividade: celular */
 @media (max-width: 768px) {
+  /* Logo menor no celular */
+  .logo-img {
+    height: 168px; /* 30% menor que 240px */
+  }
+
   /* Esconde menu horizontal */
   .menu {
     display: none;
@@ -112,6 +117,7 @@ footer {
     transform: translate(-50%, -50%);
     background: none; /* sem franja preta */
     padding: 0;
+    z-index: 2000;
   }
   /* Mostra menu quando ativo */
   .menu.active {
@@ -129,4 +135,3 @@ footer {
     display: none;
   }
 }
-
