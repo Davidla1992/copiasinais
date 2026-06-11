@@ -50,3 +50,23 @@ footer {
   background: #006400;
   color: white;
 }
+.content {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.brand {
+  margin-bottom: 30px;
+  background: #111;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.brand h2 {
+  color: #00a86b;
+}
+
+.brand p {
+  color: #ccc;
+}
+
