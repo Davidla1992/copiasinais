@@ -12,8 +12,10 @@
   <!-- Cabeçalho -->
   <header>
     <nav class="navbar">
-      <!-- Logo sem fundo -->
-      <img src="logofinal.png" alt="GreenLux Logo" class="logo-img">
+      <!-- Logo com link para atualizar página -->
+      <a href="index.html">
+        <img src="logofinal.png" alt="GreenLux Logo" class="logo-img">
+      </a>
       <button class="menu-toggle" id="menu-toggle">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -49,24 +51,3 @@
   </section>
 
   <!-- Rodapé -->
-  <footer>
-    <p>&copy; 2026 GreenLux Shop. Todos os direitos reservados.</p>
-    <div class="footer-links">
-      <a href="#politica-privacidade">Política de Privacidade</a> |
-      <a href="#termos-uso">Termos de Uso</a> |
-      <a href="#direitos">Direitos Autorais</a>
-    </div>
-  </footer>
-
-  <!-- Script para menu -->
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
-      menu.classList.toggle('active');
-    });
-  </script>
-</body>
-</html>
