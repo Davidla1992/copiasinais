@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GreenLux Shop</title>
+  <title>GreenLux Shop - Home</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
+<body class="bg-image">
   <!-- Cabeçalho -->
   <header>
     <nav class="navbar">
+      <!-- Logotipo como botão para Home -->
       <a href="index.html" class="logo-link">
         <img src="logofinal.png" alt="GreenLux Logo" class="logo-img">
       </a>
@@ -20,18 +21,21 @@
         <span class="bar"></span>
       </button>
       <ul class="menu" id="menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#marcas">Marcas</a></li>
-        <li><a href="#missao">Missão</a></li>
-        <li><a href="#impacto">Impacto</a></li>
-        <li><a href="#parceiros">Parceiros</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="marcas.html">Marcas</a></li>
+        <li><a href="missao.html">Missão</a></li>
+        <li><a href="impacto.html">Impacto</a></li>
+        <li><a href="parceiros.html">Parceiros</a></li>
+        <li><a href="contato.html">Contato</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Hero -->
-  <section id="home" class="hero"></section>
+  <section class="hero">
+    <h1>Bem-vindo à GreenLux Shop</h1>
+    <p>Moda sustentável e luxo consciente em um só lugar.</p>
+  </section>
 
   <!-- Rodapé -->
   <footer>
@@ -45,16 +49,15 @@
 
     <div class="footer-text">
       <p>&copy; 2026 GreenLux Shop. Todos os direitos reservados.</p>
-    </div>
-
-    <div class="footer-links">
-      <a href="#politica-privacidade">Política de Privacidade</a> |
-      <a href="#termos-uso">Termos de Uso</a> |
-      <a href="#direitos">Direitos Autorais</a>
+      <div class="footer-links">
+        <a href="#politica-privacidade">Política de Privacidade</a> |
+        <a href="#termos-uso">Termos de Uso</a> |
+        <a href="#direitos">Direitos Autorais</a>
+      </div>
     </div>
   </footer>
 
-  <!-- Script -->
+  <!-- Script para menu mobile -->
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
