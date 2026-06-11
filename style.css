@@ -32,8 +32,9 @@ header {
   width: 100%;
   padding: 0 1rem;
 }
+/* Logo PC 4x maior */
 .logo-img {
-  height: 50px;
+  height: 200px; /* antes 50px, multiplicado por 4 */
 }
 
 /* Menu PC */
@@ -108,7 +109,8 @@ footer {
 @media (max-width: 768px) {
   header { height: 60px; }
   body { padding-top: 60px; }
-  .logo-img { height: 40px; }
+  /* Logo celular 6x maior */
+  .logo-img { height: 240px; } /* antes 40px, multiplicado por 6 */
   .menu {
     display: none;
     flex-direction: column;
@@ -129,6 +131,6 @@ footer {
 @media (max-width: 480px) {
   header { height: 50px; }
   body { padding-top: 50px; }
-  .logo-img { height: 30px; }
+  .logo-img { height: 180px; } /* antes 30px, multiplicado por 6 */
   .footer-text { font-size: 0.6rem; }
 }
