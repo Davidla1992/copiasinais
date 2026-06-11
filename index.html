@@ -31,10 +31,7 @@
     </nav>
   </header>
 
-  <!-- Hero vazio -->
   <section class="hero"></section>
-
-  <!-- Rodapé vazio -->
   <footer></footer>
 
   <!-- Script para ativar menu mobile -->
@@ -43,11 +40,7 @@
     const menu = document.getElementById('menu');
 
     menuToggle.addEventListener('click', () => {
-      if (menu.classList.contains('active')) {
-        menu.classList.remove('active');
-      } else {
-        menu.classList.add('active');
-      }
+      menu.classList.toggle('active');
     });
   </script>
 </body>
