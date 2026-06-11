@@ -13,7 +13,7 @@ header {
   z-index: 1000;
 }
 .navbar { display: flex; justify-content: space-between; align-items: center; }
-.logo-img { height: 69px; }
+.logo-img { height: 69px; cursor: pointer; }
 
 /* Menu */
 .menu { list-style: none; display: flex; gap: 1.5rem; }
@@ -127,10 +127,4 @@ footer {
     top: 70px;
     right: 0;
     width: 200px;
-    padding: 1rem;
-  }
-  .menu.active { display: flex; }
-  .menu-toggle { display: flex; }
-
-  .logo-img { height: 86px; }
-}
+    padding: 1rem
