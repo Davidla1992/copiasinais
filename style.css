@@ -21,7 +21,7 @@ body {
   text-transform: uppercase;
 }
 
-/* Cabeçalho */
+/* Cabeçalho fixo */
 header {
   position: fixed;
   top: 0;
@@ -35,7 +35,7 @@ header {
 }
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* logo à esquerda, menu à direita */
   align-items: center;
   width: 100%;
   padding: 0 1rem;
@@ -80,7 +80,7 @@ header {
 }
 
 /* Hero */
-.hero { flex: 1; text-align: center; color: var(--logo-color); }
+.hero { flex: 1; }
 
 /* Rodapé */
 footer {
@@ -94,33 +94,11 @@ footer {
   font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   text-transform: none;
 }
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
-}
-.social-icons a {
-  color: var(--logo-color);
-  font-size: 2rem;
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
-  text-shadow: 0 0 8px rgba(0,0,0,0.7);
-  font-family: 'Montserrat', sans-serif;
-}
-.social-icons a:hover {
-  transform: scale(1.2);
-  text-shadow: 0 0 15px var(--logo-color);
-}
-.footer-text {
-  font-size: 0.8rem;
-  text-shadow: 0 0 6px rgba(0,0,0,0.6);
-  margin-bottom: 0.5rem;
-}
 
-/* Responsividade */
+/* Responsividade: celular */
 @media (max-width: 768px) {
   .menu {
-    display: none;
+    display: none; /* escondido por padrão */
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
@@ -128,4 +106,17 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0,0,
+    background: rgba(0,0,0,0.8);
+    padding: 2rem;
+    border-radius: 8px;
+  }
+  .menu.active {
+    display: flex; /* aparece quando clicado */
+  }
+  .menu-toggle {
+    display: flex; /* mostra o botão no celular */
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+}
