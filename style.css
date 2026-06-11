@@ -30,7 +30,7 @@ header {
   left: 0;
   width: 100%;
   height: 70px;
-  background: none; /* sem recuadro, só a imagem de fundo */
+  background: none; /* sem recuadro */
   z-index: 2000;
   display: flex;
   align-items: center;
@@ -43,7 +43,7 @@ header {
   padding: 0 1rem;
 }
 .logo-link { display: flex; align-items: center; }
-.logo-img { height: 60px; }
+.logo-img { height: 240px; } /* logo 4x maior */
 
 /* Menu desktop */
 .menu {
@@ -57,7 +57,7 @@ header {
   color: var(--logo-color);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 2px;
 }
