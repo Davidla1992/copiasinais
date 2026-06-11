@@ -1,5 +1,5 @@
 :root {
-  --logo-color: #39ff14; /* verde exato do logotipo */
+  --logo-color: #39FF14; /* verde neon do logotipo */
 }
 
 body {
@@ -32,9 +32,13 @@ header {
   width: 100%;
   padding: 0 1rem;
 }
-/* Logo PC 4x maior */
+.logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* força logo à esquerda */
+}
 .logo-img {
-  height: 200px; /* antes 50px, multiplicado por 4 */
+  height: 200px; /* PC: 4x maior */
 }
 
 /* Menu PC */
@@ -109,8 +113,8 @@ footer {
 @media (max-width: 768px) {
   header { height: 60px; }
   body { padding-top: 60px; }
-  /* Logo celular 6x maior */
-  .logo-img { height: 240px; } /* antes 40px, multiplicado por 6 */
+  .logo-img { height: 240px; } /* Celular/Tablet: 6x maior */
+  .logo-link { justify-content: flex-start; } /* logo colado à esquerda */
   .menu {
     display: none;
     flex-direction: column;
@@ -131,6 +135,7 @@ footer {
 @media (max-width: 480px) {
   header { height: 50px; }
   body { padding-top: 50px; }
-  .logo-img { height: 180px; } /* antes 30px, multiplicado por 6 */
+  .logo-img { height: 180px; } /* Smartphone: 6x maior */
+  .logo-link { justify-content: flex-start; }
   .footer-text { font-size: 0.6rem; }
 }
