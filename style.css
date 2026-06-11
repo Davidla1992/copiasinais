@@ -4,12 +4,16 @@ html { scroll-behavior: smooth; }
 body { 
   font-family: Arial, sans-serif; 
   line-height: 1.6; 
-  color: #39ff14; /* cor do logotipo */
   background: url('imagemfondo.png') no-repeat center center fixed;
   background-size: cover;
 }
 
-/* Cabeçalho fixo */
+/* Cor oficial do logotipo */
+:root {
+  --logo-color: #39ff14; /* substitua se sua logo tiver outro código */
+}
+
+/* Cabeçalho */
 header {
   background: transparent;
   padding: 0.5rem 1rem;
@@ -19,25 +23,24 @@ header {
   z-index: 1000;
 }
 .navbar { display: flex; justify-content: space-between; align-items: center; }
-.logo-img { height: 280px; background: transparent; } /* logo grande no PC */
+.logo-img { height: 280px; }
 
-/* Menu horizontal no PC */
+/* Menu PC */
 .menu {
   list-style: none;
   display: flex;
   gap: 2rem;
 }
 .menu a { 
-  color: #39ff14; /* mesma cor do logo */
+  color: var(--logo-color); 
   text-decoration: none; 
   font-weight: bold; 
-  transition: color 0.3s ease; 
 }
-.menu a:hover { color: #fff; }
+.menu a:hover { color: var(--logo-color); }
 
-/* Menu hamburguer (somente celular) */
+/* Hambúrguer */
 .menu-toggle {
-  display: none; /* escondido no PC */
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 28px;
@@ -49,50 +52,41 @@ header {
 .bar {
   height: 3px;
   width: 100%;
-  background-color: #39ff14; /* mesma cor do logo */
+  background-color: var(--logo-color);
   border-radius: 2px;
-  transition: all 0.3s ease;
 }
 
 /* Hero */
-.hero {
-  text-align: center;
-  min-height: 100vh;
-  display: flex; justify-content: center; align-items: center;
-}
-.hero-content { padding: 2rem; }
+.hero { min-height: 100vh; }
 
 /* Ícones sociais */
-.social-footer { text-align: center; padding: 2rem 0 1rem; }
-.social-icons { display: flex; justify-content: center; gap: 1.5rem; }
 .social-icons a { 
-  color: #39ff14; /* mesma cor do logo */
+  color: var(--logo-color); 
   font-size: 2rem; 
-  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease; 
+  transition: transform 0.3s ease, text-shadow 0.3s ease; 
 }
 .social-icons a:hover { 
-  color: #fff; 
+  color: var(--logo-color); 
   transform: scale(1.2); 
-  text-shadow: 0 0 15px #39ff14; 
+  text-shadow: 0 0 15px var(--logo-color); 
 }
 
 /* Rodapé */
 footer {
   background: transparent;
-  color: #39ff14; /* mesma cor do logo */
+  color: var(--logo-color);
   text-align: center;
   padding: 1rem;
 }
-footer a { color: #39ff14; text-decoration: none; }
-footer a:hover { color: #fff; }
-.footer-links { margin-top: 0.5rem; font-size: 0.9rem; }
+footer a { color: var(--logo-color); text-decoration: none; }
+footer a:hover { color: var(--logo-color); }
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .logo-img { height: 60px; } /* logo pequeno no canto esquerdo */
+  .logo-img { height: 60px; }
   .navbar { justify-content: space-between; }
   .menu { 
-    display: none; /* esconde menu horizontal */
+    display: none;
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
@@ -102,10 +96,10 @@ footer a:hover { color: #fff; }
     background: rgba(0,0,0,0.9);
     padding: 2rem;
     border-radius: 10px;
-    border: 2px solid #39ff14;
+    border: 2px solid var(--logo-color);
   }
   .menu.active { display: flex; }
-  .menu-toggle { display: flex; position: absolute; right: 20px; top: 20px; } /* hambúrguer à direita */
+  .menu-toggle { display: flex; position: absolute; right: 20px; top: 20px; }
 }
 @media (max-width: 480px) {
   .logo-img { height: 50px; }
