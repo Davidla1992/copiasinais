@@ -5,7 +5,7 @@
   --logo-color: #39FF14;
 }
 
-/* Fundo com imagem */
+/* Fundo */
 .bg-image {
   background: url('imagemfondo.png') no-repeat center center fixed;
   background-size: cover;
@@ -21,7 +21,7 @@ body {
   text-transform: uppercase;
 }
 
-/* Cabeçalho fixo */
+/* Cabeçalho */
 header {
   position: fixed;
   top: 0;
@@ -97,8 +97,9 @@ footer {
 
 /* Responsividade: celular */
 @media (max-width: 768px) {
+  /* Esconde menu horizontal */
   .menu {
-    display: none; /* escondido por padrão */
+    display: none;
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
@@ -110,11 +111,13 @@ footer {
     padding: 2rem;
     border-radius: 8px;
   }
+  /* Mostra menu quando ativo */
   .menu.active {
-    display: flex; /* aparece quando clicado */
+    display: flex;
   }
+  /* Mostra botão hambúrguer */
   .menu-toggle {
-    display: flex; /* mostra o botão no celular */
+    display: flex;
     position: absolute;
     right: 20px;
     top: 20px;
