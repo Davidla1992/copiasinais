@@ -35,7 +35,7 @@ header {
 .logo-link {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* força logo à esquerda */
+  justify-content: flex-start; /* logo sempre à esquerda */
 }
 .logo-img {
   height: 200px; /* PC: 4x maior */
@@ -53,6 +53,7 @@ header {
   color: var(--logo-color);
   text-decoration: none;
   font-weight: bold;
+  font-size: 1.5rem; /* fonte maior para acompanhar logo */
 }
 .menu a:hover { color: var(--logo-color); }
 
@@ -113,7 +114,7 @@ footer {
 @media (max-width: 768px) {
   header { height: 60px; }
   body { padding-top: 60px; }
-  .logo-img { height: 240px; } /* Celular/Tablet: 6x maior */
+  .logo-img { height: 240px; } /* Tablet/Celular: 6x maior */
   .logo-link { justify-content: flex-start; } /* logo colado à esquerda */
   .menu {
     display: none;
@@ -128,6 +129,7 @@ footer {
     border-radius: 10px;
     border: 2px solid var(--logo-color);
   }
+  .menu a { font-size: 1.8rem; } /* fonte maior no celular */
   .menu.active { display: flex; }
   .menu-toggle { display: flex; position: absolute; right: 20px; top: 15px; }
   .footer-text { font-size: 0.7rem; }
@@ -137,5 +139,6 @@ footer {
   body { padding-top: 50px; }
   .logo-img { height: 180px; } /* Smartphone: 6x maior */
   .logo-link { justify-content: flex-start; }
+  .menu a { font-size: 2rem; } /* fonte ainda maior em telas pequenas */
   .footer-text { font-size: 0.6rem; }
 }
