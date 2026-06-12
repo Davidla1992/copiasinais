@@ -1,5 +1,5 @@
 :root {
-  --logo-color: #39FF14; /* verde neon */
+  --logo-color: #39FF14;
 }
 
 /* Fundo */
@@ -32,10 +32,10 @@ header {
 }
 .navbar {
   display: flex;
-  justify-content: space-between; /* logo à esquerda, menu/hambúrguer à direita */
+  justify-content: space-between; /* logo à esquerda, menu à direita */
   align-items: center;
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 .logo-link { display: flex; align-items: center; }
 .logo-img { height: 240px; }
@@ -52,14 +52,14 @@ header {
   color: var(--logo-color);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* 20% menor que 1.5rem */
   letter-spacing: 2px;
 }
 .menu a:hover { color: var(--logo-color); }
 
 /* Botão hambúrguer */
 .menu-toggle {
-  display: none; /* escondido no desktop */
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
@@ -103,7 +103,7 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.6); /* leve fundo escuro translúcido */
+    background: rgba(0,0,0,0.6);
     padding: 2rem;
     border-radius: 8px;
     z-index: 2000;
