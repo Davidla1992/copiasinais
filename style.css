@@ -2,7 +2,7 @@
   --logo-color: #39FF14; /* verde neon do logotipo */
 }
 
-/* Fundo */
+/* Fundo da página */
 .bg-image {
   background: url('imagemfondo.png') no-repeat center center fixed;
   background-size: cover;
