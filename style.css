@@ -1,5 +1,5 @@
 :root {
-  --logo-color: #39FF14;
+  --logo-color: #39FF14; /* verde neon */
 }
 
 /* Fundo */
@@ -27,18 +27,18 @@ header {
   left: 0;
   width: 100%;
   height: 70px;
-  background: none; /* sem franja preta */
+  background: none;
   z-index: 2000;
 }
 .navbar {
   display: flex;
-  justify-content: space-between; /* logo à esquerda, menu à direita */
+  justify-content: space-between; /* logo à esquerda, menu/hambúrguer à direita */
   align-items: center;
   width: 100%;
   padding: 0 1rem;
 }
 .logo-link { display: flex; align-items: center; }
-.logo-img { height: 240px; } /* logo grande no desktop */
+.logo-img { height: 240px; }
 
 /* Menu desktop */
 .menu {
@@ -60,12 +60,20 @@ header {
 /* Botão hambúrguer */
 .menu-toggle {
   display: none; /* escondido no desktop */
-  font-size: 2rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
   background: none;
   border: none;
-  color: var(--logo-color);
   cursor: pointer;
   z-index: 2100;
+}
+.menu-toggle .bar {
+  height: 4px;
+  width: 100%;
+  background-color: var(--logo-color);
+  border-radius: 2px;
 }
 
 /* Hero */
@@ -82,12 +90,10 @@ footer {
 
 /* Responsividade: celular */
 @media (max-width: 768px) {
-  /* Logo menor no celular */
   .logo-img {
-    height: 168px; /* 30% menor que 240px */
+    height: 168px;
   }
 
-  /* Esconde menu horizontal */
   .menu {
     display: none;
     flex-direction: column;
@@ -97,30 +103,27 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: none; /* sem franja preta */
-    padding: 0;
+    background: rgba(0,0,0,0.6); /* leve fundo escuro translúcido */
+    padding: 2rem;
+    border-radius: 8px;
     z-index: 2000;
   }
 
-  /* Mostra menu quando ativo */
   .menu.active {
     display: flex;
   }
 
-  /* Mostra botão hambúrguer */
   .menu-toggle {
-    display: block;
+    display: flex;
     position: absolute;
     right: 20px;
     top: 20px;
   }
 
-  /* Esconde menu horizontal padrão */
   .navbar .menu {
     display: none;
   }
 
-  /* Corrige conflito: força exibir quando ativo */
   .navbar .menu.active {
     display: flex;
   }
