@@ -258,3 +258,10 @@ body.impacto-page .btn-voltar:hover {
     padding: 0.4rem 0.8rem;
   }
 }
+
+/* Responsividade exclusiva para Home (corrige fundo no celular) */
+@media (max-width: 768px) {
+  body.home-page {
+    background-attachment: scroll; /* garante que a imagem apareça no mobile */
+  }
+}
