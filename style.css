@@ -2,7 +2,7 @@
   --logo-color: #39FF14; /* verde neon do logotipo */
 }
 
-/* Fundo branco para a página Missão */
+/* Página Missão */
 body.missao-page {
   background-color: #ffffff;
   color: #000000;
@@ -100,14 +100,15 @@ header {
   color: #000000;
 }
 
-/* Imagem abaixo do texto */
+/* Imagem abaixo do texto com mesma largura */
 .icon-extra {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
 }
 .icon-extra img {
-  max-width: 200px;
+  width: 100%; /* ocupa toda a largura do container */
+  max-width: 100%; /* não ultrapassa o limite */
   height: auto;
 }
 
