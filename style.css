@@ -18,6 +18,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  text-transform: uppercase;
 }
 
 /* Cabeçalho */
@@ -36,6 +37,7 @@ header {
   align-items: center;
   width: 100%;
   padding: 0 2rem;
+  box-sizing: border-box;
 }
 .logo-link { display: flex; align-items: center; }
 .logo-img { height: 70px; }
@@ -44,22 +46,21 @@ header {
 .menu {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;   /* permite quebrar em linha se necessário */
-  justify-content: flex-end; /* força alinhamento à direita */
+  flex-wrap: wrap;        /* permite quebrar em linha se necessário */
+  justify-content: flex-end;
   gap: 1rem;
   margin: 0;
   padding: 0;
-  max-width: 60%;    /* garante que não ultrapasse a largura */
+  max-width: 70%;         /* reserva espaço para o logo */
+  overflow-wrap: anywhere; /* evita corte de palavras longas */
 }
-
 .menu a {
   color: var(--logo-color);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.9rem;   /* reduz um pouco para caber */
+  font-size: 1rem;        /* ajusta tamanho para caber */
   letter-spacing: 2px;
   text-transform: uppercase;
-  white-space: normal; /* permite quebra de palavras se precisar */
 }
 
 /* Botão hambúrguer */
@@ -81,8 +82,15 @@ header {
   border-radius: 2px;
 }
 
+/* Hero */
+.hero { flex: 1; }
+
 /* Responsividade: celular */
 @media (max-width: 768px) {
+  .logo-img {
+    height: 60px;
+  }
+
   .menu {
     display: none;
     flex-direction: column;
