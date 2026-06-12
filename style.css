@@ -32,19 +32,19 @@ header {
 }
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* logo à esquerda, menu à direita */
   align-items: center;
   width: 100%;
   padding: 0 2rem;
 }
 .logo-img { height: 80px; }
 
-/* Menu desktop (sempre visível) */
+/* Menu desktop */
 .menu {
   list-style: none;
   display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
+  justify-content: flex-end; /* alinhado à direita */
+  gap: 2rem; /* espaçamento harmonizado */
   margin: 0;
   padding: 0;
 }
@@ -54,6 +54,7 @@ header {
   font-weight: 600;
   font-size: 1rem;
   letter-spacing: 2px;
+  white-space: nowrap; /* evita cortar palavras */
 }
 .menu a.active {
   border-bottom: 2px solid var(--logo-color);
