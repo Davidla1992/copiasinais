@@ -108,7 +108,7 @@ header {
 }
 .icon-extra img {
   width: 100%; /* ocupa toda a largura do container */
-  max-width: 100%; /* não ultrapassa o limite */
+  max-width: 100%;
   height: auto;
 }
 
