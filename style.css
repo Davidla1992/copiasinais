@@ -1,4 +1,190 @@
-/* Estilo exclusivo para a página Impacto */
+:root {
+  --logo-color: #39FF14;
+}
+
+/* Página Home com imagem de fundo */
+body.home-page {
+  background: url("imagemfondo.png") no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  padding-top: 150px;
+}
+
+/* Outras páginas com fundo branco */
+body.missao-page,
+body.marcas-page,
+body.parceiros-page,
+body.contato-page {
+  background-color: #ffffff;
+  color: #000000;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  padding-top: 150px;
+}
+
+/* Cabeçalho fixo */
+header {
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4000;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem;
+}
+.logo-img {
+  max-height: 120px;
+  display: block;
+}
+.logo-link {
+  display: inline-block;
+  cursor: pointer;
+}
+.logo-link:hover .logo-img {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+/* Menu em maiúsculas */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.menu a {
+  color: var(--logo-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+}
+.menu a.active {
+  font-weight: 700;
+  border-bottom: 2px solid var(--logo-color);
+}
+.menu a:hover {
+  opacity: 0.8;
+}
+
+/* Botão hambúrguer */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.menu-toggle .bar {
+  height: 4px;
+  width: 100%;
+  background-color: var(--logo-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Ícone da Missão menor (30%) */
+.icon-extra img.extra-img {
+  width: 30%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Botão voltar verde */
+.btn-voltar {
+  background-color: var(--logo-color);
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 2px solid var(--logo-color);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.btn-voltar:hover {
+  background-color: #000000;
+  color: var(--logo-color);
+}
+
+/* Títulos da Missão em maiúsculas */
+body.missao-page h1,
+body.missao-page h2 {
+  text-transform: uppercase;
+}
+
+/* Parágrafos da Missão em texto normal */
+body.missao-page p {
+  text-transform: none;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    background-color: rgba(0,0,0,0.15);
+    padding: 1rem;
+    border-radius: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 2000;
+    width: 65%;
+    max-width: 260px;
+    max-height: 50vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  }
+  .menu.active {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 5000;
+  }
+  .logo-img {
+    max-height: 80px;
+  }
+  .icon-extra img.extra-img {
+    width: 60%;
+  }
+}
+
+/* ----------------------------- */
+/* Exclusivo para página Impacto */
+/* ----------------------------- */
 body.impacto-page {
   background-color: #ffffff;
   color: #000000;
@@ -23,7 +209,7 @@ body.impacto-page .impacto-conteudo {
 body.impacto-page .impacto-conteudo h1 {
   margin-bottom: 1rem;
   font-weight: 700;
-  text-transform: none;
+  text-transform: none; /* sem maiúsculas forçadas */
 }
 
 body.impacto-page .impacto-conteudo p {
@@ -51,4 +237,24 @@ body.impacto-page .btn-voltar {
 body.impacto-page .btn-voltar:hover {
   background-color: #000000;
   color: var(--logo-color);
+}
+
+/* Responsividade exclusiva para Impacto */
+@media (max-width: 768px) {
+  body.impacto-page .impacto-conteudo {
+    padding: 1rem;
+    min-height: auto;
+  }
+  body.impacto-page .impacto-conteudo h1 {
+    font-size: 1.5rem;
+  }
+  body.impacto-page .impacto-conteudo p {
+    font-size: 1rem;
+    line-height: 1.4;
+    padding: 0 1rem;
+  }
+  body.impacto-page .btn-voltar {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
 }
