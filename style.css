@@ -25,16 +25,16 @@ header {
 }
 .navbar {
   display: flex;
-  justify-content: space-between; /* logo à esquerda, menu à direita */
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1.5rem;
 }
 .logo-img {
-  height: 200px; /* logo grande */
-  margin-left: 0; /* colado na esquerda */
+  max-height: 120px; /* 40% menor */
+  margin-left: 0;
 }
 
 /* Menu desktop */
@@ -109,32 +109,31 @@ header {
 /* Mobile */
 @media (max-width: 768px) {
   .menu {
-    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0,0,0,0.85);
-    justify-content: center;
-    align-items: center;
-
-    /* animação */
-    transform: translateY(-20px);
+    background-color: rgba(0,0,0,0.95);
+    padding: 2rem;
+    border-radius: 8px;
+    visibility: hidden;
     opacity: 0;
-    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 999;
   }
   .menu.active {
-    display: flex;
-    transform: translateY(0);
+    visibility: visible;
     opacity: 1;
+    transform: translate(-50%, -50%);
   }
   .menu-toggle {
     display: flex;
     position: absolute;
     right: 20px;
-    top: 30px;
+    top: 20px;
+    z-index: 1000;
   }
 }
