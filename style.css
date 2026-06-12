@@ -16,7 +16,6 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  padding-top: 140px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -30,20 +29,20 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 140px;
+  height: 100px;
   background: none;
   z-index: 2000;
 }
 .navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; /* logo à esquerda, menu hambúrguer à direita */
+  align-items: center;            /* alinhamento vertical */
   width: 100%;
   padding: 0 2rem;
   box-sizing: border-box;
 }
 .logo-link { display: flex; align-items: center; }
-.logo-img { height: 140px; }
+.logo-img { height: 80px; }
 
 /* Menu desktop */
 .menu {
@@ -98,25 +97,12 @@ header {
 @media (max-width: 768px) {
   .menu {
     display: none;
-  }
-  .menu-toggle {
-    display: flex;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-  }
-}
-
-/* Menu na página Missão (mobile) */
-@media (max-width: 768px) {
-  body.missao-page .menu {
-    display: none;
     flex-direction: column;
     gap: 1.2rem;
     text-align: center;
     align-items: center;
     position: absolute;
-    top: 140px; /* logo ocupa 140px, menu começa abaixo */
+    top: 100px; /* logo ocupa 100px, menu começa abaixo */
     left: 0;
     width: 100%;
     background-color: rgba(0,0,0,0.9);
@@ -124,8 +110,14 @@ header {
     z-index: 2000;
     animation: slideDown 0.3s ease forwards;
   }
-  body.missao-page .menu.active {
+  .menu.active {
     display: flex;
+  }
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 30px;
   }
 }
 
@@ -133,71 +125,4 @@ header {
 @keyframes slideDown {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-/* Missão */
-.missao-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  position: relative;
-  z-index: 1000;
-}
-.missao-content {
-  max-width: 800px;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 2rem;
-  border-radius: 12px;
-  text-align: center;
-  color: var(--logo-color);
-  margin: auto;
-}
-.missao-content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-}
-.missao-content p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  margin-bottom: 1rem;
-}
-
-/* Símbolo unificado */
-.simbolo-unificado .simbolo-img {
-  width: 14%;
-  margin: 2rem auto 1rem auto;
-  display: block;
-  position: relative;
-  z-index: 1001;
-}
-
-/* Imagem extra */
-.icon-extra .extra-img {
-  width: 40%;
-  margin: 2rem auto;
-  display: block;
-  position: relative;
-  z-index: 1001;
-}
-
-/* Botão */
-.btn-group {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-}
-.btn-voltar {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  background-color: var(--logo-color);
-  color: #000;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-}
-.btn-voltar:hover {
-  background-color: #2ecc71;
-  color: #fff;
 }
