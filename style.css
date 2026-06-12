@@ -18,10 +18,10 @@ body {
   color: var(--logo-color);
 }
 
-/* Cabeçalho fixo */
+/* Cabeçalho invisível */
 header {
   width: 100%;
-  background-color: rgba(0,0,0,0.8);
+  background-color: transparent; /* sem fundo */
   position: fixed;
   top: 0;
   left: 0;
@@ -99,30 +99,29 @@ header {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* centralizado */
     flex-direction: column;
     align-items: center;
-    gap: 1.8rem;
+    gap: 1rem;
     text-align: center;
 
-    /* Fundo translúcido */
-    background-color: rgba(255,255,255,0.08);
-    backdrop-filter: blur(12px);
+    /* Fundo translúcido leve */
+    background-color: rgba(0,0,0,0.15);
 
-    padding: 2.5rem 1.5rem;
-    border-radius: 20px;
+    padding: 1rem;
+    border-radius: 10px;
 
     visibility: hidden;
     opacity: 0;
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
     z-index: 2000;
 
-    width: 90%;
-    max-width: 360px;
-    max-height: 80vh;
+    width: 65%;        /* recuadro menor */
+    max-width: 260px;  /* limite máximo */
+    max-height: 50vh;  /* nunca passa da tela */
     overflow-y: auto;
 
-    box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25); /* sombra leve */
   }
   .menu.active {
     visibility: visible;
@@ -142,8 +141,8 @@ header {
   .menu a {
     color: #fff;
     font-weight: 600;
-    font-size: 1.2rem;
-    letter-spacing: 2px;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
     transition: color 0.3s ease;
   }
   .menu a:hover {
