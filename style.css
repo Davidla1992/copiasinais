@@ -31,7 +31,7 @@ header {
   width: 100%;
   height: 100px;
   background: none;
-  z-index: 2000;
+  z-index: 3000; /* cabeçalho acima do fundo */
 }
 .navbar {
   display: flex;
@@ -74,7 +74,7 @@ header {
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 2100;
+  z-index: 3100;
 }
 .menu-toggle .bar {
   height: 4px;
@@ -100,20 +100,16 @@ header {
     top: 100px;
     left: 0;
     width: 100%;
-    height: calc(100vh - 100px); /* ocupa o resto da tela */
+    height: calc(100vh - 100px);
     background-color: rgba(0,0,0,0.9);
     padding: 2rem 0;
     text-align: center;
     justify-content: center;
     align-items: center;
-    overflow-y: auto; /* permite rolar se tiver muitos links */
+    overflow-y: auto;
+    z-index: 2500; /* acima do fundo */
   }
   .menu.active {
     display: flex; /* aparece quando o JS adiciona .active */
-  }
-  .menu-toggle {
-    position: absolute;
-    right: 20px;
-    top: 30px;
   }
 }
