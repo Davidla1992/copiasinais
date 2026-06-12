@@ -2,14 +2,6 @@
   --logo-color: #39FF14; /* verde neon do logotipo */
 }
 
-/* Fundo */
-.bg-image {
-  background: url('imagemfondo.png') no-repeat center center fixed;
-  background-size: cover;
-  min-height: 100vh;
-  margin: 0;
-}
-
 /* Corpo */
 body {
   margin: 0;
@@ -21,7 +13,7 @@ body {
 /* Cabeçalho invisível */
 header {
   width: 100%;
-  background-color: transparent; /* sem fundo */
+  background-color: transparent;
   position: fixed;
   top: 0;
   left: 0;
@@ -40,7 +32,7 @@ header {
   display: block;
 }
 
-/* Menu desktop (horizontal) */
+/* Menu desktop */
 .menu {
   list-style: none;
   display: flex;
@@ -49,7 +41,7 @@ header {
   padding: 0;
 }
 .menu a {
-  color: var(--logo-color); /* verde igual ao logo */
+  color: var(--logo-color);
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
@@ -58,11 +50,11 @@ header {
 }
 .menu a.active {
   font-weight: 700;
-  color: var(--logo-color); /* ativo também verde */
+  color: var(--logo-color);
   border-bottom: 2px solid var(--logo-color);
 }
 .menu a:hover {
-  opacity: 0.8; /* efeito leve sem mudar de cor */
+  opacity: 0.8;
 }
 
 /* Botão hambúrguer */
@@ -83,14 +75,13 @@ header {
   border-radius: 2px;
   transition: all 0.3s ease;
 }
-.menu-toggle.open .bar:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.menu-toggle.open .bar:nth-child(2) {
-  opacity: 0;
-}
-.menu-toggle.open .bar:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+
+/* Tipografia geral */
+h1, h2, h3, h4, h5, h6,
+p, span, strong, em,
+button, i, svg {
+  color: var(--logo-color) !important; /* força verde em tudo */
+  fill: var(--logo-color) !important;  /* ícones SVG também verdes */
 }
 
 /* Mobile */
@@ -105,7 +96,7 @@ header {
     gap: 1rem;
     text-align: center;
 
-    background-color: rgba(0,0,0,0.15); /* translúcido leve */
+    background-color: rgba(0,0,0,0.15);
 
     padding: 1rem;
     border-radius: 10px;
@@ -141,13 +132,13 @@ header {
   }
 
   .menu a {
-    color: var(--logo-color); /* verde igual ao logo */
+    color: var(--logo-color);
     font-weight: 600;
     font-size: 0.95rem;
     letter-spacing: 1px;
     transition: opacity 0.3s ease;
   }
   .menu a:hover {
-    opacity: 0.8; /* efeito leve sem mudar de cor */
+    opacity: 0.8;
   }
 }
