@@ -40,24 +40,27 @@ header {
 .logo-link { display: flex; align-items: center; }
 .logo-img { height: 70px; }
 
-/* Menu desktop */
+/* Menu desktop ajustado */
 .menu {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;   /* permite quebrar em linha se necessário */
+  justify-content: flex-end; /* força alinhamento à direita */
+  gap: 1rem;
   margin: 0;
   padding: 0;
+  max-width: 60%;    /* garante que não ultrapasse a largura */
 }
+
 .menu a {
   color: var(--logo-color);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.9rem;   /* reduz um pouco para caber */
   letter-spacing: 2px;
   text-transform: uppercase;
-  white-space: nowrap; /* evita cortar palavras */
+  white-space: normal; /* permite quebra de palavras se precisar */
 }
-.menu a:hover { color: white; }
 
 /* Botão hambúrguer */
 .menu-toggle {
