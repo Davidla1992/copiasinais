@@ -66,7 +66,7 @@ header {
 
 /* Botão hambúrguer (escondido no desktop) */
 .menu-toggle {
-  display: none !important; /* nunca aparece no desktop */
+  display: none; /* nunca aparece no desktop */
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
@@ -124,7 +124,7 @@ header {
 
   /* Mostra hambúrguer só no mobile */
   .menu-toggle {
-    display: flex !important;
+    display: flex;
     position: absolute;
     right: 20px;
     top: 30px;
