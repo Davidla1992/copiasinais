@@ -35,7 +35,7 @@ header {
 }
 .navbar {
   display: flex;
-  justify-content: space-between; /* logo à esquerda, hambúrguer à direita */
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 0 2rem;
@@ -44,12 +44,12 @@ header {
 .logo-link { display: flex; align-items: center; }
 .logo-img { height: 80px; }
 
-/* Menu desktop */
+/* Menu escondido por padrão */
 .menu {
   list-style: none;
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
+  display: none;
+  flex-direction: column;
+  gap: 1.5rem;
   margin: 0;
   padding: 0;
 }
@@ -57,7 +57,7 @@ header {
   color: var(--logo-color);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.2rem;
   letter-spacing: 2px;
 }
 .menu a.active {
@@ -66,7 +66,7 @@ header {
 
 /* Botão hambúrguer */
 .menu-toggle {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
@@ -96,33 +96,24 @@ header {
 /* Responsividade */
 @media (max-width: 768px) {
   .menu {
-    display: none;
-    flex-direction: column;
-    gap: 1.2rem;
-    text-align: center;
-    align-items: center;
-    position: absolute;
-    top: 100px; /* logo ocupa 100px, menu começa abaixo */
+    position: fixed; /* ocupa a tela */
+    top: 100px;
     left: 0;
     width: 100%;
+    height: calc(100vh - 100px); /* ocupa o resto da tela */
     background-color: rgba(0,0,0,0.9);
-    padding: 1.5rem 0;
-    z-index: 2000;
-    animation: slideDown 0.3s ease forwards;
+    padding: 2rem 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto; /* permite rolar se tiver muitos links */
   }
   .menu.active {
-    display: flex;
+    display: flex; /* aparece quando o JS adiciona .active */
   }
   .menu-toggle {
-    display: flex;
     position: absolute;
     right: 20px;
     top: 30px;
   }
-}
-
-/* Animação */
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
 }
