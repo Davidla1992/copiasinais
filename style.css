@@ -2,23 +2,21 @@
   --logo-color: #39FF14; /* verde neon do logotipo */
 }
 
-/* Fundo da página */
-.bg-image {
-  background: url('imagemfondo.png') no-repeat center center fixed;
-  background-size: cover;
-  min-height: 100vh;
-  margin: 0;
-}
-
-/* Corpo */
-body {
+/* Fundo branco para a página Missão */
+body.missao-page {
+  background-color: #ffffff;
+  color: #000000;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
-  color: var(--logo-color); /* toda tipografia em verde */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
 }
 
-/* Cabeçalho invisível */
+/* Cabeçalho */
 header {
   width: 100%;
   background-color: transparent;
@@ -49,7 +47,7 @@ header {
   padding: 0;
 }
 .menu a {
-  color: var(--logo-color);
+  color: var(--logo-color); /* verde neon só no menu */
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
@@ -58,11 +56,9 @@ header {
 }
 .menu a.active {
   font-weight: 700;
-  color: var(--logo-color);
   border-bottom: 2px solid var(--logo-color);
 }
 .menu a:hover {
-  color: var(--logo-color);
   opacity: 0.8;
 }
 
@@ -85,12 +81,48 @@ header {
   transition: all 0.3s ease;
 }
 
-/* Tipografia geral */
-h1, h2, h3, h4, h5, h6,
-p, span, strong, em,
-button, i, svg {
-  color: var(--logo-color) !important;
-  fill: var(--logo-color) !important;
+/* Container centralizado ocupando metade da tela */
+.missao-container {
+  max-width: 50%; /* metade da largura da tela */
+  padding: 2rem;
+}
+
+/* Título e parágrafos */
+.missao-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+.missao-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+/* Imagem abaixo do texto */
+.icon-extra {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.icon-extra img {
+  max-width: 200px;
+  height: auto;
+}
+
+/* Botão voltar */
+.btn-group {
+  margin-top: 2rem;
+}
+.btn-voltar {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.btn-voltar:hover {
+  opacity: 0.7;
 }
 
 /* Mobile */
@@ -104,22 +136,17 @@ button, i, svg {
     align-items: center;
     gap: 1rem;
     text-align: center;
-
     background-color: rgba(0,0,0,0.15);
-
     padding: 1rem;
     border-radius: 10px;
-
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
     z-index: 2000;
-
     width: 65%;
     max-width: 260px;
     max-height: 50vh;
     overflow-y: auto;
-
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
   }
   .menu.active {
@@ -127,7 +154,6 @@ button, i, svg {
     opacity: 1;
     transform: translate(-50%, -50%);
   }
-
   .menu-toggle {
     display: flex;
     position: absolute;
@@ -135,20 +161,7 @@ button, i, svg {
     top: 20px;
     z-index: 5000;
   }
-
   .logo-img {
     max-height: 80px;
-  }
-
-  .menu a {
-    color: var(--logo-color);
-    font-weight: 600;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
-    transition: opacity 0.3s ease;
-  }
-  .menu a:hover {
-    color: var(--logo-color);
-    opacity: 0.8;
   }
 }
