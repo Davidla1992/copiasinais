@@ -27,11 +27,15 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1400px;
+  width: 100%;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 1rem 2rem;
 }
-.logo-img { height: 70px; }
+.logo-img {
+  height: 280px; /* 4x maior que antes */
+  margin-left: 0; /* colado na esquerda */
+}
 
 /* Menu desktop */
 .menu {
@@ -47,7 +51,7 @@ header {
   color: var(--logo-color);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.2rem; /* aumentei fonte para equilibrar com logo */
   letter-spacing: 2px;
   white-space: nowrap;
   position: relative;
@@ -105,6 +109,9 @@ header {
 
 /* Mobile */
 @media (max-width: 768px) {
+  .logo-img {
+    height: 150px; /* reduzido no celular para não ocupar tudo */
+  }
   .menu {
     display: none;
     flex-direction: column;
