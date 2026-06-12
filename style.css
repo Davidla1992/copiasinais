@@ -45,7 +45,7 @@ header {
 .logo-link { display: flex; align-items: center; }
 .logo-img { height: 140px; }
 
-/* Menu */
+/* Menu padrão */
 .menu {
   list-style: none;
   display: flex;
@@ -63,6 +63,25 @@ header {
 }
 .menu a.active {
   border-bottom: 2px solid var(--logo-color);
+}
+
+/* Menu na página Missão */
+body.missao-page .menu {
+  display: none;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+  align-items: center;
+  position: absolute;   /* não cobre o texto */
+  top: 140px;           /* logo ocupa 140px, menu começa abaixo */
+  left: 0;
+  width: 100%;
+  background-color: rgba(0,0,0,0.85);
+  padding: 1.5rem 0;
+  z-index: 2000;
+}
+body.missao-page .menu.active {
+  display: flex;
 }
 
 /* Missão */
