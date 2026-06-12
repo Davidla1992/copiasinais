@@ -5,12 +5,12 @@
 /* Página Home com imagem de fundo */
 body.home-page {
   background: url("imagemfondo.png") no-repeat center center fixed;
-  background-size: cover;
+  background-size: cover;       /* cobre toda a tela */
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   padding-top: 150px;
-  min-height: 100vh; /* garante altura completa no desktop */
+  min-height: 100vh;            /* força ocupar a altura inteira */
 }
 
 /* Outras páginas com fundo branco */
@@ -181,6 +181,14 @@ body.missao-page p {
   .icon-extra img.extra-img {
     width: 60%;
   }
+
+  /* Home no celular: imagem cobre toda a tela */
+  body.home-page {
+    background: url("imagemfondo.png") no-repeat center center;
+    background-size: cover;       /* cobre toda a tela */
+    background-attachment: scroll;/* evita bug no mobile */
+    min-height: 100vh;            /* ocupa altura inteira */
+  }
 }
 
 /* ----------------------------- */
@@ -256,16 +264,5 @@ body.impacto-page .btn-voltar:hover {
   body.impacto-page .btn-voltar {
     font-size: 0.85rem;
     padding: 0.4rem 0.8rem;
-  }
-}
-
-/* Responsividade exclusiva para Home (corrige fundo no celular) */
-@media (max-width: 768px) {
-  body.home-page {
-    background: url("imagemfondo.png") no-repeat center center;
-    background-size: contain;     /* mostra a imagem inteira */
-    background-attachment: scroll;/* evita bug no mobile */
-    min-height: 100vh;            /* força ocupar a altura inteira da tela */
-    background-color: #000;       /* cor de fundo para preencher bordas */
   }
 }
