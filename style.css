@@ -19,6 +19,7 @@ body {
   min-height: 100vh;
   text-transform: uppercase;
   color: var(--logo-color);
+  box-sizing: border-box;
 }
 
 /* Cabeçalho */
@@ -36,19 +37,18 @@ header {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 3rem; /* padding vertical para dar respiro */
+  padding: 1rem 3rem; /* altura do header controlada pelo padding */
 }
-.logo-img { height: 70px; }
+.logo-img { height: 60px; }
 
 /* Menu desktop */
 .menu {
   list-style: none;
   display: flex;
   justify-content: flex-end;
-  gap: 2.5rem;
+  gap: 2rem;
   margin: 0;
   padding: 0;
-  flex-wrap: wrap;
 }
 .menu a {
   color: var(--logo-color);
