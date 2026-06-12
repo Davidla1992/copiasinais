@@ -182,13 +182,12 @@ body.missao-page p {
     width: 60%;
   }
 
-  /* Home no celular: imagem inteira sem cortes */
+  /* Home no celular: imagem cobre toda a tela */
   body.home-page {
     background: url("imagemfondo.png") no-repeat center center;
-    background-size: contain;   /* mostra a imagem inteira */
+    background-size: cover;       /* cobre toda a tela no celular */
     background-attachment: scroll;
     min-height: 100vh;
-    background-color: #000;     /* preenche bordas com preto */
   }
 }
 
