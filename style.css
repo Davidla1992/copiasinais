@@ -33,11 +33,11 @@ header {
 .navbar {
   display: flex;
   justify-content: space-between; /* logo à esquerda, menu à direita */
-  align-items: center;
+  align-items: baseline; /* linha de base invisível */
   width: 100%;
   padding: 0 2rem;
 }
-.logo-link { display: flex; align-items: center; }
+.logo-link { display: flex; align-items: baseline; }
 .logo-img { height: 240px; }
 
 /* Menu desktop */
@@ -52,7 +52,7 @@ header {
   color: var(--logo-color);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.2rem; /* 20% menor que 1.5rem */
+  font-size: 1.2rem; /* 20% menor */
   letter-spacing: 2px;
 }
 .menu a:hover { color: var(--logo-color); }
