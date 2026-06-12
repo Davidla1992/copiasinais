@@ -28,12 +28,12 @@ header {
   left: 0;
   width: 100%;
   height: 70px;
-  background: rgba(0,0,0,0.5);
+  background: none; /* sem fundo */
   z-index: 2000;
 }
 .navbar {
   display: flex;
-  justify-content: space-between; /* logo à esquerda, menu/hambúrguer à direita */
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 0 2rem;
@@ -42,23 +42,21 @@ header {
 .logo-link { display: flex; align-items: center; }
 .logo-img { height: 70px; }
 
-/* Menu desktop ajustado */
+/* Menu desktop */
 .menu {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;        /* permite quebrar em linha se necessário */
   justify-content: flex-end;
   gap: 1rem;
   margin: 0;
   padding: 0;
-  max-width: 70%;         /* reserva espaço para o logo */
-  overflow-wrap: anywhere; /* evita corte de palavras longas */
+  transition: all 0.3s ease; /* transição suave */
 }
 .menu a {
   color: var(--logo-color);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;        /* ajusta tamanho para caber */
+  font-size: 1rem;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -80,10 +78,19 @@ header {
   width: 100%;
   background-color: var(--logo-color);
   border-radius: 2px;
+  transition: all 0.3s ease; /* animação suave */
 }
 
-/* Hero */
-.hero { flex: 1; }
+/* Animação hambúrguer → X */
+.menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
 
 /* Responsividade: celular */
 @media (max-width: 768px) {
@@ -98,11 +105,10 @@ header {
     text-align: center;
     align-items: center;
     position: fixed;
-    top: 70px;
-    right: 0;
-    background: rgba(0,0,0,0.8);
-    padding: 2rem;
-    border-radius: 0 0 0 8px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
     z-index: 2000;
   }
 
