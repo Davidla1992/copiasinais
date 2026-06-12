@@ -117,16 +117,17 @@ header {
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
-    background-color: rgba(0,0,0,0.95);
+    background-color: rgba(0,0,0,0.25); /* fundo quase transparente */
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 12px;
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.4s ease, transform 0.4s ease;
     z-index: 2000;
     width: 80%;
-    max-width: 300px;
+    max-width: 320px;
     overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3); /* sombra leve */
   }
   .menu.active {
     visibility: visible;
@@ -138,7 +139,7 @@ header {
     position: absolute;
     right: 20px;
     top: 20px;
-    z-index: 3000;
+    z-index: 3000; /* botão continua no mesmo lugar */
   }
   .logo-img {
     max-height: 80px; /* logo menor no celular */
