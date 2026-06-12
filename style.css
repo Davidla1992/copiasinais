@@ -263,8 +263,9 @@ body.impacto-page .btn-voltar:hover {
 @media (max-width: 768px) {
   body.home-page {
     background: url("imagemfondo.png") no-repeat center center;
-    background-size: cover;       /* cobre toda a tela */
+    background-size: contain;     /* mostra a imagem inteira */
     background-attachment: scroll;/* evita bug no mobile */
     min-height: 100vh;            /* força ocupar a altura inteira da tela */
+    background-color: #000;       /* cor de fundo para preencher bordas */
   }
 }
