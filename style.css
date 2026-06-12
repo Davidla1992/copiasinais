@@ -16,7 +16,7 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  padding-top: 140px; /* ajustado para o logo maior */
+  padding-top: 140px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -30,7 +30,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 140px; /* logo 2x maior */
+  height: 140px;
   background: none;
   z-index: 2000;
 }
@@ -45,7 +45,7 @@ header {
 .logo-link { display: flex; align-items: center; }
 .logo-img { height: 140px; }
 
-/* Menu padrão desktop */
+/* Menu desktop */
 .menu {
   list-style: none;
   display: flex;
@@ -158,7 +158,7 @@ header {
 
 /* Símbolo unificado */
 .simbolo-unificado .simbolo-img {
-  width: 14%; /* 2 vezes maior */
+  width: 14%;
   margin: 2rem auto 1rem auto;
   display: block;
   position: relative;
@@ -167,7 +167,7 @@ header {
 
 /* Imagem extra */
 .icon-extra .extra-img {
-  width: 40%; /* proporcional */
+  width: 40%;
   margin: 2rem auto;
   display: block;
   position: relative;
