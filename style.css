@@ -8,7 +8,7 @@
   background-size: cover;
   min-height: 100vh;
   margin: 0;
-  position: relative; /* garante que o conteúdo fique acima */
+  position: relative;
   z-index: 0;
 }
 
@@ -16,7 +16,7 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  padding-top: 140px; /* ajustado para acompanhar o novo tamanho do logo */
+  padding-top: 140px; /* ajustado para o logo maior */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -30,7 +30,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 140px; /* altura dobrada */
+  height: 140px; /* logo 2x maior */
   background: none;
   z-index: 2000;
 }
@@ -43,7 +43,7 @@ header {
   box-sizing: border-box;
 }
 .logo-link { display: flex; align-items: center; }
-.logo-img { height: 140px; } /* logo 2x maior */
+.logo-img { height: 140px; }
 
 /* Menu */
 .menu {
@@ -63,61 +63,6 @@ header {
 }
 .menu a.active {
   border-bottom: 2px solid var(--logo-color);
-}
-
-/* Botão hambúrguer */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 22px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 2100;
-}
-.menu-toggle .bar {
-  height: 4px;
-  width: 100%;
-  background-color: var(--logo-color);
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-.menu-toggle.open .bar:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.menu-toggle.open .bar:nth-child(2) {
-  opacity: 0;
-}
-.menu-toggle.open .bar:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .logo-img { height: 120px; } /* proporcional em telas menores */
-  header { height: 120px; }
-  body { padding-top: 120px; }
-  .menu {
-    display: none;
-    flex-direction: column;
-    gap: 1.5rem;
-    text-align: center;
-    align-items: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2000;
-  }
-  .menu.active { display: flex; }
-  .menu-toggle {
-    display: flex;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-  }
 }
 
 /* Missão */
@@ -150,7 +95,7 @@ header {
 
 /* Símbolo unificado */
 .simbolo-unificado .simbolo-img {
-  width: 14%; /* 2 vezes maior que antes */
+  width: 14%; /* 2 vezes maior */
   margin: 2rem auto 1rem auto;
   display: block;
   position: relative;
@@ -159,7 +104,7 @@ header {
 
 /* Imagem extra */
 .icon-extra .extra-img {
-  width: 40%; /* proporcional ao símbolo */
+  width: 40%; /* proporcional */
   margin: 2rem auto;
   display: block;
   position: relative;
