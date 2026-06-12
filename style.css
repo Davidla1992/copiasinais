@@ -35,8 +35,8 @@ header {
 }
 .navbar {
   display: flex;
-  justify-content: space-between; /* logo à esquerda, menu hambúrguer à direita */
-  align-items: center;            /* alinhamento vertical */
+  justify-content: space-between; /* logo à esquerda, hambúrguer à direita */
+  align-items: center;
   width: 100%;
   padding: 0 2rem;
   box-sizing: border-box;
@@ -93,7 +93,7 @@ header {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Responsividade geral */
+/* Responsividade */
 @media (max-width: 768px) {
   .menu {
     display: none;
@@ -121,7 +121,7 @@ header {
   }
 }
 
-/* Animação de deslizar para baixo */
+/* Animação */
 @keyframes slideDown {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
