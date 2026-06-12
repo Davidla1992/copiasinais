@@ -19,6 +19,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   text-transform: uppercase;
+  color: var(--logo-color);
 }
 
 /* Cabeçalho */
@@ -58,7 +59,6 @@ header {
   font-weight: 600;
   font-size: 1rem;
   letter-spacing: 2px;
-  text-transform: uppercase;
 }
 .menu a.active {
   border-bottom: 2px solid var(--logo-color);
@@ -106,7 +106,6 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 0;
     z-index: 2000;
   }
   .menu.active { display: flex; }
@@ -118,7 +117,7 @@ header {
   }
 }
 
-/* Conteúdo Home */
+/* Home */
 .home-container {
   display: flex;
   justify-content: center;
@@ -127,21 +126,5 @@ header {
 }
 .home-content {
   text-align: center;
-  color: #fff;
-  background-color: rgba(0,0,0,0.6);
-  padding: 2rem;
-  border-radius: 12px;
-}
-.home-content h1 {
   color: var(--logo-color);
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-/* Conteúdo Missão */
-.missao-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 4rem 2rem;
-  flex: 1;
+  background-color
