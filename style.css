@@ -65,6 +65,59 @@ header {
   border-bottom: 2px solid var(--logo-color);
 }
 
+/* Botão hambúrguer */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2100;
+}
+.menu-toggle .bar {
+  height: 4px;
+  width: 100%;
+  background-color: var(--logo-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .logo-img { height: 60px; }
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+  }
+  .menu.active { display: flex; }
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+}
+
 /* Missão */
 .missao-container {
   display: flex;
@@ -95,7 +148,7 @@ header {
 
 /* Símbolo unificado */
 .simbolo-unificado .simbolo-img {
-  width: 7%; /* 3 vezes menor */
+  width: 14%; /* agora 2 vezes maior que antes */
   margin: 2rem auto 1rem auto;
   display: block;
   position: relative;
