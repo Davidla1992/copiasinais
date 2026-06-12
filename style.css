@@ -27,10 +27,8 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 100px; /* altura mínima */
-  height: auto;      /* cresce conforme o conteúdo */
-  z-index: 3000;
   background-color: rgba(0,0,0,0.6);
+  z-index: 3000;
 }
 .navbar {
   display: flex;
@@ -38,7 +36,7 @@ header {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 3rem;
+  padding: 1rem 3rem; /* padding vertical para dar respiro */
 }
 .logo-img { height: 70px; }
 
