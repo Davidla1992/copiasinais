@@ -8,7 +8,6 @@ body.home-page {
   background-size: cover;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
   text-align: center;
   padding-top: 150px;
 }
@@ -23,7 +22,6 @@ body.contato-page {
   color: #000000;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
   text-align: center;
   padding-top: 150px;
 }
@@ -60,7 +58,7 @@ header {
   transition: opacity 0.3s ease;
 }
 
-/* Menu */
+/* Menu em maiúsculas */
 .menu {
   list-style: none;
   display: flex;
@@ -74,6 +72,7 @@ header {
   font-weight: 600;
   font-size: 1.1rem;
   letter-spacing: 2px;
+  text-transform: uppercase; /* apenas o menu em maiúsculas */
   transition: opacity 0.3s ease;
 }
 .menu a.active {
@@ -128,6 +127,20 @@ header {
   color: var(--logo-color);
 }
 
+/* Títulos da Missão em maiúsculas */
+body.missao-page h1,
+body.missao-page h2 {
+  text-transform: uppercase;
+}
+
+/* Parágrafos da Missão em texto normal */
+body.missao-page p {
+  text-transform: none;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   .menu {
@@ -168,7 +181,7 @@ header {
     max-height: 80px;
   }
 
-  /* Ícone maior no celular para não ficar pequeno demais */
+  /* Ícone maior no celular */
   .icon-extra img.extra-img {
     width: 60%;
   }
