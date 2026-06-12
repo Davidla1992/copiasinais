@@ -10,6 +10,9 @@ body.missao-page {
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   text-align: center;
+
+  /* espaço fixo para compensar o cabeçalho */
+  padding-top: 150px;
 }
 
 /* Cabeçalho */
@@ -40,7 +43,7 @@ header {
   cursor: pointer;
 }
 .logo-link:hover .logo-img {
-  opacity: 0.8; /* efeito ao passar o mouse */
+  opacity: 0.8;
   transition: opacity 0.3s ease;
 }
 
@@ -53,7 +56,7 @@ header {
   padding: 0;
 }
 .menu a {
-  color: var(--logo-color); /* verde neon só no menu */
+  color: var(--logo-color);
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
@@ -87,12 +90,11 @@ header {
   transition: all 0.3s ease;
 }
 
-/* Container centralizado ocupando metade da tela */
+/* Container centralizado */
 .missao-container {
-  max-width: 50%; /* metade da largura da tela */
+  max-width: 50%;
   padding: 2rem;
   margin: 0 auto;
-  margin-top: 150px; /* espaço extra abaixo do cabeçalho */
 }
 
 /* Título e parágrafos */
@@ -108,24 +110,24 @@ header {
   color: #000000;
 }
 
-/* Imagem abaixo do texto com mesma largura */
+/* Imagem abaixo do texto */
 .icon-extra {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
 }
 .icon-extra img {
-  width: 100%; /* ocupa toda a largura do container */
+  width: 100%;
   max-width: 100%;
   height: auto;
 }
 
-/* Botão voltar para página principal em verde neon */
+/* Botão voltar */
 .btn-group {
   margin-top: 2rem;
 }
 .btn-voltar {
-  color: var(--logo-color); /* verde neon */
+  color: var(--logo-color);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
@@ -136,7 +138,7 @@ header {
 }
 .btn-voltar:hover {
   background-color: var(--logo-color);
-  color: #000000; /* texto preto quando hover */
+  color: #000000;
 }
 
 /* Mobile */
