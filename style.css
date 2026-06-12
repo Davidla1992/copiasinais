@@ -120,18 +120,23 @@ header {
   height: auto;
 }
 
-/* Botão voltar */
+/* Botão voltar para página principal em verde neon */
 .btn-group {
   margin-top: 2rem;
 }
 .btn-voltar {
-  color: #000000;
+  color: var(--logo-color); /* verde neon */
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
+  border: 2px solid var(--logo-color);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 .btn-voltar:hover {
-  opacity: 0.7;
+  background-color: var(--logo-color);
+  color: #000000; /* texto preto quando hover */
 }
 
 /* Mobile */
