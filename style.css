@@ -1,44 +1,108 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GreenLux Shop</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="bg-image">
-  <header>
-    <nav class="navbar">
-      <!-- Logo à esquerda -->
-      <a href="index.html" class="logo-link">
-        <img src="logofinal.png" alt="GreenLux Logo" class="logo-img">
-      </a>
-      <!-- Botão hambúrguer -->
-      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <!-- Menu -->
-      <ul class="menu" id="menu">
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="marcas.html">MARCAS</a></li>
-        <li><a href="missao.html">MISSÃO</a></li>
-        <li><a href="impacto.html">IMPACTO</a></li>
-        <li><a href="parceiros.html">PARCEIROS</a></li>
-        <li><a href="contato.html">CONTATO</a></li>
-      </ul>
-    </nav>
-  </header>
+:root {
+  --logo-color: #39FF14;
+}
 
-  <!-- Script -->
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
+/* Fundo */
+.bg-image {
+  background: url('imagemfondo.png') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  margin: 0;
+}
 
-    menuToggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
-    });
-  </script>
-</body>
-</html>
+/* Corpo */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(0,0,0,0.5);
+  z-index: 2000;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between; /* logo à esquerda, menu/hambúrguer à direita */
+  align-items: center;
+  width: 100%;
+  padding: 0 2rem;
+}
+.logo-link { display: flex; align-items: center; }
+.logo-img { height: 70px; }
+
+/* Menu desktop */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+.menu a {
+  color: var(--logo-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap; /* evita cortar palavras */
+}
+.menu a:hover { color: white; }
+
+/* Botão hambúrguer */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2100;
+}
+.menu-toggle .bar {
+  height: 4px;
+  width: 100%;
+  background-color: var(--logo-color);
+  border-radius: 2px;
+}
+
+/* Responsividade: celular */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    align-items: center;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    background: rgba(0,0,0,0.8);
+    padding: 2rem;
+    border-radius: 0 0 0 8px;
+    z-index: 2000;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+}
