@@ -10,6 +10,7 @@ body.home-page {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   padding-top: 150px;
+  min-height: 100vh; /* garante altura completa no desktop */
 }
 
 /* Outras páginas com fundo branco */
@@ -249,4 +250,21 @@ body.impacto-page .btn-voltar:hover {
   }
   body.impacto-page .impacto-conteudo p {
     font-size: 1rem;
-    line-height
+    line-height: 1.4;
+    padding: 0 1rem;
+  }
+  body.impacto-page .btn-voltar {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Responsividade exclusiva para Home (corrige fundo no celular) */
+@media (max-width: 768px) {
+  body.home-page {
+    background: url("imagemfondo.png") no-repeat center center;
+    background-size: cover;       /* cobre toda a tela */
+    background-attachment: scroll;/* evita bug no mobile */
+    min-height: 100vh;            /* força ocupar a altura inteira da tela */
+  }
+}
