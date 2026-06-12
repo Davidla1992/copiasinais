@@ -45,7 +45,7 @@ header {
 .logo-link { display: flex; align-items: center; }
 .logo-img { height: 140px; }
 
-/* Menu padrão */
+/* Menu padrão desktop */
 .menu {
   list-style: none;
   display: flex;
@@ -65,23 +65,67 @@ header {
   border-bottom: 2px solid var(--logo-color);
 }
 
-/* Menu na página Missão */
-body.missao-page .menu {
+/* Botão hambúrguer */
+.menu-toggle {
   display: none;
   flex-direction: column;
-  gap: 1.5rem;
-  text-align: center;
-  align-items: center;
-  position: absolute;   /* não cobre o texto */
-  top: 140px;           /* logo ocupa 140px, menu começa abaixo */
-  left: 0;
-  width: 100%;
-  background-color: rgba(0,0,0,0.85);
-  padding: 1.5rem 0;
-  z-index: 2000;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2100;
 }
-body.missao-page .menu.active {
-  display: flex;
+.menu-toggle .bar {
+  height: 4px;
+  width: 100%;
+  background-color: var(--logo-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsividade geral */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+}
+
+/* Menu na página Missão (mobile) */
+@media (max-width: 768px) {
+  body.missao-page .menu {
+    display: none;
+    flex-direction: column;
+    gap: 1.2rem;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    top: 140px; /* logo ocupa 140px, menu começa abaixo */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.9);
+    padding: 1.5rem 0;
+    z-index: 2000;
+  }
+  body.missao-page .menu.active {
+    display: flex;
+  }
 }
 
 /* Missão */
