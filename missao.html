@@ -9,6 +9,7 @@
 <body class="missao-page">
   <header>
     <nav class="navbar">
+      <!-- Logotipo como botão para página inicial -->
       <a href="index.html" class="logo-link">
         <img src="logofinal.png" alt="GreenLux Logo" class="logo-img">
       </a>
@@ -44,7 +45,7 @@
         O símbolo Greenlux é da cultura Mapuche, que representa as quatro forças da natureza: terra, ar, água e fogo.
       </p>
 
-      <!-- Apenas a imagem iconemissao1 abaixo do texto -->
+      <!-- Imagem abaixo do texto -->
       <div class="icon-extra">
         <img src="iconemissao1.png" alt="Ícone Missão Greenlux" class="extra-img">
       </div>
@@ -57,4 +58,11 @@
 
   <script>
     const menuToggle = document.getElementById('menu-toggle');
-    const menu
+    const menu = document.getElementById('menu');
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      menuToggle.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
