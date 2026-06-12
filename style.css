@@ -34,6 +34,16 @@ header {
   display: block;
 }
 
+/* Logotipo como botão */
+.logo-link {
+  display: inline-block;
+  cursor: pointer;
+}
+.logo-link:hover .logo-img {
+  opacity: 0.8; /* efeito ao passar o mouse */
+  transition: opacity 0.3s ease;
+}
+
 /* Menu desktop */
 .menu {
   list-style: none;
