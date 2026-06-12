@@ -9,10 +9,6 @@ body.missao-page {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
   text-align: center;
 }
 
@@ -85,6 +81,8 @@ header {
 .missao-container {
   max-width: 50%; /* metade da largura da tela */
   padding: 2rem;
+  margin: 0 auto;
+  margin-top: 150px; /* espaço extra abaixo do cabeçalho */
 }
 
 /* Título e parágrafos */
