@@ -99,4 +99,81 @@ header {
   .menu {
     display: none;
     flex-direction: column;
-    gap
+    gap: 1.5rem;
+    text-align: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+  }
+  .menu.active { display: flex; }
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+}
+
+/* Missão */
+.missao-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.missao-content {
+  max-width: 800px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  color: var(--logo-color);
+  margin: auto; /* centraliza verticalmente */
+}
+.missao-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+.missao-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* Símbolo unificado */
+.simbolo-unificado .simbolo-img {
+  width: 7%; /* 3 vezes menor que antes */
+  margin: 2rem auto 1rem auto;
+  display: block;
+}
+
+/* Imagem extra */
+.icon-extra img {
+  width: 60%;
+  margin: 2rem auto;
+  display: block;
+}
+
+/* Botão */
+.btn-group {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.btn-voltar {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--logo-color);
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+.btn-voltar:hover {
+  background-color: #2ecc71;
+  color: #fff;
+}
