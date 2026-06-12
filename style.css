@@ -2,6 +2,14 @@
   --logo-color: #39FF14; /* verde neon do logotipo */
 }
 
+/* Fundo */
+.bg-image {
+  background: url('imagemfondo.png') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  margin: 0;
+}
+
 /* Corpo */
 body {
   margin: 0;
@@ -54,6 +62,7 @@ header {
   border-bottom: 2px solid var(--logo-color);
 }
 .menu a:hover {
+  color: var(--logo-color);
   opacity: 0.8;
 }
 
@@ -80,8 +89,8 @@ header {
 h1, h2, h3, h4, h5, h6,
 p, span, strong, em,
 button, i, svg {
-  color: var(--logo-color) !important; /* força verde em tudo */
-  fill: var(--logo-color) !important;  /* ícones SVG também verdes */
+  color: var(--logo-color) !important;
+  fill: var(--logo-color) !important;
 }
 
 /* Mobile */
@@ -139,6 +148,7 @@ button, i, svg {
     transition: opacity 0.3s ease;
   }
   .menu a:hover {
+    color: var(--logo-color);
     opacity: 0.8;
   }
 }
