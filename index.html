@@ -9,7 +9,7 @@
 <body class="bg-image">
   <header>
     <nav class="navbar">
-      <!-- Logo à esquerda -->
+      <!-- Logo como botão de início -->
       <a href="index.html" class="logo-link">
         <img src="logofinal.png" alt="GreenLux Logo" class="logo-img">
       </a>
@@ -19,9 +19,9 @@
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
-      <!-- Menu -->
+      <!-- Menu principal -->
       <ul class="menu" id="menu">
-        <li><a href="index.html">HOME</a></li>
+        <li><a href="index.html" class="active">HOME</a></li>
         <li><a href="marcas.html">MARCAS</a></li>
         <li><a href="missao.html">MISSÃO</a></li>
         <li><a href="impacto.html">IMPACTO</a></li>
@@ -31,12 +31,16 @@
     </nav>
   </header>
 
-  <!-- Script -->
+  <main class="home-container">
+    <section class="home-content">
+      <h1>Bem-vindo à GreenLux Shop</h1>
+      <p>Luxo e sustentabilidade unidos em um só propósito.</p>
+    </section>
+  </main>
+
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
-    const bars = document.querySelectorAll('.bar');
-
     menuToggle.addEventListener('click', () => {
       menu.classList.toggle('active');
       menuToggle.classList.toggle('open');
@@ -44,4 +48,3 @@
   </script>
 </body>
 </html>
-
