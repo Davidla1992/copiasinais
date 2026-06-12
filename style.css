@@ -122,10 +122,17 @@ header {
     background-color: rgba(0,0,0,0.9);
     padding: 1.5rem 0;
     z-index: 2000;
+    animation: slideDown 0.3s ease forwards;
   }
   body.missao-page .menu.active {
     display: flex;
   }
+}
+
+/* Animação de deslizar para baixo */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Missão */
