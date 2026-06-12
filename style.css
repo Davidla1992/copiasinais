@@ -1,5 +1,5 @@
 :root {
-  --logo-color: #39FF14;
+  --logo-color: #39FF14; /* verde neon do logotipo */
 }
 
 /* Fundo */
@@ -15,7 +15,7 @@ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
-  color: var(--logo-color);
+  color: var(--logo-color); /* toda tipografia em verde */
 }
 
 /* Cabeçalho invisível */
@@ -49,23 +49,23 @@ header {
   padding: 0;
 }
 .menu a {
-  color: var(--logo-color);
+  color: var(--logo-color); /* verde igual ao logo */
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
   letter-spacing: 2px;
-  transition: color 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 .menu a.active {
   font-weight: 700;
-  color: #fff;
+  color: var(--logo-color); /* ativo também verde */
   border-bottom: 2px solid var(--logo-color);
 }
 .menu a:hover {
-  color: #fff;
+  opacity: 0.8; /* efeito leve sem mudar de cor */
 }
 
-/* Botão hambúrguer (escondido no desktop) */
+/* Botão hambúrguer */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -95,7 +95,6 @@ header {
 
 /* Mobile */
 @media (max-width: 768px) {
-  /* Menu vira recuadro centralizado */
   .menu {
     position: fixed;
     top: 50%;
@@ -129,7 +128,6 @@ header {
     transform: translate(-50%, -50%);
   }
 
-  /* Botão hambúrguer aparece no mobile */
   .menu-toggle {
     display: flex;
     position: absolute;
@@ -143,13 +141,13 @@ header {
   }
 
   .menu a {
-    color: #fff;
+    color: var(--logo-color); /* verde igual ao logo */
     font-weight: 600;
     font-size: 0.95rem;
     letter-spacing: 1px;
-    transition: color 0.3s ease;
+    transition: opacity 0.3s ease;
   }
   .menu a:hover {
-    color: var(--logo-color);
+    opacity: 0.8; /* efeito leve sem mudar de cor */
   }
 }
