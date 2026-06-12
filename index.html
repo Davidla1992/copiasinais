@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GreenLux Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-image">
   <header>
-    <nav class="navbar">
-      <!-- Logo sozinho na esquerda -->
+    <nav class="navbar" role="navigation">
+      <!-- Logo à esquerda -->
       <a href="index.html" class="logo-link">
         <img src="logofinal.png" alt="GreenLux Logo" class="logo-img">
       </a>
@@ -24,8 +25,8 @@
         <li><a href="contato.html">CONTATO</a></li>
       </ul>
 
-      <!-- Botão hambúrguer (só no celular) -->
-      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+      <!-- Botão hambúrguer (mobile) -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -38,8 +39,9 @@
     const menu = document.getElementById('menu');
 
     menuToggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
+      const isOpen = menu.classList.toggle('active');
       menuToggle.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
     });
 
     const menuLinks = document.querySelectorAll('#menu a');
@@ -47,6 +49,7 @@
       link.addEventListener('click', () => {
         menu.classList.remove('active');
         menuToggle.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
       });
     });
   </script>
