@@ -209,7 +209,7 @@ body.impacto-page .impacto-conteudo {
 body.impacto-page .impacto-conteudo h1 {
   margin-bottom: 1rem;
   font-weight: 700;
-  text-transform: none; /* sem maiúsculas forçadas */
+  text-transform: none;
 }
 
 body.impacto-page .impacto-conteudo p {
@@ -249,19 +249,4 @@ body.impacto-page .btn-voltar:hover {
     font-size: 1.5rem;
   }
   body.impacto-page .impacto-conteudo p {
-    font-size: 1rem;
-    line-height: 1.4;
-    padding: 0 1rem;
-  }
-  body.impacto-page .btn-voltar {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.8rem;
-  }
-}
-
-/* Responsividade exclusiva para Home (corrige fundo no celular) */
-@media (max-width: 768px) {
-  body.home-page {
-    background-attachment: scroll; /* garante que a imagem apareça no mobile */
-  }
-}
+    font-size
