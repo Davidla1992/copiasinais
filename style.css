@@ -29,13 +29,17 @@ header {
   width: 100%;
   height: 100px;
   z-index: 3000;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
 }
 .navbar {
   display: flex;
-  justify-content: space-between; /* logo à esquerda, menu à direita */
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem;
 }
 .logo-img { height: 80px; }
 
@@ -43,10 +47,11 @@ header {
 .menu {
   list-style: none;
   display: flex;
-  justify-content: flex-end; /* alinhado à direita */
-  gap: 2rem; /* espaçamento harmonizado */
+  justify-content: flex-end;
+  gap: 2.5rem;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
 }
 .menu a {
   color: var(--logo-color);
@@ -54,10 +59,30 @@ header {
   font-weight: 600;
   font-size: 1rem;
   letter-spacing: 2px;
-  white-space: nowrap; /* evita cortar palavras */
+  white-space: nowrap;
+  position: relative;
+  transition: color 0.3s ease;
 }
 .menu a.active {
+  font-weight: 700;
+  color: #fff;
   border-bottom: 2px solid var(--logo-color);
+}
+.menu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: var(--logo-color);
+  transition: width 0.3s ease;
+}
+.menu a:hover::after {
+  width: 100%;
+}
+.menu a:hover {
+  color: #fff;
 }
 
 /* Botão hambúrguer escondido no desktop */
@@ -90,12 +115,13 @@ header {
 
 /* Mobile */
 @media (max-width: 768px) {
-  /* Esconde menu horizontal */
   .menu {
     display: none;
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
   }
   .menu.active {
     display: flex;
@@ -104,13 +130,12 @@ header {
     left: 0;
     width: 100%;
     height: calc(100vh - 100px);
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.85);
     justify-content: center;
     align-items: center;
     z-index: 5000;
+    transform: translateY(0); /* animação de entrada */
   }
-
-  /* Mostra hambúrguer só no celular */
   .menu-toggle {
     display: flex;
     position: absolute;
