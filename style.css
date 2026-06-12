@@ -103,6 +103,14 @@ header {
   transition: all 0.3s ease;
 }
 
+/* Ícone da página Missão menor */
+.icon-extra img.extra-img {
+  width: 40%;   /* reduz para 40% da largura */
+  height: auto; /* mantém proporção */
+  display: block;
+  margin: 0 auto; /* centraliza */
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   .menu {
