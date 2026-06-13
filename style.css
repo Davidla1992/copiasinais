@@ -108,9 +108,9 @@ header {
   opacity: 0.8;
 }
 
-/* Botão hambúrguer */
+/* Botão hambúrguer sempre visível */
 .menu-toggle {
-  display: flex; /* sempre visível */
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
@@ -204,55 +204,4 @@ header {
 /* Rodapé */
 footer {
   margin-top: 3rem;
-  padding: 1rem;
-  background-color: transparent;
-  color: #000000;
-  font-size: 0.9rem;
-}
-
-/* --- MISSÃO --- */
-body.missao-page .missao-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 70vh;
-}
-body.missao-page .missao-content h1 {
-  margin-bottom: 1rem;
-  font-weight: 700;
-  font-size: 2rem;
-}
-body.missao-page .missao-content p {
-  line-height: 1.8;
-  font-size: 1.2rem;
-  max-width: 800px;
-  margin-bottom: 2rem;
-}
-
-/* --- IMPACTO --- */
-body.impacto-page .impacto-conteudo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 70vh;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-}
-body.impacto-page .impacto-texto {
-  margin-bottom: 2rem;
-}
-body.impacto-page .impacto-texto h1 {
-  margin-bottom: 1rem;
-  font-weight: 700;
-  font-size: 2rem;
-}
-body.impacto-page .impacto-texto p {
-  line-height: 1.8;
-  font-size
+  padding: 1rem
