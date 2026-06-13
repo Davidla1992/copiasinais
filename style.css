@@ -83,10 +83,10 @@ header {
   transition: opacity 0.3s ease;
 }
 
-/* Menu padrão (desktop escondido, só aparece no mobile via toggle) */
+/* Menu escondido por padrão */
 .menu {
   list-style: none;
-  display: none; /* escondido por padrão */
+  display: none; /* escondido */
   gap: 2rem;
   margin: 0;
   padding: 0;
@@ -127,6 +127,25 @@ header {
   transition: all 0.3s ease;
 }
 
+/* Menu ativo (quando clicado) */
+.menu.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  background-color: rgba(0,0,0,0.15);
+  padding: 1rem;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5000;
+  width: 80%;
+  max-width: 300px;
+}
+
 /* Ícone extra */
 .icon-extra .extra-img {
   max-width: 500px; /* multiplicado por 5 */
@@ -151,14 +170,14 @@ header {
   color: var(--logo-color);
 }
 
-/* Imagem dos parceiros (multiplicada por 5) */
+/* Imagem dos parceiros */
 .logos-parceiros {
   margin-top: 2rem;
   margin-bottom: 2rem;
   text-align: center;
 }
 .img-parceiros {
-  max-width: 350%; /* antes 70%, agora 5x maior */
+  max-width: 350%; /* multiplicado por 5 */
   height: auto;
 }
 
@@ -191,7 +210,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* --- MISSÃO: texto em cima, imagem no meio, botão embaixo --- */
+/* --- MISSÃO --- */
 body.missao-page .missao-content {
   display: flex;
   flex-direction: column;
@@ -199,13 +218,11 @@ body.missao-page .missao-content {
   align-items: center;
   min-height: 70vh;
 }
-
 body.missao-page .missao-content h1 {
   margin-bottom: 1rem;
   font-weight: 700;
   font-size: 2rem;
 }
-
 body.missao-page .missao-content p {
   line-height: 1.8;
   font-size: 1.2rem;
@@ -213,7 +230,7 @@ body.missao-page .missao-content p {
   margin-bottom: 2rem;
 }
 
-/* --- IMPACTO: texto em cima, botão embaixo --- */
+/* --- IMPACTO --- */
 body.impacto-page .impacto-conteudo {
   display: flex;
   flex-direction: column;
@@ -228,79 +245,14 @@ body.impacto-page .impacto-conteudo {
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.2);
 }
-
 body.impacto-page .impacto-texto {
   margin-bottom: 2rem;
 }
-
 body.impacto-page .impacto-texto h1 {
   margin-bottom: 1rem;
   font-weight: 700;
   font-size: 2rem;
 }
-
 body.impacto-page .impacto-texto p {
   line-height: 1.8;
-  font-size: 1.2rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    z-index: 6000;
-  }
-
-  .menu {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    text-align: center;
-    background-color: rgba(0,0,0,0.15);
-    padding: 1rem;
-    border-radius: 10px;
-    z-index: 5000;
-    width: 80%;
-    max-width: 300px;
-  }
-  .menu.active {
-    display: flex;
-  }
-
-  .logo-img {
-    max-height: 60px;
-  }
-
-  .missao-content,
-  body.marcas-page .marcas-content,
-  body.parceiros-page .parceiros-content,
-  body.contato-page .contato-content,
-  body.impacto-page .impacto-conteudo {
-    max-width: 95%;
-    padding: 1.2rem;
-    margin: 0 auto;
-  }
-
-  .icon-extra .extra-img {
-    max-width: 500px; /* mantém multiplicado por 5 */
-  }
-
-  .img-parceiros {
-    max-width: 350%;
-  }
-
-  body.impacto-page .impacto-conteudo {
-    max-width: 95%;
-    padding: 1.5rem;
-  }
-}
+  font-size
