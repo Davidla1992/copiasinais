@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GreenLux Shop - Parceiros</title>
+  <title>Parceiros - GreenLux Shop</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="parceiros-page">
@@ -13,9 +13,7 @@
         <img src="logofinal.png" alt="GreenLux Logo" class="logo-img">
       </a>
       <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
       </button>
       <ul class="menu" id="menu">
         <li><a href="index.html">HOME</a></li>
@@ -28,25 +26,17 @@
     </nav>
   </header>
 
-  <main class="conteudo-parceiros">
-    <h1>Parceiros</h1>
-    <p>Trabalhamos com marcas e organizações que compartilham nossos valores de sustentabilidade e inovação.</p>
-    <p>Em breve você verá aqui a lista completa dos nossos parceiros estratégicos.</p>
-
-    <!-- Imagem dos parceiros -->
-    <div class="logos-parceiros">
-      <img src="parceiros.png" alt="Logos dos Parceiros" class="img-parceiros">
-    </div>
+  <main class="parceiros-container">
+    <section class="parceiros-content">
+      <h1>PARCEIROS</h1>
+      <div class="logos-parceiros">
+        <img src="parceiros.png" alt="Logos dos Parceiros" class="img-parceiros">
+      </div>
+      <div class="btn-group">
+        <a href="index.html" class="btn-voltar">« VOLTAR</a>
+      </div>
+    </section>
   </main>
-
-  <!-- Botão voltar -->
-  <div style="text-align:center; margin-bottom:2rem;">
-    <a href="index.html" class="btn-voltar">Voltar</a>
-  </div>
-
-  <footer>
-    <p>&copy; 2026 GreenLux Shop. Todos os direitos reservados.</p>
-  </footer>
 
   <script>
     const menuToggle = document.getElementById('menu-toggle');
