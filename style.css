@@ -83,10 +83,11 @@ header {
   transition: opacity 0.3s ease;
 }
 
-/* Menu escondido por padrão */
+/* Menu padrão (desktop: horizontal) */
 .menu {
   list-style: none;
-  display: none;
+  display: flex; /* horizontal no desktop */
+  flex-direction: row;
   gap: 2rem;
   margin: 0;
   padding: 0;
@@ -108,9 +109,9 @@ header {
   opacity: 0.8;
 }
 
-/* Botão hambúrguer */
+/* Botão hambúrguer escondido no desktop */
 .menu-toggle {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
@@ -118,10 +119,6 @@ header {
   background: none;
   border: none;
   cursor: pointer;
-  position: fixed;
-  right: 20px;
-  top: 20px;
-  z-index: 6000;
 }
 .menu-toggle .bar {
   height: 4px;
@@ -131,7 +128,7 @@ header {
   transition: all 0.3s ease;
 }
 
-/* Menu ativo */
+/* Menu ativo (mobile) */
 .menu.active {
   display: flex;
   flex-direction: column;
@@ -218,12 +215,12 @@ footer {
 body.missao-page .missao-content h1 {
   margin-bottom: 1rem;
   font-weight: 700;
-  font-size: 1.8rem; /* título menor */
+  font-size: 1.8rem;
 }
 body.missao-page .missao-content p {
   line-height: 1.6;
-  font-size: 1rem;   /* texto reduzido */
-  max-width: 700px;  /* largura menor */
+  font-size: 1rem;
+  max-width: 700px;
   margin-bottom: 1.5rem;
 }
 
@@ -257,10 +254,41 @@ body.impacto-page .impacto-texto p {
   margin: 0 auto;
 }
 
-/* Desktop */
+/* Mobile (até 768px): menu hambúrguer */
+@media (max-width: 768px) {
+  .menu {
+    display: none; /* escondido por padrão no celular */
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    background-color: rgba(0,0,0,0.15);
+    padding: 1rem;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5000;
+    width: 80%;
+    max-width: 300px;
+  }
+  .menu.active {
+    display: flex; /* aparece quando clicado */
+  }
+  .menu-toggle {
+    display: flex; /* botão visível no celular */
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 6000;
+  }
+}
+
+/* Desktop (a partir de 769px): menu horizontal */
 @media (min-width: 769px) {
   .menu {
-    display: flex;
+    display: flex; /* horizontal */
     flex-direction: row;
     gap: 2rem;
     position: static;
@@ -271,6 +299,6 @@ body.impacto-page .impacto-texto p {
     max-width: none;
   }
   .menu-toggle {
-    display: none;
+    display: none; /* esconde hambúrguer no desktop */
   }
 }
