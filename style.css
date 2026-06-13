@@ -2,6 +2,65 @@
   --logo-color: #39FF14;
 }
 
+/* Fundo da Home */
+body.home-page {
+  background: url("imagemfondo.png") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* desktop */
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  padding-top: 150px;
+  min-height: 100vh;
+}
+
+/* Corrige fundo no celular */
+@media (max-width: 768px) {
+  body.home-page {
+    background-attachment: scroll; /* garante que apareça no mobile */
+  }
+}
+
+/* Outras páginas */
+body.missao-page,
+body.marcas-page,
+body.parceiros-page,
+body.contato-page,
+body.impacto-page {
+  background-color: #ffffff;
+  color: #000000;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  padding-top: 150px;
+}
+
+/* Blocos centrais */
+.missao-container,
+body.marcas-page .marcas-container,
+body.parceiros-page .parceiros-container,
+body.contato-page .contato-container,
+body.impacto-page .impacto-conteudo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.missao-content,
+body.marcas-page .marcas-content,
+body.parceiros-page .parceiros-content,
+body.contato-page .contato-content,
+body.impacto-page .impacto-conteudo {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
 /* Cabeçalho fixo */
 header {
   width: 100%;
@@ -32,10 +91,10 @@ header {
   transition: opacity 0.3s ease;
 }
 
-/* Menu padrão (desktop: horizontal) */
+/* Menu desktop */
 .menu {
   list-style: none;
-  display: flex; /* visível no desktop */
+  display: flex;
   flex-direction: row;
   gap: 2rem;
   margin: 0;
@@ -77,33 +136,7 @@ header {
   transition: all 0.3s ease;
 }
 
-/* Mobile (até 768px): menu hambúrguer */
-@media (max-width: 768px) {
-  .menu {
-    display: none; /* escondido por padrão no celular */
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    text-align: center;
-    background-color: rgba(0,0,0,0.15);
-    padding: 1rem;
-    border-radius: 10px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 5000;
-    width: 80%;
-    max-width: 300px;
-  }
-  .menu.active {
-    display: flex; /* aparece quando clicado */
-  }
-  .menu-toggle {
-    display: flex; /* botão visível no celular */
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    z-index: 6000;
-  }
-}
+/* Menu ativo (mobile) */
+.menu.active {
+  display: flex;
+  flex-direction: column;
