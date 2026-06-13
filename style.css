@@ -17,7 +17,8 @@ body.home-page {
 body.missao-page,
 body.marcas-page,
 body.parceiros-page,
-body.contato-page {
+body.contato-page,
+body.impacto-page {
   background-color: #ffffff;
   color: #000000;
   margin: 0;
@@ -148,6 +149,33 @@ header {
   color: #000000;
 }
 
+/* Página Impacto com bloco central encuadrado */
+body.impacto-page .impacto-conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;              /* ocupa mais da metade da tela */
+  max-width: 900px;              /* largura controlada */
+  margin: 0 auto;                /* centraliza horizontalmente */
+  padding: 2rem;
+  text-align: center;
+  background-color: #f9f9f9;     /* leve contraste */
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+body.impacto-page .impacto-conteudo h1 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 2rem;
+}
+body.impacto-page .impacto-conteudo p {
+  line-height: 1.8;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
 /* Rodapé */
 footer {
   margin-top: 3rem;
@@ -199,4 +227,7 @@ footer {
   .img-parceiros {
     max-width: 95%;
   }
-}
+  body.impacto-page .impacto-conteudo {
+    max-width: 95%;
+    padding: 1.5rem;
+  }
