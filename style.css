@@ -27,6 +27,20 @@ body.impacto-page {
   padding-top: 150px;
 }
 
+/* Centralização da seção Missão */
+.missao-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+.missao-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
 /* Cabeçalho fixo */
 header {
   width: 100%;
@@ -45,7 +59,7 @@ header {
   padding: 0.5rem 1.5rem;
 }
 .logo-img {
-  max-height: 120px;
+  max-height: 100px; /* reduzido para não ficar gigante */
   display: block;
 }
 .logo-link {
@@ -118,6 +132,13 @@ header {
   color: var(--logo-color);
 }
 
+/* Ícone extra */
+.icon-extra .extra-img {
+  max-width: 120px; /* menor e centralizado */
+  margin: 1rem auto;
+  display: block;
+}
+
 /* Imagem dos parceiros */
 .logos-parceiros {
   margin-top: 2rem;
@@ -125,7 +146,7 @@ header {
   text-align: center;
 }
 .img-parceiros {
-  max-width: 80%;
+  max-width: 70%; /* reduzido */
   height: auto;
 }
 
@@ -155,12 +176,12 @@ body.impacto-page .impacto-conteudo {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 70vh;              /* ocupa mais da metade da tela */
-  max-width: 900px;              /* largura controlada */
-  margin: 0 auto;                /* centraliza horizontalmente */
+  min-height: 70vh;
+  max-width: 900px;
+  margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: #f9f9f9;     /* leve contraste */
+  background-color: #f9f9f9;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.2);
 }
@@ -197,37 +218,4 @@ footer {
     gap: 1rem;
     text-align: center;
     background-color: rgba(0,0,0,0.15);
-    padding: 1rem;
-    border-radius: 10px;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 2000;
-    width: 65%;
-    max-width: 260px;
-    max-height: 50vh;
-    overflow-y: auto;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  }
-  .menu.active {
-    visibility: visible;
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
-  .menu-toggle {
-    display: flex;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    z-index: 5000;
-  }
-  .logo-img {
-    max-height: 80px;
-  }
-  .img-parceiros {
-    max-width: 95%;
-  }
-  body.impacto-page .impacto-conteudo {
-    max-width: 95%;
-    padding: 1.5rem;
-  }
+    padding
