@@ -127,9 +127,9 @@ header {
   transition: all 0.3s ease;
 }
 
-/* Ícone extra (multiplicado por 3) */
+/* Ícone extra (multiplicado por 5) */
 .icon-extra .extra-img {
-  max-width: 300px; /* antes 100px */
+  max-width: 500px; /* antes 100px, agora 5x maior */
   margin: 1.5rem auto;
   display: block;
 }
@@ -151,14 +151,14 @@ header {
   color: var(--logo-color);
 }
 
-/* Imagem dos parceiros (multiplicada por 3) */
+/* Imagem dos parceiros (multiplicada por 5) */
 .logos-parceiros {
   margin-top: 2rem;
   margin-bottom: 2rem;
   text-align: center;
 }
 .img-parceiros {
-  max-width: 210%; /* antes 70% */
+  max-width: 350%; /* antes 70%, agora 5x maior */
   height: auto;
 }
 
@@ -215,6 +215,4 @@ body.missao-page .missao-content p {
 
 /* --- IMPACTO: texto em cima, botão embaixo --- */
 body.impacto-page .impacto-conteudo {
-  display: flex;
-  flex-direction: column;
-  justify-content
+  display: flex
