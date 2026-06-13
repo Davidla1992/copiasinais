@@ -86,7 +86,7 @@ header {
 /* Menu escondido por padrão */
 .menu {
   list-style: none;
-  display: none; /* escondido */
+  display: none;
   gap: 2rem;
   margin: 0;
   padding: 0;
@@ -108,7 +108,7 @@ header {
   opacity: 0.8;
 }
 
-/* Botão hambúrguer sempre visível */
+/* Botão hambúrguer */
 .menu-toggle {
   display: flex;
   flex-direction: column;
@@ -118,6 +118,10 @@ header {
   background: none;
   border: none;
   cursor: pointer;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 6000;
 }
 .menu-toggle .bar {
   height: 4px;
@@ -127,7 +131,7 @@ header {
   transition: all 0.3s ease;
 }
 
-/* Menu ativo (quando clicado) */
+/* Menu ativo */
 .menu.active {
   display: flex;
   flex-direction: column;
@@ -148,7 +152,7 @@ header {
 
 /* Ícone extra */
 .icon-extra .extra-img {
-  max-width: 500px; /* multiplicado por 5 */
+  max-width: 500px;
   margin: 1.5rem auto;
   display: block;
 }
@@ -177,7 +181,7 @@ header {
   text-align: center;
 }
 .img-parceiros {
-  max-width: 350%; /* multiplicado por 5 */
+  max-width: 350%;
   height: auto;
 }
 
@@ -204,4 +208,69 @@ header {
 /* Rodapé */
 footer {
   margin-top: 3rem;
-  padding: 1rem
+  padding: 1rem;
+  background-color: transparent;
+  color: #000000;
+  font-size: 0.9rem;
+}
+
+/* --- MISSÃO (ajuste de tamanho do texto) --- */
+body.missao-page .missao-content h1 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 1.8rem; /* título menor */
+}
+body.missao-page .missao-content p {
+  line-height: 1.6;
+  font-size: 1rem;   /* texto reduzido */
+  max-width: 700px;  /* largura menor */
+  margin-bottom: 1.5rem;
+}
+
+/* --- IMPACTO --- */
+body.impacto-page .impacto-conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+body.impacto-page .impacto-texto {
+  margin-bottom: 2rem;
+}
+body.impacto-page .impacto-texto h1 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 2rem;
+}
+body.impacto-page .impacto-texto p {
+  line-height: 1.8;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .menu {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    position: static;
+    background: none;
+    padding: 0;
+    transform: none;
+    width: auto;
+    max-width: none;
+  }
+  .menu-toggle {
+    display: none;
+  }
+}
