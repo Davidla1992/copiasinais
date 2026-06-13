@@ -3,33 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GreenLux Shop - Marcas</title>
+  <title>Marcas - GreenLux Shop</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-white">
+<body class="marcas-page">
   <header>
     <nav class="navbar">
       <a href="index.html" class="logo-link">
         <img src="logofinal.png" alt="GreenLux Logo" class="logo-img">
       </a>
-      <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="marcas.html">Marcas</a></li>
-        <li><a href="missao.html">Missão</a></li>
-        <li><a href="impacto.html">Impacto</a></li>
-        <li><a href="parceiros.html">Parceiros</a></li>
-        <li><a href="contato.html">Contato</a></li>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <ul class="menu" id="menu">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="marcas.html" class="active">MARCAS</a></li>
+        <li><a href="missao.html">MISSÃO</a></li>
+        <li><a href="impacto.html">IMPACTO</a></li>
+        <li><a href="parceiros.html">PARCEIROS</a></li>
+        <li><a href="contato.html">CONTATO</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Nossas Marcas</h1>
-    <p>Conteúdo sobre marcas...</p>
-  </section>
+  <main class="marcas-container">
+    <section class="marcas-content">
+      <h1>MARCAS</h1>
+      <p>Apresentamos nossas micro marcas sustentáveis, cada uma com coleções exclusivas e atemporais.</p>
+      <div class="btn-group">
+        <a href="index.html" class="btn-voltar">« VOLTAR</a>
+      </div>
+    </section>
+  </main>
 
-  <footer>
-    <p>&copy; 2026 GreenLux Shop. Todos os direitos reservados.</p>
-  </footer>
-</body>
-</html>
+  <script>
+    const menuToggle
