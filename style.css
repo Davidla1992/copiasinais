@@ -44,7 +44,7 @@ body.marcas-page .marcas-content,
 body.parceiros-page .parceiros-content,
 body.contato-page .contato-content,
 body.impacto-page .impacto-conteudo {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -127,10 +127,10 @@ header {
   transition: all 0.3s ease;
 }
 
-/* Ícone extra */
+/* Ícone extra (multiplicado por 3) */
 .icon-extra .extra-img {
-  max-width: 100px;
-  margin: 1rem auto;
+  max-width: 300px; /* antes 100px */
+  margin: 1.5rem auto;
   display: block;
 }
 
@@ -151,14 +151,14 @@ header {
   color: var(--logo-color);
 }
 
-/* Imagem dos parceiros */
+/* Imagem dos parceiros (multiplicada por 3) */
 .logos-parceiros {
   margin-top: 2rem;
   margin-bottom: 2rem;
   text-align: center;
 }
 .img-parceiros {
-  max-width: 70%;
+  max-width: 210%; /* antes 70% */
   height: auto;
 }
 
@@ -191,42 +191,30 @@ footer {
   font-size: 0.9rem;
 }
 
-/* --- IMPACTO: texto em cima, botão embaixo --- */
-body.impacto-page .impacto-conteudo {
+/* --- MISSÃO: texto em cima, imagem no meio, botão embaixo --- */
+body.missao-page .missao-content {
   display: flex;
   flex-direction: column; /* ordem vertical */
   justify-content: center;
   align-items: center;
   min-height: 70vh;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
 }
 
-body.impacto-page .impacto-texto {
-  margin-bottom: 2rem;
-}
-
-body.impacto-page .impacto-texto h1 {
+body.missao-page .missao-content h1 {
   margin-bottom: 1rem;
   font-weight: 700;
   font-size: 2rem;
 }
 
-body.impacto-page .impacto-texto p {
+body.missao-page .missao-content p {
   line-height: 1.8;
   font-size: 1.2rem;
   max-width: 800px;
-  margin: 0 auto;
+  margin-bottom: 2rem;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;              /* aparece no mobile */
-    position: fixed;            /* fixo no topo */
-    right: 20px;
+/* --- IMPACTO: texto em cima, botão embaixo --- */
+body.impacto-page .impacto-conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content
