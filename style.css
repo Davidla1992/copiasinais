@@ -86,7 +86,7 @@ header {
 /* Menu desktop */
 .menu {
   list-style: none;
-  display: flex;
+  display: flex;   /* horizontal no desktop */
   gap: 2rem;
   margin: 0;
   padding: 0;
