@@ -2,11 +2,10 @@
   --logo-color: #39FF14;
 }
 
-/* Fundo da Home */
+/* Página Home com imagem de fundo */
 body.home-page {
-  background: url("imagemfondo.png") no-repeat center center;
+  background: url("imagemfondo.png") no-repeat center center fixed;
   background-size: cover;
-  background-attachment: fixed; /* desktop */
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
@@ -14,14 +13,7 @@ body.home-page {
   min-height: 100vh;
 }
 
-/* Corrige fundo no celular */
-@media (max-width: 768px) {
-  body.home-page {
-    background-attachment: scroll; /* garante que apareça no mobile */
-  }
-}
-
-/* Outras páginas */
+/* Outras páginas com fundo branco */
 body.missao-page,
 body.marcas-page,
 body.parceiros-page,
@@ -33,32 +25,6 @@ body.impacto-page {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   padding-top: 150px;
-}
-
-/* Blocos centrais */
-.missao-container,
-body.marcas-page .marcas-container,
-body.parceiros-page .parceiros-container,
-body.contato-page .contato-container,
-body.impacto-page .impacto-conteudo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 70vh;
-}
-
-.missao-content,
-body.marcas-page .marcas-content,
-body.parceiros-page .parceiros-content,
-body.contato-page .contato-content,
-body.impacto-page .impacto-conteudo {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
 
 /* Cabeçalho fixo */
@@ -79,7 +45,7 @@ header {
   padding: 0.5rem 1.5rem;
 }
 .logo-img {
-  max-height: 90px;
+  max-height: 120px;
   display: block;
 }
 .logo-link {
@@ -91,11 +57,10 @@ header {
   transition: opacity 0.3s ease;
 }
 
-/* Menu desktop */
+/* Menu */
 .menu {
   list-style: none;
   display: flex;
-  flex-direction: row;
   gap: 2rem;
   margin: 0;
   padding: 0;
@@ -117,7 +82,7 @@ header {
   opacity: 0.8;
 }
 
-/* Botão hambúrguer escondido no desktop */
+/* Botão hambúrguer */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -136,7 +101,133 @@ header {
   transition: all 0.3s ease;
 }
 
-/* Menu ativo (mobile) */
-.menu.active {
+/* Botão voltar */
+.btn-voltar {
+  background-color: var(--logo-color);
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 2px solid var(--logo-color);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.btn-voltar:hover {
+  background-color: #000000;
+  color: var(--logo-color);
+}
+
+/* Imagem dos parceiros */
+.logos-parceiros {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.img-parceiros {
+  max-width: 80%;
+  height: auto;
+}
+
+/* Formulário de contato */
+.form-contato {
+  max-width: 500px;
+  margin: 2rem auto;
+  text-align: left;
+}
+.form-contato input,
+.form-contato textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid var(--logo-color);
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+.form-contato label {
+  font-weight: 600;
+  color: #000000;
+}
+
+/* Página Impacto com bloco central encuadrado */
+body.impacto-page .impacto-conteudo {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;              /* ocupa mais da metade da tela */
+  max-width: 900px;              /* largura controlada */
+  margin: 0 auto;                /* centraliza horizontalmente */
+  padding: 2rem;
+  text-align: center;
+  background-color: #f9f9f9;     /* leve contraste */
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+body.impacto-page .impacto-conteudo h1 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 2rem;
+}
+body.impacto-page .impacto-conteudo p {
+  line-height: 1.8;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+/* Rodapé */
+footer {
+  margin-top: 3rem;
+  padding: 1rem;
+  background-color: transparent;
+  color: #000000;
+  font-size: 0.9rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    background-color: rgba(0,0,0,0.15);
+    padding: 1rem;
+    border-radius: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 2000;
+    width: 65%;
+    max-width: 260px;
+    max-height: 50vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  }
+  .menu.active {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 5000;
+  }
+  .logo-img {
+    max-height: 80px;
+  }
+  .img-parceiros {
+    max-width: 95%;
+  }
+  body.impacto-page .impacto-conteudo {
+    max-width: 95%;
+    padding: 1.5rem;
+  }
