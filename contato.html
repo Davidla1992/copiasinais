@@ -6,7 +6,7 @@
   <title>Contato - GreenLux Shop</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="contato-page">
+<body>
   <header>
     <nav class="navbar">
       <a href="index.html" class="logo-link">
@@ -26,17 +26,42 @@
     </nav>
   </header>
 
-  <main class="contato-container">
-    <section class="contato-content">
-      <h1>CONTATO</h1>
-      <form class="form-contato">
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email">
-        <label for="mensagem">Mensagem</label>
-        <textarea id="mensagem" name="mensagem"></textarea>
-        <button type="submit" class="btn-voltar">Enviar</button>
-      </form>
-      <div class="btn-group">
-        <a href="index.html" class="btn-vol
+  <main class="page-container">
+    <h1 class="highlight-text">Fale Conosco</h1>
+    <p>
+      Quer saber mais sobre a GreenLux Shop, nossos produtos ou parcerias?  
+      Entre em contato conosco e teremos prazer em responder.
+    </p>
+
+    <p>
+      📧 <strong>Email:</strong> contato@greenluxshop.com  
+      📞 <strong>Telefone:</strong> (11) 1234-5678  
+      📍 <strong>Endereço:</strong> Barueri, São Paulo - Brasil
+    </p>
+
+    <img src="extraicon.png" alt="Ícone contato sustentável" class="extra-img">
+    <a href="index.html" class="btn-voltar">Voltar para Home</a>
+  </main>
+
+  <!-- Rodapé com redes sociais (somente nesta página) -->
+  <footer>
+    <div class="social-links">
+      <a href="https://www.youtube.com" target="_blank">YouTube</a>
+      <a href="https://www.instagram.com" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com" target="_blank">Facebook</a>
+      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+      <a href="https://wa.me/551112345678" target="_blank">WhatsApp</a>
+      <a href="https://www.tiktok.com" target="_blank">TikTok</a>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      menuToggle.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
