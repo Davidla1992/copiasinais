@@ -13,6 +13,22 @@ body {
   flex-direction: column;
 }
 
+
+/* Container centralizado para todas as páginas */
+.page-container,
+.missao-container {
+  max-width: 800px;
+  background: transparent;
+  color: var(--logo-color);
+  padding: 2rem;
+  text-align: center;   /* garante centralização */
+  margin: auto;         /* centraliza verticalmente */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Container transparente */
 .page-container {
   max-width: 800px;
