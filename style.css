@@ -18,29 +18,28 @@ body.missao-page {
 /* Container transparente */
 .missao-container {
   max-width: 800px;
-  background: transparent; /* sem bloco sólido */
-  color: #fff;
+  background: transparent;
+  color: var(--logo-color); /* texto verde */
   padding: 2rem;
 }
 
-/* Texto translúcido */
-.translucent-text {
-  background: rgba(0,0,0,0.35);
-  display: inline-block;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
+/* Texto verde destacado */
+.highlight-text {
+  color: var(--logo-color);
+  font-weight: 600;
 }
 
 /* Logo translúcido */
 .translucent-logo {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.1);
   border-radius: 12px;
   padding: 0.3rem;
 }
 
-/* Botão translúcido */
-.translucent-btn {
-  background: rgba(57, 255, 20, 0.6);
+/* Botão verde */
+.btn-voltar {
+  display: inline-block;
+  background-color: var(--logo-color);
   color: #000;
   font-weight: bold;
   padding: 0.7rem 1.5rem;
@@ -48,8 +47,8 @@ body.missao-page {
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
-.translucent-btn:hover {
-  background: rgba(46, 204, 113, 0.8);
+.btn-voltar:hover {
+  background-color: #2ecc71;
 }
 
 /* Ícone menor */
