@@ -118,7 +118,7 @@ header {
   opacity: 0.8;
 }
 
-/* Botão hambúrguer */
+/* Botão hambúrguer escondido no desktop */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -137,8 +137,25 @@ header {
   transition: all 0.3s ease;
 }
 
+/* Animação para virar X */
+.menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
 /* Mobile */
 @media (max-width: 768px) {
+  /* Mostrar botão hambúrguer */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Menu vira popup */
   .menu {
     position: fixed;
     top: 50%;
@@ -166,4 +183,4 @@ header {
     opacity: 1;
     transform: translate(-50%, -50%);
   }
-  .menu-toggle {
+}
