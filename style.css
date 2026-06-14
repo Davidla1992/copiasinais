@@ -13,30 +13,20 @@ body {
   flex-direction: column;
 }
 
-
-/* Container centralizado para todas as páginas */
+/* Container centralizado */
 .page-container,
 .missao-container {
+  flex: 1;
   max-width: 800px;
   background: transparent;
   color: var(--logo-color);
   padding: 2rem;
-  text-align: center;   /* garante centralização */
-  margin: auto;         /* centraliza verticalmente */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Container transparente */
-.page-container {
-  max-width: 800px;
-  background: transparent;
-  color: var(--logo-color); /* texto verde */
-  padding: 2rem;
   text-align: center;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centraliza verticalmente */
+  align-items: center;     /* centraliza horizontalmente */
 }
 
 /* Texto verde destacado */
@@ -184,4 +174,29 @@ header {
   .logo-img {
     max-height: 80px;
   }
+}
+
+/* Rodapé com redes sociais (somente contato.html usa) */
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 1.5rem 0;
+  background: rgba(0,0,0,0.3);
+  margin-top: auto;
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.social-links a {
+  color: var(--logo-color);
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+.social-links a:hover {
+  opacity: 0.7;
 }
