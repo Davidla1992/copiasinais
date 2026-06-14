@@ -2,25 +2,25 @@
   --logo-color: #39FF14;
 }
 
-/* Fundo da página Missão */
-body.missao-page {
+/* Fundo padrão para todas as páginas */
+body {
   background: url("imagemfondo.png") no-repeat center center fixed;
   background-size: cover;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  flex-direction: column;
 }
 
 /* Container transparente */
-.missao-container {
+.page-container {
   max-width: 800px;
   background: transparent;
   color: var(--logo-color); /* texto verde */
   padding: 2rem;
+  text-align: center;
+  margin: auto;
 }
 
 /* Texto verde destacado */
