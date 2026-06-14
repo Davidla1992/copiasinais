@@ -10,7 +10,7 @@
   <header>
     <nav class="navbar">
       <a href="index.html" class="logo-link">
-        <img src="logofinal.png" alt="GreenLux Logo" class="logo-img">
+        <img src="logofinal.png" alt="GreenLux Logo" class="logo-img translucent-logo">
       </a>
       <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
@@ -26,11 +26,30 @@
     </nav>
   </header>
 
-  <main class="page-container">
-    <h1 class="highlight-text">Nosso Impacto</h1>
-    <p>
-      Greenlux integra tecnologia industrial com sustentabilidade, em todas as etapas da produção, estabelecendo parcerias com cooperativas sociais,
-      que garantem materiais éticos e de alta qualidade. Esse modelo colaborativo fortalece a economia local e promove a preservação cultural ambiental.
-    </p>
+  <main class="impacto-container">
+    <section>
+      <h1 class="highlight-text">Nosso Impacto</h1>
+      <p>
+        A GreenLux Shop acredita que moda pode ser transformadora.  
+        Cada peça vendida contribui para reduzir o desperdício, apoiar comunidades locais e promover práticas sustentáveis.
+      </p>
+      <p>
+        🌱 <strong>Impacto Ambiental:</strong> Redução de emissões e uso consciente de recursos.  
+        🤝 <strong>Impacto Social:</strong> Apoio a artesãos e pequenos produtores.  
+        💡 <strong>Impacto Cultural:</strong> Incentivo à moda ética e responsável.
+      </p>
+      <img src="extraicon.png" alt="Ícone impacto sustentável" class="extra-img translucent-logo">
+      <a href="index.html" class="btn-voltar">« VOLTAR</a>
+    </section>
+  </main>
 
-    <img src="extraicon.png" alt="Ícone impacto sustentável" class="extra-img">
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      menuToggle.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
