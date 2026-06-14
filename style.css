@@ -24,10 +24,11 @@ body.missao-page {
   text-align: center;
 }
 
-/* Container da missão */
+/* Overlay translúcido para contraste */
 .missao-container {
   max-width: 800px;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(0, 0, 0, 0.6); /* overlay escuro */
+  color: #fff; /* texto branco para contraste */
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.25);
