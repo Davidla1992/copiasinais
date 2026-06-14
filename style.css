@@ -1,8 +1,9 @@
 :root {
   --logo-color: #39FF14;
+  --luxury-gold: #d4af37;
 }
 
-/* Fundo padrão para todas as páginas */
+/* Fundo padrão */
 body {
   background: url("imagemfondo.png") no-repeat center center fixed;
   background-size: cover;
@@ -18,19 +19,19 @@ body {
 .missao-container,
 .impacto-container,
 .parceiros-container {
-  flex: 1; /* ocupa toda a altura disponível */
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* centraliza verticalmente */
-  align-items: center;     /* centraliza horizontalmente */
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
   padding: 2rem;
   color: var(--logo-color);
 }
 
-/* Texto verde destacado */
+/* Texto destacado */
 .highlight-text {
   color: var(--logo-color);
   font-weight: 600;
@@ -43,7 +44,7 @@ body {
   padding: 0.3rem;
 }
 
-/* Botão verde */
+/* Botão padrão */
 .btn-voltar {
   display: inline-block;
   background-color: var(--logo-color);
@@ -177,7 +178,7 @@ header {
   }
 }
 
-/* Rodapé com redes sociais (somente contato.html usa) */
+/* Rodapé */
 footer {
   width: 100%;
   text-align: center;
@@ -204,60 +205,65 @@ footer {
 
 /* Formulário sofisticado */
 .lead-form {
-  background: rgba(0,0,0,0.4);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-  max-width: 500px;
+  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(30,30,30,0.9));
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  max-width: 600px;
   width: 100%;
   margin: 2rem auto;
+  border: 1px solid var(--luxury-gold);
 }
 
 .lead-form .form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .lead-form label {
   font-weight: 600;
-  color: var(--logo-color);
+  color: var(--luxury-gold);
   margin-bottom: 0.5rem;
+  font-size: 1.1rem;
 }
 
 .lead-form input,
 .lead-form select,
 .lead-form textarea {
-  padding: 0.8rem;
-  border: 2px solid var(--logo-color);
-  border-radius: 8px;
-  background: rgba(255,255,255,0.1);
+  padding: 1rem;
+  border: 2px solid var(--luxury-gold);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
   color: #fff;
   font-size: 1rem;
-  transition: border-color 0.3s ease, background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .lead-form input:focus,
 .lead-form select:focus,
 .lead-form textarea:focus {
-  border-color: #2ecc71;
-  background: rgba(255,255,255,0.2);
+  border-color: var(--logo-color);
+  background: rgba(255,255,255,0.15);
   outline: none;
+  box-shadow: 0 0 12px var(--luxury-gold);
 }
 
 .btn-submit {
-  background-color: var(--logo-color);
+  background: var(--luxury-gold);
   color: #000;
   font-weight: bold;
-  padding: 0.9rem 1.5rem;
-  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
   width: 100%;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
 }
 
 .btn-submit:hover {
-  background-color: #2ecc71;
+  background: #f5d76e;
   transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(212,175,55,0.6);
 }
