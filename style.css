@@ -2,16 +2,13 @@
   --logo-color: #39FF14;
 }
 
-/* Fundo da página Missão */
-body.missao-page {
+/* Fundo da página Home */
+body.home-page {
   background: url("imagemfondo.png") no-repeat center center fixed;
   background-size: cover;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   min-height: 100vh;
-  color: #000000;
-  text-align: center;
-  padding-top: 150px;
 }
 
 /* Cabeçalho fixo */
@@ -88,24 +85,6 @@ header {
   transition: all 0.3s ease;
 }
 
-/* Conteúdo da Missão */
-.conteudo-missao {
-  max-width: 800px;
-  margin: 0 auto;
-  background-color: rgba(255,255,255,0.85);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-}
-.conteudo-missao h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-.conteudo-missao p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-}
-
 /* Mobile */
 @media (max-width: 768px) {
   .menu {
@@ -144,9 +123,5 @@ header {
   }
   .logo-img {
     max-height: 80px;
-  }
-  .conteudo-missao {
-    max-width: 95%;
-    padding: 1.5rem;
   }
 }
