@@ -11,6 +11,28 @@ body.home-page {
   min-height: 100vh;
 }
 
+/* Fundo da página Missão */
+body.missao-page {
+  background: url("imagemfondo.png") no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Container da missão */
+.missao-container {
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
 /* Cabeçalho fixo */
 header {
   width: 100%;
@@ -22,7 +44,7 @@ header {
 }
 .navbar {
   display: flex;
-  justify-content: space-between; /* logo à esquerda, menu à direita */
+  justify-content: space-between;
   align-items: center;
   max-width: 1600px;
   margin: 0 auto;
@@ -83,6 +105,29 @@ header {
   background-color: var(--logo-color);
   border-radius: 2px;
   transition: all 0.3s ease;
+}
+
+/* Ícone menor */
+.extra-img {
+  width: 50%;
+  max-width: 150px;
+  margin: 1rem auto;
+  display: block;
+}
+
+/* Botão verde */
+.btn-voltar {
+  display: inline-block;
+  background-color: #39FF14;
+  color: #000;
+  font-weight: bold;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.btn-voltar:hover {
+  background-color: #2ecc71;
 }
 
 /* Mobile */
