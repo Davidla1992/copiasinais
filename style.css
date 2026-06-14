@@ -13,20 +13,21 @@ body {
   flex-direction: column;
 }
 
-/* Container centralizado */
+/* Containers centralizados */
 .page-container,
-.missao-container {
-  flex: 1;
-  max-width: 800px;
-  background: transparent;
-  color: var(--logo-color);
-  padding: 2rem;
-  text-align: center;
-  margin: auto;
+.missao-container,
+.impacto-container,
+.parceiros-container {
+  flex: 1; /* ocupa toda a altura disponível */
   display: flex;
   flex-direction: column;
   justify-content: center; /* centraliza verticalmente */
   align-items: center;     /* centraliza horizontalmente */
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  color: var(--logo-color);
 }
 
 /* Texto verde destacado */
