@@ -2,27 +2,14 @@
   --logo-color: #39FF14;
 }
 
-/* Página Home com imagem de fundo */
-body.home-page {
+/* Fundo da página Missão */
+body.missao-page {
   background: url("imagemfondo.png") no-repeat center center fixed;
   background-size: cover;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  padding-top: 150px;
   min-height: 100vh;
-}
-
-/* Outras páginas com fundo branco */
-body.missao-page,
-body.marcas-page,
-body.parceiros-page,
-body.contato-page,
-body.impacto-page {
-  background-color: #ffffff;
   color: #000000;
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
   text-align: center;
   padding-top: 150px;
 }
@@ -38,14 +25,14 @@ header {
 }
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* logo à esquerda, menu à direita */
   align-items: center;
   max-width: 1600px;
   margin: 0 auto;
   padding: 0.5rem 1.5rem;
 }
 .logo-img {
-  max-height: 120px;
+  max-height: 100px;
   display: block;
 }
 .logo-link {
@@ -57,7 +44,7 @@ header {
   transition: opacity 0.3s ease;
 }
 
-/* Menu */
+/* Menu desktop */
 .menu {
   list-style: none;
   display: flex;
@@ -101,88 +88,22 @@ header {
   transition: all 0.3s ease;
 }
 
-/* Botão voltar */
-.btn-voltar {
-  background-color: var(--logo-color);
-  color: #000000;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  border: 2px solid var(--logo-color);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-.btn-voltar:hover {
-  background-color: #000000;
-  color: var(--logo-color);
-}
-
-/* Imagem dos parceiros */
-.logos-parceiros {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-.img-parceiros {
-  max-width: 80%;
-  height: auto;
-}
-
-/* Formulário de contato */
-.form-contato {
-  max-width: 500px;
-  margin: 2rem auto;
-  text-align: left;
-}
-.form-contato input,
-.form-contato textarea {
-  width: 100%;
-  padding: 0.5rem;
-  border: 2px solid var(--logo-color);
-  border-radius: 5px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-}
-.form-contato label {
-  font-weight: 600;
-  color: #000000;
-}
-
-/* Página Impacto com bloco central encuadrado */
-body.impacto-page .impacto-conteudo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 70vh;              /* ocupa mais da metade da tela */
-  max-width: 900px;              /* largura controlada */
-  margin: 0 auto;                /* centraliza horizontalmente */
+/* Conteúdo da Missão */
+.conteudo-missao {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: rgba(255,255,255,0.85);
   padding: 2rem;
-  text-align: center;
-  background-color: #f9f9f9;     /* leve contraste */
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.2);
 }
-body.impacto-page .impacto-conteudo h1 {
-  margin-bottom: 1rem;
-  font-weight: 700;
+.conteudo-missao h1 {
   font-size: 2rem;
+  margin-bottom: 1rem;
 }
-body.impacto-page .impacto-conteudo p {
-  line-height: 1.8;
+.conteudo-missao p {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
-  max-width: 800px;
-}
-
-/* Rodapé */
-footer {
-  margin-top: 3rem;
-  padding: 1rem;
-  background-color: transparent;
-  color: #000000;
-  font-size: 0.9rem;
+  line-height: 1.8;
 }
 
 /* Mobile */
@@ -224,10 +145,8 @@ footer {
   .logo-img {
     max-height: 80px;
   }
-  .img-parceiros {
-    max-width: 95%;
-  }
-  body.impacto-page .impacto-conteudo {
+  .conteudo-missao {
     max-width: 95%;
     padding: 1.5rem;
   }
+}
