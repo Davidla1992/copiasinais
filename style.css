@@ -2,15 +2,6 @@
   --logo-color: #39FF14;
 }
 
-/* Fundo da página Home */
-body.home-page {
-  background: url("imagemfondo.png") no-repeat center center fixed;
-  background-size: cover;
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  min-height: 100vh;
-}
-
 /* Fundo da página Missão */
 body.missao-page {
   background: url("imagemfondo.png") no-repeat center center fixed;
@@ -24,14 +15,49 @@ body.missao-page {
   text-align: center;
 }
 
-/* Overlay translúcido para contraste */
+/* Container transparente */
 .missao-container {
   max-width: 800px;
-  background-color: rgba(0, 0, 0, 0.6); /* overlay escuro */
-  color: #fff; /* texto branco para contraste */
+  background: transparent; /* sem bloco sólido */
+  color: #fff;
   padding: 2rem;
+}
+
+/* Texto translúcido */
+.translucent-text {
+  background: rgba(0,0,0,0.35);
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+}
+
+/* Logo translúcido */
+.translucent-logo {
+  background: rgba(255,255,255,0.2);
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  padding: 0.3rem;
+}
+
+/* Botão translúcido */
+.translucent-btn {
+  background: rgba(57, 255, 20, 0.6);
+  color: #000;
+  font-weight: bold;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.translucent-btn:hover {
+  background: rgba(46, 204, 113, 0.8);
+}
+
+/* Ícone menor */
+.extra-img {
+  width: 50%;
+  max-width: 150px;
+  margin: 1rem auto;
+  display: block;
 }
 
 /* Cabeçalho fixo */
@@ -54,10 +80,6 @@ header {
 .logo-img {
   max-height: 100px;
   display: block;
-}
-.logo-link {
-  display: inline-block;
-  cursor: pointer;
 }
 .logo-link:hover .logo-img {
   opacity: 0.8;
@@ -106,29 +128,6 @@ header {
   background-color: var(--logo-color);
   border-radius: 2px;
   transition: all 0.3s ease;
-}
-
-/* Ícone menor */
-.extra-img {
-  width: 50%;
-  max-width: 150px;
-  margin: 1rem auto;
-  display: block;
-}
-
-/* Botão verde */
-.btn-voltar {
-  display: inline-block;
-  background-color: #39FF14;
-  color: #000;
-  font-weight: bold;
-  padding: 0.7rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-.btn-voltar:hover {
-  background-color: #2ecc71;
 }
 
 /* Mobile */
