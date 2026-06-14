@@ -3,33 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GreenLux Shop - Home</title>
+  <title>Home - GreenLux Shop</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-image">
-  <!-- Cabeçalho -->
+<body>
   <header>
     <nav class="navbar">
-      <a href="index.html" class="logo-link">
-        <img src="logofinal.png" alt="GreenLux Logo" class="logo-img">
+      <a href="home.html" class="logo-link">
+        <img src="logofinal.png" alt="GreenLux Logo" class="logo-img translucent-logo">
       </a>
-      <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="marcas.html">Marcas</a></li>
-        <li><a href="missao.html">Missão</a></li>
-        <li><a href="impacto.html">Impacto</a></li>
-        <li><a href="parceiros.html">Parceiros</a></li>
-        <li><a href="contato.html">Contato</a></li>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <ul class="menu" id="menu">
+        <li><a href="home.html" class="active">HOME</a></li>
+        <li><a href="marcas.html">MARCAS</a></li>
+        <li><a href="missao.html">MISSÃO</a></li>
+        <li><a href="impacto.html">IMPACTO</a></li>
+        <li><a href="parceiros.html">PARCEIROS</a></li>
+        <li><a href="contato.html">CONTATO</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Bem-vindo à GreenLux Shop</h1>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 GreenLux Shop. Todos os direitos reservados.</p>
-  </footer>
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      menuToggle.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
+
