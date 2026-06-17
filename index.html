@@ -1,41 +1,105 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GreenLux Shop</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Internacional de Gemas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <a href="index.html" class="logo-link">
-        <img src="logofinal.png" alt="GreenLux Logo" class="logo-img">
-      </a>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <ul class="menu" id="menu">
-        <li><a href="index.html" class="active">HOME</a></li>
-        <li><a href="marcas.html">MARCAS</a></li>
-        <li><a href="missao.html">MISSÃO</a></li>
-        <li><a href="impacto.html">IMPACTO</a></li>
-        <li><a href="parceiros.html">PARCEIROS</a></li>
-        <li><a href="contato.html">CONTATO</a></li>
-      </ul>
+    <!-- Header -->
+    <header>
+        <div class="logo">💎 Gemas 24kt</div>
+        <nav class="nav-desktop">
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Produtos</a></li>
+                <li><a href="#">Famílias</a></li>
+                <li><a href="#">Usuários</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <!-- Menu Mobile -->
+    <nav class="nav-mobile" id="mobileMenu">
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Produtos</a></li>
+            <li><a href="#">Famílias</a></li>
+            <li><a href="#">Usuários</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
     </nav>
-  </header>
 
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
+    <!-- Loja -->
+    <section class="store">
+        <h1>Produtos por Família</h1>
+        <div class="familia">
+            <h2>Ouro 24kt</h2>
+            <div class="produtos">
+                <div class="produto">Lingote 100g</div>
+                <div class="produto">Moeda 1oz</div>
+            </div>
+        </div>
+        <div class="familia">
+            <h2>Diamantes</h2>
+            <div class="produtos">
+                <div class="produto">Diamante Bruto</div>
+                <div class="produto">Diamante Lapidado</div>
+            </div>
+        </div>
+        <div class="familia">
+            <h2>Esmeraldas</h2>
+            <div class="produtos">
+                <div class="produto">Esmeralda Bruta</div>
+                <div class="produto">Esmeralda Lapidada</div>
+            </div>
+        </div>
+        <div class="familia">
+            <h2>Rubis</h2>
+            <div class="produtos">
+                <div class="produto">Rubi Bruto</div>
+                <div class="produto">Rubi Lapidado</div>
+            </div>
+        </div>
+        <div class="familia">
+            <h2>Águas Marinhas</h2>
+            <div class="produtos">
+                <div class="produto">Água Marinha Bruta</div>
+                <div class="produto">Água Marinha Lapidada</div>
+            </div>
+        </div>
+    </section>
 
-    menuToggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
-      menuToggle.classList.toggle('open');
-    });
-  </script>
+    <!-- Sistema de Usuários -->
+    <section class="usuarios">
+        <h1>Área de Usuários</h1>
+        <form>
+            <input type="text" placeholder="Usuário" required>
+            <input type="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+        <p><a href="#">Cadastrar novo usuário</a></p>
+    </section>
+
+    <!-- Redes Sociais -->
+    <footer>
+        <h3>Siga-nos</h3>
+        <div class="social">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">TikTok</a>
+            <a href="#">WhatsApp</a>
+        </div>
+        <p>Todos os produtos provêm diretamente das minas — ouro 24kt e gemas autênticas.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("mobileMenu").classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
