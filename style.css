@@ -7,7 +7,7 @@
 
 /* Layout geral */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: #f9f9f9;
     color: #333;
 }
@@ -17,8 +17,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #111;
-    color: #fff;
+    background: #000;
+    color: #FFD700;
     padding: 10px 20px;
 }
 
@@ -37,8 +37,13 @@ header {
 }
 
 .nav-desktop ul li a {
-    color: #fff;
+    color: #FFD700;
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-desktop ul li a:hover {
+    color: #fff;
 }
 
 .hamburger {
@@ -50,7 +55,9 @@ header {
 /* Menu Mobile */
 .nav-mobile {
     display: none;
-    background: #222;
+    background: #111;
+    transition: max-height 0.3s ease;
+    overflow: hidden;
 }
 
 .nav-mobile.active {
@@ -67,47 +74,83 @@ header {
 }
 
 .nav-mobile ul li a {
-    color: #fff;
+    color: #FFD700;
     text-decoration: none;
 }
 
 /* Loja */
 .store {
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 .store h1 {
     margin-bottom: 20px;
     text-align: center;
+    color: #000;
 }
 
 .familia {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .familia h2 {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     color: #444;
 }
 
 .produtos {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
 }
 
 .produto {
-    background: #eee;
-    padding: 15px;
-    border-radius: 8px;
-    flex: 1 1 150px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.produto img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.produto h3 {
+    margin-bottom: 5px;
+}
+
+.produto p {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #000;
+}
+
+.produto button {
+    background: #FFD700;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.produto button:hover {
+    background: #e6c200;
 }
 
 /* Usuários */
 .usuarios {
-    padding: 20px;
+    padding: 30px;
     background: #fafafa;
     text-align: center;
 }
@@ -127,31 +170,30 @@ header {
 }
 
 .usuarios button {
-    background: #111;
-    color: #fff;
+    background: #000;
+    color: #FFD700;
     cursor: pointer;
+    transition: background 0.3s;
+}
+
+.usuarios button:hover {
+    background: #333;
 }
 
 /* Footer */
 footer {
-    background: #111;
-    color: #fff;
+    background: #000;
+    color: #FFD700;
     padding: 20px;
     text-align: center;
 }
 
 .social a {
     margin: 0 10px;
-    color: #fff;
+    color: #FFD700;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .nav-desktop {
-        display: none;
-    }
-    .hamburger {
-        display: block;
-    }
-}
+.social a:hover {
+    color: #fff
