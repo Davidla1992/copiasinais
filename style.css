@@ -1,186 +1,157 @@
-:root {
-  --logo-color: #39FF14;
-  --luxury-gold: #d4af37;
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Fundo padrão */
+/* Layout geral */
 body {
-  background: url("imagemfondo.png") no-repeat center center fixed;
-  background-size: cover;
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    color: #333;
 }
 
-/* Containers centralizados */
-.page-container,
-.missao-container,
-.impacto-container,
-.parceiros-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  max-width: 900px;
-  margin: auto;
-  padding: 2rem;
-  color: var(--logo-color);
-}
-
-/* Texto destacado */
-.highlight-text {
-  color: var(--logo-color);
-  font-weight: 600;
-}
-
-/* Logo translúcido */
-.translucent-logo {
-  background: rgba(255,255,255,0.1);
-  border-radius: 12px;
-  padding: 0.3rem;
-}
-
-/* Botão padrão */
-.btn-voltar {
-  display: inline-block;
-  background-color: var(--logo-color);
-  color: #000;
-  font-weight: bold;
-  padding: 0.7rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-.btn-voltar:hover {
-  background-color: #2ecc71;
-}
-
-/* Ícone menor */
-.extra-img {
-  width: 50%;
-  max-width: 150px;
-  margin: 1rem auto;
-  display: block;
-}
-
-/* Cabeçalho fixo */
+/* Header */
 header {
-  width: 100%;
-  background-color: transparent;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 4000;
-}
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0.5rem 1.5rem;
-}
-.logo-img {
-  max-height: 100px;
-  display: block;
-}
-.logo-link:hover .logo-img {
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-
-/* Menu desktop */
-.menu {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
-.menu a {
-  color: var(--logo-color);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: opacity 0.3s ease;
-}
-.menu a.active {
-  font-weight: 700;
-  border-bottom: 2px solid var(--logo-color);
-}
-.menu a:hover {
-  opacity: 0.8;
-}
-
-/* Botão hambúrguer escondido no desktop */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 22px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-.menu-toggle .bar {
-  height: 4px;
-  width: 100%;
-  background-color: var(--logo-color);
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* Animação para virar X */
-.menu-toggle.open .bar:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.menu-toggle.open .bar:nth-child(2) {
-  opacity: 0;
-}
-.menu-toggle.open .bar:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  /* Mostrar botão hambúrguer */
-  .menu-toggle {
     display: flex;
-  }
-
-  /* Menu vira popup */
-  .menu {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    background: #111;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-desktop ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav-desktop ul li {
+    margin: 0 15px;
+}
+
+.nav-desktop ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+/* Menu Mobile */
+.nav-mobile {
+    display: none;
+    background: #222;
+}
+
+.nav-mobile.active {
+    display: block;
+}
+
+.nav-mobile ul {
+    list-style: none;
+    padding: 10px;
+}
+
+.nav-mobile ul li {
+    margin: 10px 0;
+}
+
+.nav-mobile ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Loja */
+.store {
+    padding: 20px;
+}
+
+.store h1 {
+    margin-bottom: 20px;
     text-align: center;
-    background-color: rgba(0,0,0,0.15);
-    padding: 1rem;
-    border-radius: 10px;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 2000;
-    width: 65%;
-    max-width: 260px;
-    max-height: 50vh;
-    overflow-y: auto;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  }
-  .menu.active {
-    visibility: visible;
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
+}
+
+.familia {
+    margin-bottom: 30px;
+}
+
+.familia h2 {
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.produtos {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.produto {
+    background: #eee;
+    padding: 15px;
+    border-radius: 8px;
+    flex: 1 1 150px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Usuários */
+.usuarios {
+    padding: 20px;
+    background: #fafafa;
+    text-align: center;
+}
+
+.usuarios form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+    margin: auto;
+}
+
+.usuarios input, .usuarios button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.usuarios button {
+    background: #111;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background: #111;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.social a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-desktop {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
 }
