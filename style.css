@@ -8,8 +8,9 @@
 /* Layout geral */
 body {
     font-family: 'Poppins', sans-serif;
-    background: #f9f9f9;
-    color: #333;
+    color: #fff;
+    background: url("img/fundo.png") no-repeat center center fixed;
+    background-size: cover;
 }
 
 /* Header */
@@ -17,16 +18,17 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #000;
+    background: rgba(0,0,0,0.7);
     color: #FFD700;
     padding: 10px 20px;
 }
 
 /* Logo */
 .logo img {
-    height: 70px; /* tamanho razoável */
+    height: 80px;
     width: auto;
     cursor: pointer;
+    display: block;
 }
 
 /* Efeito de brilho suave */
@@ -82,7 +84,7 @@ header {
 /* Menu Mobile */
 .nav-mobile {
     display: none;
-    background: #111;
+    background: rgba(0,0,0,0.9);
     transition: max-height 0.3s ease;
     overflow: hidden;
 }
@@ -114,6 +116,6 @@ header {
         display: block;
     }
     .logo img {
-        height: 60px;
+        height: 65px;
     }
 }
