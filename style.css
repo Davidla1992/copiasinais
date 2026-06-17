@@ -1,19 +1,28 @@
-/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Layout geral */
 body {
     font-family: 'Poppins', sans-serif;
     color: #fff;
-    background: url("img/fundo.png") no-repeat center center fixed;
+    background: url("img/fundo_otimizado.png") no-repeat center center fixed;
     background-size: cover;
+    background-attachment: fixed;
 }
 
-/* Header */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: -1;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -23,7 +32,6 @@ header {
     padding: 10px 20px;
 }
 
-/* Logo */
 .logo img {
     height: 80px;
     width: auto;
@@ -31,7 +39,6 @@ header {
     display: block;
 }
 
-/* Efeito de brilho suave */
 .logo-brilho {
     position: relative;
     overflow: hidden;
@@ -54,7 +61,6 @@ header {
     100% { left: 100%; }
 }
 
-/* Menu Desktop */
 .nav-desktop ul {
     display: flex;
     list-style: none;
@@ -74,14 +80,12 @@ header {
     color: #fff;
 }
 
-/* Hamburger (mobile) */
 .hamburger {
     display: none;
     font-size: 1.8em;
     cursor: pointer;
 }
 
-/* Menu Mobile */
 .nav-mobile {
     display: none;
     background: rgba(0,0,0,0.9);
@@ -107,7 +111,6 @@ header {
     text-decoration: none;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .nav-desktop {
         display: none;
