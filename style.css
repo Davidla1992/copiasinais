@@ -13,7 +13,7 @@ body {
   position: relative;
 }
 
-/* Fallback + brilho dourado animado */
+/* Fundo com brilho dourado animado */
 body::before {
   content: "";
   position: fixed;
@@ -56,14 +56,14 @@ header {
 }
 
 .logo img {
-  height: 55px;
+  height: 165px; /* 3x maior */
   width: auto;
   cursor: pointer;
-  transition: transform 0.3s ease; /* efeito suave */
+  transition: transform 0.3s ease;
 }
 
 .logo img:hover {
-  transform: scale(1.1); /* aumenta levemente ao passar o mouse */
+  transform: scale(1.1);
 }
 
 .logo-brilho {
@@ -139,7 +139,7 @@ header {
 /* Hamburger */
 .hamburger {
   display: none;
-  font-size: 1.8em;
+  font-size: 2em;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -190,6 +190,6 @@ header {
     display: block;
   }
   .logo img {
-    height: 45px;
+    height: 135px; /* ainda grande no mobile */
   }
 }
