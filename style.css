@@ -56,7 +56,7 @@ header {
 }
 
 .logo img {
-  height: 110px; /* 2x maior que o original (55px) */
+  height: 82px; /* 50% maior que o original (55px → 82px) */
   width: auto;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -190,6 +190,6 @@ header {
     display: block;
   }
   .logo img {
-    height: 90px; /* ainda grande no mobile */
+    height: 68px; /* também 50% maior no mobile (45px → 68px) */
   }
 }
