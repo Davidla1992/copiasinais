@@ -111,31 +111,6 @@ header {
   border-bottom: 2px solid #FFD700;
 }
 
-/* Submenu */
-.submenu {
-  display: none;
-  position: absolute;
-  top: 35px;
-  left: 0;
-  background: rgba(0,0,0,0.9);
-  list-style: none;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.submenu li {
-  margin: 5px 0;
-}
-
-.submenu li a {
-  color: #FFD700;
-  text-decoration: none;
-}
-
-.nav-desktop ul li:hover .submenu {
-  display: block;
-}
-
 /* Hamburger */
 .hamburger {
   display: none;
@@ -202,3 +177,4 @@ header {
     height: 68px;
   }
 }
+
