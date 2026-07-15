@@ -28,12 +28,29 @@
     .nav-desktop ul li a{color:#FFD700;text-decoration:none;padding:8px;}
     .nav-desktop ul li a.active,.nav-desktop ul li a:hover{color:#fff;border-bottom:2px solid #FFD700;}
     .hamburger{display:none;cursor:pointer;font-size:28px;color:#FFD700;}
-    .nav-mobile{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#111;padding-top:80px;text-align:center;}
-    .nav-mobile ul{list-style:none;padding:0;}
+    
+    /* Menu mobile centralizado */
+    .nav-mobile{
+      position:fixed;top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,0.85);
+      display:flex;justify-content:center;align-items:center;
+      opacity:0;pointer-events:none;transition:opacity 0.4s ease;
+      z-index:999;
+    }
+    .nav-mobile.active{opacity:1;pointer-events:auto;}
+    .nav-mobile ul{list-style:none;text-align:center;}
     .nav-mobile ul li{margin:20px 0;}
-    .nav-mobile ul li a{color:#FFD700;text-decoration:none;font-size:22px;}
-    .nav-mobile.active{display:block;}
-    @media(max-width:768px){.nav-desktop{display:none;}.hamburger{display:block;}}
+    .nav-mobile ul li a{
+      color:#FFD700;text-decoration:none;font-size:1.8em;
+      font-weight:600;transition:color 0.3s;
+    }
+    .nav-mobile ul li a:hover{color:#fff;}
+    
+    @media(max-width:768px){
+      .nav-desktop{display:none;}
+      .hamburger{display:block;}
+      .logo img{height:68px;}
+    }
   </style>
 </head>
 <body>
@@ -69,9 +86,15 @@
   <script>
     const hamburger=document.querySelector(".hamburger");
     const mobileMenu=document.getElementById("mobileMenu");
-    hamburger.addEventListener("click",()=>{hamburger.classList.toggle("active");mobileMenu.classList.toggle("active");});
+    hamburger.addEventListener("click",()=>{
+      hamburger.classList.toggle("active");
+      mobileMenu.classList.toggle("active");
+    });
     document.querySelectorAll("#mobileMenu a").forEach(link=>{
-      link.addEventListener("click",()=>{mobileMenu.classList.remove("active");hamburger.classList.remove("active");});
+      link.addEventListener("click",()=>{
+        mobileMenu.classList.remove("active");
+        hamburger.classList.remove("active");
+      });
     });
   </script>
 </body>
