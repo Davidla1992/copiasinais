@@ -6,6 +6,7 @@
   <title>Venda de Ouro - Achei o Caminho</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: 'Poppins', sans-serif;
       color: #fff;
@@ -14,94 +15,69 @@
       background-attachment: fixed;
       position: relative;
     }
-
     body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-      z-index: -1;
+      content:"";
+      position:fixed; top:0; left:0; width:100%; height:100%;
+      background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+                 linear-gradient(120deg,rgba(255,215,0,0.15),rgba(255,215,0,0.05));
+      background-size:200% 200%;
+      animation:fundoBrilho 10s ease infinite;
+      z-index:-1;
     }
-
+    @keyframes fundoBrilho {
+      0% { background-position:0% 50%; }
+      50% { background-position:100% 50%; }
+      100% { background-position:0% 50%; }
+    }
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(0,0,0,0.7);
-      color: #FFD700;
-      padding: 10px 20px;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      z-index: 1000;
+      display:flex; justify-content:space-between; align-items:center;
+      background:rgba(0,0,0,0.7); color:#FFD700; padding:10px 20px;
+      position:fixed; top:0; left:0; width:100%; z-index:1000;
     }
-
+    .logo img { height:70px; }
     .container {
-      max-width: 800px;
-      margin: 120px auto 50px;
-      padding: 20px;
-      background: rgba(0,0,0,0.7);
-      border-radius: 10px;
+      max-width:800px; margin:120px auto 50px; padding:20px;
+      background:rgba(0,0,0,0.7); border-radius:10px;
     }
-
     h1 {
-      text-align: center;
-      color: #FFD700;
-      margin-bottom: 30px;
+      text-align:center; color:#FFD700; margin-bottom:30px;
     }
-
     p {
-      text-align: center;
-      margin-bottom: 20px;
-      line-height: 1.6;
+      text-align:center; margin-bottom:20px; line-height:1.6;
     }
-
     form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+      display:flex; flex-direction:column; gap:15px;
     }
-
-    label {
-      font-weight: 600;
-      color: #FFD700;
-    }
-
+    label { font-weight:600; color:#FFD700; }
     input, select, textarea {
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      font-size: 1em;
-      outline: none;
+      padding:10px; border:none; border-radius:5px;
+      font-size:1em; outline:none;
     }
-
     input[type="submit"] {
-      background-color: #FFD700;
-      color: #000;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s;
+      background-color:#FFD700; color:#000; font-weight:600;
+      cursor:pointer; transition:background 0.3s;
     }
-
     input[type="submit"]:hover {
-      background-color: #fff;
-      color: #000;
+      background-color:#fff; color:#000;
+    }
+    .resultado {
+      margin-top:20px; text-align:center;
+      font-size:1.2em; color:#FFD700; font-weight:bold;
     }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">
-      <a href="index.html"><img src="logofinalor.png" alt="Achei o Caminho" height="70"></a>
+      <a href="index.html"><img src="logofinalor.png" alt="Achei o Caminho"></a>
     </div>
   </header>
 
   <div class="container">
     <h1>Venda de Ouro</h1>
-    <p>Preencha o formulário abaixo para vender suas joias, barras ou moedas de ouro (18K ou 24K) com segurança e credibilidade.</p>
+    <p>Preencha o formulário abaixo para vender suas joias, barras ou moedas de ouro (18K ou 24K). Veja o valor estimado antes de enviar!</p>
 
-    <form action="processar_venda.php" method="POST">
+    <form id="formVenda" action="processar_venda.php" method="POST">
       <label for="nome">Nome completo:</label>
       <input type="text" id="nome" name="nome" required>
 
@@ -124,8 +100,42 @@
       <label for="descricao">Descrição das peças:</label>
       <textarea id="descricao" name="descricao" rows="4" placeholder="Ex: anel, corrente, moeda, barra..."></textarea>
 
+      <div class="resultado" id="resultado">Valor estimado: R$ 0,00</div>
+
       <input type="submit" value="Enviar Proposta de Venda">
     </form>
   </div>
+
+  <script>
+    // Cotação real do ouro (atualize conforme mercado)
+    const cotacaoOuro24k = 662.18; // R$/g
+    const cotacaoOuro18k = 496.63; // R$/g
+
+    const tipoSelect = document.getElementById("tipo");
+    const pesoInput = document.getElementById("peso");
+    const resultadoDiv = document.getElementById("resultado");
+
+    function calcularValor() {
+      const tipo = tipoSelect.value;
+      const peso = parseFloat(pesoInput.value);
+
+      if (!tipo || isNaN(peso) || peso <= 0) {
+        resultadoDiv.textContent = "Valor estimado: R$ 0,00";
+        return;
+      }
+
+      let valor = 0;
+      if (tipo === "24k") {
+        valor = peso * cotacaoOuro24k;
+      } else if (tipo === "18k") {
+        valor = peso * cotacaoOuro18k;
+      }
+
+      resultadoDiv.textContent = "Valor estimado: R$ " + valor.toLocaleString("pt-BR", {minimumFractionDigits: 2});
+    }
+
+    tipoSelect.addEventListener("change", calcularValor);
+    pesoInput.addEventListener("input", calcularValor);
+  </script>
 </body>
 </html>
